@@ -109,7 +109,7 @@ const Suggestions = forwardRef<HTMLDivElement, SuggestionsProps>(
         {...otherProps}
       >
         {suggestions.length > 0 && (
-          <UIList data-suggestions-list className="suggestions__section">
+          <UIList className="suggestions__section">
             {suggestions?.map((suggestion, index) => (
               <li key={index} className="suggestions__item">
                 <Button onClick={() => null}>
@@ -122,7 +122,9 @@ const Suggestions = forwardRef<HTMLDivElement, SuggestionsProps>(
 
         {SUGGESTED_PRODUCTS.length > 0 && (
           <div className="suggestions__section">
-            <p className="suggestions__title">Suggested Products</p>
+            <p className="suggestions__title suggestions__title--small">
+              Suggested Products
+            </p>
             <UIList>
               {SUGGESTED_PRODUCTS.slice(0, MAX_SUGGESTED_PRODUCTS).map(
                 (product, index) => (

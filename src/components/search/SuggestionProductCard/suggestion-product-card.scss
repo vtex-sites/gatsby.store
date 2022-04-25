@@ -3,6 +3,10 @@
 .suggestion-product-card {
   padding: var(--fs-spacing-1) 0;
 
+  [data-card-image] {
+    display: flex;
+  }
+
   [data-card-content] {
     display: grid;
     grid-template-columns: rem(56px) repeat(4, 1fr);

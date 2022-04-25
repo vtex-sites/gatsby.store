@@ -1,5 +1,5 @@
 import { formatSearchState, initSearchState } from '@faststore/sdk'
-import { Icon as UIIcon, List as UIList } from '@faststore/ui'
+import { List as UIList } from '@faststore/ui'
 import Button from 'src/components/ui/Button'
 import Icon from 'src/components/ui/Icon'
 import Link from 'src/components/ui/Link'
@@ -25,32 +25,29 @@ const SearchHistory = ({ history = [], onClear }: SearchHistoryProps) => {
   const { searchHistory } = useSearchHistory(history)
 
   return (
-    <section data-store-search-history>
-      <div data-store-search-history-header>
-        <h4 data-store-search-history-title>History</h4>
+    <section className="suggestions__section">
+      <div className="suggestions__header">
+        <p className="suggestions__title">History</p>
         <Button variant="tertiary" onClick={onClear}>
           Clear
         </Button>
       </div>
       <UIList variant="ordered">
         {searchHistory.map((item, index) => (
-          <li data-store-search-history-item key={index}>
+          <li key={index} className="suggestions__item">
             <Link
               variant="display"
               to={doSearch(item)}
               target="_blank"
               rel="noreferrer"
             >
-              <UIIcon
-                component={<Icon name="Clock" width={18} height={18} />}
+              <Icon
+                name="Clock"
+                width={18}
+                height={18}
+                className="suggestions__item-icon"
               />
               {item}
-              <UIIcon
-                data-store-search-history-arrow
-                component={
-                  <Icon name="ArrowUpRight" width={13.5} height={13.5} />
-                }
-              />
             </Link>
           </li>
         ))}

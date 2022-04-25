@@ -37,7 +37,9 @@ const SuggestionsTopSearch = forwardRef<
       className="suggestions__section"
       {...otherProps}
     >
-      <p className="suggestions__title">Top Search</p>
+      <div className="suggestions__header">
+        <p className="suggestions__title">Top Search</p>
+      </div>
       <UIList variant="ordered">
         {searchedItems.map((item, index) => (
           <li key={index} className="suggestions__item">
