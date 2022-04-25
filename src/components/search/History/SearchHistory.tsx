@@ -5,7 +5,8 @@ import Icon from 'src/components/ui/Icon'
 import Link from 'src/components/ui/Link'
 import useSearchHistory from 'src/sdk/search/useSearchHistory'
 
-interface SearchHistoryProps {
+export interface SearchHistoryProps {
+  history?: string[]
   onClear: () => void
 }
 
@@ -20,8 +21,8 @@ const doSearch = (term: string) => {
   return `${pathname}${search}`
 }
 
-const SearchHistory = ({ onClear }: SearchHistoryProps) => {
-  const { searchHistory } = useSearchHistory()
+const SearchHistory = ({ history = [], onClear }: SearchHistoryProps) => {
+  const { searchHistory } = useSearchHistory(history)
 
   return (
     <section data-store-search-history>
