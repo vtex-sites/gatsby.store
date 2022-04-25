@@ -1,4 +1,4 @@
-import { usePagination, useSearch } from '@faststore/sdk'
+import { useSearch } from '@faststore/sdk'
 import { GatsbySeo } from 'gatsby-plugin-next-seo'
 import { lazy, Suspense, useState } from 'react'
 import Filter from 'src/components/search/Filter'
@@ -13,6 +13,7 @@ import { mark } from 'src/sdk/tests/mark'
 import Section from '../Section'
 import EmptyGallery from './EmptyGallery'
 import { useDelayedFacets } from './useDelayedFacets'
+import { useDelayedPagination } from './useDelayedPagination'
 import { useGalleryQuery } from './useGalleryQuery'
 import { useProductsPrefetch } from './usePageProducts'
 
@@ -31,7 +32,7 @@ function ProductGallery({ title, searchTerm }: Props) {
   const { data } = useGalleryQuery()
   const facets = useDelayedFacets(data)
   const totalCount = data?.search.products.pageInfo.totalCount ?? 0
-  const { next, prev } = usePagination(totalCount)
+  const { next, prev } = useDelayedPagination(totalCount)
 
   useProductsPrefetch(prev ? prev.cursor : null)
   useProductsPrefetch(next ? next.cursor : null)
