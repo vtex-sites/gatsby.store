@@ -27,7 +27,7 @@
 
 - PR 
 - [ ] Label added according to the PR goal - `Breaking change`, `Enhancement`, `Bug` or `Chore`.
-- [ ] The component, hook or pathname is in-between backticks (``) *- If applicable*. E.g.: `ComponentName` component.
+- [ ] The component, hook, or pathname is in-between backticks (``) *- If applicable*. E.g.: `ComponentName` component.
 - [ ] Function or parameter identified on the PR *- If applicable*. E.g.: `useWindowDimensions` hook.
 - [ ] For documentation changes, ping @carolinamenezes or @Mariana-Caetano to review and update the changes.
 
