@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
+- New items in the `pull_request_template.md` ([#12](https://github.com/vtex-sites/gatsby.store/pull/12))
 - Integrates with search.query event api (#2)
 - Applies new local tokens to `Badge` (#462)
 - Applies new local tokens to `Hero` (#435)
@@ -16,7 +17,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Adds Storybook configs (#463)
 - Adds vtex search tracking script. With this we will populate TopSearches and Autocomplete indices (#389)
 - Add `RegionalizationBar`, `RegionalizationButton` components and integrates it on Mobile and Desktop devices (#424).
-- New items in the `pull_request_template.md`
 
 ### Changed
 
