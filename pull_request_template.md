@@ -20,7 +20,7 @@
 
 <em>You may erase this after checking them all ;)</em>
 
-- [ ] CHANGELOG entry added.
+- [ ] Add an entry in `CHANGELOG.md` at the beginning of its due section. [The latest version should comes first](https://keepachangelog.com/en/1.0.0/#:~:text=The%20latest%20version%20comes%20first.).
 - [ ] The latest version was added first in the `CHANGELOG.md`.
 - [ ] PR number added in the CHANGELOG entry.
 
