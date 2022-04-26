@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
+
 - Integrates with search.query event api (#2)
 - Applies new local tokens to `Badge` (#462)
 - Applies new local tokens to `Hero` (#435)
@@ -19,6 +20,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- Update `RegionalizationButton` and `RegionalizationBar` to show the postal code (#8)
 - Changed name from BaseStore to GatsbyStore (#497)
 - Applies new local tokens to `BannerText` (#470)
 - Update the Incentives component to handle CMS data (#474)
