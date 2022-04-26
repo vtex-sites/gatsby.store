@@ -20,4 +20,14 @@
 
 <em>You may erase this after checking them all ;)</em>
 
-- [] CHANGELOG entry added
+- [ ] CHANGELOG entry added.
+- [ ] The latest version was added first in the `CHANGELOG.md`.
+- [ ] PR number added in the CHANGELOG entry.
+
+
+- PR 
+- [ ] Label added according to the PR goal - `Breaking change`, `Enhancement`, `Bug` or `Chore`.
+- [ ] The component, hook or pathname is in-between backticks (``) *- If applicable*. E.g.: `ComponentName` component.
+- [ ] Function or parameter identified on the PR *- If applicable*. E.g.: `useWindowDimensions` hook.
+- [ ] For documentation changes, ping @carolinamenezes or @Mariana-Caetano to review and update the changes.
+
