@@ -65,7 +65,7 @@ function handleSuggestions(suggestion: string, searchTerm: string) {
       {suggestionSubstring.map((substring, indexSubstring) => (
         <>
           {substring.length > 0 && (
-            <b className="suggestions__item-bold">
+            <b data-fs-search-suggestion-item-bold>
               {indexSubstring === 0
                 ? substring.charAt(0).toUpperCase() + substring.slice(1)
                 : substring}
@@ -104,14 +104,14 @@ const Suggestions = forwardRef<HTMLDivElement, SuggestionsProps>(
       <section
         ref={ref}
         data-testid={testId}
-        data-store-suggestions
+        data-fs-search-suggestions
         className="suggestions"
         {...otherProps}
       >
         {suggestions.length > 0 && (
-          <UIList className="suggestions__section">
+          <UIList data-fs-search-suggestion-section>
             {suggestions?.map((suggestion, index) => (
-              <li key={index} className="suggestions__item">
+              <li key={index} data-fs-search-suggestion-item>
                 <Button onClick={() => null}>
                   {handleSuggestions(suggestion, term)}
                 </Button>
@@ -121,14 +121,12 @@ const Suggestions = forwardRef<HTMLDivElement, SuggestionsProps>(
         )}
 
         {SUGGESTED_PRODUCTS.length > 0 && (
-          <div className="suggestions__section">
-            <p className="suggestions__title suggestions__title--small">
-              Suggested Products
-            </p>
+          <div data-fs-search-suggestion-section>
+            <p data-fs-search-suggestion-title="small">Suggested Products</p>
             <UIList>
               {SUGGESTED_PRODUCTS.slice(0, MAX_SUGGESTED_PRODUCTS).map(
                 (product, index) => (
-                  <li key={index} className="suggestions__item">
+                  <li key={index} data-fs-search-suggestion-item>
                     <Link to="/" variant="display">
                       <SuggestionProductCard product={product} />
                     </Link>

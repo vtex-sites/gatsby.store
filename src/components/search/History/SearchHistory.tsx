@@ -25,16 +25,16 @@ const SearchHistory = ({ history = [], onClear }: SearchHistoryProps) => {
   const { searchHistory } = useSearchHistory(history)
 
   return (
-    <section className="suggestions__section">
-      <div className="suggestions__header">
-        <p className="suggestions__title">History</p>
+    <section data-fs-search-suggestion-section>
+      <div data-fs-search-suggestion-header>
+        <p data-fs-search-suggestion-title>History</p>
         <Button variant="tertiary" onClick={onClear}>
           Clear
         </Button>
       </div>
       <UIList variant="ordered">
         {searchHistory.map((item, index) => (
-          <li key={index} className="suggestions__item">
+          <li key={index} data-fs-search-suggestion-item>
             <Link
               variant="display"
               to={doSearch(item)}
@@ -45,7 +45,7 @@ const SearchHistory = ({ history = [], onClear }: SearchHistoryProps) => {
                 name="Clock"
                 width={18}
                 height={18}
-                className="suggestions__item-icon"
+                data-fs-search-suggestion-item-icon
               />
               {item}
             </Link>
