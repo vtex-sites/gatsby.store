@@ -20,6 +20,8 @@
     border: var(--fs-border-width-default) solid var(--fs-border-color-default);
     border-radius: var(--fs-border-radius-default);
 
+    @include input-focus-ring;
+
     &:placeholder-shown + label {
       top: calc(1.5 * (var(--fs-text-size-body) / 2));
       overflow: hidden;
@@ -40,7 +42,7 @@
       font-size: var(--fs-text-size-tiny);
     }
 
-    &:hover:not(:disabled) {
+    &:hover:not(:disabled):not(:focus-visible):not(:focus) {
       border-color: var(--fs-border-color-default-active);
       box-shadow: 0 0 0 var(--fs-border-width-default) var(--fs-border-color-default-active);
     }
@@ -51,8 +53,6 @@
       border: 0;
       + label { cursor: not-allowed; }
     }
-
-    @include input-focus-ring;
   }
 
   label {
@@ -77,7 +77,7 @@
     @include input-focus-ring($outline: #{var(--fs-color-focus-ring-danger)},
     $border: #{var(--fs-color-danger-border)});
 
-    &:hover:not(:disabled) {
+    &:hover:not(:disabled):not(:focus-visible):not(:focus) {
       border-color: var(--fs-color-danger-border);
       box-shadow: 0 0 0 var(--fs-border-width-default) var(--fs-color-danger-border);
     }
