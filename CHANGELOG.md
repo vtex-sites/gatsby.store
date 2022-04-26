@@ -21,6 +21,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 
 - Update `RegionalizationButton` and `RegionalizationBar` to show the postal code (#8)
+- Fixes `ProductCard` bordered variant (#5)
 - Changed name from BaseStore to GatsbyStore (#497)
 - Applies new local tokens to `BannerText` (#470)
 - Update the Incentives component to handle CMS data (#474)
