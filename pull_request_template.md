@@ -20,14 +20,14 @@
 
 <em>You may erase this after checking them all ;)</em>
 
-- [ ] Add an entry in `CHANGELOG.md` at the beginning of its due section. [The latest version should comes first](https://keepachangelog.com/en/1.0.0/#:~:text=The%20latest%20version%20comes%20first.).
-- [ ] The latest version was added first in the `CHANGELOG.md`.
-- [ ] PR number added in the CHANGELOG entry.
+- [ ] Added an entry in the `CHANGELOG.md` at the beginning of its due section. [The latest version should comes first](https://keepachangelog.com/en/1.0.0/#:~:text=The%20latest%20version%20comes%20first.).
+- [ ] Added the PR number at the entry in the `CHANGELOG.md`.
+- [ ] Updated the Storybook - *if applicable*.
 
 
-- PR 
-- [ ] Label added according to the PR goal - `Breaking change`, `Enhancement`, `Bug` or `Chore`.
-- [ ] The component, hook, or pathname is in-between backticks (``) *- If applicable*. E.g.: `ComponentName` component.
-- [ ] Function or parameter identified on the PR *- If applicable*. E.g.: `useWindowDimensions` hook.
+- PR description
+- [ ] Added a label according to the PR goal - `Breaking change`, `Enhancement`, `Bug` or `Chore`.
+- [ ] Added the component, hook, or pathname in-between backticks (``) *- If applicable*. E.g.: `ComponentName` component.
+- [ ] Identified the function or parameter in the PR *- If applicable*. E.g.: `useWindowDimensions` hook.
 - [ ] For documentation changes, ping @carolinamenezes or @Mariana-Caetano to review and update the changes.
 
