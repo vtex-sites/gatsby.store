@@ -5,7 +5,7 @@ import IconButton from 'src/components/ui/Button/ButtonIcon'
 import Icon from 'src/components/ui/Icon'
 import type { InputProps } from '@faststore/ui'
 
-export type InputTextProps = {
+type DefaultProps = {
   /**
    * ID to identify input and corresponding label.
    */
@@ -41,7 +41,7 @@ type ActionableInputText =
       buttonActionText?: string
     }
 
-type Props = InputTextProps & InputProps & ActionableInputText
+export type InputTextProps = DefaultProps & InputProps & ActionableInputText
 
 const InputText = ({
   id,
@@ -52,9 +52,10 @@ const InputText = ({
   buttonActionText = 'Apply',
   onSubmit,
   placeholder = ' ', // initializes with an empty space to style float label using `placeholder-shown`
+  value,
   ...otherProps
-}: Props) => {
-  const [inputValue, setInputValue] = useState<string>('')
+}: InputTextProps) => {
+  const [inputValue, setInputValue] = useState<string>((value as string) ?? '')
   const [hasError, setHasError] = useState<boolean>(!!errorMessage)
 
   const inputRef = useRef<HTMLInputElement>(null)

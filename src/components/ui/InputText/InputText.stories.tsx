@@ -13,11 +13,19 @@ const Template = ({ ...args }: InputTextProps) => (
 )
 
 export const Default = Template.bind({})
+export const HasError = Template.bind({})
 export const Interactive = Template.bind({})
 
 Default.args = {
   id: 'default-input-text',
   label: 'Email',
+  errorMessage: 'Please, add a valid email',
+}
+
+HasError.args = {
+  id: 'error-input-text',
+  label: 'Email',
+  value: 'invalid@mail',
   errorMessage: 'Please, add a valid email',
 }
 
