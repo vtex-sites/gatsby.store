@@ -1,5 +1,6 @@
 import { Input as UIInput, Label as UILabel } from '@faststore/ui'
-import { useEffect, useRef, useState } from 'react'
+import type { MutableRefObject } from 'react'
+import { useEffect, useState } from 'react'
 import Button from 'src/components/ui/Button'
 import IconButton from 'src/components/ui/Button/ButtonIcon'
 import Icon from 'src/components/ui/Icon'
@@ -18,6 +19,10 @@ export type InputTextProps = {
    * The error message is displayed when an error occurs.
    */
   errorMessage?: string
+  /**
+   * Component's ref.
+   */
+  inputRef?: MutableRefObject<HTMLInputElement | null>
 }
 
 type ActionableInputText =
@@ -52,12 +57,11 @@ const InputText = ({
   buttonActionText = 'Apply',
   onSubmit,
   placeholder = ' ', // initializes with an empty space to style float label using `placeholder-shown`
+  inputRef,
   ...otherProps
 }: Props) => {
   const [inputValue, setInputValue] = useState<string>('')
   const [hasError, setHasError] = useState<boolean>(!!errorMessage)
-
-  const inputRef = useRef<HTMLInputElement>(null)
 
   useEffect(() => {
     errorMessage && setHasError(true)
@@ -65,7 +69,7 @@ const InputText = ({
 
   const onClear = () => {
     setInputValue('')
-    inputRef.current?.focus()
+    inputRef?.current?.focus()
   }
 
   return (
