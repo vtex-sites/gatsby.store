@@ -17,5 +17,6 @@ const Template = ({ ...args }: ToggleProps) => <Toggle {...args} />
 export const Default = Template.bind({})
 
 Default.args = {
+  id: 'toggle',
   label: 'Label',
 }

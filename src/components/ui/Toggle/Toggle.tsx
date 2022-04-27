@@ -1,27 +1,38 @@
+import { Input as UIInput, Label as UILabel } from '@faststore/ui'
 import { forwardRef } from 'react'
-import type { HTMLAttributes } from 'react'
+import type { InputHTMLAttributes } from 'react'
 import Icon from 'src/components/ui/Icon'
 
 export interface ToggleProps
-  extends HTMLAttributes<Omit<HTMLInputElement, 'disabled'>> {
+  extends InputHTMLAttributes<Omit<HTMLInputElement, 'disabled' | 'type'>> {
+  /**
+   * ID to identify input and corresponding label.
+   */
+  id: string
+  /**
+   * The text displayed to identify the input.
+   */
   label?: string
+  /**
+   * Specifies that this input should be disabled.
+   */
   disabled?: boolean
   variant?: 'horizontal' | 'vertical'
 }
 
 const Toggle = forwardRef<HTMLInputElement, ToggleProps>(function Toggle(
-  { label, disabled, variant = 'horizontal', ...otherProps }: ToggleProps,
+  { id, label, disabled, variant = 'horizontal', ...otherProps }: ToggleProps,
   ref
 ) {
   return (
     <div data-fs-toggle data-fs-toggle-variant={variant}>
       <div data-fs-toggle-container>
-        <input
+        <UIInput
+          id={id}
           ref={ref}
-          id="toggle"
-          name="toggle"
           type="checkbox"
           disabled={disabled}
+          aria-label={label ? undefined : `toggle-${id}`}
           {...otherProps}
         />
         <span data-fs-toggle-knob>
@@ -34,7 +45,11 @@ const Toggle = forwardRef<HTMLInputElement, ToggleProps>(function Toggle(
           />
         </span>
       </div>
-      <label htmlFor="toggle">{label}</label>
+      {label && (
+        <UILabel data-fs-label htmlFor={id}>
+          {label}
+        </UILabel>
+      )}
     </div>
   )
 })
