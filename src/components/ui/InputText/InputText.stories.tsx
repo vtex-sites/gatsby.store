@@ -15,6 +15,7 @@ const Template = ({ ...args }: InputTextProps) => (
 export const Default = Template.bind({})
 export const HasError = Template.bind({})
 export const Interactive = Template.bind({})
+export const Disabled = Template.bind({})
 
 Default.args = {
   id: 'default-input-text',
@@ -34,4 +35,11 @@ Interactive.args = {
   label: 'Postal Code',
   actionable: true,
   errorMessage: 'Invalid Postal Code',
+}
+
+Disabled.args = {
+  id: 'disabled-input-text',
+  label: 'Email',
+  errorMessage: 'Please, add a valid email',
+  disabled: true,
 }

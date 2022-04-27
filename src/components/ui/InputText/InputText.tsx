@@ -103,6 +103,7 @@ const InputText = ({
             data-fs-input-text-button
             variant="tertiary"
             onClick={() => onSubmit(inputValue)}
+            size="small"
           >
             {buttonActionText}
           </Button>
