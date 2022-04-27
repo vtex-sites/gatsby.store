@@ -24,28 +24,30 @@
   --fs-toggle-knob-border-color                : var(--fs-color-main-4);
   --fs-toggle-knob-border-width                : var(--fs-border-width-thick);
   --fs-toggle-knob-icon-color                  : transparent;
-  --fs-toggle-knob-icon-checked-color          : var(--fs-color-main-2);
-  --fs-toggle-knob-icon-checked-disabled-color : var(--fs-toggle-knob-icon-color);
-  --fs-toggle-knob-icon-disabled-color         : var(--fs-toggle-bkg-color);
 
-  // Interactive states
+  --fs-toggle-shadow-hover                     : var(--fs-shadow);
+  --fs-toggle-bkg-color-hover                  : var(--fs-color-primary-bkg-light);
+  --fs-toggle-border-color-hover               : var(--fs-border-color-default-hover);
+  --fs-toggle-knob-bkg-color-hover             : var(--fs-toggle-border-color-hover);
+  --fs-toggle-knob-border-color-hover          : var(--fs-toggle-border-color-hover);
+
+  // Checked
   --fs-toggle-checked-bkg-color                : var(--fs-color-primary-bkg-active);
   --fs-toggle-checked-border-color             : var(--fs-border-color-default-active);
-  --fs-toggle-checked-hover-bkg-color          : var(--fs-color-primary-bkg-hover);
-  --fs-toggle-checked-hover-border-color       : var(--fs-toggle-checked-hover-bkg-color);
+  --fs-toggle-checked-bkg-color-hover          : var(--fs-color-primary-bkg-hover);
+  --fs-toggle-checked-border-color-hover       : var(--fs-toggle-checked-bkg-color-hover);
   --fs-toggle-checked-knob-bkg-color           : var(--fs-control-bkg-default);
   --fs-toggle-checked-knob-border-color        : var(--fs-toggle-checked-knob-bkg-color);
+  --fs-toggle-checked-knob-icon-color          : var(--fs-toggle-checked-bkg-color);
+  --fs-toggle-checked-knob-icon-color-disabled : var(--fs-toggle-knob-icon-color);
+  --fs-toggle-checked-knob-icon-color-hover    : var(--fs-toggle-checked-bkg-color-hover);
 
-  --fs-toggle-hover-shadow                     : var(--fs-shadow-hover);
-  --fs-toggle-hover-bkg-color                  : var(--fs-color-primary-bkg-light);
-  --fs-toggle-hover-border-color               : var(--fs-border-color-default-hover);
-  --fs-toggle-hover-knob-bkg-color             : var(--fs-toggle-hover-border-color);
-  --fs-toggle-hover-knob-border-color          : var(--fs-toggle-hover-border-color);
-
+  // Disabled
   --fs-toggle-disabled-bkg-color               : var(--fs-color-disabled-bkg);
   --fs-toggle-disabled-border-color            : var(--fs-border-color-default-disabled);
   --fs-toggle-disabled-knob-bkg-color          : var(--fs-color-neutral-5);
   --fs-toggle-disabled-knob-border-color       : var(--fs-toggle-disabled-knob-bkg-color);
+  --fs-toggle-disabled-knob-icon-color         : var(--fs-toggle-disabled-bkg-color);
 
   // --------------------------------------------------------
   // Structural Styles
@@ -53,10 +55,6 @@
 
   display: flex;
   align-items: center;
-  padding: 0;
-  margin: 0;
-  border: 0;
-  outline: 0;
 
   input {
     @include focus-ring-visible;
@@ -74,40 +72,48 @@
     transition: var(--fs-toggle-transition-property) var(--fs-toggle-transition-timing) var(--fs-toggle-transition-function);
     appearance: none;
 
-    @media (hover: hover) {
-      &:hover {
-        background-color: var(--fs-toggle-hover-bkg-color);
-        border-color: var(--fs-toggle-hover-border-color);
-        box-shadow: var(--fs-toggle-hover-shadow);
-
-        + [data-fs-toggle-knob] {
-          background-color: var(--fs-toggle-hover-knob-bkg-color);
-          border-color: var(--fs-toggle-hover-knob-border-color);
-
-          [data-fs-toggle-knob-icon] {
-            color: var(--fs-toggle-knob-icon-color);
-          }
-        }
-      }
-    }
-
     &:checked {
       background-color: var(--fs-toggle-checked-bkg-color);
       border: var(--fs-toggle-border-width) solid var(--fs-toggle-checked-border-color);
 
       + [data-fs-toggle-knob] {
+        color: var(--fs-toggle-checked-knob-icon-color);
         background-color: var(--fs-toggle-checked-knob-bkg-color);
         border-color: var(--fs-toggle-checked-knob-border-color);
-
-        [data-fs-toggle-knob-icon] {
-          color: var(--fs-toggle-knob-icon-checked-color);
-        }
       }
 
       @media (hover: hover) {
-        &:hover {
-          background-color: var(--fs-toggle-checked-hover-bkg-color);
-          border: var(--fs-toggle-border-width) solid var(--fs-toggle-checked-hover-border-color);
+        &:hover:not(:disabled) {
+          background-color: var(--fs-toggle-checked-bkg-color-hover);
+          border: var(--fs-toggle-border-width) solid var(--fs-toggle-checked-border-color-hover);
+
+          + [data-fs-toggle-knob] {
+            color: var(--fs-toggle-checked-knob-icon-color-hover);
+          }
+        }
+      }
+    }
+
+    &:not(:checked) {
+      background-color: var(--fs-toggle-bkg-color);
+      border: var(--fs-toggle-border-width) solid var(--fs-toggle-border-color);
+
+      + [data-fs-toggle-knob] {
+        color: var(--fs-toggle-knob-icon-color);
+        background-color: var(--fs-toggle-knob-bkg-color);
+        border: var(--fs-toggle-border-width) solid var(--fs-toggle-knob-border-color);
+      }
+
+      @media (hover: hover) {
+        &:hover:not(:disabled) {
+          background-color: var(--fs-toggle-bkg-color-hover);
+          border-color: var(--fs-toggle-border-color-hover);
+          box-shadow: var(--fs-toggle-shadow-hover);
+
+          + [data-fs-toggle-knob] {
+            background-color: var(--fs-toggle-knob-bkg-color-hover);
+            border-color: var(--fs-toggle-knob-border-color-hover);
+          }
         }
       }
     }
@@ -120,14 +126,10 @@
       + [data-fs-toggle-knob] {
         background-color: var(--fs-toggle-disabled-knob-bkg-color);
         border-color: var(--fs-toggle-disabled-knob-border-color);
-
-        [data-fs-toggle-knob-icon] { color: var(--fs-toggle-knob-icon-disabled-color); }
       }
 
-      &:not(:checked) {
-        + [data-fs-toggle-knob] {
-          [data-fs-toggle-knob-icon] { color: var(--fs-toggle-knob-icon-checked-disabled-color); }
-        }
+      &:checked + [data-fs-toggle-knob] {
+        color: var(--fs-toggle-disabled-knob-icon-color);
       }
     }
   }
@@ -135,7 +137,6 @@
 
 [data-fs-toggle-container] {
   position: relative;
-  margin-right: var(--fs-spacing-1);
   overflow: visible;
 }
 
@@ -146,11 +147,13 @@
   align-items: center;
   justify-content: center;
   pointer-events: none;
-  background-color: var(--fs-toggle-knob-bkg-color);
-  border: var(--fs-toggle-border-width) solid var(--fs-toggle-knob-border-color);
   border-radius: var(--fs-toggle-knob-radius);
   box-shadow: var(--fs-toggle-knob-shadow);
   transition: var(--fs-toggle-transition-property) var(--fs-toggle-transition-timing) var(--fs-toggle-transition-function);
+}
+
+[data-fs-label] {
+  margin-left: var(--fs-spacing-1);
 }
 
 // --------------------------------------------------------
