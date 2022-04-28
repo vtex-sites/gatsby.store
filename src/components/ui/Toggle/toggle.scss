@@ -162,7 +162,7 @@
   input:checked + [data-fs-toggle-knob] { left: calc(50% + var(--fs-toggle-border-width)); }
 
   [data-fs-toggle-container] {
-    width: calc(var(--fs-toggle-height) * 1.75);
+    min-width: calc(var(--fs-toggle-height) * 1.75);
     height: var(--fs-toggle-height);
   }
 
@@ -178,7 +178,7 @@
   input:checked + [data-fs-toggle-knob] { bottom: calc(50% + var(--fs-toggle-border-width)); }
 
   [data-fs-toggle-container] {
-    width: var(--fs-toggle-height);
+    min-width: var(--fs-toggle-height);
     height: calc(var(--fs-toggle-height) * 1.75);
   }
 
