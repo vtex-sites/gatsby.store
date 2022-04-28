@@ -21,11 +21,11 @@ export default function RegionalizationBar({
         <Icon name="MapPin" width={24} height={24} />
         {postalCode ? (
           <>
-            <span>{postalCode}</span>
+            <span key="postal-code-mobile">{postalCode}</span>
             <span>Edit</span>
           </>
         ) : (
-          <span>Set your location</span>
+          <span key="default-postal-code-mobile">Set your location</span>
         )}
         <Icon name="CaretRight" width={24} height={24} />
       </Button>
