@@ -1,13 +1,13 @@
 import { Card, CardContent, CardImage } from '@faststore/ui'
+import type { ProductSummary_ProductFragment } from '@generated/graphql'
 import { Link } from 'gatsby'
 import { Image } from 'src/components/ui/Image'
 import Price from 'src/components/ui/Price'
 import { useFormattedPrice } from 'src/sdk/product/useFormattedPrice'
 import { useProductLink } from 'src/sdk/product/useProductLink'
-import { StoreProduct } from '../../../../@generated/graphql'
 
 type SuggestionProductCardProps = {
-  product: StoreProduct
+  product: ProductSummary_ProductFragment
   index: number
 }
 
