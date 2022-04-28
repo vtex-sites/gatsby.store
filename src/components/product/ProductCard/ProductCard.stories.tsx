@@ -3,11 +3,32 @@ import storeConfig from 'store.config'
 import { LocationProvider } from '@reach/router'
 
 import type { ProductCardProps } from '.'
+import Icon from '../../ui/Icon'
+import Button from '../../ui/Button'
 import ProductCard from '.'
 
 export default {
   component: ProductCard,
-  title: 'Components/ProductCard',
+  title: 'Molecules/ProductCard',
+  argTypes: {
+    variant: {
+      defaultValue: 'default',
+      table: { defaultValue: 'default' },
+    },
+    product: { table: { disable: true } },
+    index: { table: { disable: true } },
+    aspectRatio: {
+      defaultValue: 1,
+      description: 'ProductCard Image aspect ratio',
+      options: [0.75, 1.5, 1],
+      control: { type: 'radio' },
+      table: { defaultValue: '1' },
+    },
+    ButtonBuy: {
+      control: 'boolean',
+      table: { defaultValue: false },
+    },
+  },
 }
 
 const product = {
@@ -41,19 +62,69 @@ const product = {
   },
 }
 
-const Template = (args: ProductCardProps) => (
-  <LocationProvider>
-    <SessionProvider initialState={{ channel: storeConfig.channel }}>
-      <div style={{ width: 300 }}>
-        <ProductCard {...args} />
-      </div>
-    </SessionProvider>
-  </LocationProvider>
-)
+const Template = ({ ButtonBuy, ...args }: ProductCardProps) => {
+  const button = ButtonBuy ? (
+    <Button
+      variant="primary"
+      data-fs-button-size="small"
+      icon={<Icon name="ShoppingCart" width={18} height={18} />}
+      iconPosition="left"
+    >
+      Add
+    </Button>
+  ) : null
+
+  return (
+    <LocationProvider>
+      <SessionProvider initialState={{ channel: storeConfig.channel }}>
+        <div style={{ width: 300 }}>
+          <ProductCard ButtonBuy={button} {...args} />
+        </div>
+      </SessionProvider>
+    </LocationProvider>
+  )
+}
+
+const TemplateWide = ({ ButtonBuy, ...args }: ProductCardProps) => {
+  const button = ButtonBuy ? (
+    <Button
+      variant="primary"
+      data-fs-button-size="small"
+      icon={<Icon name="ShoppingCart" width={18} height={18} />}
+      iconPosition="left"
+    >
+      Add
+    </Button>
+  ) : null
+
+  return (
+    <LocationProvider>
+      <SessionProvider initialState={{ channel: storeConfig.channel }}>
+        <div style={{ width: 400 }}>
+          <ProductCard ButtonBuy={button} {...args} />
+        </div>
+      </SessionProvider>
+    </LocationProvider>
+  )
+}
 
 export const Default = Template.bind({})
+export const Wide = TemplateWide.bind({})
 
 Default.args = {
   product,
   index: 1,
+  variant: 'default',
+  bordered: false,
+  aspectRatio: 1,
+  ButtonBuy: false,
+}
+
+Wide.args = {
+  product,
+  index: 1,
+  variant: 'wide',
+  bordered: false,
+  aspectRatio: 1.5,
+  ButtonBuy: false,
 }

@@ -8,6 +8,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
+
+- ImageGallery to PDP ([#6](https://github.com/vtex-sites/gatsby.store/pull/6))
+- New items in the `pull_request_template.md` ([#12](https://github.com/vtex-sites/gatsby.store/pull/12))
 - Integrates with search.query event api (#2)
 - Applies new local tokens to `Badge` (#462)
 - Applies new local tokens to `Hero` (#435)
@@ -19,6 +22,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- ImageGallery now uses native scroll instead of useSlider ([#6](https://github.com/vtex-sites/gatsby.store/pull/6))
+- Fixes `ProductCard` bordered variant (#5)
 - Changed name from BaseStore to GatsbyStore (#497)
 - Applies new local tokens to `BannerText` (#470)
 - Update the Incentives component to handle CMS data (#474)
