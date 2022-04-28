@@ -4,10 +4,10 @@ import { Image } from 'src/components/ui/Image'
 import Price from 'src/components/ui/Price'
 import { useFormattedPrice } from 'src/sdk/product/useFormattedPrice'
 import { useProductLink } from 'src/sdk/product/useProductLink'
+import { StoreProduct } from '../../../../@generated/graphql'
 
 type SuggestionProductCardProps = {
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  product: any
+  product: StoreProduct
   index: number
 }
 

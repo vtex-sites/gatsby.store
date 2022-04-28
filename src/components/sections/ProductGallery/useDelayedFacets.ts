@@ -9,7 +9,7 @@ export const useDelayedFacets = (data?: ProductGalleryQueryQuery) => {
 
   return useMemo(() => {
     if (data) {
-      facets.current = data.search.facets as any
+      facets.current = data.search.facets
     }
 
     return facets.current
