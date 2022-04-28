@@ -32,7 +32,7 @@ const Toggle = forwardRef<HTMLInputElement, ToggleProps>(function Toggle(
           ref={ref}
           type="checkbox"
           disabled={disabled}
-          aria-label={label ? undefined : `toggle-${id}`}
+          aria-label={label ? undefined : `Toggle input with ID ${id}`}
           {...otherProps}
         />
         <span data-fs-toggle-knob>
