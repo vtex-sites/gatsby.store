@@ -14,7 +14,7 @@ import SuggestionProductCard from '../SuggestionProductCard'
 
 const SearchSuggestionsQuery = gql`
   query SearchSuggestionsQuery($term: String!) {
-    search(term: $term) {
+    search(first: 10, term: $term) {
       suggestions {
         terms
         products {
