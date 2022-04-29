@@ -8,6 +8,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
+
+- Applies new local tokens to `Select` ([#17](https://github.com/vtex-sites/gatsby.store/pull/17))
 - Applies new local tokens to `Input Text` ([#15](https://github.com/vtex-sites/gatsby.store/pull/15))
 - `Toggle` component ([#14](https://github.com/vtex-sites/gatsby.store/pull/14))
 - Applies new local tokens to `Link` ([#19](https://github.com/vtex-sites/gatsby.store/pull/19))
