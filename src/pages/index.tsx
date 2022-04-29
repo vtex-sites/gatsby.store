@@ -11,6 +11,8 @@ import { ITEMS_PER_SECTION } from 'src/constants'
 import type { PageProps } from 'gatsby'
 import type { HomePageQueryQuery } from '@generated/graphql'
 import IncentivesMock from 'src/components/sections/Incentives/incentivesMock'
+import { ErrorBoundaryComonent } from 'src/sdk/error/ErrorBoundary'
+import { Suspense } from 'react'
 
 import 'src/styles/pages/homepage.scss'
 
@@ -78,17 +80,25 @@ function Page(props: Props) {
 
       <IncentivesHeader incentives={IncentivesMock} />
 
-      <ProductShelf
-        first={ITEMS_PER_SECTION}
-        selectedFacets={[{ key: 'productClusterIds', value: '140' }]}
-        title="Most Wanted"
-      />
+      <ErrorBoundaryComonent fallback={null /* TODO: add skeleton */}>
+        <Suspense fallback={null}>
+          <ProductShelf
+            first={ITEMS_PER_SECTION}
+            selectedFacets={[{ key: 'productClusterIds', value: '140' }]}
+            title="Most Wanted"
+          />
+        </Suspense>
+      </ErrorBoundaryComonent>
 
-      <ProductTiles
-        first={3}
-        selectedFacets={[{ key: 'productClusterIds', value: '141' }]}
-        title="Just Arrived"
-      />
+      <ErrorBoundaryComonent fallback={null /* TODO: add skeleton */}>
+        <Suspense fallback={null}>
+          <ProductTiles
+            first={3}
+            selectedFacets={[{ key: 'productClusterIds', value: '141' }]}
+            title="Just Arrived"
+          />
+        </Suspense>
+      </ErrorBoundaryComonent>
 
       <BannerText
         title="Receive our news and promotions in advance. Enjoy and get 10% off on your first purchase."
@@ -96,11 +106,15 @@ function Page(props: Props) {
         actionLabel="Call to action"
       />
 
-      <ProductShelf
-        first={ITEMS_PER_SECTION}
-        selectedFacets={[{ key: 'productClusterIds', value: '142' }]}
-        title="Deals & Promotions"
-      />
+      <ErrorBoundaryComonent fallback={null /* TODO: add skeleton */}>
+        <Suspense fallback={null}>
+          <ProductShelf
+            first={ITEMS_PER_SECTION}
+            selectedFacets={[{ key: 'productClusterIds', value: '142' }]}
+            title="Deals & Promotions"
+          />
+        </Suspense>
+      </ErrorBoundaryComonent>
     </>
   )
 }
