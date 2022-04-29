@@ -13,6 +13,8 @@ import type { HomePageQueryQuery } from '@generated/graphql'
 import IncentivesMock from 'src/components/sections/Incentives/incentivesMock'
 import { ErrorBoundaryComonent } from 'src/sdk/error/ErrorBoundary'
 import { Suspense } from 'react'
+import ProductShelfSkeleton from 'src/components/skeletons/ProductShelfSkeleton'
+import ProductTilesSkeleton from 'src/components/skeletons/ProductTilesSkeleton'
 
 import 'src/styles/pages/homepage.scss'
 
@@ -80,8 +82,12 @@ function Page(props: Props) {
 
       <IncentivesHeader incentives={IncentivesMock} />
 
-      <ErrorBoundaryComonent fallback={null /* TODO: add skeleton */}>
-        <Suspense fallback={null}>
+      <ErrorBoundaryComonent
+        fallback={<ProductShelfSkeleton title="Most Wanted" loading />}
+      >
+        <Suspense
+          fallback={<ProductShelfSkeleton title="Most Wanted" loading />}
+        >
           <ProductShelf
             first={ITEMS_PER_SECTION}
             selectedFacets={[{ key: 'productClusterIds', value: '140' }]}
@@ -90,8 +96,16 @@ function Page(props: Props) {
         </Suspense>
       </ErrorBoundaryComonent>
 
-      <ErrorBoundaryComonent fallback={null /* TODO: add skeleton */}>
-        <Suspense fallback={null}>
+      <ErrorBoundaryComonent
+        fallback={
+          <ProductTilesSkeleton title="Just Arrived" variant="wide" loading />
+        }
+      >
+        <Suspense
+          fallback={
+            <ProductTilesSkeleton title="Just Arrived" variant="wide" loading />
+          }
+        >
           <ProductTiles
             first={3}
             selectedFacets={[{ key: 'productClusterIds', value: '141' }]}
@@ -106,8 +120,12 @@ function Page(props: Props) {
         actionLabel="Call to action"
       />
 
-      <ErrorBoundaryComonent fallback={null /* TODO: add skeleton */}>
-        <Suspense fallback={null}>
+      <ErrorBoundaryComonent
+        fallback={<ProductShelfSkeleton title="Deals & Promotions" loading />}
+      >
+        <Suspense
+          fallback={<ProductShelfSkeleton title="Deals & Promotions" loading />}
+        >
           <ProductShelf
             first={ITEMS_PER_SECTION}
             selectedFacets={[{ key: 'productClusterIds', value: '142' }]}
