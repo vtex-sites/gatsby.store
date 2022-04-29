@@ -25,7 +25,7 @@ export default function RegionalizationBar({
             <span>Edit</span>
           </>
         ) : (
-          <span key="default-postal-code-mobile">Set your location</span>
+          <span key="postal-code-mobile">Set your location</span>
         )}
         <Icon name="CaretRight" width={24} height={24} />
       </Button>
