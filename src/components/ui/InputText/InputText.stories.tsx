@@ -21,6 +21,7 @@ Default.args = {
   id: 'default-input-text',
   label: 'Email',
   errorMessage: 'Please, add a valid email',
+  disabled: false,
 }
 
 HasError.args = {
@@ -28,6 +29,7 @@ HasError.args = {
   label: 'Email',
   value: 'invalid@mail',
   errorMessage: 'Please, add a valid email',
+  disabled: false,
 }
 
 Interactive.args = {
@@ -35,6 +37,7 @@ Interactive.args = {
   label: 'Postal Code',
   actionable: true,
   errorMessage: 'Invalid Postal Code',
+  disabled: false,
 }
 
 Disabled.args = {
