@@ -28,6 +28,8 @@ export default function RegionalizationInput() {
       return
     }
 
+    setErrorMessage('')
+
     try {
       const {
         updateSession: { channel },
