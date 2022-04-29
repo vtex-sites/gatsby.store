@@ -2,18 +2,18 @@ import type { HTMLAttributes } from 'react'
 import { useModal } from 'src/sdk/ui/modal/Provider'
 import Button from 'src/components/ui/Button'
 import Icon from 'src/components/ui/Icon'
+import { useSession } from '@faststore/sdk'
 
 interface RegionalizationButtonProps extends HTMLAttributes<HTMLDivElement> {
-  content?: string
   classes: string
 }
 
 export default function RegionalizationButton({
-  content,
   classes,
   ...otherProps
 }: RegionalizationButtonProps) {
   const { setIsRegionalizationModalOpen } = useModal()
+  const { postalCode } = useSession()
 
   return (
     <div data-fs-regionalization-button className={classes} {...otherProps}>
@@ -24,13 +24,7 @@ export default function RegionalizationButton({
         iconPosition="left"
         onClick={() => setIsRegionalizationModalOpen(true)}
       >
-        {content ? (
-          <>
-            <span>{content}</span>
-          </>
-        ) : (
-          <span>Set your location</span>
-        )}
+        <span>{postalCode ?? 'Set your location'}</span>
       </Button>
     </div>
   )
