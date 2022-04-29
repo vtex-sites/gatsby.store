@@ -1,2 +1,2 @@
 export { default } from './ErrorBoundary'
-export { default as ErrorBoundaryComonent } from './ErrorBoundaryComponent'
+export { default as ErrorBoundaryComponent } from './ErrorBoundaryComponent'

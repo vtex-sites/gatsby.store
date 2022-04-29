@@ -11,7 +11,7 @@ import { ITEMS_PER_SECTION } from 'src/constants'
 import type { PageProps } from 'gatsby'
 import type { HomePageQueryQuery } from '@generated/graphql'
 import IncentivesMock from 'src/components/sections/Incentives/incentivesMock'
-import { ErrorBoundaryComonent } from 'src/sdk/error/ErrorBoundary'
+import { ErrorBoundaryComponent } from 'src/sdk/error/ErrorBoundary'
 import { Suspense } from 'react'
 import ProductShelfSkeleton from 'src/components/skeletons/ProductShelfSkeleton'
 import ProductTilesSkeleton from 'src/components/skeletons/ProductTilesSkeleton'
@@ -82,7 +82,7 @@ function Page(props: Props) {
 
       <IncentivesHeader incentives={IncentivesMock} />
 
-      <ErrorBoundaryComonent
+      <ErrorBoundaryComponent
         fallback={<ProductShelfSkeleton title="Most Wanted" loading />}
       >
         <Suspense
@@ -94,9 +94,9 @@ function Page(props: Props) {
             title="Most Wanted"
           />
         </Suspense>
-      </ErrorBoundaryComonent>
+      </ErrorBoundaryComponent>
 
-      <ErrorBoundaryComonent
+      <ErrorBoundaryComponent
         fallback={
           <ProductTilesSkeleton title="Just Arrived" variant="wide" loading />
         }
@@ -112,7 +112,7 @@ function Page(props: Props) {
             title="Just Arrived"
           />
         </Suspense>
-      </ErrorBoundaryComonent>
+      </ErrorBoundaryComponent>
 
       <BannerText
         title="Receive our news and promotions in advance. Enjoy and get 10% off on your first purchase."
@@ -120,7 +120,7 @@ function Page(props: Props) {
         actionLabel="Call to action"
       />
 
-      <ErrorBoundaryComonent
+      <ErrorBoundaryComponent
         fallback={<ProductShelfSkeleton title="Deals & Promotions" loading />}
       >
         <Suspense
@@ -132,7 +132,7 @@ function Page(props: Props) {
             title="Deals & Promotions"
           />
         </Suspense>
-      </ErrorBoundaryComonent>
+      </ErrorBoundaryComponent>
     </>
   )
 }

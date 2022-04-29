@@ -10,7 +10,7 @@ interface Props {
   fallback: NonNullable<ReactNode> | null
 }
 
-class ErrorBoundaryComonent extends Component<Props, State> {
+class ErrorBoundaryComponent extends Component<Props, State> {
   public state = { hasError: false, error: null }
   public static getDerivedStateFromError(error: unknown) {
     return {
@@ -32,4 +32,4 @@ class ErrorBoundaryComonent extends Component<Props, State> {
   }
 }
 
-export default ErrorBoundaryComonent
+export default ErrorBoundaryComponent
