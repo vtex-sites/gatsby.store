@@ -30,6 +30,7 @@ export default function Select({
   value,
   'aria-label': ariaLabel,
   testId,
+  ...otherProps
 }: UISelectProps) {
   return (
     <div data-fs-select className={className}>
@@ -44,6 +45,7 @@ export default function Select({
         value={value}
         aria-label={ariaLabel}
         id={id}
+        {...otherProps}
       >
         {Object.keys(options).map((key) => (
           <option key={key} value={key}>
