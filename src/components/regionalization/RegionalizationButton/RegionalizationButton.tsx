@@ -24,9 +24,7 @@ export default function RegionalizationButton({
         iconPosition="left"
         onClick={() => setIsRegionalizationModalOpen(true)}
       >
-        <span key="postal-code-desktop">
-          {postalCode ?? 'Set your location'}
-        </span>
+        <span>{postalCode ?? 'Set your location'}</span>
       </Button>
     </div>
   )
