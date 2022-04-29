@@ -17,4 +17,5 @@ Default.args = {
     name_desc: 'Name, Z-A',
   },
   label: 'Label',
+  disabled: false,
 }
