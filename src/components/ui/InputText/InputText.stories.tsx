@@ -3,7 +3,7 @@ import InputText from '.'
 
 export default {
   component: InputText,
-  title: 'Atom/InputText',
+  title: 'Atoms/InputText',
 }
 
 const Template = ({ ...args }: InputTextProps) => (
