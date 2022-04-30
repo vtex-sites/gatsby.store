@@ -30,6 +30,7 @@ const Toggle = forwardRef<HTMLInputElement, ToggleProps>(function Toggle(
         <UIInput
           id={id}
           ref={ref}
+          role="switch"
           type="checkbox"
           disabled={disabled}
           aria-label={label ? undefined : `Toggle input with ID ${id}`}
