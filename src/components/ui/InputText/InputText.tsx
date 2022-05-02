@@ -93,14 +93,12 @@ const InputText = ({
         inputValue !== '' &&
         (hasError ? (
           <IconButton
-            data-fs-input-text-button
             aria-label="Clear Field"
             icon={<Icon name="XCircle" width={20} height={20} />}
             onClick={onClear}
           />
         ) : (
           <Button
-            data-fs-input-text-button
             variant="tertiary"
             onClick={() => onSubmit(inputValue)}
             size="small"
