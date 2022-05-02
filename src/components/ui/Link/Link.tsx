@@ -3,7 +3,7 @@ import { Link as GatsbyLink } from 'gatsby'
 import type { ElementType } from 'react'
 import type { LinkProps as UILinkProps } from '@faststore/ui'
 
-type Variant = 'default' | 'display' | 'inline' | 'footer'
+type Variant = 'default' | 'display' | 'footer' | 'inline'
 
 export type LinkProps<T extends ElementType = typeof GatsbyLink> =
   UILinkProps<T> & {

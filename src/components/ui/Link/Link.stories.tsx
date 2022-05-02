@@ -30,3 +30,27 @@ Default.args = {
   variant: 'default',
   inverse: false,
 }
+
+export const Display = Template.bind({})
+
+Display.args = {
+  to: '#',
+  variant: 'display',
+  inverse: false,
+}
+
+export const Footer = Template.bind({})
+
+Footer.args = {
+  to: '#',
+  variant: 'footer',
+  inverse: false,
+}
+
+export const Inline = Template.bind({})
+
+Inline.args = {
+  to: '#',
+  variant: 'inline',
+  inverse: false,
+}
