@@ -2,7 +2,7 @@ import { parseSearchState, SearchProvider, useSession } from '@faststore/sdk'
 import { gql } from '@vtex/graphql-utils'
 import { graphql } from 'gatsby'
 import { BreadcrumbJsonLd, GatsbySeo } from 'gatsby-plugin-next-seo'
-import { Suspense, useMemo } from 'react'
+import { useMemo } from 'react'
 import Breadcrumb from 'src/components/sections/Breadcrumb'
 import Hero from 'src/components/sections/Hero'
 import ProductGallery from 'src/components/sections/ProductGallery'
@@ -19,8 +19,6 @@ import type {
 } from '@generated/graphql'
 import type { PageProps } from 'gatsby'
 import type { SearchState } from '@faststore/sdk'
-import { ErrorBoundaryComponent } from 'src/sdk/error/ErrorBoundary'
-import ProductShelfSkeleton from 'src/components/skeletons/ProductShelfSkeleton'
 
 import 'src/styles/pages/plp.scss'
 
@@ -124,20 +122,12 @@ function Page(props: Props) {
 
       <ProductGallery title={title} />
 
-      <ErrorBoundaryComponent
-        fallback={<ProductShelfSkeleton title="You might also like" />}
-      >
-        <Suspense
-          fallback={<ProductShelfSkeleton title="You might also like" />}
-        >
-          <ProductShelf
-            first={ITEMS_PER_SECTION}
-            sort="score_desc"
-            title="You might also like"
-            withDivisor
-          />
-        </Suspense>
-      </ErrorBoundaryComponent>
+      <ProductShelf
+        first={ITEMS_PER_SECTION}
+        sort="score_desc"
+        title="You might also like"
+        withDivisor
+      />
 
       <ScrollToTopButton />
     </SearchProvider>

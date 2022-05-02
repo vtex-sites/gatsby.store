@@ -1,5 +1,6 @@
 import { useProductsQuery } from 'src/sdk/product/useProductsQuery'
 import type { ProductsQueryQueryVariables } from '@generated/graphql'
+import ProductShelfSkeleton from 'src/components/skeletons/ProductShelfSkeleton'
 
 import ProductCard from '../../product/ProductCard'
 import Section from '../Section'
@@ -14,7 +15,7 @@ function ProductShelf({
   withDivisor = false,
   ...variables
 }: ProductShelfProps) {
-  const products = useProductsQuery(variables, { suspense: true })
+  const products = useProductsQuery(variables)
 
   if (products?.edges.length === 0) {
     return null
@@ -26,13 +27,15 @@ function ProductShelf({
     >
       <h2 className="text__title-section layout__content">{title}</h2>
       <div data-fs-product-shelf>
-        <ul data-fs-product-shelf-items className="layout__content">
-          {products?.edges.map((product, idx) => (
-            <li key={`${product.node.id}`}>
-              <ProductCard product={product.node} index={idx + 1} />
-            </li>
-          ))}
-        </ul>
+        <ProductShelfSkeleton loading={products === undefined}>
+          <ul data-fs-product-shelf-items className="layout__content">
+            {products?.edges.map((product, idx) => (
+              <li key={`${product.node.id}`}>
+                <ProductCard product={product.node} index={idx + 1} />
+              </li>
+            ))}
+          </ul>
+        </ProductShelfSkeleton>
       </div>
     </Section>
   )

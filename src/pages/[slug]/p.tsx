@@ -16,9 +16,6 @@ import type {
   ProductPageQueryQueryVariables,
 } from '@generated/graphql'
 import { ITEMS_PER_SECTION } from 'src/constants'
-import { ErrorBoundaryComponent } from 'src/sdk/error/ErrorBoundary'
-import ProductShelfSkeleton from 'src/components/skeletons/ProductShelfSkeleton'
-import { Suspense } from 'react'
 
 import 'src/styles/pages/pdp.scss'
 
@@ -105,20 +102,12 @@ function Page(props: Props) {
 
       <ProductDetails product={product} />
 
-      <ErrorBoundaryComponent
-        fallback={<ProductShelfSkeleton title="You might also like" />}
-      >
-        <Suspense
-          fallback={<ProductShelfSkeleton title="You might also like" />}
-        >
-          <ProductShelf
-            first={ITEMS_PER_SECTION}
-            term={product.brand.name}
-            title="You might also like"
-            withDivisor
-          />
-        </Suspense>
-      </ErrorBoundaryComponent>
+      <ProductShelf
+        first={ITEMS_PER_SECTION}
+        term={product.brand.name}
+        title="You might also like"
+        withDivisor
+      />
     </>
   )
 }

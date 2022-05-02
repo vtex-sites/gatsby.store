@@ -4,19 +4,19 @@ import { GatsbySeo, JsonLd } from 'gatsby-plugin-next-seo'
 import BannerText from 'src/components/sections/BannerText'
 import Hero from 'src/components/sections/Hero'
 import IncentivesHeader from 'src/components/sections/Incentives/IncentivesHeader'
-import ProductShelf from 'src/components/sections/ProductShelf'
-import ProductTiles from 'src/components/sections/ProductTiles'
 import { mark } from 'src/sdk/tests/mark'
 import { ITEMS_PER_SECTION } from 'src/constants'
 import type { PageProps } from 'gatsby'
 import type { HomePageQueryQuery } from '@generated/graphql'
 import IncentivesMock from 'src/components/sections/Incentives/incentivesMock'
-import { ErrorBoundaryComponent } from 'src/sdk/error/ErrorBoundary'
-import { Suspense } from 'react'
+import { Suspense, lazy } from 'react'
 import ProductShelfSkeleton from 'src/components/skeletons/ProductShelfSkeleton'
 import ProductTilesSkeleton from 'src/components/skeletons/ProductTilesSkeleton'
 
 import 'src/styles/pages/homepage.scss'
+
+const ProductShelf = lazy(() => import('src/components/sections/ProductShelf'))
+const ProductTiles = lazy(() => import('src/components/sections/ProductTiles'))
 
 export type Props = PageProps<HomePageQueryQuery>
 
@@ -82,37 +82,25 @@ function Page(props: Props) {
 
       <IncentivesHeader incentives={IncentivesMock} />
 
-      <ErrorBoundaryComponent
-        fallback={<ProductShelfSkeleton title="Most Wanted" loading />}
-      >
-        <Suspense
-          fallback={<ProductShelfSkeleton title="Most Wanted" loading />}
-        >
-          <ProductShelf
-            first={ITEMS_PER_SECTION}
-            selectedFacets={[{ key: 'productClusterIds', value: '140' }]}
-            title="Most Wanted"
-          />
-        </Suspense>
-      </ErrorBoundaryComponent>
+      <Suspense fallback={<ProductShelfSkeleton title="Most Wanted" loading />}>
+        <ProductShelf
+          first={ITEMS_PER_SECTION}
+          selectedFacets={[{ key: 'productClusterIds', value: '140' }]}
+          title="Most Wanted"
+        />
+      </Suspense>
 
-      <ErrorBoundaryComponent
+      <Suspense
         fallback={
           <ProductTilesSkeleton title="Just Arrived" variant="wide" loading />
         }
       >
-        <Suspense
-          fallback={
-            <ProductTilesSkeleton title="Just Arrived" variant="wide" loading />
-          }
-        >
-          <ProductTiles
-            first={3}
-            selectedFacets={[{ key: 'productClusterIds', value: '141' }]}
-            title="Just Arrived"
-          />
-        </Suspense>
-      </ErrorBoundaryComponent>
+        <ProductTiles
+          first={3}
+          selectedFacets={[{ key: 'productClusterIds', value: '141' }]}
+          title="Just Arrived"
+        />
+      </Suspense>
 
       <BannerText
         title="Receive our news and promotions in advance. Enjoy and get 10% off on your first purchase."
@@ -120,19 +108,15 @@ function Page(props: Props) {
         actionLabel="Call to action"
       />
 
-      <ErrorBoundaryComponent
+      <Suspense
         fallback={<ProductShelfSkeleton title="Deals & Promotions" loading />}
       >
-        <Suspense
-          fallback={<ProductShelfSkeleton title="Deals & Promotions" loading />}
-        >
-          <ProductShelf
-            first={ITEMS_PER_SECTION}
-            selectedFacets={[{ key: 'productClusterIds', value: '142' }]}
-            title="Deals & Promotions"
-          />
-        </Suspense>
-      </ErrorBoundaryComponent>
+        <ProductShelf
+          first={ITEMS_PER_SECTION}
+          selectedFacets={[{ key: 'productClusterIds', value: '142' }]}
+          title="Deals & Promotions"
+        />
+      </Suspense>
     </>
   )
 }
