@@ -38,6 +38,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 
+- A bugged vertical gap with the `EmptyState` component inside the cart ([#20](https://github.com/vtex-sites/gatsby.store/pull/20)).
+- Some pages missing component styles because they weren't imported ([#20](https://github.com/vtex-sites/gatsby.store/pull/20)).
 - Fix Storybook initialization (#492)
 - Fix styling issue on Regionalization Modal by adding the missing imports in layout.scss (#488)
 - Fix unused CSS problem by separating imports into different files for each page (#473)
