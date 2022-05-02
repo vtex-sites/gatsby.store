@@ -2,7 +2,7 @@ import type { PropsWithChildren } from 'react'
 
 function EmptyState({ children }: PropsWithChildren<unknown>) {
   return (
-    <section className="empty-state" data-empty-state>
+    <section className="empty-state" data-fs-empty-state>
       {children}
     </section>
   )

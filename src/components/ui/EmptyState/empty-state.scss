@@ -1,6 +1,6 @@
 @import "src/styles/scaffold";
 
-.empty-state[data-empty-state] {
+.empty-state[data-fs-empty-state] {
   display: flex;
   flex-direction: column;
   row-gap: var(--fs-spacing-3);
