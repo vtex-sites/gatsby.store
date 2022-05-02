@@ -7,11 +7,18 @@
 
   // Default properties
   --fs-toggle-height                           : calc(var(--fs-control-min-height) / 1.75);
-  --fs-toggle-shadow                           : var(--fs-shadow);
+
   --fs-toggle-bkg-color                        : var(--fs-control-bkg-default);
+  --fs-toggle-bkg-color-hover                  : var(--fs-color-primary-bkg-light);
+
+  --fs-toggle-shadow                           : var(--fs-shadow);
+  --fs-toggle-shadow-hover                     : var(--fs-shadow);
+
   --fs-toggle-border-color                     : var(--fs-border-color-default);
+  --fs-toggle-border-color-hover               : var(--fs-border-color-default-hover);
   --fs-toggle-border-radius                    : var(--fs-border-radius-default);
   --fs-toggle-border-width                     : var(--fs-border-width-default);
+
   --fs-toggle-transition-timing                : var(--fs-transition-timing);
   --fs-toggle-transition-property              : var(--fs-transition-property);
   --fs-toggle-transition-function              : var(--fs-transition-function);
@@ -19,20 +26,16 @@
   --fs-toggle-knob-radius                      : var(--fs-border-radius-small);
   --fs-toggle-knob-shadow                      : var(--fs-shadow);
   --fs-toggle-knob-bkg-color                   : var(--fs-color-primary-bkg);
+  --fs-toggle-knob-bkg-color-hover             : var(--fs-toggle-border-color-hover);
   --fs-toggle-knob-border-color                : var(--fs-color-main-4);
+  --fs-toggle-knob-border-color-hover          : var(--fs-toggle-border-color-hover);
   --fs-toggle-knob-border-width                : var(--fs-border-width-thick);
   --fs-toggle-knob-icon-color                  : transparent;
 
-  --fs-toggle-shadow-hover                     : var(--fs-shadow);
-  --fs-toggle-bkg-color-hover                  : var(--fs-color-primary-bkg-light);
-  --fs-toggle-border-color-hover               : var(--fs-border-color-default-hover);
-  --fs-toggle-knob-bkg-color-hover             : var(--fs-toggle-border-color-hover);
-  --fs-toggle-knob-border-color-hover          : var(--fs-toggle-border-color-hover);
-
   // Checked
   --fs-toggle-checked-bkg-color                : var(--fs-color-primary-bkg-active);
-  --fs-toggle-checked-border-color             : var(--fs-border-color-default-active);
   --fs-toggle-checked-bkg-color-hover          : var(--fs-color-primary-bkg-hover);
+  --fs-toggle-checked-border-color             : var(--fs-border-color-default-active);
   --fs-toggle-checked-border-color-hover       : var(--fs-toggle-checked-bkg-color-hover);
   --fs-toggle-checked-knob-bkg-color           : var(--fs-control-bkg-default);
   --fs-toggle-checked-knob-border-color        : var(--fs-toggle-checked-knob-bkg-color);
