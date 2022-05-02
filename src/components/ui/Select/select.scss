@@ -9,17 +9,20 @@
   --fs-select-height                      : var(--fs-spacing-6);
   --fs-select-min-height                  : var(--fs-control-tap-size);
   --fs-select-padding                     : var(--fs-spacing-1) var(--fs-spacing-5) var(--fs-spacing-1) var(--fs-spacing-2);
-  --fs-select-color                       : var(--fs-color-link);
-  --fs-select-bkg                         : transparent;
+
+  --fs-select-text-color                  : var(--fs-color-link);
   --fs-select-border-radius               : var(--fs-border-radius-default);
-  --fs-select-box-shadow-transition       : box-shadow var(--fs-transition-timing) ease;
-  --fs-select-background-color-transition : background-color var(--fs-transition-timing) ease;
   --fs-select-appearance                  : none;
+
+  --fs-select-bkg                         : transparent;
   --fs-select-bkg-color-focus             : var(--fs-color-primary-bkg-light);
   --fs-select-bkg-color-hover             : var(--fs-select-bkg-color-focus);
 
-  --fs-select-label-margin-right          : var(--fs-spacing-1);
+  --fs-select-box-shadow-transition       : box-shadow var(--fs-transition-timing) ease;
+  --fs-select-background-color-transition : background-color var(--fs-transition-timing) ease;
+
   --fs-select-label-color                 : var(--fs-color-text-light);
+  --fs-select-label-margin-right          : var(--fs-spacing-1);
 
   --fs-select-icon-right                  : var(--fs-spacing-2);
   --fs-select-icon-color                  : var(--fs-color-link);
@@ -34,7 +37,7 @@
 
   select {
     padding: var(--fs-select-padding);
-    color: var(--fs-select-color);
+    color: var(--fs-select-text-color);
     background: var(--fs-select-bkg);
     border: 0;
     border-radius: var(--fs-select-border-radius);
