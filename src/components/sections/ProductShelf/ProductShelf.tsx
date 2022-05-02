@@ -1,6 +1,6 @@
+import ProductShelfSkeleton from 'src/components/skeletons/ProductShelfSkeleton'
 import { useProductsQuery } from 'src/sdk/product/useProductsQuery'
 import type { ProductsQueryQueryVariables } from '@generated/graphql'
-import ProductShelfSkeleton from 'src/components/skeletons/ProductShelfSkeleton'
 
 import ProductCard from '../../product/ProductCard'
 import Section from '../Section'

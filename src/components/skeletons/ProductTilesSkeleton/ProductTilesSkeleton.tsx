@@ -21,7 +21,7 @@ function ProductTilesSkeleton({
 }: PropsWithChildren<Props>) {
   return loading ? (
     <Section className="layout__section layout__content">
-      <h2 className="text__title-section">{title}</h2>
+      {title && <h2 className="text__title-section">{title}</h2>}
       <Tiles>
         {Array.from({ length: DEFAULT_ITEMS_NUMBER }, (_, index) => (
           <Tile key={String(index)}>
