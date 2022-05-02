@@ -12,7 +12,6 @@
 
   --fs-select-text-color                  : var(--fs-color-link);
   --fs-select-border-radius               : var(--fs-border-radius-default);
-  --fs-select-appearance                  : none;
 
   --fs-select-bkg                         : transparent;
   --fs-select-bkg-color-focus             : var(--fs-color-primary-bkg-light);
@@ -29,8 +28,8 @@
   --fs-select-icon-color                  : var(--fs-color-link);
 
   // Disabled
-  --fs-select-disabled-color              : var(--fs-color-disabled-text);
-  --fs-select-disabled-opacity            : 1;
+  --fs-select-disabled-text-color         : var(--fs-color-disabled-text);
+  --fs-select-disabled-text-opacity       : 1;
 
   position: relative;
   display: flex;
@@ -44,7 +43,7 @@
     border-radius: var(--fs-select-border-radius);
     box-shadow: 0;
     transition: var(--fs-toggle-transition-property) var(--fs-toggle-transition-timing) var(--fs-toggle-transition-function);
-    appearance: var(--fs-select-appearance);
+    appearance: none;
 
     @include focus-ring-visible;
 
@@ -53,9 +52,9 @@
     &:hover:not(:disabled) { background-color: var(--fs-select-bkg-color-hover); }
 
     &:disabled {
-      color: var(--fs-select-disabled-color);
+      color: var(--fs-select-disabled-text-color);
       cursor: not-allowed;
-      opacity: var(--fs-select-disabled-opacity);
+      opacity: var(--fs-select-disabled-text-opacity);
       + [data-fs-select-icon] { display: none; }
     }
 
