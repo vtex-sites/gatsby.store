@@ -8,6 +8,7 @@
   // Default properties
   --fs-input-text-padding               : var(--fs-spacing-2) var(--fs-spacing-2) 0;
   --fs-input-text-padding-label         : 0 var(--fs-spacing-2);
+  --fs-input-text-height                : var(--fs-control-tap-size);
 
   --fs-input-text-box-shadow            : none;
   --fs-input-text-box-shadow-hover      : 0 0 0 var(--fs-border-width-default) var(--fs-border-color-default-active);
@@ -22,7 +23,9 @@
   --fs-input-text-text-size             : var(--fs-text-size-body);
   --fs-input-text-text-size-message     : var(--fs-text-size-legend);
   --fs-input-text-text-size-label       : var(--fs-text-size-tiny);
-  --fs-input-text-text-line-height      : 1.25;
+
+  --fs-input-text-line-height           : 1.25;
+  --fs-input-text-line-height-message   : 1.5;
 
   --fs-input-text-transition-function   : var(--fs-transition-function);
   --fs-input-text-transition-property   : var(--fs-transition-property);
@@ -53,10 +56,10 @@
   }
 
   input {
-    height: var(--fs-control-tap-size);
+    height: var(--fs-input-text-height);
     padding: var(--fs-input-text-padding);
     font-size: var(--fs-input-text-text-size);
-    line-height: var(--fs-input-text-text-line-height);
+    line-height: var(--fs-input-text-line-height);
     color: var(--fs-input-text-text-color);
     border: var(--fs-input-text-border-width) solid var(--fs-input-text-border-color);
     border-radius: var(--fs-input-text-border-radius);
@@ -109,7 +112,7 @@
 [data-fs-input-text-message] {
   margin-top: rem(2px);
   font-size: var(--fs-input-text-text-size-message);
-  line-height: 1.5;
+  line-height: var(--fs-input-text-line-height-message);
 }
 
 // --------------------------------------------------------
