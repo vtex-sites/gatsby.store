@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 - Applies new local tokens to `Input Text` (#15)
+- ImageGallery to PDP ([#6](https://github.com/vtex-sites/gatsby.store/pull/6))
 - New items in the `pull_request_template.md` ([#12](https://github.com/vtex-sites/gatsby.store/pull/12))
 - Integrates with search.query event api (#2)
 - Applies new local tokens to `Badge` (#462)
@@ -21,6 +22,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- Update `RegionalizationButton` and `RegionalizationBar` to show the postal code (#8)
+- ImageGallery now uses native scroll instead of useSlider ([#6](https://github.com/vtex-sites/gatsby.store/pull/6))
 - Fixes `ProductCard` bordered variant (#5)
 - Changed name from BaseStore to GatsbyStore (#497)
 - Applies new local tokens to `BannerText` (#470)
@@ -35,6 +38,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 
+- A bugged vertical gap with the `EmptyState` component inside the cart ([#20](https://github.com/vtex-sites/gatsby.store/pull/20)).
+- Some pages missing component styles because they weren't imported ([#20](https://github.com/vtex-sites/gatsby.store/pull/20)).
 - Fix Storybook initialization (#492)
 - Fix styling issue on Regionalization Modal by adding the missing imports in layout.scss (#488)
 - Fix unused CSS problem by separating imports into different files for each page (#473)
