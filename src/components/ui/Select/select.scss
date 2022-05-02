@@ -18,8 +18,9 @@
   --fs-select-bkg-color-focus             : var(--fs-color-primary-bkg-light);
   --fs-select-bkg-color-hover             : var(--fs-select-bkg-color-focus);
 
-  --fs-select-box-shadow-transition       : box-shadow var(--fs-transition-timing) ease;
-  --fs-select-background-color-transition : background-color var(--fs-transition-timing) ease;
+  --fs-toggle-transition-timing           : var(--fs-transition-timing);
+  --fs-toggle-transition-property         : var(--fs-transition-property);
+  --fs-toggle-transition-function         : var(--fs-transition-function);
 
   --fs-select-label-color                 : var(--fs-color-text-light);
   --fs-select-label-margin-right          : var(--fs-spacing-1);
@@ -42,8 +43,7 @@
     border: 0;
     border-radius: var(--fs-select-border-radius);
     box-shadow: 0;
-    transition: var(--fs-select-box-shadow-transition);
-    transition: var(--fs-select-background-color-transition);
+    transition: var(--fs-toggle-transition-property) var(--fs-toggle-transition-timing) var(--fs-toggle-transition-function);
     appearance: var(--fs-select-appearance);
 
     @include focus-ring-visible;
