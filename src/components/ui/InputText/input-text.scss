@@ -6,41 +6,41 @@
   // --------------------------------------------------------
 
   // Default properties
-  --fs-input-text-padding               : var(--fs-spacing-2) var(--fs-spacing-2) 0;
-  --fs-input-text-padding-label         : 0 var(--fs-spacing-2);
-  --fs-input-text-height                : var(--fs-control-tap-size);
+  --fs-input-padding               : var(--fs-spacing-2) var(--fs-spacing-2) 0;
+  --fs-input-padding-label         : 0 var(--fs-spacing-2);
+  --fs-input-height                : var(--fs-control-tap-size);
 
-  --fs-input-text-box-shadow            : none;
-  --fs-input-text-box-shadow-hover      : 0 0 0 var(--fs-border-width-default) var(--fs-border-color-default-active);
+  --fs-input-box-shadow            : none;
+  --fs-input-box-shadow-hover      : 0 0 0 var(--fs-border-width-default) var(--fs-border-color-default-active);
 
-  --fs-input-text-border-radius         : var(--fs-border-radius-default);
-  --fs-input-text-border-width          : var(--fs-border-width-default);
-  --fs-input-text-border-color          : var(--fs-border-color-default);
-  --fs-input-text-border-color-hover    : var(--fs-border-color-default-active);
+  --fs-input-border-radius         : var(--fs-border-radius-default);
+  --fs-input-border-width          : var(--fs-border-width-default);
+  --fs-input-border-color          : var(--fs-border-color-default);
+  --fs-input-border-color-hover    : var(--fs-border-color-default-active);
 
-  --fs-input-text-text-color            : var(--fs-color-text);
-  --fs-input-text-text-color-label      : var(--fs-color-text-light);
-  --fs-input-text-text-size             : var(--fs-text-size-body);
-  --fs-input-text-text-size-message     : var(--fs-text-size-legend);
-  --fs-input-text-text-size-label       : var(--fs-text-size-tiny);
+  --fs-input-text-color            : var(--fs-color-text);
+  --fs-input-text-color-label      : var(--fs-color-text-light);
+  --fs-input-text-size             : var(--fs-text-size-body);
+  --fs-input-text-size-message     : var(--fs-text-size-legend);
+  --fs-input-text-size-label       : var(--fs-text-size-tiny);
 
-  --fs-input-text-line-height           : 1.25;
-  --fs-input-text-line-height-message   : 1.5;
+  --fs-input-line-height           : 1.25;
+  --fs-input-line-height-message   : 1.5;
 
-  --fs-input-text-transition-function   : var(--fs-transition-function);
-  --fs-input-text-transition-property   : var(--fs-transition-property);
-  --fs-input-text-transition-timing     : var(--fs-transition-timing);
+  --fs-input-transition-function   : var(--fs-transition-function);
+  --fs-input-transition-property   : var(--fs-transition-property);
+  --fs-input-transition-timing     : var(--fs-transition-timing);
 
   // Error
-  --fs-input-text-error-border-color    : var(--fs-color-danger-border);
-  --fs-input-text-error-box-shadow      : 0 0 0 var(--fs-border-width-default) var(--fs-input-text-error-border-color);
-  --fs-input-text-error-focus-ring      : var(--fs-color-focus-ring-danger);
+  --fs-input-error-border-color    : var(--fs-color-danger-border);
+  --fs-input-error-box-shadow      : 0 0 0 var(--fs-border-width-default) var(--fs-input-error-border-color);
+  --fs-input-error-focus-ring      : var(--fs-color-focus-ring-danger);
 
   // Disabled
-  --fs-input-text-disabled-bkg-color    : var(--fs-color-disabled-bkg);
-  --fs-input-text-disabled-text-color   : var(--fs-color-disabled-text);
-  --fs-input-text-disabled-border-width : var(--fs-border-width-default);
-  --fs-input-text-disabled-border-color : var(--fs-border-color-default);
+  --fs-input-disabled-bkg-color    : var(--fs-color-disabled-bkg);
+  --fs-input-disabled-text-color   : var(--fs-color-disabled-text);
+  --fs-input-disabled-border-width : var(--fs-border-width-default);
+  --fs-input-disabled-border-color : var(--fs-border-color-default);
 
   // --------------------------------------------------------
   // Structural Styles
@@ -52,23 +52,23 @@
 
   input,
   label {
-    transition: var(--fs-input-text-transition-property) var(--fs-input-text-transition-timing) var(--fs-input-text-transition-function);
+    transition: var(--fs-input-transition-property) var(--fs-input-transition-timing) var(--fs-input-transition-function);
   }
 
   input {
-    height: var(--fs-input-text-height);
-    padding: var(--fs-input-text-padding);
-    font-size: var(--fs-input-text-text-size);
-    line-height: var(--fs-input-text-line-height);
-    color: var(--fs-input-text-text-color);
-    border: var(--fs-input-text-border-width) solid var(--fs-input-text-border-color);
-    border-radius: var(--fs-input-text-border-radius);
-    box-shadow: var(--fs-input-text-box-shadow);
+    height: var(--fs-input-height);
+    padding: var(--fs-input-padding);
+    font-size: var(--fs-input-text-size);
+    line-height: var(--fs-input-line-height);
+    color: var(--fs-input-text-color);
+    border: var(--fs-input-border-width) solid var(--fs-input-border-color);
+    border-radius: var(--fs-input-border-radius);
+    box-shadow: var(--fs-input-box-shadow);
 
     @include input-focus-ring;
 
     &:placeholder-shown + label {
-      top: calc(1.5 * (var(--fs-input-text-text-size) / 2));
+      top: calc(1.5 * (var(--fs-input-text-size) / 2));
       overflow: hidden;
     }
 
@@ -84,35 +84,35 @@
     &:not(:placeholder-shown) + label,
     &:focus + label {
       top: rem(6px);
-      font-size: var(--fs-input-text-text-size-label);
+      font-size: var(--fs-input-text-size-label);
     }
 
     &:hover:not(:disabled):not(:focus-visible):not(:focus) {
-      border-color: var(--fs-input-text-border-color-hover);
-      box-shadow: var(--fs-input-text-box-shadow-hover);
+      border-color: var(--fs-input-border-color-hover);
+      box-shadow: var(--fs-input-box-shadow-hover);
     }
 
     &:disabled {
       cursor: not-allowed;
-      background-color: var(--fs-input-text-disabled-bkg-color);
-      border: var(--fs-input-text-disabled-border-width) solid var(--fs-input-text-disabled-border-color);
+      background-color: var(--fs-input-disabled-bkg-color);
+      border: var(--fs-input-disabled-border-width) solid var(--fs-input-disabled-border-color);
       + label { cursor: not-allowed; }
     }
   }
 
   label {
     position: absolute;
-    padding: var(--fs-input-text-padding-label);
-    font-size: var(--fs-input-text-text-size);
+    padding: var(--fs-input-padding-label);
+    font-size: var(--fs-input-text-size);
     line-height: 1.5;
-    color: var(--fs-input-text-text-color-label);
+    color: var(--fs-input-text-color-label);
   }
 }
 
 [data-fs-input-text-message] {
   margin-top: rem(2px);
-  font-size: var(--fs-input-text-text-size-message);
-  line-height: var(--fs-input-text-line-height-message);
+  font-size: var(--fs-input-text-size-message);
+  line-height: var(--fs-input-line-height-message);
 }
 
 // --------------------------------------------------------
@@ -121,14 +121,14 @@
 
 [data-fs-input-text-error="true"] {
   input {
-    border-color: var(--fs-input-text-error-border-color);
+    border-color: var(--fs-input-error-border-color);
 
-    @include input-focus-ring($outline: #{var(--fs-input-text-error-focus-ring)},
-    $border: #{var(--fs-input-text-error-border-color)});
+    @include input-focus-ring($outline: #{var(--fs-input-error-focus-ring)},
+    $border: #{var(--fs-input-error-border-color)});
 
     &:hover:not(:disabled):not(:focus-visible):not(:focus) {
-      border-color: var(--fs-input-text-error-border-color);
-      box-shadow: var(--fs-input-text-error-box-shadow);
+      border-color: var(--fs-input-error-border-color);
+      box-shadow: var(--fs-input-error-box-shadow);
     }
   }
 
@@ -155,13 +155,13 @@
       width: 1px;
       height: 80%;
       content: "";
-      background-color: var(--fs-input-text-border-color);
+      background-color: var(--fs-input-border-color);
     }
   }
 
   [data-fs-button][data-store-icon-button] {
-    width: var(--fs-input-text-button-size);
-    height: var(--fs-input-text-button-size);
+    width: var(--fs-input-button-size);
+    height: var(--fs-input-button-size);
 
     &::before {
       left: calc(-1 * var(--fs-spacing-1));
