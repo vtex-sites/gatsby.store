@@ -2,6 +2,7 @@ import { Input as UIInput, Label as UILabel } from '@faststore/ui'
 import { forwardRef } from 'react'
 import type { InputHTMLAttributes } from 'react'
 import Icon from 'src/components/ui/Icon'
+import SROnly from 'src/components/ui/SROnly'
 
 export interface ToggleProps
   extends InputHTMLAttributes<Omit<HTMLInputElement, 'disabled' | 'type'>> {
@@ -12,7 +13,11 @@ export interface ToggleProps
   /**
    * The text displayed to identify the input.
    */
-  label?: string
+  label: string
+  /**
+   * Controls whether the label will be displayed or not.
+   */
+  displayLabel?: boolean
   /**
    * Specifies that this input should be disabled.
    */
@@ -21,7 +26,14 @@ export interface ToggleProps
 }
 
 const Toggle = forwardRef<HTMLInputElement, ToggleProps>(function Toggle(
-  { id, label, disabled, variant = 'horizontal', ...otherProps }: ToggleProps,
+  {
+    id,
+    label,
+    disabled,
+    displayLabel = true,
+    variant = 'horizontal',
+    ...otherProps
+  }: ToggleProps,
   ref
 ) {
   return (
@@ -33,7 +45,6 @@ const Toggle = forwardRef<HTMLInputElement, ToggleProps>(function Toggle(
           role="switch"
           type="checkbox"
           disabled={disabled}
-          aria-label={label ? undefined : `Toggle input with ID ${id}`}
           {...otherProps}
         />
         <span data-fs-toggle-knob>
@@ -46,10 +57,12 @@ const Toggle = forwardRef<HTMLInputElement, ToggleProps>(function Toggle(
           />
         </span>
       </div>
-      {label && (
+      {displayLabel ? (
         <UILabel data-fs-label htmlFor={id}>
           {label}
         </UILabel>
+      ) : (
+        <SROnly text={label} />
       )}
     </div>
   )

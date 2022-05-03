@@ -9,6 +9,9 @@ export default {
       name: 'variant',
       defaultValue: 'horizontal',
     },
+    displayLabel: {
+      defaultValue: true,
+    },
   },
 }
 
