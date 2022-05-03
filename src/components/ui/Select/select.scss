@@ -24,7 +24,7 @@
   --fs-select-label-color                 : var(--fs-color-text-light);
   --fs-select-label-margin-right          : var(--fs-spacing-1);
 
-  --fs-select-icon-right                  : var(--fs-spacing-2);
+  --fs-select-icon-position-right         : var(--fs-spacing-2);
   --fs-select-icon-color                  : var(--fs-color-link);
 
   // Disabled
@@ -71,7 +71,7 @@
 
 [data-fs-select-icon] {
   position: absolute;
-  right: var(--fs-select-icon-right);
+  right: var(--fs-select-icon-position-right);
   color: var(--fs-select-icon-color);
   pointer-events: none;
 }
