@@ -4,6 +4,16 @@ import InputText from '.'
 export default {
   component: InputText,
   title: 'Atoms/InputText',
+  argTypes: {
+    inputRef: {
+      table: {
+        disable: true,
+      },
+    },
+    id: {
+      type: { name: 'string', required: true },
+    },
+  },
 }
 
 const Template = ({ ...args }: InputTextProps) => (
