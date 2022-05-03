@@ -10,12 +10,17 @@ interface ProductShelfProps extends Partial<ProductsQueryQueryVariables> {
   withDivisor?: boolean
 }
 
+const options = {
+  suspense: true,
+  fallbackData: { search: { products: undefined } },
+}
+
 function ProductShelf({
   title,
   withDivisor = false,
   ...variables
 }: ProductShelfProps) {
-  const products = useProductsQuery(variables)
+  const products = useProductsQuery(variables, options)
 
   if (products?.edges.length === 0) {
     return null
