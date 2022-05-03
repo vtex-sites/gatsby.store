@@ -14,7 +14,7 @@ const Template = ({ ...args }: InputTextProps) => (
 
 export const Default = Template.bind({})
 export const HasError = Template.bind({})
-export const Interactive = Template.bind({})
+export const Actionable = Template.bind({})
 export const Disabled = Template.bind({})
 
 Default.args = {
@@ -32,8 +32,8 @@ HasError.args = {
   disabled: false,
 }
 
-Interactive.args = {
-  id: 'interactive-input-text',
+Actionable.args = {
+  id: 'actionable-input-text',
   label: 'Postal Code',
   actionable: true,
   errorMessage: 'Invalid Postal Code',
