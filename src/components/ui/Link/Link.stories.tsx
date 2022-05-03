@@ -18,10 +18,23 @@ export default {
         disable: true,
       },
     },
+    inverse: {
+      control: 'boolean',
+      table: { defaultValue: false },
+    },
   },
 }
 
-const Template = ({ ...args }: LinkProps) => <Link {...args}>Link</Link>
+const Template = ({ inverse, ...args }: LinkProps) =>
+  inverse ? (
+    <div style={{ backgroundColor: '#171a1c', padding: '10px' }}>
+      <Link inverse {...args}>
+        Link Inverse
+      </Link>
+    </div>
+  ) : (
+    <Link {...args}>Link</Link>
+  )
 
 export const Default = Template.bind({})
 
