@@ -1,21 +1,22 @@
 import { Link as UILink } from '@faststore/ui'
 import { Link as GatsbyLink } from 'gatsby'
 import type { ElementType } from 'react'
-import type { LinkProps } from '@faststore/ui'
+import type { LinkProps as UILinkProps } from '@faststore/ui'
 
-type Variant = 'default' | 'display' | 'inline' | 'footer'
+type Variant = 'default' | 'display' | 'footer' | 'inline'
 
-type Props<T extends ElementType = typeof GatsbyLink> = LinkProps<T> & {
-  variant?: Variant
-  inverse?: boolean
-}
+export type LinkProps<T extends ElementType = typeof GatsbyLink> =
+  UILinkProps<T> & {
+    variant?: Variant
+    inverse?: boolean
+  }
 
 function Link<T extends ElementType = typeof GatsbyLink>({
   variant = 'default',
   inverse,
   to,
-  ...props
-}: Props<T>) {
+  ...otherProps
+}: LinkProps<T>) {
   return (
     <UILink
       as={GatsbyLink}
@@ -23,7 +24,7 @@ function Link<T extends ElementType = typeof GatsbyLink>({
       data-fs-link-variant={variant}
       data-fs-link-inverse={inverse}
       to={to}
-      {...props}
+      {...otherProps}
     />
   )
 }

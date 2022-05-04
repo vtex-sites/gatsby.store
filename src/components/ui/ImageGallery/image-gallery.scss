@@ -1,0 +1,32 @@
+@import "src/styles/scaffold";
+
+[data-fs-image-gallery] {
+  position: relative;
+  left: calc(-1 * var(--fs-grid-padding));
+  display: flex;
+  flex-direction: column;
+  row-gap: var(--fs-spacing-2);
+  width: calc(100% + (2 * var(--fs-grid-padding)));
+
+  @include media(">=notebook") {
+    display: flex;
+    flex-direction: row-reverse;
+    column-gap: var(--fs-spacing-3);
+  }
+
+  > [data-store-image] {
+    @include media(">=tablet") {
+      border-radius: var(--fs-border-radius-default);
+    }
+  }
+
+  @include media(">=tablet") {
+    left: 0;
+    grid-row: 1 / span 2;
+    grid-column: span 7;
+    width: 100%;
+    margin-bottom: var(--fs-spacing-7);
+  }
+
+  @include media(">=notebook") { grid-column: span 8; }
+}
