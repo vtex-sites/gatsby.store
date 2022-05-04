@@ -2,11 +2,11 @@ import { Input as UIInput, Label as UILabel } from '@faststore/ui'
 import type { MutableRefObject } from 'react'
 import { useEffect, useState } from 'react'
 import Button from 'src/components/ui/Button'
-import IconButton from 'src/components/ui/Button/ButtonIcon'
+import ButtonIcon from 'src/components/ui/Button/ButtonIcon'
 import Icon from 'src/components/ui/Icon'
 import type { InputProps } from '@faststore/ui'
 
-export type InputTextProps = {
+type DefaultProps = {
   /**
    * ID to identify input and corresponding label.
    */
@@ -23,6 +23,10 @@ export type InputTextProps = {
    * Component's ref.
    */
   inputRef?: MutableRefObject<HTMLInputElement | null>
+  /**
+   * Specifies that the whole input component should be disabled.
+   */
+  disabled?: boolean
 }
 
 type ActionableInputText =
@@ -46,7 +50,9 @@ type ActionableInputText =
       buttonActionText?: string
     }
 
-type Props = InputTextProps & InputProps & ActionableInputText
+export type InputTextProps = DefaultProps &
+  Omit<InputProps, 'disabled'> &
+  ActionableInputText
 
 const InputText = ({
   id,
@@ -57,10 +63,12 @@ const InputText = ({
   buttonActionText = 'Apply',
   onSubmit,
   placeholder = ' ', // initializes with an empty space to style float label using `placeholder-shown`
+  value,
   inputRef,
+  disabled,
   ...otherProps
-}: Props) => {
-  const [inputValue, setInputValue] = useState<string>('')
+}: InputTextProps) => {
+  const [inputValue, setInputValue] = useState<string>((value as string) ?? '')
   const [hasError, setHasError] = useState<boolean>(!!errorMessage)
 
   useEffect(() => {
@@ -84,6 +92,7 @@ const InputText = ({
         ref={inputRef}
         placeholder={placeholder}
         value={inputValue}
+        disabled={disabled}
         onInput={(e) => {
           hasError && setHasError(false)
           setInputValue(e.currentTarget.value)
@@ -93,24 +102,25 @@ const InputText = ({
       <UILabel htmlFor={id}>{label}</UILabel>
 
       {actionable &&
+        !disabled &&
         inputValue !== '' &&
         (hasError ? (
-          <IconButton
-            data-fs-input-text-button
+          <ButtonIcon
+            data-fs-button-size="small"
             aria-label="Clear Field"
             icon={<Icon name="XCircle" width={20} height={20} />}
             onClick={onClear}
           />
         ) : (
           <Button
-            data-fs-input-text-button
             variant="tertiary"
             onClick={() => onSubmit(inputValue)}
+            size="small"
           >
             {buttonActionText}
           </Button>
         ))}
-      {hasError && inputValue !== '' && (
+      {hasError && !disabled && inputValue !== '' && (
         <span data-fs-input-text-message>{errorMessage}</span>
       )}
     </div>
