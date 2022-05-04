@@ -7,6 +7,9 @@ export default {
   title: 'Molecules/Badge',
   argTypes: {
     onClose: { table: { disable: true } },
+    children: {
+      name: 'label',
+    },
   },
 }
 
