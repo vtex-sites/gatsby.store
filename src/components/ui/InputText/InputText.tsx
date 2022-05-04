@@ -102,6 +102,7 @@ const InputText = ({
       <UILabel htmlFor={id}>{label}</UILabel>
 
       {actionable &&
+        !disabled &&
         inputValue !== '' &&
         (hasError ? (
           <ButtonIcon
@@ -115,12 +116,11 @@ const InputText = ({
             variant="tertiary"
             onClick={() => onSubmit(inputValue)}
             size="small"
-            disabled={disabled}
           >
             {buttonActionText}
           </Button>
         ))}
-      {hasError && inputValue !== '' && (
+      {hasError && !disabled && inputValue !== '' && (
         <span data-fs-input-text-message>{errorMessage}</span>
       )}
     </div>
