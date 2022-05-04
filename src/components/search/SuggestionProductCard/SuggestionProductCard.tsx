@@ -30,19 +30,16 @@ function SuggestionProductCard({
   } = product
 
   return (
-    <Card
-      className="suggestion-product-card"
-      data-testid="suggestion-product-card"
-    >
+    <Card data-fs-suggestion-product-card data-testid="suggestion-product-card">
       <CardContent>
         <CardImage>
           <Image src={img.url} alt={img.alternateName} width={56} height={56} />
         </CardImage>
-        <div data-suggestion-product-card-summary>
-          <p className="text__title-mini" data-suggestion-product-card-title>
+        <div data-fs-suggestion-product-card-summary>
+          <p className="text__title-mini" data-fs-suggestion-product-card-title>
             {name}
           </p>
-          <span data-suggestion-product-card-prices>
+          <span data-fs-suggestion-product-card-prices>
             <Price
               value={listPrice}
               formatter={useFormattedPrice}
