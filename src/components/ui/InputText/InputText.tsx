@@ -23,6 +23,10 @@ type DefaultProps = {
    * Component's ref.
    */
   inputRef?: MutableRefObject<HTMLInputElement | null>
+  /**
+   * Specifies that the whole input component should be disabled.
+   */
+  disabled?: boolean
 }
 
 type ActionableInputText =
@@ -46,7 +50,9 @@ type ActionableInputText =
       buttonActionText?: string
     }
 
-export type InputTextProps = DefaultProps & InputProps & ActionableInputText
+export type InputTextProps = DefaultProps &
+  Omit<InputProps, 'disabled'> &
+  ActionableInputText
 
 const InputText = ({
   id,
@@ -59,6 +65,7 @@ const InputText = ({
   placeholder = ' ', // initializes with an empty space to style float label using `placeholder-shown`
   value,
   inputRef,
+  disabled,
   ...otherProps
 }: InputTextProps) => {
   const [inputValue, setInputValue] = useState<string>((value as string) ?? '')
@@ -85,6 +92,7 @@ const InputText = ({
         ref={inputRef}
         placeholder={placeholder}
         value={inputValue}
+        disabled={disabled}
         onInput={(e) => {
           hasError && setHasError(false)
           setInputValue(e.currentTarget.value)
@@ -107,6 +115,7 @@ const InputText = ({
             variant="tertiary"
             onClick={() => onSubmit(inputValue)}
             size="small"
+            disabled={disabled}
           >
             {buttonActionText}
           </Button>
