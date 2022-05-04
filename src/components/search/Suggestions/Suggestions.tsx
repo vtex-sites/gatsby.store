@@ -110,8 +110,8 @@ const Suggestions = forwardRef<HTMLDivElement, SuggestionsProps>(
       >
         {suggestions.length > 0 && (
           <UIList data-fs-search-suggestion-section>
-            {suggestions?.map((suggestion, index) => (
-              <li key={index} data-fs-search-suggestion-item>
+            {suggestions?.map((suggestion) => (
+              <li key={suggestion} data-fs-search-suggestion-item>
                 <Button onClick={() => null}>
                   {handleSuggestions(suggestion, term)}
                 </Button>
@@ -125,8 +125,8 @@ const Suggestions = forwardRef<HTMLDivElement, SuggestionsProps>(
             <p data-fs-search-suggestion-title="small">Suggested Products</p>
             <UIList>
               {SUGGESTED_PRODUCTS.slice(0, MAX_SUGGESTED_PRODUCTS).map(
-                (product, index) => (
-                  <li key={index} data-fs-search-suggestion-item>
+                (product) => (
+                  <li key={product.name} data-fs-search-suggestion-item>
                     <Link to="/" variant="display">
                       <SuggestionProductCard product={product} />
                     </Link>

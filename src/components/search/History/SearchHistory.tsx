@@ -33,8 +33,8 @@ const SearchHistory = ({ history = [], onClear }: SearchHistoryProps) => {
         </Button>
       </div>
       <UIList variant="ordered">
-        {searchHistory.map((item, index) => (
-          <li key={index} data-fs-search-suggestion-item>
+        {searchHistory.map((item) => (
+          <li key={item} data-fs-search-suggestion-item>
             <Link
               variant="display"
               to={doSearch(item)}
