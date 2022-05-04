@@ -8,7 +8,7 @@ export default {
   argTypes: {
     onClose: { table: { disable: true } },
     children: {
-      name: 'label',
+      name: 'content',
     },
   },
 }
