@@ -4,7 +4,6 @@ import Footer from 'src/components/common/Footer'
 import Navbar from 'src/components/common/Navbar'
 import Toast from 'src/components/common/Toast'
 import RegionalizationBar from 'src/components/regionalization/RegionalizationBar'
-import RegionalizationModal from 'src/components/regionalization/RegionalizationModal'
 import { useUI } from 'src/sdk/ui'
 import type { PropsWithChildren } from 'react'
 import { useModal } from 'src/sdk/ui/modal/Provider'
@@ -12,6 +11,9 @@ import { useModal } from 'src/sdk/ui/modal/Provider'
 import 'src/styles/pages/layout.scss'
 
 const CartSidebar = lazy(() => import('src/components/cart/CartSidebar'))
+const RegionalizationModal = lazy(
+  () => import('src/components/regionalization/RegionalizationModal')
+)
 
 function Layout({ children }: PropsWithChildren<unknown>) {
   const { displayMinicart } = useUI()
@@ -42,10 +44,14 @@ function Layout({ children }: PropsWithChildren<unknown>) {
           </Suspense>
         )}
       </div>
-      <RegionalizationModal
-        isOpen={isRegionalizationModalOpen}
-        onDismiss={() => setIsRegionalizationModalOpen(false)}
-      />
+      {isRegionalizationModalOpen && (
+        <Suspense fallback={null}>
+          <RegionalizationModal
+            isOpen={isRegionalizationModalOpen}
+            onDismiss={() => setIsRegionalizationModalOpen(false)}
+          />
+        </Suspense>
+      )}
     </>
   )
 }
