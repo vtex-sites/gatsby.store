@@ -57,7 +57,7 @@ const SearchInput = forwardRef<SearchInputRef, SearchInputProps>(
     useOnClickOutside(searchRef, () => setSuggestionsOpen(false))
 
     return (
-      <div ref={searchRef} className="search__wrapper">
+      <div ref={searchRef} data-store-search-input-wrapper>
         <UISearchInput
           ref={ref}
           icon={
