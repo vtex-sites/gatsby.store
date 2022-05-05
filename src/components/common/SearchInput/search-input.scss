@@ -87,6 +87,7 @@
   left: var(--left);
   z-index: 1;
   width: 100vw;
+  padding: var(--fs-spacing-3);
   background-color: var(--fs-color-neutral-0);
 
   @include media(">=tablet") {
@@ -104,11 +105,4 @@
     border-radius: 0 0 var(--fs-border-radius-default) var(--fs-border-radius-default);
     box-shadow: var(--fs-shadow);
   }
-}
-
-.suggestions__item button {
-  display: block;
-  width: 100%;
-  text-align: left;
-  background: transparent;
 }

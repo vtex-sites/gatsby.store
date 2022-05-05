@@ -1,6 +1,6 @@
 import { Card, CardContent, CardImage } from '@faststore/ui'
 import type { ProductSummary_ProductFragment } from '@generated/graphql'
-import { Link } from 'gatsby'
+import Link from 'src/components/ui/Link'
 import { Image } from 'src/components/ui/Image'
 import Price from 'src/components/ui/Price'
 import { useFormattedPrice } from 'src/sdk/product/useFormattedPrice'
@@ -23,12 +23,8 @@ function SuggestionProductCard({ product, index }: SuggestionProductCardProps) {
   } = product
 
   return (
-    <Card
-      className="suggestion-product-card"
-      data-testid="suggestion-product-card"
-    >
-      {' '}
-      <Link {...linkProps} title={name}>
+    <Card data-fs-suggestion-product-card data-testid="suggestion-product-card">
+      <Link {...linkProps} title={name} variant="display">
         <CardContent>
           <CardImage>
             <Image
@@ -38,11 +34,14 @@ function SuggestionProductCard({ product, index }: SuggestionProductCardProps) {
               height={56}
             />
           </CardImage>
-          <div data-suggestion-product-card-summary>
-            <p className="text__title-mini" data-suggestion-product-card-title>
+          <div data-fs-suggestion-product-card-summary>
+            <p
+              className="text__title-mini"
+              data-fs-suggestion-product-card-title
+            >
               {name}
             </p>
-            <span data-suggestion-product-card-prices>
+            <span data-fs-suggestion-product-card-prices>
               <Price
                 value={listPrice}
                 formatter={useFormattedPrice}

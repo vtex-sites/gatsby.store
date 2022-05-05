@@ -7,7 +7,6 @@ import { gql } from '@vtex/graphql-utils'
 import type { HTMLAttributes } from 'react'
 import { useEffect, useState } from 'react'
 import Button from 'src/components/ui/Button'
-import Link from 'src/components/ui/Link'
 import { request } from 'src/sdk/graphql/request'
 
 import SuggestionProductCard from '../SuggestionProductCard'
@@ -54,7 +53,7 @@ function handleSuggestions(suggestion: string, searchTerm: string) {
       {suggestionSubstring.map((substring, indexSubstring) => (
         <>
           {substring.length > 0 && (
-            <b className="suggestions__item-bold">
+            <b data-fs-search-suggestion-item-bold>
               {indexSubstring === 0
                 ? substring.charAt(0).toUpperCase() + substring.slice(1)
                 : substring}
@@ -128,16 +127,11 @@ function Suggestions({
   }
 
   return (
-    <section
-      data-testid={testId}
-      data-store-suggestions
-      className="suggestions"
-      {...otherProps}
-    >
+    <section data-testid={testId} data-fs-search-suggestions {...otherProps}>
       {terms.length > 0 && (
-        <UIList data-suggestions-list className="suggestions__section">
+        <UIList data-fs-search-suggestion-section>
           {terms?.map((suggestion) => (
-            <li key={suggestion} className="suggestions__item">
+            <li key={suggestion} data-fs-search-suggestion-item>
               <Button onClick={() => onSearch(suggestion)}>
                 {handleSuggestions(suggestion, term)}
               </Button>
@@ -147,14 +141,12 @@ function Suggestions({
       )}
 
       {products.length > 0 && (
-        <div className="suggestions__section">
-          <p className="suggestions__title">Suggested Products</p>
+        <div data-fs-search-suggestion-section>
+          <p data-fs-search-suggestion-title="small">Suggested Products</p>
           <UIList>
             {products.map((product, index) => (
-              <li key={product.name} className="suggestions__item">
-                <Link to="/" variant="display">
-                  <SuggestionProductCard product={product} index={index} />
-                </Link>
+              <li key={product.name} data-fs-search-suggestion-item>
+                <SuggestionProductCard product={product} index={index} />
               </li>
             ))}
           </UIList>
