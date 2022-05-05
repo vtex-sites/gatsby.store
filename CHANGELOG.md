@@ -8,6 +8,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
+
+- Applies new local tokens to `Select` ([#17](https://github.com/vtex-sites/gatsby.store/pull/17))
 - Applies new local tokens to `Input Text` ([#15](https://github.com/vtex-sites/gatsby.store/pull/15))
 - `Toggle` component ([#14](https://github.com/vtex-sites/gatsby.store/pull/14))
 - Applies new local tokens to `Link` ([#19](https://github.com/vtex-sites/gatsby.store/pull/19))
@@ -21,6 +23,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Adds Storybook configs (#463)
 - Adds vtex search tracking script. With this we will populate TopSearches and Autocomplete indices (#389)
 - Add `RegionalizationBar`, `RegionalizationButton` components and integrates it on Mobile and Desktop devices (#424).
+- Suspend the useProductsQuery, the ProductShelves and ProductTiles ([#10](https://github.com/vtex-sites/gatsby.store/pull/10)).
 
 ### Changed
 
@@ -31,7 +34,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Fixes `ProductCard` bordered variant (#5)
 - Changed name from BaseStore to GatsbyStore (#497)
 - Applies new local tokens to `BannerText` (#470)
-- Update the Incentives component to handle CMS data (#474)
+- Update the Incentives component to handle CMS data (#474).
+- useQuery, at usePersonQuery, in favor of `request` ([#10](https://github.com/vtex-sites/gatsby.store/pull/10)).
 
 ### Deprecated
 
