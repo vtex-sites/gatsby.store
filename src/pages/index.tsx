@@ -11,6 +11,9 @@ import { ITEMS_PER_SECTION } from 'src/constants'
 import type { PageProps } from 'gatsby'
 import type { HomePageQueryQuery } from '@generated/graphql'
 import IncentivesMock from 'src/components/sections/Incentives/incentivesMock'
+import ProductShelfSkeleton from 'src/components/skeletons/ProductShelfSkeleton'
+import { Suspense } from 'react'
+import ProductTilesSkeleton from 'src/components/skeletons/ProductTilesSkeleton'
 
 import 'src/styles/pages/homepage.scss'
 
@@ -78,17 +81,22 @@ function Page(props: Props) {
 
       <IncentivesHeader incentives={IncentivesMock} />
 
-      <ProductShelf
-        first={ITEMS_PER_SECTION}
-        selectedFacets={[{ key: 'productClusterIds', value: '140' }]}
-        title="Most Wanted"
-      />
+      <Suspense fallback={<ProductShelfSkeleton loading />}>
+        <ProductShelf
+          first={ITEMS_PER_SECTION}
+          selectedFacets={[{ key: 'productClusterIds', value: '140' }]}
+          title="Most Wanted"
+          suspenseData
+        />
+      </Suspense>
 
-      <ProductTiles
-        first={3}
-        selectedFacets={[{ key: 'productClusterIds', value: '141' }]}
-        title="Just Arrived"
-      />
+      <Suspense fallback={<ProductTilesSkeleton loading />}>
+        <ProductTiles
+          first={3}
+          selectedFacets={[{ key: 'productClusterIds', value: '141' }]}
+          title="Just Arrived"
+        />
+      </Suspense>
 
       <BannerText
         title="Receive our news and promotions in advance. Enjoy and get 10% off on your first purchase."
@@ -96,11 +104,14 @@ function Page(props: Props) {
         actionLabel="Call to action"
       />
 
-      <ProductShelf
-        first={ITEMS_PER_SECTION}
-        selectedFacets={[{ key: 'productClusterIds', value: '142' }]}
-        title="Deals & Promotions"
-      />
+      <Suspense fallback={<ProductShelfSkeleton loading />}>
+        <ProductShelf
+          first={ITEMS_PER_SECTION}
+          selectedFacets={[{ key: 'productClusterIds', value: '142' }]}
+          title="Deals & Promotions"
+          suspenseData
+        />
+      </Suspense>
     </>
   )
 }
