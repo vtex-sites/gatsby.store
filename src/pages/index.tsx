@@ -86,6 +86,7 @@ function Page(props: Props) {
           first={ITEMS_PER_SECTION}
           selectedFacets={[{ key: 'productClusterIds', value: '140' }]}
           title="Most Wanted"
+          suspenseData
         />
       </Suspense>
 
@@ -108,6 +109,7 @@ function Page(props: Props) {
           first={ITEMS_PER_SECTION}
           selectedFacets={[{ key: 'productClusterIds', value: '142' }]}
           title="Deals & Promotions"
+          suspenseData
         />
       </Suspense>
     </>
