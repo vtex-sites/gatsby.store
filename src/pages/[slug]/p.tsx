@@ -16,8 +16,7 @@ import type {
   ProductPageQueryQueryVariables,
 } from '@generated/graphql'
 import { ITEMS_PER_SECTION } from 'src/constants'
-import { Suspense } from 'react'
-import ProductShelfSkeleton from 'src/components/skeletons/ProductShelfSkeleton'
+
 import 'src/styles/pages/pdp.scss'
 
 export type Props = PageProps<
@@ -102,14 +101,12 @@ function Page(props: Props) {
       */}
       <ProductDetails product={product} />
 
-      <Suspense fallback={<ProductShelfSkeleton loading />}>
-        <ProductShelf
-          first={ITEMS_PER_SECTION}
-          term={product.brand.name}
-          title="You might also like"
-          withDivisor
-        />
-      </Suspense>
+      <ProductShelf
+        first={ITEMS_PER_SECTION}
+        term={product.brand.name}
+        title="You might also like"
+        withDivisor
+      />
     </>
   )
 }
