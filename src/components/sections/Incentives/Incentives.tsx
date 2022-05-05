@@ -8,12 +8,12 @@ interface Incentive {
   secondLineText?: string
 }
 
-interface Props {
+export interface IncentivesProps {
   incentives: Incentive[]
   classes?: string
 }
 
-function Incentives({ incentives, classes = '' }: Props) {
+function Incentives({ incentives, classes = '' }: IncentivesProps) {
   return (
     <div className={`incentives ${classes} layout__content-full`}>
       <UIList variant="unordered" className="layout__content">
