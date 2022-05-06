@@ -19,6 +19,7 @@ asdf
 asdfsadf
 asdfasdf
 asdfasdf
+asdfsadf
 Kickoff your store with this boilerplate. This starter ships with the main FastStore configuration files you might need to get up and running blazing fast with the blazing-fast store for React.
 
 ## ⚠️ Before you start
