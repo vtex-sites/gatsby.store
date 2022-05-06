@@ -17,7 +17,7 @@ export const parameters = {
   },
   options: {
     storySort: {
-      order: ['Releases', 'Atoms', 'Molecules', 'Organisms'],
+      order: ['Foundation', 'Atoms', 'Molecules', 'Organisms', 'Releases'],
     },
   },
 }

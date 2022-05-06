@@ -1,0 +1,58 @@
+import { Description } from '@storybook/addon-docs/blocks'
+import { Meta } from '@storybook/addon-docs'
+
+<Meta title="Foundation/Theming" />
+
+# Theming
+
+This themeable structure is made of two complementary layers: a useful and assorted library of templates for the components and sections, alongside a comprehensive set of design tokens to further customize them.
+
+**Templates**, the first layer, has foundational styles that lay things out in common design patterns for different use cases. It also covers a component's fundamental interactions, like showing/hiding a dropdown or moving a toggle’s knob to make it active.
+
+<img
+  src="https://user-images.githubusercontent.com/723163/159504019-b6380d47-8f93-47a3-b77f-0abb6aeb1ad2.png"
+  width="450"
+  align="right"
+/>
+
+The second, **Theme**, is where the branding lives and what truly differentiates one UI from another. Graphic elements—like typography (and type scale), colors, imagery, borders, spacing, & more—are controlled by design tokens that a developer can easily tweak to create a unique look and feel.
+
+Additional styles can be added to overwrite what was set in the Structure and/or Theme, reaching a state of total flexibility and freedom. Lastly, the developer can throw away all existing FastStore CSS altogether and build it from scratch.
+
+<br />
+
+## Theming architecture
+
+Starting from the bottom up, we have the components: fully-featured UI blocks that belong to a larger whole system. The components have their own CSS that defines their overall appearance and how things are arranged; these scoped stylesheets are the Templates. The Templates' visual properties are tied to local variables—design tokens—that draw the final picture of the component; these local, scoped variables, on the other hand, are tied to global tokens, which form the Theme.
+
+<img
+  src="https://user-images.githubusercontent.com/723163/159509122-7e39c20f-d1a6-4449-bf22-e77e91692316.png"
+  width="650"
+  align="center"
+/>
+
+<br />
+
+## Design tokens naming scheme
+
+All design tokens must follow a strict scheme to achieve predictability and cohesiveness. The tokens parts must tell:
+
+- Where this token is coming from (is it a global or a component's local part);
+- Their semantic meaning;
+- What property type it affects;
+- Which category of this type is going to be affected;
+- Their interactive state.
+
+![Naming scheme](https://user-images.githubusercontent.com/723163/159535015-25c1caa9-6f44-476f-ba7b-f530066b6c98.png)
+
+<br />
+
+## Theme (or global design tokens)
+
+Global design tokens are parameters that affect all UI look 'n' feel. They are the main configuration file of a Theme. It's constituted of three main groups:
+
+1. Branding Core
+2. UI Essentials
+3. Refinements
+
+![Theme architecture](https://user-images.githubusercontent.com/723163/159511583-ea1868d5-1262-4a3e-a06c-d807ed88c79c.png)
