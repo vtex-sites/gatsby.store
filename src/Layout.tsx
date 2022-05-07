@@ -36,14 +36,14 @@ function Layout({ children }: PropsWithChildren<unknown>) {
 
         <Navbar />
 
+        <Toast />
+
         <main>
           <RegionalizationBar classes="display-mobile" />
           {children}
         </main>
 
         <Footer />
-
-        <Toast />
 
         {displayMinicart && (
           <Suspense fallback={null}>
