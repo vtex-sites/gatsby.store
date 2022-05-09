@@ -15,7 +15,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Applies new local tokens to `Link` ([#19](https://github.com/vtex-sites/gatsby.store/pull/19))
 - ImageGallery to PDP ([#6](https://github.com/vtex-sites/gatsby.store/pull/6))
 - New items in the `pull_request_template.md` ([#12](https://github.com/vtex-sites/gatsby.store/pull/12))
-- Integrates with search.query event api ([#2](https://github.com/vtex-sites/base.store/pull/2))
+- Integrates with search.query event api ([#2](https://github.com/vtex-sites/gatsby.store/pull/2))
 - Applies new local tokens to `Badge` ([#462](https://github.com/vtex-sites/base.store/pull/462))
 - Applies new local tokens to `Hero` ([#435](https://github.com/vtex-sites/base.store/pull/435))
 - Applies new local tokens to `Quantity Selector` ([#448](https://github.com/vtex-sites/base.store/pull/448))
@@ -29,9 +29,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Renames `Badge` component prop `interactive` to `actionable`([#25](https://github.com/vtex-sites/gatsby.store/pull/25))
 - Update Regionalization input to use the `TextInput` component ([#9](https://github.com/vtex-sites/gatsby.store/pull/9))
-- Update `RegionalizationButton` and `RegionalizationBar` to show the postal code ([#8](https://github.com/vtex-sites/base.store/pull/8))
+- Update `RegionalizationButton` and `RegionalizationBar` to show the postal code ([#8](https://github.com/vtex-sites/gatsby.store/pull/8))
 - ImageGallery now uses native scroll instead of useSlider ([#6](https://github.com/vtex-sites/gatsby.store/pull/6))
-- Fixes `ProductCard` bordered variant ([#5](https://github.com/vtex-sites/base.store/pull/5))
+- Fixes `ProductCard` bordered variant ([#5](https://github.com/vtex-sites/gatsby.store/pull/5))
 - Changed name from BaseStore to GatsbyStore ([#497](https://github.com/vtex-sites/base.store/pull/497))
 - Applies new local tokens to `BannerText` ([#470](https://github.com/vtex-sites/base.store/pull/470))
 - Update the Incentives component to handle CMS data ([#474](https://github.com/vtex-sites/base.store/pull/474)).
