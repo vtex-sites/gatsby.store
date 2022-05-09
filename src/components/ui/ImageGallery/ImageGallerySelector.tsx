@@ -2,6 +2,7 @@ import { useRef } from 'react'
 import { Button, IconButton } from '@faststore/ui'
 import Icon from 'src/components/ui/Icon'
 import { Image } from 'src/components/ui/Image'
+import { useInView } from 'react-intersection-observer'
 
 import type { ImageElementData } from './ImageGallery'
 
@@ -34,6 +35,13 @@ const hasScroll = (container: HTMLDivElement | null): boolean => {
 
 function ImageGallerySelector({ images, onSelect, currentImageIdx }: Props) {
   const elementsRef = useRef<HTMLDivElement>(null)
+  const { ref: firstImageRef, inView: firstImageInView } = useInView({
+    threshold: 1,
+  })
+
+  const { ref: lastImageRef, inView: lastImageInView } = useInView({
+    threshold: 1,
+  })
 
   return (
     <section
@@ -41,7 +49,7 @@ function ImageGallerySelector({ images, onSelect, currentImageIdx }: Props) {
       aria-roledescription="carousel"
       aria-label="Product images"
     >
-      {hasScroll(elementsRef.current) && (
+      {hasScroll(elementsRef.current) && !firstImageInView && (
         <IconButton
           aria-label="backward slide image selector"
           icon={<Icon name="ArrowLeft" width={24} height={24} />}
@@ -50,6 +58,14 @@ function ImageGallerySelector({ images, onSelect, currentImageIdx }: Props) {
       )}
       <div data-fs-image-gallery-selector-elements ref={elementsRef}>
         {images.map((image, idx) => {
+          let ref
+
+          if (idx === 0) {
+            ref = firstImageRef
+          } else if (idx === images.length - 1) {
+            ref = lastImageRef
+          }
+
           return (
             <Button
               key={idx}
@@ -62,6 +78,7 @@ function ImageGallerySelector({ images, onSelect, currentImageIdx }: Props) {
               onClick={() => onSelect(idx)}
             >
               <Image
+                ref={ref}
                 src={image.url}
                 alt={image.alternateName}
                 loading={idx === 0 ? 'eager' : 'lazy'}
@@ -73,7 +90,7 @@ function ImageGallerySelector({ images, onSelect, currentImageIdx }: Props) {
           )
         })}
       </div>
-      {hasScroll(elementsRef.current) && (
+      {hasScroll(elementsRef.current) && !lastImageInView && (
         <IconButton
           aria-label="forward slide image selector"
           icon={<Icon name="ArrowLeft" width={24} height={24} />}
