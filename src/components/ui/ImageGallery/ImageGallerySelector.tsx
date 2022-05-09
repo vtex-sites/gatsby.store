@@ -35,8 +35,13 @@ const hasScroll = (container: HTMLDivElement | null): boolean => {
 
 function ImageGallerySelector({ images, onSelect, currentImageIdx }: Props) {
   const elementsRef = useRef<HTMLDivElement>(null)
-  const { ref: firstImageRef, inView: firstImageInView } = useInView()
-  const { ref: lastImageRef, inView: lastImageInView } = useInView()
+  const { ref: firstImageRef, inView: firstImageInView } = useInView({
+    threshold: 0.5,
+  })
+
+  const { ref: lastImageRef, inView: lastImageInView } = useInView({
+    threshold: 0.5,
+  })
 
   return (
     <section
