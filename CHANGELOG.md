@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- Suspend the `useProductsQuery`, the `ProductShelve`s and `ProductTile`s ([#10](https://github.com/vtex-sites/gatsby.store/pull/10)).
 - Applies new local tokens to `Select` ([#17](https://github.com/vtex-sites/gatsby.store/pull/17))
 - Applies new local tokens to `Input Text` ([#15](https://github.com/vtex-sites/gatsby.store/pull/15))
 - `Toggle` component ([#14](https://github.com/vtex-sites/gatsby.store/pull/14))
@@ -23,11 +24,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Adds Storybook configs ([#463](https://github.com/vtex-sites/base.store/pull/463))
 - Adds VTEX search tracking script. With this we will populate `TopSearches` and `Autocomplete` indices ([#389](https://github.com/vtex-sites/base.store/pull/389))
 - Add `RegionalizationBar`, `RegionalizationButton` components and integrates it on Mobile and Desktop devices ([#424](https://github.com/vtex-sites/base.store/pull/424)).
-- Suspend the `useProductsQuery`, the `ProductShelve`s and `ProductTile`s ([#10](https://github.com/vtex-sites/gatsby.store/pull/10)).
 
 ### Changed
 
 - `CHANGELOG.md` to link to PRs and fixed some markdown ([#24](https://github.com/vtex-sites/gatsby.store/pull/24)).
+- `useQuery`, at `usePersonQuery`, in favor of `request` ([#10](https://github.com/vtex-sites/gatsby.store/pull/10)).
 - Renames `Badge` component prop `interactive` to `actionable`([#25](https://github.com/vtex-sites/gatsby.store/pull/25))
 - Update Regionalization input to use the `TextInput` component ([#9](https://github.com/vtex-sites/gatsby.store/pull/9))
 - Update `RegionalizationButton` and `RegionalizationBar` to show the postal code ([#8](https://github.com/vtex-sites/gatsby.store/pull/8))
@@ -36,7 +37,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Changed name from BaseStore to GatsbyStore ([#497](https://github.com/vtex-sites/base.store/pull/497))
 - Applies new local tokens to `BannerText` ([#470](https://github.com/vtex-sites/base.store/pull/470))
 - Update the `Incentives` component to handle CMS data ([#474](https://github.com/vtex-sites/base.store/pull/474)).
-- `useQuery`, at `usePersonQuery`, in favor of `request` ([#10](https://github.com/vtex-sites/gatsby.store/pull/10)).
 
 ### Deprecated
 
