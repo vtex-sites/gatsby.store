@@ -1,10 +1,23 @@
 import { useCallback, useState } from 'react'
+import type { ReactNode } from 'React'
 import UIAlert from 'src/components/ui/Alert'
 import { mark } from 'src/sdk/tests/mark'
-import type { PropsWithChildren } from 'react'
 import Icon from 'src/components/ui/Icon'
 
-function Alert({ children }: PropsWithChildren<unknown>) {
+interface Props {
+  icon: string
+  text: ReactNode
+  linkText?: string
+  actionLink?: string
+  dismissible: boolean
+}
+function Alert({
+  icon,
+  text,
+  linkText,
+  actionLink,
+  dismissible = false,
+}: Props) {
   const [displayAlert, setDisplayAlert] = useState(true)
 
   const onAlertClose = useCallback(
@@ -16,13 +29,17 @@ function Alert({ children }: PropsWithChildren<unknown>) {
     return null
   }
 
+  const link =
+    actionLink && linkText ? { to: actionLink, text: linkText } : undefined
+
   return (
     <UIAlert
-      icon={<Icon name="BellRinging" width={24} height={24} />}
-      dismissible
+      icon={<Icon name={icon} width={24} height={24} />}
+      dismissible={dismissible}
       onClose={onAlertClose}
+      link={link}
     >
-      {children}
+      {text}
     </UIAlert>
   )
 }

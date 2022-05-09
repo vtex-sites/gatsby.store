@@ -23,9 +23,15 @@ function Layout({ children }: PropsWithChildren<unknown>) {
   return (
     <>
       <div id="layout">
-        <Alert>
-          Get 10% off today:&nbsp;<span>NEW10</span>
-        </Alert>
+        <Alert
+          icon="Bell"
+          text={
+            <>
+              Get 10% off today:&nbsp;<span>NEW10</span>
+            </>
+          }
+          dismissible
+        />
 
         <Navbar />
 
