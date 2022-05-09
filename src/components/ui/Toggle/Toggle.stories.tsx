@@ -38,6 +38,7 @@ export const Horizontal = Template.bind({})
 export const Vertical = Template.bind({})
 export const Checked = Template.bind({})
 export const Disabled = Template.bind({})
+export const DisabledChecked = Template.bind({})
 
 Horizontal.args = {
   id: 'toggle-horizontal',
@@ -59,5 +60,12 @@ Checked.args = {
 Disabled.args = {
   id: 'toggle-vertical',
   label: 'Label',
+  disabled: true,
+}
+
+DisabledChecked.args = {
+  id: 'toggle-vertical',
+  label: 'Label',
+  checked: true,
   disabled: true,
 }
