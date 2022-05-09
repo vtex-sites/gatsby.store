@@ -27,6 +27,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- `CHANGELOG.md` to link to PRs and fixed some markdown ([#24](https://github.com/vtex-sites/gatsby.store/pull/24)).
 - Renames `Badge` component prop `interactive` to `actionable`([#25](https://github.com/vtex-sites/gatsby.store/pull/25))
 - Update Regionalization input to use the `TextInput` component ([#9](https://github.com/vtex-sites/gatsby.store/pull/9))
 - Update `RegionalizationButton` and `RegionalizationBar` to show the postal code ([#8](https://github.com/vtex-sites/gatsby.store/pull/8))
