@@ -7,6 +7,9 @@ export default {
   title: 'Molecules/Badge',
   argTypes: {
     onClose: { table: { disable: true } },
+    children: {
+      name: 'content',
+    },
   },
 }
 
@@ -15,18 +18,18 @@ const Template = ({ children, ...args }: BadgeProps) => (
 )
 
 export const Default = Template.bind({})
-export const Interactive = Template.bind({})
+export const Actionable = Template.bind({})
 
 Default.args = {
   children: 'New arrival',
   big: false,
-  interactive: false,
+  actionable: false,
   variant: 'info',
 }
 
-Interactive.args = {
+Actionable.args = {
   children: 'New arrival',
   big: true,
-  interactive: true,
+  actionable: true,
   variant: 'info',
 }

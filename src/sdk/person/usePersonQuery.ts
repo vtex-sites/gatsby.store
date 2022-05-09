@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { gql } from '@vtex/graphql-utils'
 import type {
   PersonQueryQuery,
@@ -6,8 +6,8 @@ import type {
 } from '@generated/graphql'
 import { useSession } from '@faststore/sdk'
 
-import { useQuery } from '../graphql/useQuery'
 import type { QueryOptions } from '../graphql/useQuery'
+import { request } from '../graphql/request'
 
 export const query = gql`
   query PersonQuery {
@@ -21,12 +21,43 @@ export const query = gql`
 `
 
 const usePersonQuery = (options?: QueryOptions) => {
-  const { data } = useQuery<PersonQueryQuery, PersonQueryQueryVariables>(
-    query,
-    {},
-    { ...options, fetchOptions: { ...options?.fetchOptions, method: 'POST' } }
-  )
+  const [data, setData] = useState<PersonQueryQuery | null>(null)
 
+  useEffect(() => {
+    let cancel = false
+    const effect = async () => {
+      const reqData = await request<
+        PersonQueryQuery,
+        PersonQueryQueryVariables
+      >(
+        query,
+        {},
+        {
+          ...options,
+          fetchOptions: { ...options?.fetchOptions, method: 'POST' },
+        }
+      ).catch(() => undefined)
+
+      // If request fails (4xx or 5xx status code), try to refetch after 1s.
+      if (!reqData) {
+        setTimeout(effect, 1000)
+
+        return
+      }
+
+      if (cancel) {
+        return
+      }
+
+      setData(reqData)
+    }
+
+    setTimeout(effect, 0)
+
+    return () => {
+      cancel = true
+    }
+  }, [options])
   const { setSession, user, ...session } = useSession()
   const person = data?.person
 
