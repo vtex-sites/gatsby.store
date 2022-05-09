@@ -95,7 +95,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 
 - Replaces `onDismissTransition` callback by a Provider that handles opening/closing of modal/slide over's behavior ([#426](https://github.com/vtex-sites/base.store/pull/426))
-- # `OutOfStock` integrated with regionalization
 - `OutOfStock` integrated with regionalization ([#441](https://github.com/vtex-sites/base.store/pull/441))
 - Move ProductShelf and ProductTiles to the client side ([#431](https://github.com/vtex-sites/base.store/pull/431))
 - Drop gatsby-plugin-image in favor of custom/simpler component ([#401](https://github.com/vtex-sites/base.store/pull/401))
