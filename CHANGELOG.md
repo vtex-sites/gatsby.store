@@ -48,7 +48,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 
 - Fix `ImageGallerySelector` arrow toggle according to scroll position ([#27](https://github.com/vtex-sites/gatsby.store/pull/27))
-- Fix hydration mismatch on PLPs at `?page=1` pagination
+- Fix hydration mismatch on PLPs at `?page=1` pagination ([#3](https://github.com/vtex-sites/gatsby.store/pull/3))
 - A bugged vertical gap with the `EmptyState` component inside the cart ([#20](https://github.com/vtex-sites/gatsby.store/pull/20)).
 - Some pages missing component styles because they weren't imported ([#20](https://github.com/vtex-sites/gatsby.store/pull/20)).
 - Fix Storybook initialization ([#492](https://github.com/vtex-sites/base.store/pull/492))
