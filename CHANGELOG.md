@@ -13,17 +13,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Applies new local tokens to `Input Text` ([#15](https://github.com/vtex-sites/gatsby.store/pull/15))
 - `Toggle` component ([#14](https://github.com/vtex-sites/gatsby.store/pull/14))
 - Applies new local tokens to `Link` ([#19](https://github.com/vtex-sites/gatsby.store/pull/19))
-- ImageGallery to PDP ([#6](https://github.com/vtex-sites/gatsby.store/pull/6))
+- `ImageGallery` to PDP ([#6](https://github.com/vtex-sites/gatsby.store/pull/6))
 - New items in the `pull_request_template.md` ([#12](https://github.com/vtex-sites/gatsby.store/pull/12))
-- Integrates with search.query event api ([#2](https://github.com/vtex-sites/gatsby.store/pull/2))
+- Integrates with `search.query` event API ([#2](https://github.com/vtex-sites/gatsby.store/pull/2))
 - Applies new local tokens to `Badge` ([#462](https://github.com/vtex-sites/base.store/pull/462))
 - Applies new local tokens to `Hero` ([#435](https://github.com/vtex-sites/base.store/pull/435))
 - Applies new local tokens to `Quantity Selector` ([#448](https://github.com/vtex-sites/base.store/pull/448))
 - Applies new local tokens to `ProductShelf` component ([#464](https://github.com/vtex-sites/base.store/pull/464))
 - Adds Storybook configs ([#463](https://github.com/vtex-sites/base.store/pull/463))
-- Adds vtex search tracking script. With this we will populate TopSearches and Autocomplete indices ([#389](https://github.com/vtex-sites/base.store/pull/389))
+- Adds VTEX search tracking script. With this we will populate `TopSearches` and `Autocomplete` indices ([#389](https://github.com/vtex-sites/base.store/pull/389))
 - Add `RegionalizationBar`, `RegionalizationButton` components and integrates it on Mobile and Desktop devices ([#424](https://github.com/vtex-sites/base.store/pull/424)).
-- Suspend the useProductsQuery, the ProductShelves and ProductTiles ([#10](https://github.com/vtex-sites/gatsby.store/pull/10)).
+- Suspend the `useProductsQuery`, the `ProductShelve`s and `ProductTile`s ([#10](https://github.com/vtex-sites/gatsby.store/pull/10)).
 
 ### Changed
 
@@ -31,12 +31,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Renames `Badge` component prop `interactive` to `actionable`([#25](https://github.com/vtex-sites/gatsby.store/pull/25))
 - Update Regionalization input to use the `TextInput` component ([#9](https://github.com/vtex-sites/gatsby.store/pull/9))
 - Update `RegionalizationButton` and `RegionalizationBar` to show the postal code ([#8](https://github.com/vtex-sites/gatsby.store/pull/8))
-- ImageGallery now uses native scroll instead of useSlider ([#6](https://github.com/vtex-sites/gatsby.store/pull/6))
+- `ImageGallery` now uses native scroll instead of useSlider ([#6](https://github.com/vtex-sites/gatsby.store/pull/6))
 - Fixes `ProductCard` bordered variant ([#5](https://github.com/vtex-sites/gatsby.store/pull/5))
 - Changed name from BaseStore to GatsbyStore ([#497](https://github.com/vtex-sites/base.store/pull/497))
 - Applies new local tokens to `BannerText` ([#470](https://github.com/vtex-sites/base.store/pull/470))
-- Update the Incentives component to handle CMS data ([#474](https://github.com/vtex-sites/base.store/pull/474)).
-- useQuery, at usePersonQuery, in favor of `request` ([#10](https://github.com/vtex-sites/gatsby.store/pull/10)).
+- Update the `Incentives` component to handle CMS data ([#474](https://github.com/vtex-sites/base.store/pull/474)).
+- `useQuery`, at `usePersonQuery`, in favor of `request` ([#10](https://github.com/vtex-sites/gatsby.store/pull/10)).
 
 ### Deprecated
 
@@ -54,7 +54,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Fix Storybook initialization ([#492](https://github.com/vtex-sites/base.store/pull/492))
 - Fix styling issue on Regionalization Modal by adding the missing imports in layout.scss ([#488](https://github.com/vtex-sites/base.store/pull/488))
 - Fix unused CSS problem by separating imports into different files for each page ([#473](https://github.com/vtex-sites/base.store/pull/473))
-- Potential layout shift on Hero section fixed ([#472](https://github.com/vtex-sites/base.store/pull/472))
+- Potential layout shift on `Hero` section fixed ([#472](https://github.com/vtex-sites/base.store/pull/472))
 - Fix layout section spacings style ([#469](https://github.com/vtex-sites/base.store/pull/469))
 
 ### Security
