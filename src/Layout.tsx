@@ -30,6 +30,7 @@ function Layout({ children }: PropsWithChildren<unknown>) {
               Get 10% off today:&nbsp;<span>NEW10</span>
             </>
           }
+          link={{ text: 'Buy now', to: '/office' }}
           dismissible
         />
 

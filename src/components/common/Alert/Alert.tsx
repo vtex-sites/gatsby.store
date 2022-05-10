@@ -7,17 +7,13 @@ import Icon from 'src/components/ui/Icon'
 interface Props {
   icon: string
   text: ReactNode
-  linkText?: string
-  actionLink?: string
+  link?: {
+    to: string
+    text: string
+  }
   dismissible: boolean
 }
-function Alert({
-  icon,
-  text,
-  linkText,
-  actionLink,
-  dismissible = false,
-}: Props) {
+function Alert({ icon, text, link, dismissible = false }: Props) {
   const [displayAlert, setDisplayAlert] = useState(true)
 
   const onAlertClose = useCallback(
@@ -28,9 +24,6 @@ function Alert({
   if (displayAlert === false) {
     return null
   }
-
-  const link =
-    actionLink && linkText ? { to: actionLink, text: linkText } : undefined
 
   return (
     <UIAlert
