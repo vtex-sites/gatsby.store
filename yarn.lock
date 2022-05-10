@@ -1981,9 +1981,10 @@
     minimatch "^3.0.4"
     strip-json-comments "^3.1.1"
 
-"@faststore/api@https://pkg.csb.dev/vtex/faststore/commit/2ef6d5a5/@faststore/api":
-  version "1.8.2"
-  resolved "https://pkg.csb.dev/vtex/faststore/commit/2ef6d5a5/@faststore/api#ba8354ee1c21258813e2cd4f3e842fb19b7b238e"
+"@faststore/api@^1.8.4":
+  version "1.8.4"
+  resolved "https://registry.yarnpkg.com/@faststore/api/-/api-1.8.4.tgz#3b6b0b62f0b5e60c2e85209aaf1d089001513f80"
+  integrity sha512-GpxkBhESoaiWpa0+3XHYz/nebGLa7Ujn3gsWLw1dXSW7wMLS/JJ5cIdmBx95FfkB+MV0zjoBK+7BPwiGh7YPwQ==
   dependencies:
     "@graphql-tools/schema" "^8.2.0"
     "@rollup/plugin-graphql" "^1.0.0"
@@ -1992,28 +1993,17 @@
     isomorphic-unfetch "^3.1.0"
     p-limit "^3.1.0"
 
-"@faststore/api@https://pkg.csb.dev/vtex/faststore/commit/e44aec59/@faststore/api":
-  version "1.8.2"
-  resolved "https://pkg.csb.dev/vtex/faststore/commit/e44aec59/@faststore/api#7b50a12f1ae18b6dbf0a0b265256ff2cb29c188f"
-  dependencies:
-    "@graphql-tools/schema" "^8.2.0"
-    "@rollup/plugin-graphql" "^1.0.0"
-    dataloader "^2.0.0"
-    fast-deep-equal "^3.1.3"
-    isomorphic-unfetch "^3.1.0"
-    p-limit "^3.1.0"
-
-"@faststore/sdk@^1.7.53":
-  version "1.7.53"
-  resolved "https://registry.yarnpkg.com/@faststore/sdk/-/sdk-1.7.53.tgz#8dcb8953ea8ec1e9df8ea3fd832785899b3b7afb"
-  integrity sha512-xic2rqKAV9UiV2povYQ/6UTtIJIehuUGG4KDMEirqN7RbjvCFtFtrCjGYMny9sTe+AaJMhcZS2nyZMoCoLHhCg==
+"@faststore/sdk@^1.8.4":
+  version "1.8.4"
+  resolved "https://registry.yarnpkg.com/@faststore/sdk/-/sdk-1.8.4.tgz#c7686baa3794e11cbb41f08859168804b4c14a69"
+  integrity sha512-fcL06DPwExOFJhgFP5SrTqoilX/aJrcSmTwnu68w+h3lX870VySAdzWR40pMeXBJNYMd2tOIR4S0t4e4rQ/ANA==
   dependencies:
     idb-keyval "^5.1.3"
 
-"@faststore/ui@^1.7.53":
-  version "1.7.53"
-  resolved "https://registry.yarnpkg.com/@faststore/ui/-/ui-1.7.53.tgz#d3e98cf415cfe51e9abc79c74b104eee459dc1f5"
-  integrity sha512-bg2mc0eMYSZ6GY6W0oloEEmVYNHZ4kYOymH2e+u9Ki5zUv3c7tbzjw6syT9nWrqUNM/oN47ulooOnECs/FIJBw==
+"@faststore/ui@^1.8.4":
+  version "1.8.4"
+  resolved "https://registry.yarnpkg.com/@faststore/ui/-/ui-1.8.4.tgz#cb46cd91cfd4414cef6cf27785da10b92d5c751d"
+  integrity sha512-oJ5ByhLDLu4l7mDNdP8h/cMJrvU93EUlckKjXPoNSAxHYRSnkB87z/bTIi6vDrJgeYpCeEX+Sx6sA4QW1q4O1A==
   dependencies:
     "@reach/popover" "^0.16.0"
     "@storybook/addon-a11y" "^6.4.4"
@@ -5312,20 +5302,20 @@
   resolved "https://registry.yarnpkg.com/@vercel/webpack-asset-relocator-loader/-/webpack-asset-relocator-loader-1.7.0.tgz#d3b707e0aba3111719f941dacb2408eff3c27319"
   integrity sha512-1Dy3BdOliDwxA7VZSIg55E1d/us2KvsCQOZV25fgufG//CsnZBGiSAL7qewTQf7YVHH0A9PHgzwMmKIZ8aFYVw==
 
-"@vtex/graphql-utils@^1.7.33":
-  version "1.7.33"
-  resolved "https://registry.yarnpkg.com/@vtex/graphql-utils/-/graphql-utils-1.7.33.tgz#6ed0170b3b8a5120564fc9c32b8bab4e3986b436"
-  integrity sha512-uGbi4jYoyPe90A4VTGK8RGIt2zLUBrDwCgadEf0EMTvXT2MD/zuaCGGcKzuP7KvVfUiwgrcbrpOEUVowrv/3uw==
+"@vtex/graphql-utils@^1.8.4":
+  version "1.8.4"
+  resolved "https://registry.yarnpkg.com/@vtex/graphql-utils/-/graphql-utils-1.8.4.tgz#f82ca164c15c412b6e592dc8758304412a915c87"
+  integrity sha512-FUJo1X9Ho8O5F9dgCpiD/tOjNPSNGv6GyTmA2pBnaKNeP1NPtoEi28m/wqf7BaBFvasGvrcZZicOnKK59oHjSQ==
   dependencies:
     "@babel/traverse" "^7.15.4"
     "@babel/types" "^7.15.6"
     "@graphql-codegen/plugin-helpers" "^2.2.0"
     "@graphql-tools/relay-operation-optimizer" "^6.4.0"
 
-"@vtex/lighthouse-config@^1.7.33":
-  version "1.7.33"
-  resolved "https://registry.yarnpkg.com/@vtex/lighthouse-config/-/lighthouse-config-1.7.33.tgz#7ff4170a08682f634e638182832236e16cc0686c"
-  integrity sha512-w8WNtgPx/TxQunrBiiU5Ljq/yQYOJZPoMQjTNaPqqkhZ1Ldqa1xdfyNBMXGW+DMZuh6JgfUlAjuDgftl/ozm4A==
+"@vtex/lighthouse-config@^1.8.4":
+  version "1.8.4"
+  resolved "https://registry.yarnpkg.com/@vtex/lighthouse-config/-/lighthouse-config-1.8.4.tgz#9a69f24144895bb03c5de9092cc8ed9f356c777e"
+  integrity sha512-/fEX67Y3BvNie8jGngcFhf9IFY1qHMQGdhEAcai3MchUh/bGX2kNtN1l2xBMZPNyzy27R9lJGJ9tWRr7y2BQwQ==
 
 "@vtex/prettier-config@1.0.0":
   version "1.0.0"
