@@ -172,13 +172,13 @@
   @include media(">=tablet") {
     grid-template-rows: 5fr 2fr;
 
-    &[data-fs-product-card-actionabled="true"] {
+    &[data-fs-product-card-actionable="true"] {
       grid-template-rows: 10fr 7fr;
     }
   }
 
   @include media(">=notebook") {
-    &[data-fs-product-card-actionabled="true"] {
+    &[data-fs-product-card-actionable="true"] {
       grid-template-rows: 6fr 3fr;
     }
 
