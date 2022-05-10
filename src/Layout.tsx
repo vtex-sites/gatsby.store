@@ -25,7 +25,7 @@ function Layout({ children }: PropsWithChildren<unknown>) {
       <div id="layout">
         <Alert
           icon="Bell"
-          text={
+          content={
             <>
               Get 10% off today:&nbsp;<span>NEW10</span>
             </>
