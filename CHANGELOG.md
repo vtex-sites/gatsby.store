@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- An initial integration of the search term & product suggestions ([#16](https://github.com/vtex-sites/gatsby.store/pull/16)).
 - Suspend the `useProductsQuery`, the `ProductShelve`s and `ProductTile`s ([#10](https://github.com/vtex-sites/gatsby.store/pull/10)).
 - Applies new local tokens to `Select` ([#17](https://github.com/vtex-sites/gatsby.store/pull/17))
 - Applies new local tokens to `Input Text` ([#15](https://github.com/vtex-sites/gatsby.store/pull/15))
