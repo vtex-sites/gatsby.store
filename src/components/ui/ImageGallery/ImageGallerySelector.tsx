@@ -35,6 +35,7 @@ const hasScroll = (container: HTMLDivElement | null): boolean => {
 
 function ImageGallerySelector({ images, onSelect, currentImageIdx }: Props) {
   const elementsRef = useRef<HTMLDivElement>(null)
+  const elementHasScroll = hasScroll(elementsRef.current)
   const { ref: firstImageRef, inView: firstImageInView } = useInView({
     threshold: 1,
   })
@@ -49,7 +50,7 @@ function ImageGallerySelector({ images, onSelect, currentImageIdx }: Props) {
       aria-roledescription="carousel"
       aria-label="Product images"
     >
-      {hasScroll(elementsRef.current) && !firstImageInView && (
+      {elementHasScroll && !firstImageInView && (
         <IconButton
           aria-label="backward slide image selector"
           icon={<Icon name="ArrowLeft" width={24} height={24} />}
@@ -89,7 +90,7 @@ function ImageGallerySelector({ images, onSelect, currentImageIdx }: Props) {
           )
         })}
       </div>
-      {hasScroll(elementsRef.current) && !lastImageInView && (
+      {elementHasScroll && !lastImageInView && (
         <IconButton
           aria-label="forward slide image selector"
           icon={<Icon name="ArrowLeft" width={24} height={24} />}
