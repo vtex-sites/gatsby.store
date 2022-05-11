@@ -17,7 +17,17 @@ export const parameters = {
   },
   options: {
     storySort: {
-      order: ['Fundamentals', 'Atoms', 'Molecules', 'Organisms', 'Releases'],
+      method: 'alphabetical',
+      order: [
+        'Getting Started',
+        'Theming',
+        'Fundamentals',
+        ['Colors', 'Typography', 'Icons'],
+        'Atoms',
+        'Molecules',
+        'Organisms',
+        'Releases',
+      ],
     },
   },
 }
