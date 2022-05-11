@@ -8,5 +8,6 @@ module.exports = VTEXLHConfig({
   assertions: {
     'csp-xss': 'off',
     'legacy-javascript': ['error', { maxLength: 1 }],
+    deprecations: ['warn'],
   },
 })
