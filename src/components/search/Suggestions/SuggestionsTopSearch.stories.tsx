@@ -7,7 +7,16 @@ export default {
 }
 
 const Template = (props: SuggestionsTopSearchProps) => (
-  <SuggestionsTopSearch {...props} />
+  <div
+    style={{
+      maxWidth: '600px',
+      margin: '0 auto',
+      padding: '0 16px',
+      background: 'white',
+    }}
+  >
+    <SuggestionsTopSearch {...props} />
+  </div>
 )
 
 export const Default = Template.bind({})
@@ -20,4 +29,8 @@ Default.args = {
     { name: 'Laser Printer', href: '/laser-printer' },
     { name: 'Bluetooth Keyboard', href: '/bluetooth-keyboard' },
   ],
+}
+
+Default.parameters = {
+  backgrounds: { default: 'dark' },
 }

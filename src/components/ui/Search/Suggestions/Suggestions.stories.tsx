@@ -41,11 +41,20 @@ export default {
 }
 
 const Template = (props: SuggestionsProps) => (
-  <LocationProvider>
-    <SessionProvider>
-      <Suggestions {...props} />
-    </SessionProvider>
-  </LocationProvider>
+  <div
+    style={{
+      maxWidth: '600px',
+      margin: '0 auto',
+      padding: '0 16px',
+      background: 'white',
+    }}
+  >
+    <LocationProvider>
+      <SessionProvider>
+        <Suggestions {...props} />
+      </SessionProvider>
+    </LocationProvider>
+  </div>
 )
 
 export const Default = Template.bind({})
@@ -58,4 +67,8 @@ Default.args = {
     product({ id: '2', name: 'Steel Towels' }),
     product({ id: '3', name: 'Steel Practical' }),
   ],
+}
+
+Default.parameters = {
+  backgrounds: { default: 'dark' },
 }
