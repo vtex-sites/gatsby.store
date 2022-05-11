@@ -29,6 +29,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 
 - Accessibility tests to output what were the actual violations, not just how many ([#23](https://github.com/vtex-sites/gatsby.store/pull/23)).
+- `SearchHistory`, `Suggestions`, and `SuggestionsTopSearch` components to reuse shared markup and styles ([#7](https://github.com/vtex-sites/gatsby.store/pull/7)).
 - `CHANGELOG.md` to link to PRs and fixed some markdown ([#24](https://github.com/vtex-sites/gatsby.store/pull/24)).
 - `useQuery`, at `usePersonQuery`, in favor of `request` ([#10](https://github.com/vtex-sites/gatsby.store/pull/10)).
 - Renames `Badge` component prop `interactive` to `actionable`([#25](https://github.com/vtex-sites/gatsby.store/pull/25))
