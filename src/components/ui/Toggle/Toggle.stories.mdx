@@ -1,15 +1,56 @@
-import { Canvas, Story, ArgsTable } from '@storybook/addon-docs'
+import { Meta, Canvas, Story, ArgsTable } from '@storybook/addon-docs'
 
 import Toggle from '.'
 
+<Meta
+  title="Atoms/Toggle"
+  argTypes={{
+    displayLabel: {
+      type: {
+        name: 'boolean',
+      },
+    },
+    disabled: {
+      type: {
+        name: 'boolean',
+      },
+      defaultValue: false,
+    },
+    variant: {
+      name: 'variant',
+      control: 'radio',
+    },
+  }}
+  component={Toggle}
+/>
+
+export const Template = (args) => <Toggle {...args} />
+
 # Toggle
 
+Toggle is an input checkbox styled to look like a switch button.
+
+<br />
+
+### Import
+
+`import Toggle from '../components/ui/Toggle'`
+
+### Usage
+
 <Canvas>
-  <Story id="atoms-toggle--horizontal" />
-  <Story id="atoms-toggle--vertical" />
+  <Story
+    name="default"
+    args={{
+      id: 'toggle-default',
+      label: 'Label',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
 </Canvas>
 
-<ArgsTable of={Toggle} />
+<ArgsTable story="default" />
 
 | Local token                       | Default value/Global token linked           |
 | --------------------------------- | ------------------------------------------- |
@@ -58,19 +99,45 @@ import Toggle from '.'
 ### Horizontal
 
 <Canvas>
-  <Story id="atoms-toggle--horizontal" />
+  <Story
+    name="horizontal"
+    args={{
+      id: 'toggle-horizontal',
+      label: 'Label',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
 </Canvas>
 
 ### Vertical
 
 <Canvas>
-  <Story id="atoms-toggle--vertical" />
+  <Story
+    name="vertical"
+    args={{
+      id: 'toggle-vertical',
+      label: 'Label',
+      variant: 'vertical',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
 </Canvas>
 
 ### Checked
 
 <Canvas>
-  <Story id="atoms-toggle--checked" />
+  <Story
+    name="checked"
+    args={{
+      id: 'toggle-checked',
+      label: 'Label',
+      checked: true,
+    }}
+  >
+    {Template.bind({})}
+  </Story>
 </Canvas>
 
 | Local token                                    | Default value/Global token linked          |
@@ -88,8 +155,27 @@ import Toggle from '.'
 ### Disabled
 
 <Canvas>
-  <Story id="atoms-toggle--disabled" />
-  <Story id="atoms-toggle--disabled-checked" />
+  <Story
+    name="disabled"
+    args={{
+      id: 'toggle-disabled',
+      label: 'Label',
+      disabled: true,
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="disabled-checked"
+    args={{
+      id: 'toggle-disabled-checked',
+      label: 'Label',
+      disabled: true,
+      checked: true,
+    }}
+  >
+    {Template.bind({})}
+  </Story>
 </Canvas>
 
 | Local token                              | Default value/Global token linked          |
