@@ -58,13 +58,12 @@ function ImageGallerySelector({ images, onSelect, currentImageIdx }: Props) {
       )}
       <div data-fs-image-gallery-selector-elements ref={elementsRef}>
         {images.map((image, idx) => {
-          let ref
-
-          if (idx === 0) {
-            ref = firstImageRef
-          } else if (idx === images.length - 1) {
-            ref = lastImageRef
-          }
+          const ref =
+            idx === 0
+              ? firstImageRef
+              : idx === images.length - 1
+              ? lastImageRef
+              : null
 
           return (
             <Button
