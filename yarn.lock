@@ -1981,10 +1981,10 @@
     minimatch "^3.0.4"
     strip-json-comments "^3.1.1"
 
-"@faststore/api@^1.8.4":
-  version "1.8.4"
-  resolved "https://registry.yarnpkg.com/@faststore/api/-/api-1.8.4.tgz#3b6b0b62f0b5e60c2e85209aaf1d089001513f80"
-  integrity sha512-GpxkBhESoaiWpa0+3XHYz/nebGLa7Ujn3gsWLw1dXSW7wMLS/JJ5cIdmBx95FfkB+MV0zjoBK+7BPwiGh7YPwQ==
+"@faststore/api@^1.8.9":
+  version "1.8.9"
+  resolved "https://registry.yarnpkg.com/@faststore/api/-/api-1.8.9.tgz#989ad2501c661b2cc7bddf82dc003cf3ba32603f"
+  integrity sha512-N5teOH6HV0u7T9ZtELFpQrrxFJzp7ngbomOLgZ7pxhqkUOBtw4nI8mIDU+mzEM6iM7c2+lADvrNuWbWEGuE6+Q==
   dependencies:
     "@graphql-tools/schema" "^8.2.0"
     "@rollup/plugin-graphql" "^1.0.0"
@@ -1993,28 +1993,17 @@
     isomorphic-unfetch "^3.1.0"
     p-limit "^3.1.0"
 
-"@faststore/api@https://pkg.csb.dev/vtex/faststore/commit/d94b6778/@faststore/api":
-  version "1.8.8"
-  resolved "https://pkg.csb.dev/vtex/faststore/commit/d94b6778/@faststore/api#b278a887f5d42a3c4965f9b3054b4f033158b263"
-  dependencies:
-    "@graphql-tools/schema" "^8.2.0"
-    "@rollup/plugin-graphql" "^1.0.0"
-    dataloader "^2.0.0"
-    fast-deep-equal "^3.1.3"
-    isomorphic-unfetch "^3.1.0"
-    p-limit "^3.1.0"
-
-"@faststore/sdk@^1.8.4":
-  version "1.8.4"
-  resolved "https://registry.yarnpkg.com/@faststore/sdk/-/sdk-1.8.4.tgz#c7686baa3794e11cbb41f08859168804b4c14a69"
-  integrity sha512-fcL06DPwExOFJhgFP5SrTqoilX/aJrcSmTwnu68w+h3lX870VySAdzWR40pMeXBJNYMd2tOIR4S0t4e4rQ/ANA==
+"@faststore/sdk@^1.8.9":
+  version "1.8.9"
+  resolved "https://registry.yarnpkg.com/@faststore/sdk/-/sdk-1.8.9.tgz#3f63a6f7c2d1fef3bdf50ac7890633bde6bc9d43"
+  integrity sha512-olEDJUNVqvVCPOyozHe1pJaHQ5C6It1C+ctLO+51bRM+kqGCIHXtITyJGc1XRdoPA8Ms7NJO7sYp6V/7tjJc6w==
   dependencies:
     idb-keyval "^5.1.3"
 
-"@faststore/ui@^1.8.4":
-  version "1.8.4"
-  resolved "https://registry.yarnpkg.com/@faststore/ui/-/ui-1.8.4.tgz#cb46cd91cfd4414cef6cf27785da10b92d5c751d"
-  integrity sha512-oJ5ByhLDLu4l7mDNdP8h/cMJrvU93EUlckKjXPoNSAxHYRSnkB87z/bTIi6vDrJgeYpCeEX+Sx6sA4QW1q4O1A==
+"@faststore/ui@^1.8.9":
+  version "1.8.9"
+  resolved "https://registry.yarnpkg.com/@faststore/ui/-/ui-1.8.9.tgz#9dff2964fd49d4ffb773e2887448756fd8c672d9"
+  integrity sha512-IZoj8CYwvgiUmpfGJGv+wzUZCC8fcaw0pZ/30ZTmfvGptAkx/l/xlIBHvUwlTVG9mmkxiNGXpTaVIybHg/H0AA==
   dependencies:
     "@reach/popover" "^0.16.0"
     "@storybook/addon-a11y" "^6.4.4"
@@ -5313,20 +5302,20 @@
   resolved "https://registry.yarnpkg.com/@vercel/webpack-asset-relocator-loader/-/webpack-asset-relocator-loader-1.7.0.tgz#d3b707e0aba3111719f941dacb2408eff3c27319"
   integrity sha512-1Dy3BdOliDwxA7VZSIg55E1d/us2KvsCQOZV25fgufG//CsnZBGiSAL7qewTQf7YVHH0A9PHgzwMmKIZ8aFYVw==
 
-"@vtex/graphql-utils@^1.8.4":
-  version "1.8.4"
-  resolved "https://registry.yarnpkg.com/@vtex/graphql-utils/-/graphql-utils-1.8.4.tgz#f82ca164c15c412b6e592dc8758304412a915c87"
-  integrity sha512-FUJo1X9Ho8O5F9dgCpiD/tOjNPSNGv6GyTmA2pBnaKNeP1NPtoEi28m/wqf7BaBFvasGvrcZZicOnKK59oHjSQ==
+"@vtex/graphql-utils@^1.8.9":
+  version "1.8.9"
+  resolved "https://registry.yarnpkg.com/@vtex/graphql-utils/-/graphql-utils-1.8.9.tgz#d59d2d0ffa64fc78f39a4ffc4aa2b9cec72c2ad9"
+  integrity sha512-RNQ56ldc9ocmDawQ7WewERh3qCJR3mq3YEelwOCxBH0cva/Wh0YSfnhyCp9vxRTj4tofRPXbvDMYD9UX6WXynw==
   dependencies:
     "@babel/traverse" "^7.15.4"
     "@babel/types" "^7.15.6"
     "@graphql-codegen/plugin-helpers" "^2.2.0"
     "@graphql-tools/relay-operation-optimizer" "^6.4.0"
 
-"@vtex/lighthouse-config@^1.8.4":
-  version "1.8.4"
-  resolved "https://registry.yarnpkg.com/@vtex/lighthouse-config/-/lighthouse-config-1.8.4.tgz#9a69f24144895bb03c5de9092cc8ed9f356c777e"
-  integrity sha512-/fEX67Y3BvNie8jGngcFhf9IFY1qHMQGdhEAcai3MchUh/bGX2kNtN1l2xBMZPNyzy27R9lJGJ9tWRr7y2BQwQ==
+"@vtex/lighthouse-config@^1.8.9":
+  version "1.8.9"
+  resolved "https://registry.yarnpkg.com/@vtex/lighthouse-config/-/lighthouse-config-1.8.9.tgz#a736b6d6eb68246ca1ab240fc7150f37ce5e7712"
+  integrity sha512-Xf5eQwlhz1s4/U1u7zPyQbfXmZkzlO/et6hbztpZoaraLr2fXlAvw1mmSH+qTT2V5FVA7wtMubX7mbPYQrhFzw==
 
 "@vtex/prettier-config@1.0.0":
   version "1.0.0"
