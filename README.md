@@ -60,6 +60,7 @@ As of Dec, 22, 2021, this starter is still far from covering most basic cases fo
      }
    }
    ```
+Add note about setting site domain 
 
 3. **Start developing**
 
