@@ -48,28 +48,368 @@ import { Meta, ColorPalette, ColorItem } from '@storybook/addon-docs'
 
 ### Hierarchy
 
-| Global Token                            | Value                                 |
-| --------------------------------------- | ------------------------------------- |
-| `--fs-color-primary-text`               | `var(--fs-color-text-inverse)`        |
-| `--fs-color-primary-bkg`                | `var(--fs-color-main-4)`              |
-| `--fs-color-primary-bkg-hover`          | `var(--fs-color-main-3)`              |
-| `--fs-color-primary-bkg-active`         | `var(--fs-color-main-2)`              |
-| `--fs-color-primary-bkg-light`          | `var(--fs-color-main-0)`              |
-| `--fs-color-primary-bkg-light-active`   | `var(--fs-color-main-1)`              |
-|                                         |                                       |
-| `--fs-color-secondary-text`             | `var(--fs-color-main-4)`              |
-| `--fs-color-secondary-bkg`              | `transparent`                         |
-| `--fs-color-secondary-bkg-hover`        | `var(--fs-color-main-4)`              |
-| `--fs-color-secondary-bkg-active`       | `var(--fs-color-main-3)`              |
-| `--fs-color-secondary-bkg-light`        | `var(--fs-color-main-0)`              |
-| `--fs-color-secondary-bkg-light-active` | `var(--fs-color-secondary-bkg-light)` |
-|                                         |                                       |
-| `--fs-color-tertiary-text`              | `var(--fs-color-link)`                |
-| `--fs-color-tertiary-bkg`               | `transparent`                         |
-| `--fs-color-tertiary-bkg-hover`         | `var(--fs-color-main-0)`              |
-| `--fs-color-tertiary-bkg-active`        | `var(--fs-color-main-1)`              |
-| `--fs-color-tertiary-bkg-light`         | `var(--fs-color-neutral-0)`           |
-| `--fs-color-tertiary-bkg-light-active`  | `var(--fs-color-tertiary-bkg-light)`  |
+<table
+  style={{
+    width: '100%',
+  }}
+>
+  <thead>
+    <tr>
+      <th>Global Token</th>
+      <th>Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        <code>--fs-color-primary-text</code>
+      </td>
+      <td>
+        <div
+          style={{
+            backgroundColor: 'var(--fs-color-text-inverse)',
+            width: '1.5rem',
+            height: '1.5rem',
+            borderRadius: '100%',
+            border: '1px solid gray',
+            float: 'left',
+            marginRight: '.5rem',
+          }}
+        ></div>
+        <code>var(--fs-color-text-inverse)</code>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <code>--fs-color-primary-bkg</code>
+      </td>
+      <td>
+        <div
+          style={{
+            backgroundColor: 'var(--fs-color-main-4)',
+            width: '1.5rem',
+            height: '1.5rem',
+            borderRadius: '100%',
+            border: '1px solid gray',
+            float: 'left',
+            marginRight: '.5rem',
+          }}
+        ></div>
+        <code>var(--fs-color-main-4)</code>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <code>--fs-color-primary-bkg-hover</code>
+      </td>
+      <td>
+        <div
+          style={{
+            backgroundColor: 'var(--fs-color-main-3)',
+            width: '1.5rem',
+            height: '1.5rem',
+            borderRadius: '100%',
+            border: '1px solid gray',
+            float: 'left',
+            marginRight: '.5rem',
+          }}
+        ></div>
+        <code>var(--fs-color-main-3)</code>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <code>--fs-color-primary-bkg-active</code>
+      </td>
+      <td>
+        <div
+          style={{
+            backgroundColor: 'var(--fs-color-main-2)',
+            width: '1.5rem',
+            height: '1.5rem',
+            borderRadius: '100%',
+            border: '1px solid gray',
+            float: 'left',
+            marginRight: '.5rem',
+          }}
+        ></div>
+        <code>var(--fs-color-main-2)</code>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <code>--fs-color-primary-bkg-light</code>
+      </td>
+      <td>
+        <div
+          style={{
+            backgroundColor: 'var(--fs-color-main-0)',
+            width: '1.5rem',
+            height: '1.5rem',
+            borderRadius: '100%',
+            border: '1px solid gray',
+            float: 'left',
+            marginRight: '.5rem',
+          }}
+        ></div>
+        <code>var(--fs-color-main-0)</code>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <code>--fs-color-primary-bkg-light-active</code>
+      </td>
+      <td>
+        <div
+          style={{
+            backgroundColor: 'var(--fs-color-main-1)',
+            width: '1.5rem',
+            height: '1.5rem',
+            borderRadius: '100%',
+            border: '1px solid gray',
+            float: 'left',
+            marginRight: '.5rem',
+          }}
+        ></div>
+        <code>var(--fs-color-main-1)</code>
+      </td>
+    </tr>
+    <tr>
+      <td></td>
+    </tr>
+    <tr>
+      <td>
+        <code>--fs-color-secondary-text</code>
+      </td>
+      <td>
+        <div
+          style={{
+            backgroundColor: 'var(--fs-color-main-4)',
+            width: '1.5rem',
+            height: '1.5rem',
+            borderRadius: '100%',
+            border: '1px solid gray',
+            float: 'left',
+            marginRight: '.5rem',
+          }}
+        ></div>
+        <code>var(--fs-color-main-4)</code>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <code>--fs-color-secondary-bkg</code>
+      </td>
+      <td>
+        <div
+          style={{
+            backgroundColor: 'transparent',
+            width: '1.5rem',
+            height: '1.5rem',
+            borderRadius: '100%',
+            border: '1px solid gray',
+            float: 'left',
+            marginRight: '.5rem',
+          }}
+        ></div>
+        <code>transparent</code>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <code>--fs-color-secondary-bkg-hover</code>
+      </td>
+      <td>
+        <div
+          style={{
+            backgroundColor: 'var(--fs-color-main-4)',
+            width: '1.5rem',
+            height: '1.5rem',
+            borderRadius: '100%',
+            border: '1px solid gray',
+            float: 'left',
+            marginRight: '.5rem',
+          }}
+        ></div>
+        <code>var(--fs-color-main-4)</code>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <code>--fs-color-secondary-bkg-active</code>
+      </td>
+      <td>
+        <div
+          style={{
+            backgroundColor: 'var(--fs-color-main-3)',
+            width: '1.5rem',
+            height: '1.5rem',
+            borderRadius: '100%',
+            border: '1px solid gray',
+            float: 'left',
+            marginRight: '.5rem',
+          }}
+        ></div>
+        <code>var(--fs-color-main-3)</code>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <code>--fs-color-secondary-bkg-light</code>
+      </td>
+      <td>
+        <div
+          style={{
+            backgroundColor: 'var(--fs-color-main-0)',
+            width: '1.5rem',
+            height: '1.5rem',
+            borderRadius: '100%',
+            border: '1px solid gray',
+            float: 'left',
+            marginRight: '.5rem',
+          }}
+        ></div>
+        <code>var(--fs-color-main-0)</code>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <code>--fs-color-secondary-bkg-light-active</code>
+      </td>
+      <td>
+        <div
+          style={{
+            backgroundColor: 'var(--fs-color-secondary-bkg-light)',
+            width: '1.5rem',
+            height: '1.5rem',
+            borderRadius: '100%',
+            border: '1px solid gray',
+            float: 'left',
+            marginRight: '.5rem',
+          }}
+        ></div>
+        <code>var(--fs-color-secondary-bkg-light)</code>
+      </td>
+    </tr>
+    <tr>
+      <td></td>
+    </tr>
+    <tr>
+      <td>
+        <code>--fs-color-tertiary-text</code>
+      </td>
+      <td>
+        <div
+          style={{
+            backgroundColor: 'var(--fs-color-link)',
+            width: '1.5rem',
+            height: '1.5rem',
+            borderRadius: '100%',
+            border: '1px solid gray',
+            float: 'left',
+            marginRight: '.5rem',
+          }}
+        ></div>
+        <code>var(--fs-color-link)</code>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <code>--fs-color-tertiary-bkg</code>
+      </td>
+      <td>
+        <div
+          style={{
+            backgroundColor: 'transparent',
+            width: '1.5rem',
+            height: '1.5rem',
+            borderRadius: '100%',
+            border: '1px solid gray',
+            float: 'left',
+            marginRight: '.5rem',
+          }}
+        ></div>
+        <code>transparent</code>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <code>--fs-color-tertiary-bkg-hover</code>
+      </td>
+      <td>
+        <div
+          style={{
+            backgroundColor: 'var(--fs-color-main-0)',
+            width: '1.5rem',
+            height: '1.5rem',
+            borderRadius: '100%',
+            border: '1px solid gray',
+            float: 'left',
+            marginRight: '.5rem',
+          }}
+        ></div>
+        <code>var(--fs-color-main-0)</code>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <code>--fs-color-tertiary-bkg-active</code>
+      </td>
+      <td>
+        <div
+          style={{
+            backgroundColor: 'var(--fs-color-main-1)',
+            width: '1.5rem',
+            height: '1.5rem',
+            borderRadius: '100%',
+            border: '1px solid gray',
+            float: 'left',
+            marginRight: '.5rem',
+          }}
+        ></div>
+        <code>var(--fs-color-main-1)</code>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <code>--fs-color-tertiary-bkg-light</code>
+      </td>
+      <td>
+        <div
+          style={{
+            backgroundColor: 'var(--fs-color-neutral-0)',
+            width: '1.5rem',
+            height: '1.5rem',
+            borderRadius: '100%',
+            border: '1px solid gray',
+            float: 'left',
+            marginRight: '.5rem',
+          }}
+        ></div>
+        <code>var(--fs-color-neutral-0)</code>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <code>--fs-color-tertiary-bkg-light-active</code>
+      </td>
+      <td>
+        <div
+          style={{
+            backgroundColor: 'var(--fs-color-tertiary-bkg-light)',
+            width: '1.5rem',
+            height: '1.5rem',
+            borderRadius: '100%',
+            border: '1px solid gray',
+            float: 'left',
+            marginRight: '.5rem',
+          }}
+        ></div>
+        <code>var(--fs-color-tertiary-bkg-light)</code>
+      </td>
+    </tr>
+  </tbody>
+</table>
 
 <br />
 
