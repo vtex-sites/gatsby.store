@@ -7,6 +7,20 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Addded
+
+### Changed
+
+### Deprecated
+
+### Removed
+
+### Fixed
+
+### Security
+
+## [22.19.0.beta] - 2022-05-06
+
 ### Added
 
 - An initial integration of the search term & product suggestions ([#16](https://github.com/vtex-sites/gatsby.store/pull/16)).
@@ -28,6 +42,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- General code improvements at `ImageGallerySelector` ([#40](https://github.com/vtex-sites/gatsby.store/pull/40))
+- Adjust `Alert` component for `CMS` ([#29](https://github.com/vtex-sites/gatsby.store/pull/29))
+- Accessibility tests to output what were the actual violations, not just how many ([#23](https://github.com/vtex-sites/gatsby.store/pull/23)).
+- `SearchHistory`, `Suggestions`, and `SuggestionsTopSearch` components to reuse shared markup and styles ([#7](https://github.com/vtex-sites/gatsby.store/pull/7)).
 - `CHANGELOG.md` to link to PRs and fixed some markdown ([#24](https://github.com/vtex-sites/gatsby.store/pull/24)).
 - `useQuery`, at `usePersonQuery`, in favor of `request` ([#10](https://github.com/vtex-sites/gatsby.store/pull/10)).
 - Renames `Badge` component prop `interactive` to `actionable`([#25](https://github.com/vtex-sites/gatsby.store/pull/25))
@@ -38,8 +56,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Changed name from BaseStore to GatsbyStore ([#497](https://github.com/vtex-sites/base.store/pull/497))
 - Applies new local tokens to `BannerText` ([#470](https://github.com/vtex-sites/base.store/pull/470))
 - Update the `Incentives` component to handle CMS data ([#474](https://github.com/vtex-sites/base.store/pull/474)).
-
-### Deprecated
 
 ### Removed
 
@@ -57,8 +73,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Fix unused CSS problem by separating imports into different files for each page ([#473](https://github.com/vtex-sites/base.store/pull/473))
 - Potential layout shift on `Hero` section fixed ([#472](https://github.com/vtex-sites/base.store/pull/472))
 - Fix layout section spacings style ([#469](https://github.com/vtex-sites/base.store/pull/469))
-
-### Security
 
 ## [0.2.2] - 2022-04-07
 

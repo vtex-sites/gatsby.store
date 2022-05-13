@@ -23,9 +23,16 @@ function Layout({ children }: PropsWithChildren<unknown>) {
   return (
     <>
       <div id="layout">
-        <Alert>
-          Get 10% off today:&nbsp;<span>NEW10</span>
-        </Alert>
+        <Alert
+          icon="Bell"
+          content={
+            <>
+              Get 10% off today:&nbsp;<span>NEW10</span>
+            </>
+          }
+          link={{ text: 'Buy now', to: '/office' }}
+          dismissible
+        />
 
         <Navbar />
 
