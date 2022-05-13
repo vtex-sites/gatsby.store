@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { Image } from 'src/components/ui/Image'
-import { fsImageGallery } from 'src/components/ui/ImageGallery/image-gallery.module.scss'
+import * as styles from 'src/components/ui/ImageGallery/image-gallery.module.scss'
 
 import { ImageGallerySelector, ImageZoom } from '.'
 
@@ -18,7 +18,7 @@ function ImageGallery({ images }: ImageGalleryProps) {
   const currentImage = images[selectedImageIdx]
 
   return (
-    <section data-fs-image-gallery className={fsImageGallery}>
+    <section data-fs-image-gallery className={styles.fsImageGallery}>
       <ImageZoom>
         <Image
           src={currentImage.url}
