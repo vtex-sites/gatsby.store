@@ -55,7 +55,6 @@
 
   @include media(">=notebook") {
     flex-direction: column;
-    grid-row: 1;
     justify-content: space-between;
   }
 
