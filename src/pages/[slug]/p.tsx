@@ -200,7 +200,7 @@ export const getServerData = async ({
         status: 301,
         props: {},
         headers: {
-          'cache-control': 'public, max-age=0, stale-while-revalidate=31536000',
+          'cache-control': 's-maxage=31536000, stale-while-revalidate',
           location: `/404/?from=${encodeURIComponent(originalUrl)}`,
         },
       }
@@ -210,7 +210,7 @@ export const getServerData = async ({
       status: 200,
       props: data ?? {},
       headers: {
-        'cache-control': 'public, max-age=0, stale-while-revalidate=31536000',
+        'cache-control': 's-maxage=31536000, stale-while-revalidate',
       },
     }
   } catch (err) {
