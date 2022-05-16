@@ -7,13 +7,19 @@ function Toast() {
   const toast = toasts[toasts.length - 1]
   const ref = useRef<NodeJS.Timeout[]>([])
 
-  const [fade, setFade] = useState<'in' | 'out'>('in')
+  const [fade, setFade] = useState<'in' | 'out'>()
 
   useEffect(() => {
-    const id = setTimeout(() => setFade('out'), 2e3)
+    toast && setFade('in')
+  }, [toast])
 
-    ref.current.push(id)
-  }, [])
+  useEffect(() => {
+    if (fade === 'in') {
+      const id = setTimeout(() => setFade('out'), 2e3)
+
+      ref.current.push(id)
+    }
+  }, [fade])
 
   if (toast === undefined) {
     return null
