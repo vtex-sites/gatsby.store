@@ -39,13 +39,22 @@ Starting from the bottom up, we have the components: fully-featured UI blocks th
 
 All design tokens must follow a strict scheme to achieve predictability and cohesiveness. The tokens parts must tell:
 
-- Where this token is coming from (is it a global or a component's local part);
-- Their semantic meaning;
-- What property type it affects;
-- Which category of this type is going to be affected;
-- Their interactive state.
+- **Namespacing**: Where this token is coming from (is it a global or a component's local part);
+- **Component**: Their semantic meaning;
+- **Type**: What property type it affects;
+- **Category** Which category of this type is going to be affected;
+- **State**: Their interactive state.
 
-![Naming scheme](https://user-images.githubusercontent.com/723163/159535015-25c1caa9-6f44-476f-ba7b-f530066b6c98.png)
+![Naming scheme](https://user-images.githubusercontent.com/11613011/168681910-ecfdf685-33a0-431d-a317-d8ea2e223e1c.png)
+
+If needed, we can use other additional incrementation to the token's name, such as:
+
+- **Hierarchy**: Define its tier;
+- **Nested Element**: To sytle elements contained inside the component;
+- **Variant**: What differentiate it from the default;
+- **Situation**: When they should be used;
+
+![Naming scheme 2](https://user-images.githubusercontent.com/11613011/168690590-55b3d6ab-ccea-42d8-a970-ba6486825941.png)
 
 <br />
 
