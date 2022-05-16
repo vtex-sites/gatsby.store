@@ -19,6 +19,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 
+- Fix Storybook `@reach/router` issue ([#48](https://github.com/vtex-sites/gatsby.store/pull/48))
+
 ### Security
 
 ## [22.19.0.beta] - 2022-05-06
