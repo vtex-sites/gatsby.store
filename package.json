@@ -33,7 +33,6 @@
     "@faststore/api": "^1.8.17",
     "@faststore/sdk": "^1.8.17",
     "@faststore/ui": "^1.8.17",
-    "@reach/router": "^1.3.4",
     "@vtex/graphql-utils": "^1.8.10",
     "gatsby": "^4.11.1",
     "gatsby-plugin-gatsby-cloud": "^4.11.1",
