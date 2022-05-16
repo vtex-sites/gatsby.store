@@ -15,6 +15,10 @@ export const parameters = {
   docs: {
     theme: SBTheme,
   },
+  previewTabs: {
+    canvas: { hidden: true },
+  },
+  viewMode: 'docs',
   options: {
     storySort: {
       method: 'alphabetical',
