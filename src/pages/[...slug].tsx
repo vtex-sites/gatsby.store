@@ -175,6 +175,8 @@ export const getServerData = async ({
 }: {
   params: Record<string, string>
 }) => {
+  const ONE_YEAR_CACHE = `s-maxage=31536000, stale-while-revalidate`
+
   try {
     const { execute } = await import('src/server/index')
     const { data } = await execute({
@@ -189,7 +191,7 @@ export const getServerData = async ({
         status: 301,
         props: {},
         headers: {
-          'cache-control': 's-maxage=31536000, stale-while-revalidate',
+          'cache-control': ONE_YEAR_CACHE,
           location: `/404/?from=${encodeURIComponent(originalUrl)}`,
         },
       }
@@ -199,7 +201,7 @@ export const getServerData = async ({
       status: 200,
       props: data ?? {},
       headers: {
-        'cache-control': 's-maxage=31536000, stale-while-revalidate',
+        'cache-control': ONE_YEAR_CACHE,
       },
     }
   } catch (err) {
