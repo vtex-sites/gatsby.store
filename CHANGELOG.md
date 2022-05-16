@@ -8,11 +8,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
+
 - Uses new WebOps Incremental Static Builds ([#47](https://github.com/vtex-sites/gatsby.store/pull/47))
 - `add_to_cart` and `remove_from_cart` analytics events to `CartItem` ([#43](https://github.com/vtex-sites/gatsby.store/pull/43))
 
 ### Changed
 
+- Applies styles to `Toast` ([#28](https://github.com/vtex-sites/gatsby.store/pull/28))
 - Added base files (`Getting Started`, `Theming`, `Colors`, `Typography` and `Icons`) to Storybook ([#26](https://github.com/vtex-sites/gatsby.store/pull/26))
 - Updated tokens' naming scheme ([#26](https://github.com/vtex-sites/gatsby.store/pull/26))
 - Uses CSS Modules to import CSS at `ImageGallery` component [#41](https://github.com/vtex-sites/gatsby.store/pull/41)
