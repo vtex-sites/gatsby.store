@@ -184,6 +184,8 @@ export const getServerData = async ({
 }: {
   params: Record<string, string>
 }) => {
+  const ONE_YEAR_CACHE = `s-maxage=31536000, stale-while-revalidate`
+
   try {
     const id = slug.split('-').pop()
 
@@ -200,7 +202,7 @@ export const getServerData = async ({
         status: 301,
         props: {},
         headers: {
-          'cache-control': 'public, max-age=0, stale-while-revalidate=31536000',
+          'cache-control': ONE_YEAR_CACHE,
           location: `/404/?from=${encodeURIComponent(originalUrl)}`,
         },
       }
@@ -210,7 +212,7 @@ export const getServerData = async ({
       status: 200,
       props: data ?? {},
       headers: {
-        'cache-control': 'public, max-age=0, stale-while-revalidate=31536000',
+        'cache-control': ONE_YEAR_CACHE,
       },
     }
   } catch (err) {
