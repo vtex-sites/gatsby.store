@@ -1,9 +1,4 @@
 /* eslint-disable react-hooks/rules-of-hooks */
-/**
- * Polyfill for dataloader.
- * TODO: Remove it once this is fixed: https://github.com/graphql/dataloader/issues/249
- * */
-import 'setimmediate'
 import {
   envelop,
   useExtendContext,
@@ -35,6 +30,9 @@ const apiOptions: APIOptions = {
   environment: storeConfig.api.environment as APIOptions['environment'],
   channel: storeConfig.channel,
   hideUnavailableItems: storeConfig.api.hideUnavailableItems,
+  flags: {
+    enableOrderFormSync: true,
+  },
 }
 
 export const apiSchema = getSchema(apiOptions)

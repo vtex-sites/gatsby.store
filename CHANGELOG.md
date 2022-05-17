@@ -7,15 +7,23 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-### Addded
+### Added
+- Uses new WebOps Incremental Static Builds ([#47](https://github.com/vtex-sites/gatsby.store/pull/47))
+- `add_to_cart` and `remove_from_cart` analytics events to `CartItem` ([#43](https://github.com/vtex-sites/gatsby.store/pull/43))
 
 ### Changed
+
+- Added base files (`Getting Started`, `Theming`, `Colors`, `Typography` and `Icons`) to Storybook ([#26](https://github.com/vtex-sites/gatsby.store/pull/26))
+- Updated tokens' naming scheme ([#26](https://github.com/vtex-sites/gatsby.store/pull/26))
+- Uses CSS Modules to import CSS at `ImageGallery` component [#41](https://github.com/vtex-sites/gatsby.store/pull/41)
 
 ### Deprecated
 
 ### Removed
 
 ### Fixed
+
+- Fix Storybook `@reach/router` issue ([#48](https://github.com/vtex-sites/gatsby.store/pull/48))
 
 ### Security
 
@@ -42,6 +50,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- Uses `ProductCard` component from FSUI instead of `Card` ([#34](https://github.com/vtex-sites/gatsby.store/pull/34))
 - General code improvements at `ImageGallerySelector` ([#40](https://github.com/vtex-sites/gatsby.store/pull/40))
 - Adjust `Alert` component for `CMS` ([#29](https://github.com/vtex-sites/gatsby.store/pull/29))
 - Accessibility tests to output what were the actual violations, not just how many ([#23](https://github.com/vtex-sites/gatsby.store/pull/23)).
@@ -111,7 +120,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Replaces `onDismissTransition` callback by a Provider that handles opening/closing of modal/slide over's behavior ([#426](https://github.com/vtex-sites/base.store/pull/426))
 - `OutOfStock` integrated with regionalization ([#441](https://github.com/vtex-sites/base.store/pull/441))
-- Move ProductShelf and ProductTiles to the client side ([#431](https://github.com/vtex-sites/base.store/pull/431))
+- Move `ProductShelf` and `ProductTiles` to the client side ([#431](https://github.com/vtex-sites/base.store/pull/431))
 - Drop gatsby-plugin-image in favor of custom/simpler component ([#401](https://github.com/vtex-sites/base.store/pull/401))
 - Replace `stylelint-config-rational-order` with `stylelint-config-recess-order` ([#415](https://github.com/vtex-sites/base.store/pull/415))
 - Simplify filters component by using `useReducer` instead of multiple `useState` ([#422](https://github.com/vtex-sites/base.store/pull/422))
@@ -149,7 +158,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 
 - Move inline styles to external stylesheet to improve TBT ([#408](https://github.com/vtex-sites/base.store/pull/408))
-- Changed ProductGallery and EmptyGallery styles to make the search results page ([#387](https://github.com/vtex-sites/base.store/pull/387))
+- Changed `ProductGallery` and `EmptyGallery` styles to make the search results page ([#387](https://github.com/vtex-sites/base.store/pull/387))
 - Moved all icons to use Icon component ([#386](https://github.com/vtex-sites/base.store/pull/386))
 - Moved common/IconsSVG to ui/Icons ([#386](https://github.com/vtex-sites/base.store/pull/386))
 - Moved EmptyState from common to ui folder ([#386](https://github.com/vtex-sites/base.store/pull/386))
