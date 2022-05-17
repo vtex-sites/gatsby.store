@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { Image } from 'src/components/ui/Image'
+import * as styles from 'src/components/ui/ImageGallery/image-gallery.module.scss'
 
 import { ImageGallerySelector, ImageZoom } from '.'
 
@@ -15,9 +16,13 @@ interface ImageGalleryProps {
 function ImageGallery({ images }: ImageGalleryProps) {
   const [selectedImageIdx, setSelectedImageIdx] = useState(0)
   const currentImage = images[selectedImageIdx]
+  const hasSelector = images.length > 1
 
   return (
-    <section data-fs-image-gallery>
+    <section
+      data-fs-image-gallery={!hasSelector ? 'without-selector' : ''}
+      className={styles.fsImageGallery}
+    >
       <ImageZoom>
         <Image
           src={currentImage.url}
@@ -28,7 +33,7 @@ function ImageGallery({ images }: ImageGalleryProps) {
           loading="eager"
         />
       </ImageZoom>
-      {images.length > 1 && (
+      {hasSelector && (
         <ImageGallerySelector
           images={images}
           currentImageIdx={selectedImageIdx}

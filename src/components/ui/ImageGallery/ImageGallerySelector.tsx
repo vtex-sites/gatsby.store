@@ -3,6 +3,7 @@ import { Button, IconButton } from '@faststore/ui'
 import Icon from 'src/components/ui/Icon'
 import { Image } from 'src/components/ui/Image'
 import { useInView } from 'react-intersection-observer'
+import * as styles from 'src/components/ui/ImageGallery/image-gallery-selector.module.scss'
 
 import type { ImageElementData } from './ImageGallery'
 
@@ -47,6 +48,7 @@ function ImageGallerySelector({ images, onSelect, currentImageIdx }: Props) {
   return (
     <section
       data-fs-image-gallery-selector
+      className={styles.fsImageGallerySelector}
       aria-roledescription="carousel"
       aria-label="Product images"
     >
