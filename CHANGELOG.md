@@ -13,6 +13,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- Uses CSS Modules to import CSS at `ImageGallery` component [#41](https://github.com/vtex-sites/gatsby.store/pull/41)
+
 ### Deprecated
 
 ### Removed
