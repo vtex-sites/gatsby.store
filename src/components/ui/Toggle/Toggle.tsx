@@ -22,6 +22,9 @@ export interface ToggleProps
    * Specifies that this input should be disabled.
    */
   disabled?: boolean
+  /**
+   * Controls the component's direction.
+   */
   variant?: 'horizontal' | 'vertical'
 }
 
