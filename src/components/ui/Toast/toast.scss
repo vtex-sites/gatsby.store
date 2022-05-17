@@ -31,7 +31,7 @@
 
   --fs-toast-content-title-size           : var(--fs-text-size-body);
   --fs-toast-content-title-weight         : var(--fs-text-weight-bold);
-  --fs-toast-content-title-line-height    : 1.25;
+  --fs-toast-content-title-line-height    : var(--fs-scale);
 
   --fs-toast-content-message-size         : var(--fs-toast-content-title-size);
   --fs-toast-content-message-line-height  : var(--fs-toast-content-title-line-height);
