@@ -5,7 +5,7 @@ import Icon from 'src/components/ui/Icon'
 function Toast() {
   const { toasts, popToast } = useUI()
   const toast = toasts[toasts.length - 1]
-  const ref = useRef<NodeJS.Timeout[]>([])
+  const timeoutRef = useRef<NodeJS.Timeout>()
 
   const [fade, setFade] = useState<'in' | 'out'>()
 
@@ -14,11 +14,13 @@ function Toast() {
   }, [toast])
 
   useEffect(() => {
-    if (fade === 'in') {
-      const id = setTimeout(() => setFade('out'), 2e3)
-
-      ref.current.push(id)
+    if (fade !== 'in') {
+      return
     }
+
+    timeoutRef.current = setTimeout(() => setFade('out'), 2e3)
+
+    return () => timeoutRef.current && clearTimeout(timeoutRef.current)
   }, [fade])
 
   if (toast === undefined) {
