@@ -39,8 +39,8 @@ function Toast() {
         </div>
       )}
       <div data-fs-toast-content>
-        {toast.title && <p data-fs-toast-content-title>{toast.title}</p>}
-        <p data-fs-toast-content-message>{toast.message}</p>
+        {toast.title && <p data-fs-toast-title>{toast.title}</p>}
+        <p data-fs-toast-message>{toast.message}</p>
       </div>
     </div>
   )
