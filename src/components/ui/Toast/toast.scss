@@ -13,7 +13,7 @@
   --fs-toast-margin                       : var(--fs-spacing-3) var(--fs-spacing-3) 0 var(--fs-spacing-3);
 
   --fs-toast-border-radius                : 8px;
-  --fs-toast-border-width                 : var(--fs-border-width-default);
+  --fs-toast-border-width                 : var(--fs-border-width);
   --fs-toast-border-color                 : transparent;
 
   --fs-toast-shadow                       : var(--fs-shadow);
@@ -25,7 +25,7 @@
   --fs-toast-icon-container-width         : var(--fs-spacing-7);
   --fs-toast-icon-container-height        : var(--fs-toast-icon-container-width);
   --fs-toast-icon-container-bkg-color     : var(--fs-color-primary-bkg-light);
-  --fs-toast-icon-container-border-radius : var(--fs-border-radius-default);
+  --fs-toast-icon-container-border-radius : var(--fs-border-radius);
 
   --fs-toast-content-padding              : var(--fs-spacing-0) var(--fs-spacing-2);
 
