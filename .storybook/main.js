@@ -27,6 +27,11 @@ module.exports = {
       }),
     ]
 
+    config.resolve.alias['@reach/router'] = resolve(
+      __dirname,
+      '../node_modules/@gatsbyjs/reach-router'
+    )
+
     return config
   },
 }
