@@ -15,10 +15,10 @@ function Toast() {
 
   useEffect(() => {
     if (fade !== 'in') {
-      return
+      return undefined
     }
 
-    timeoutRef.current = setTimeout(() => setFade('out'), 2e3)
+    timeoutRef.current = setTimeout(() => setFade('out'), 8e3)
 
     return () => timeoutRef.current && clearTimeout(timeoutRef.current)
   }, [fade])
@@ -29,6 +29,7 @@ function Toast() {
 
   return (
     <div
+      role="status"
       data-fs-toast
       data-fs-toast-state={fade}
       onAnimationEnd={() => fade === 'out' && popToast()}
