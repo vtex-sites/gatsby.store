@@ -41,12 +41,7 @@ const SearchHistory = ({ history = [], onClear }: SearchHistoryProps) => {
       <UIList variant="ordered">
         {searchHistory.map((item) => (
           <li key={item} data-fs-search-suggestion-item>
-            <Link
-              variant="display"
-              to={doSearch(item)}
-              target="_blank"
-              rel="noreferrer"
-            >
+            <Link variant="display" to={doSearch(item)}>
               <Icon
                 name="Clock"
                 width={18}
