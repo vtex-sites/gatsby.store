@@ -22,7 +22,11 @@ const doSearch = (term: string) => {
 }
 
 const SearchHistory = ({ history = [], onClear }: SearchHistoryProps) => {
-  const { searchHistory } = useSearchHistory(history)
+  const { searchHistory, clearSearchHistory } = useSearchHistory(history)
+  const onClearClick = () => {
+    clearSearchHistory()
+    onClear()
+  }
 
   if (!searchHistory.length) return null
 
@@ -30,7 +34,7 @@ const SearchHistory = ({ history = [], onClear }: SearchHistoryProps) => {
     <section data-fs-search-suggestion-section>
       <div data-fs-search-suggestion-header>
         <p data-fs-search-suggestion-title>History</p>
-        <Button variant="tertiary" onClick={onClear}>
+        <Button variant="tertiary" onClick={onClearClick}>
           Clear
         </Button>
       </div>
