@@ -57,9 +57,9 @@
   box-shadow: var(--fs-toast-shadow);
 
   @include media(">=tablet") {
-    top: 110px;
-    right: 25px;
-    max-width: 398px;
+    top: rem(110px);
+    right: var(--fs-spacing-4);
+    max-width: rem(398px);
   }
 
   &[data-fs-toast-state="in"] {
