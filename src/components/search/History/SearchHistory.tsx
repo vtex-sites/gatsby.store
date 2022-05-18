@@ -24,6 +24,8 @@ const doSearch = (term: string) => {
 const SearchHistory = ({ history = [], onClear }: SearchHistoryProps) => {
   const { searchHistory } = useSearchHistory(history)
 
+  if (!searchHistory.length) return null
+
   return (
     <section data-fs-search-suggestion-section>
       <div data-fs-search-suggestion-header>
