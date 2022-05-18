@@ -7,7 +7,6 @@ import useSearchHistory from 'src/sdk/search/useSearchHistory'
 
 export interface SearchHistoryProps {
   history?: string[]
-  onClear: () => void
 }
 
 const doSearch = (term: string) => {
@@ -21,12 +20,8 @@ const doSearch = (term: string) => {
   return `${pathname}${search}`
 }
 
-const SearchHistory = ({ history = [], onClear }: SearchHistoryProps) => {
+const SearchHistory = ({ history = [] }: SearchHistoryProps) => {
   const { searchHistory, clearSearchHistory } = useSearchHistory(history)
-  const onClearClick = () => {
-    clearSearchHistory()
-    onClear()
-  }
 
   if (!searchHistory.length) return null
 
@@ -34,7 +29,7 @@ const SearchHistory = ({ history = [], onClear }: SearchHistoryProps) => {
     <section data-fs-search-suggestion-section>
       <div data-fs-search-suggestion-header>
         <p data-fs-search-suggestion-title>History</p>
-        <Button variant="tertiary" onClick={onClearClick}>
+        <Button variant="tertiary" onClick={clearSearchHistory}>
           Clear
         </Button>
       </div>
