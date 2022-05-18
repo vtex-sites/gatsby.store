@@ -8,6 +8,8 @@ import type {
 } from '@generated/graphql'
 import type { SuggestionsProps } from 'src/components/ui/Search/Suggestions'
 
+import { SearchHistory } from '../History'
+
 const SearchSuggestionsQuery = gql`
   query SearchSuggestionsQuery($term: String!) {
     search(first: 10, term: $term) {
@@ -51,7 +53,12 @@ function Suggestions({ term = '', ...otherProps }: SuggestionsProps) {
   const { terms, products, loading } = useSuggestions(term)
 
   if (term.length === 0 && !loading) {
-    return <p>Top Search List</p>
+    return (
+      <>
+        <SearchHistory />
+        <p>Top Search List</p>
+      </>
+    )
   }
 
   if (loading) {
