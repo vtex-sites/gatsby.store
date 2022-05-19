@@ -9,6 +9,7 @@ import type {
 import type { SuggestionsProps } from 'src/components/ui/Search/Suggestions'
 
 import { SearchHistory } from '../History'
+import SuggestionsTopSearch from './SuggestionsTopSearch'
 
 const SearchSuggestionsQuery = gql`
   query SearchSuggestionsQuery($term: String!) {
@@ -56,7 +57,7 @@ function Suggestions({ term = '', ...otherProps }: SuggestionsProps) {
     return (
       <>
         <SearchHistory />
-        <p>Top Search List</p>
+        <SuggestionsTopSearch />
       </>
     )
   }

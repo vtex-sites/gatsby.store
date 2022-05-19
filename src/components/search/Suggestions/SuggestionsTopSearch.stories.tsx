@@ -22,12 +22,12 @@ const Template = (props: SuggestionsTopSearchProps) => (
 export const Default = Template.bind({})
 
 Default.args = {
-  searchedItems: [
-    { name: 'Office Supplies', href: '/office-supplies' },
-    { name: 'Headphones', href: '/headphones' },
-    { name: 'Notebooks', href: '/notebooks' },
-    { name: 'Laser Printer', href: '/laser-printer' },
-    { name: 'Bluetooth Keyboard', href: '/bluetooth-keyboard' },
+  topTerms: [
+    'Office Supplies',
+    'Headphones',
+    'Notebooks',
+    'Laser Printer',
+    'Bluetooth Keyboard',
   ],
 }
 

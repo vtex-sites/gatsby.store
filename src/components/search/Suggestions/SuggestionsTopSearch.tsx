@@ -1,8 +1,61 @@
+import { gql } from '@vtex/graphql-utils'
 import { List as UIList } from '@faststore/ui'
-import { forwardRef } from 'react'
+import { forwardRef, useEffect, useState } from 'react'
 import { Badge } from 'src/components/ui/Badge'
 import Link from 'src/components/ui/Link'
 import type { HTMLAttributes } from 'react'
+import { formatSearchState, initSearchState } from '@faststore/sdk'
+import type {
+  SearchSuggestionsQueryQuery,
+  SearchSuggestionsQueryQueryVariables,
+} from '@generated/graphql'
+import { request } from 'src/sdk/graphql/request'
+
+function searchPath(term: string) {
+  const { pathname, search } = formatSearchState(
+    initSearchState({
+      term,
+      base: '/s',
+    })
+  )
+
+  return `${pathname}${search}`
+}
+
+const TopSearchQuery = gql`
+  query SearchSuggestionsQuery {
+    search(first: 5) {
+      suggestions {
+        terms
+      }
+    }
+  }
+`
+
+function useTopSearch(initialTerms: string[] = []) {
+  const [topTerms, setTopTerms] =
+    useState<SearchSuggestionsQueryQuery['search']['suggestions']['terms']>(
+      initialTerms
+    )
+
+  const [loading, setLoading] = useState(true)
+
+  useEffect(() => {
+    request<SearchSuggestionsQueryQuery, SearchSuggestionsQueryQueryVariables>(
+      TopSearchQuery,
+      { term: '' }
+    )
+      .then((data) => {
+        setTopTerms(data.search.suggestions.terms)
+      })
+      .finally(() => setLoading(false))
+  }, [])
+
+  return {
+    terms: topTerms ?? [],
+    loading,
+  }
+}
 
 export interface SuggestionsTopSearchProps
   extends HTMLAttributes<HTMLDivElement> {
@@ -13,22 +66,20 @@ export interface SuggestionsTopSearchProps
   /**
    * List of top searched items
    */
-  // TODO: Adapts for the real received data type
-  searchedItems: LinkItem[]
-}
-
-type LinkItem = {
-  href: string
-  name: string
+  topTerms?: string[]
 }
 
 const SuggestionsTopSearch = forwardRef<
   HTMLDivElement,
   SuggestionsTopSearchProps
 >(function SuggestionsTopSearch(
-  { testId = 'top-search', searchedItems, ...otherProps },
+  { testId = 'top-search', topTerms, ...otherProps },
   ref
 ) {
+  const { terms, loading } = useTopSearch(topTerms)
+
+  if (loading) return <span>Loading</span>
+
   return (
     <section
       ref={ref}
@@ -40,11 +91,11 @@ const SuggestionsTopSearch = forwardRef<
         <p data-fs-search-suggestion-title>Top Search</p>
       </div>
       <UIList variant="ordered">
-        {searchedItems.map((item, index) => (
-          <li key={item.name} data-fs-search-suggestion-item>
-            <Link variant="display" to={item.href}>
+        {terms.map((term, index) => (
+          <li key={term} data-fs-search-suggestion-item>
+            <Link variant="display" to={searchPath(term)}>
               <Badge variant="info">{index + 1}</Badge>
-              {item.name}
+              {term}
             </Link>
           </li>
         ))}
