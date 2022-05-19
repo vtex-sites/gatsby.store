@@ -1,5 +1,6 @@
 import ProductGridSkeleton from 'src/components/skeletons/ProductGridSkeleton'
 import type { ProductSummary_ProductFragment } from '@generated/graphql'
+import * as styles from 'src/components/product/ProductGrid/product-grid.module.scss'
 
 import ProductCard from '../ProductCard'
 
@@ -12,7 +13,7 @@ interface Props {
 function ProductGrid({ products, page, pageSize }: Props) {
   return (
     <ProductGridSkeleton loading={products.length === 0}>
-      <ul className="product-grid">
+      <ul className={styles.productGrid}>
         {products.map(({ node: product }, idx) => (
           <li key={`${product.id}`}>
             <ProductCard
