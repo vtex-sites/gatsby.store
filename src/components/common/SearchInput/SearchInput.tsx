@@ -1,9 +1,5 @@
 import type { SearchEvent } from '@faststore/sdk'
-import {
-  formatSearchState,
-  initSearchState,
-  sendAnalyticsEvent,
-} from '@faststore/sdk'
+import { sendAnalyticsEvent } from '@faststore/sdk'
 import type {
   SearchInputProps as UISearchInputProps,
   SearchInputRef,
@@ -13,6 +9,7 @@ import { navigate } from 'gatsby'
 import { forwardRef, lazy, Suspense, useRef, useState } from 'react'
 import Icon from 'src/components/ui/Icon'
 import useSearchHistory from 'src/sdk/search/useSearchHistory'
+import { formatSearchPath } from 'src/sdk/search/utils'
 import useOnClickOutside from 'src/sdk/ui/useOnClickOutside'
 
 const Suggestions = lazy(() => import('src/components/search/Suggestions'))
@@ -23,19 +20,12 @@ declare type SearchInputProps = {
 } & Omit<UISearchInputProps, 'onSubmit'>
 
 const doSearch = async (term: string) => {
-  const { pathname, search } = formatSearchState(
-    initSearchState({
-      term,
-      base: '/s',
-    })
-  )
-
   sendAnalyticsEvent<SearchEvent>({
     name: 'search',
     params: { search_term: term },
   })
 
-  navigate(`${pathname}${search}`)
+  navigate(formatSearchPath(term))
 }
 
 const SearchInput = forwardRef<SearchInputRef, SearchInputProps>(

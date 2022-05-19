@@ -4,23 +4,12 @@ import { forwardRef, useEffect, useState } from 'react'
 import { Badge } from 'src/components/ui/Badge'
 import Link from 'src/components/ui/Link'
 import type { HTMLAttributes } from 'react'
-import { formatSearchState, initSearchState } from '@faststore/sdk'
 import type {
   SearchSuggestionsQueryQuery,
   SearchSuggestionsQueryQueryVariables,
 } from '@generated/graphql'
 import { request } from 'src/sdk/graphql/request'
-
-function searchPath(term: string) {
-  const { pathname, search } = formatSearchState(
-    initSearchState({
-      term,
-      base: '/s',
-    })
-  )
-
-  return `${pathname}${search}`
-}
+import { formatSearchPath } from 'src/sdk/search/utils'
 
 const TopSearchQuery = gql`
   query SearchSuggestionsQuery {
@@ -93,7 +82,7 @@ const SuggestionsTopSearch = forwardRef<
       <UIList variant="ordered">
         {terms.map((term, index) => (
           <li key={term} data-fs-search-suggestion-item>
-            <Link variant="display" to={searchPath(term)}>
+            <Link variant="display" to={formatSearchPath(term)}>
               <Badge variant="info">{index + 1}</Badge>
               {term}
             </Link>

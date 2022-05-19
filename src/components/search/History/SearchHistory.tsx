@@ -1,23 +1,12 @@
-import { formatSearchState, initSearchState } from '@faststore/sdk'
 import { List as UIList } from '@faststore/ui'
 import Button from 'src/components/ui/Button'
 import Icon from 'src/components/ui/Icon'
 import Link from 'src/components/ui/Link'
 import useSearchHistory from 'src/sdk/search/useSearchHistory'
+import { formatSearchPath } from 'src/sdk/search/utils'
 
 export interface SearchHistoryProps {
   history?: string[]
-}
-
-const doSearch = (term: string) => {
-  const { pathname, search } = formatSearchState(
-    initSearchState({
-      term,
-      base: '/s',
-    })
-  )
-
-  return `${pathname}${search}`
 }
 
 const SearchHistory = ({ history = [] }: SearchHistoryProps) => {
@@ -36,7 +25,7 @@ const SearchHistory = ({ history = [] }: SearchHistoryProps) => {
       <UIList variant="ordered">
         {searchHistory.map((item) => (
           <li key={item} data-fs-search-suggestion-item>
-            <Link variant="display" to={doSearch(item)}>
+            <Link variant="display" to={formatSearchPath(item)}>
               <Icon
                 name="Clock"
                 width={18}
