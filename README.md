@@ -249,7 +249,7 @@ Now, include the component's CSS into the Store's CSS. Open `src/styles/global/c
 
 ```scss
 // ...
-@import "src/components/ui/Button/button.scss";
+@import 'src/components/ui/Button/button.scss';
 // ...
 ```
 
@@ -324,6 +324,7 @@ The aforementioned guide works well for UI components. However, components like 
 ```
 
 ### Managing SVG Icons
+
 Icons help build web pages by illustrating concepts and improving website navigation. However, using icons can decrease the page's performance. One option to avoid the decrease of the page's performance is to use SVGs from a single SVG file, located in `/static/icons.svg`, and load them with the `ui/Icon` component.
 
 In the following steps, learn how to add and use a new SVG icon and avoid decreasing page performance while using an icon.
@@ -333,6 +334,7 @@ In the following steps, learn how to add and use a new SVG icon and avoid decrea
 > This is a recommendation while using icons on a web page. Evaluate if this fits in your project.
 
 #### Adding an SVG icon
+
 1. In the SVG file, change the `svg` tag to `symbol`.
 2. Add an `id` to the symbol. Remember to use an unique `id` and do not replicate it.
 3. Remove unnecessary HTML/SVG properties to allow you to style and decrease the final file size, such as `fill`, `stroke-width`, `width`, `height`, and `color`.
@@ -384,8 +386,8 @@ We also listed a couple of customizable tokens so you can easily change your bod
 If you feel the need to edit some of the color decisions, you can enter `tokens.scss` and update the semantical tokens. E.g.:
 
 ```scss
---fs-border-color-default: var(--fs-color-neutral-4); // Current
---fs-border-color-default: var(--fs-color-neutral-5); // Updated
+--fs-border-color: var(--fs-color-neutral-4); // Current
+--fs-border-color: var(--fs-color-neutral-5); // Updated
 ```
 
 #### <b>Typography</b>
