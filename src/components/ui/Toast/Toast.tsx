@@ -18,7 +18,7 @@ function Toast() {
       return undefined
     }
 
-    timeoutRef.current = setTimeout(() => setFade('out'), 8e3)
+    timeoutRef.current = setTimeout(() => setFade('out'), 6e3)
 
     return () => timeoutRef.current && clearTimeout(timeoutRef.current)
   }, [fade])
