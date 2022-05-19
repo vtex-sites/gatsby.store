@@ -13,6 +13,7 @@ import { useFormattedPrice } from 'src/sdk/product/useFormattedPrice'
 import { useProductLink } from 'src/sdk/product/useProductLink'
 import type { ReactNode } from 'react'
 import type { ProductSummary_ProductFragment } from '@generated/graphql'
+import * as styles from 'src/components/product/ProductCard/product-card.module.scss'
 
 type Variant = 'wide' | 'default'
 
@@ -54,6 +55,7 @@ function ProductCard({
       data-fs-product-card-bordered={bordered}
       data-fs-product-card-actionable={!!ButtonBuy}
       data-fs-product-card-sku={sku}
+      className={styles.fsProductCard}
       {...otherProps}
     >
       <UIProductCardImage>
