@@ -1,0 +1,191 @@
+import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs'
+
+import Button from '.'
+
+<Meta
+  argTypes={{
+    icon: { control: { disable: true } },
+  }}
+  component={Button}
+  title="Atoms/Button"
+/>
+
+export const Template = (args) => <Button {...args}>Button</Button>
+
+<header>
+
+# Button
+
+A element that allows users to take actions, make choices or trigger an event with a single tap.
+
+</header>
+
+The `Button` component uses [FastStore UI Button](https://www.faststore.dev/reference/ui/atoms/Button) as base.
+
+### Import
+
+`import Button from '../components/ui/Button'`
+
+### Usage
+
+<Canvas>
+  <Story name="Button">{Template.bind({})}</Story>
+</Canvas>
+
+<ArgsTable story="Button" />
+
+| Local token                                  | Default value/Global token linked                                                                 |
+| -------------------------------------------- | ------------------------------------------------------------------------------------------------- |
+| <code>--fs-button-padding</code>             | <code>calc(var(--fs-spacing-1) - (var(--fs-button-border-width) \* 2)) var(--fs-spacing-3)</code> |
+| <code>--fs-button-height</code>              | <code>var(--fs-control-tap-size)</code>                                                           |
+| <code>--fs-button-gap</code>                 | <code>var(--fs-spacing-2)</code>                                                                  |
+|                                              |                                                                                                   |
+| <code>--fs-button-shadow</code>              | <code>none</code>                                                                                 |
+| <code>--fs-button-shadow-hover</code>        | <code>none</code>                                                                                 |
+|                                              |                                                                                                   |
+| <code>--fs-button-border-radius</code>       | <code>var(--fs-border-radius-default)</code>                                                      |
+| <code>--fs-button-border-width</code>        | <code>var(--fs-border-width-thick)</code>                                                         |
+| <code>--fs-button-border-color</code>        | <code>transparent</code>                                                                          |
+|                                              |                                                                                                   |
+| <code>--fs-button-text-size</code>           | <code>var(--fs-text-size-base)</code>                                                             |
+| <code>--fs-button-text-weight</code>         | <code>bold</code>                                                                                 |
+|                                              |                                                                                                   |
+| <code>--fs-button-transition-function</code> | <code>var(--fs-transition-function)</code>                                                        |
+| <code>--fs-button-transition-property</code> | <code>var(--fs-transition-property)</code>                                                        |
+| <code>--fs-button-transition-timing</code>   | <code>var(--fs-transition-timing)</code>                                                          |
+
+<br />
+
+## Nested Elements
+
+### Icon
+
+| Local token                           | Default value/Global token linked  |
+| ------------------------------------- | ---------------------------------- |
+| <code>--fs-button-icon-padding</code> | <code>0 var(--fs-spacing-1)</code> |
+
+## Variants
+
+<br />
+
+### Primary
+
+<Canvas>
+  <Story name="Primary" args={{ variant: 'primary' }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+| Local token                                                  | Default value/Global token linked                     |
+| ------------------------------------------------------------ | ----------------------------------------------------- |
+| <code>--fs-button-primary-text-color</code>                  | <code>var(--fs-color-primary-text)</code>             |
+| <code>--fs-button-primary-text-color-hover</code>            | <code>var(--fs-color-primary-text)</code>             |
+| <code>--fs-button-primary-text-color-active</code>           | <code>var(--fs-color-primary-text)</code>             |
+| <code>--fs-button-primary-bkg-color</code>                   | <code>var(--fs-color-primary-bkg)</code>              |
+| <code>--fs-button-primary-bkg-color-hover</code>             | <code>var(--fs-color-primary-bkg-hover)</code>        |
+| <code>--fs-button-primary-bkg-color-active</code>            | <code>var(--fs-color-primary-bkg-active)</code>       |
+| <code>--fs-button-primary-border-color</code>                | <code>transparent</code>                              |
+| <code>--fs-button-primary-border-color-hover</code>          | <code>var(--fs-button-primary-border-color)</code>    |
+| <code>--fs-button-primary-border-color-active</code>         | <code>var(--fs-button-primary-border-color)</code>    |
+| <code>--fs-button-primary-shadow-hover</code>                | <code>var(--fs-button-shadow-hover)</code>            |
+|                                                              |                                                       |
+| <code>--fs-button-primary-inverse-text-color</code>          | <code>var(--fs-button-primary-bkg-color)</code>       |
+| <code>--fs-button-primary-inverse-text-color-hover</code>    | <code>var(--fs-button-primary-bkg-color)</code>       |
+| <code>--fs-button-primary-inverse-text-color-active</code>   | <code>var(--fs-button-primary-bkg-color)</code>       |
+| <code>--fs-button-primary-inverse-bkg-color</code>           | <code>var(--fs-button-primary-text-color)</code>      |
+| <code>--fs-button-primary-inverse-bkg-color-hover</code>     | <code>var(--fs-color-primary-bkg-light)</code>        |
+| <code>--fs-button-primary-inverse-bkg-color-active</code>    | <code>var(--fs-color-primary-bkg-light-active)</code> |
+| <code>--fs-button-primary-inverse-border-color</code>        | <code>var(--fs-button-primary-border-color)</code>    |
+| <code>--fs-button-primary-inverse-border-color-hover</code>  | <code>var(--fs-button-primary-border-color)</code>    |
+| <code>--fs-button-primary-inverse-border-color-active</code> | <code>var(--fs-button-primary-border-color)</code>    |
+| <code>--fs-button-primary-inverse-shadow-hover</code>        | <code>var(--fs-button-shadow-hover)</code>            |
+
+<br />
+
+### Secondary
+
+<Canvas>
+  <Story name="Secondary" args={{ variant: 'secondary' }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+| Local token                                                    | Default value/Global token linked                                |
+| -------------------------------------------------------------- | ---------------------------------------------------------------- |
+| <code>--fs-button-secondary-text-color</code>                  | <code>var(--fs-color-secondary-text)</code>                      |
+| <code>--fs-button-secondary-text-color-hover</code>            | <code>var(--fs-color-text-inverse)</code>                        |
+| <code>--fs-button-secondary-text-color-active</code>           | <code>var(--fs-color-text-inverse)</code>                        |
+| <code>--fs-button-secondary-bkg-color</code>                   | <code>var(--fs-color-secondary-bkg)</code>                       |
+| <code>--fs-button-secondary-bkg-color-hover</code>             | <code>var(--fs-color-secondary-bkg-hover)</code>                 |
+| <code>--fs-button-secondary-bkg-color-active</code>            | <code>var(--fs-color-secondary-bkg-active)</code>                |
+| <code>--fs-button-secondary-border-color</code>                | <code>var(--fs-color-secondary-text)</code>                      |
+| <code>--fs-button-secondary-border-color-hover</code>          | <code>var(--fs-button-secondary-bkg-color-hover)</code>          |
+| <code>--fs-button-secondary-border-color-active</code>         | <code>var(--fs-button-secondary-bkg-color-active)</code>         |
+| <code>--fs-button-secondary-shadow-hover</code>                | <code>var(--fs-button-shadow-hover)</code>                       |
+|                                                                |                                                                  |
+| <code>--fs-button-secondary-inverse-text-color</code>          | <code>var(--fs-color-text-inverse)</code>                        |
+| <code>--fs-button-secondary-inverse-text-color-hover</code>    | <code>var(--fs-color-secondary-text)</code>                      |
+| <code>--fs-button-secondary-inverse-text-color-active</code>   | <code>var(--fs-color-secondary-text)</code>                      |
+| <code>--fs-button-secondary-inverse-bkg-color</code>           | <code>var(--fs-color-secondary-bkg)</code>                       |
+| <code>--fs-button-secondary-inverse-bkg-color-hover</code>     | <code>var(--fs-color-text-inverse)</code>                        |
+| <code>--fs-button-secondary-inverse-bkg-color-active</code>    | <code>var(--fs-color-secondary-bkg-light)</code>                 |
+| <code>--fs-button-secondary-inverse-border-color</code>        | <code>var(--fs-button-secondary-inverse-text-color)</code>       |
+| <code>--fs-button-secondary-inverse-border-color-hover</code>  | <code>var(--fs-button-secondary-inverse-bkg-color-hover)</code>  |
+| <code>--fs-button-secondary-inverse-border-color-active</code> | <code>var(--fs-button-secondary-inverse-bkg-color-active)</code> |
+| <code>--fs-button-secondary-inverse-shadow-hover</code>        | <code>var(--fs-button-shadow-hover)</code>                       |
+
+<br />
+
+### Tertiary
+
+<Canvas>
+  <Story name="Tertiary" args={{ variant: 'tertiary' }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+| Local token                                                   | Default value/Global token linked                         |
+| ------------------------------------------------------------- | --------------------------------------------------------- |
+| <code>--fs-button-tertiary-text-color</code>                  | <code>var(--fs-color-tertiary-text)</code>                |
+| <code>--fs-button-tertiary-text-color-hover</code>            | <code>var(--fs-color-tertiary-text)</code>                |
+| <code>--fs-button-tertiary-text-color-active</code>           | <code>var(--fs-button-primary-bkg-color)</code>           |
+| <code>--fs-button-tertiary-bkg-color</code>                   | <code>var(--fs-color-tertiary-bkg)</code>                 |
+| <code>--fs-button-tertiary-bkg-color-hover</code>             | <code>var(--fs-color-tertiary-bkg-hover)</code>           |
+| <code>--fs-button-tertiary-bkg-color-active</code>            | <code>var(--fs-color-tertiary-bkg-active)</code>          |
+| <code>--fs-button-tertiary-border-color</code>                | <code>transparent</code>                                  |
+| <code>--fs-button-tertiary-border-color-hover</code>          | <code>var(--fs-button-tertiary-border-color)</code>       |
+| <code>--fs-button-tertiary-border-color-active</code>         | <code>var(--fs-button-tertiary-border-color)</code>       |
+| <code>--fs-button-tertiary-shadow-hover</code>                | <code>var(--fs-button-shadow-hover)</code>                |
+|                                                               |                                                           |
+| <code>--fs-button-tertiary-inverse-text-color</code>          | <code>var(--fs-color-text-inverse)</code>                 |
+| <code>--fs-button-tertiary-inverse-text-color-hover</code>    | <code>var(--fs-color-text-inverse)</code>                 |
+| <code>--fs-button-tertiary-inverse-text-color-active</code>   | <code>var(--fs-color-text-inverse)</code>                 |
+| <code>--fs-button-tertiary-inverse-bkg-color</code>           | <code>var(--fs-button-secondary-inverse-bkg-color)</code> |
+| <code>--fs-button-tertiary-inverse-bkg-color-hover</code>     | <code>var(--fs-button-primary-bkg-color-hover)</code>     |
+| <code>--fs-button-tertiary-inverse-bkg-color-active</code>    | <code>var(--fs-button-primary-bkg-color-active)</code>    |
+| <code>--fs-button-tertiary-inverse-border-color</code>        | <code>var(--fs-button-tertiary-border-color)</code>       |
+| <code>--fs-button-tertiary-inverse-border-color-hover</code>  | <code>var(--fs-button-tertiary-border-color)</code>       |
+| <code>--fs-button-tertiary-inverse-border-color-active</code> | <code>var(--fs-button-tertiary-border-color)</code>       |
+| <code>--fs-button-tertiary-inverse-shadow-hover</code>        | <code>var(--fs-button-shadow-hover)</code>                |
+
+<br />
+
+## Size Variants
+
+<br />
+
+### Small
+
+<Canvas>
+  <Story name="Small" args={{ size: 'small' }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+| Local token                               | Default value/Global token linked                    |
+| ----------------------------------------- | ---------------------------------------------------- |
+| <code>--fs-button-small-padding</code>    | <code>var(--fs-spacing-0) var(--fs-spacing-1)</code> |
+| <code>--fs-button-small-min-height</code> | <code>var(--fs-spacing-5)</code>                     |
+| <code>--fs-button-small-gap</code>        | <code>var(--fs-spacing-1)</code>                     |
+
+<br />
