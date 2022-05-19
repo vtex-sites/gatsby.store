@@ -14,6 +14,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- Uses CSS Modules on `ProductCard` component [#54](https://github.com/vtex-sites/gatsby.store/pull/54)
+- Uses CSS Modules on `ProductGrid` component [#54](https://github.com/vtex-sites/gatsby.store/pull/54)
 - Applies styles to `Toast` ([#28](https://github.com/vtex-sites/gatsby.store/pull/28))
 - Added base files (`Getting Started`, `Theming`, `Colors`, `Typography` and `Icons`) to Storybook ([#26](https://github.com/vtex-sites/gatsby.store/pull/26))
 - Updated tokens' naming scheme ([#26](https://github.com/vtex-sites/gatsby.store/pull/26))
