@@ -8,7 +8,7 @@ interface Incentive {
   secondLineText?: string
 }
 
-interface Props {
+export interface IncentivesProps {
   incentives: Incentive[]
   /**
    * Controls whether the component will be colored or not.
@@ -24,7 +24,7 @@ function Incentives({
   incentives,
   variant = 'horizontal',
   colored = false,
-}: Props) {
+}: IncentivesProps) {
   return (
     <div
       data-fs-incentives

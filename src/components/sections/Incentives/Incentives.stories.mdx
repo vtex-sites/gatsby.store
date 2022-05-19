@@ -1,0 +1,66 @@
+import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs'
+
+import Incentives, IncentivesMock from '.'
+
+<Meta title="Organisms/Incentives" component={Incentives} />
+
+export const Template = (args) => <Incentives {...args} />
+
+<header>
+
+# Incentives
+
+Banners are used for advertising brands, products, and/or collections. They comprise a title, some description (only available for the `Secondary` variation), and a call-to-action button.
+
+</header>
+
+### Import
+
+`import Incentives from '../components/sections/Incentives'`
+
+### Usage
+
+<Canvas>
+  <Story
+    name="Incentives"
+    args={{
+      incentives={IncentivesMock}
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<ArgsTable story="Incentives" />
+
+| Local token                              | Default value/Global token linked    |
+| ---------------------------------------- | ------------------------------------ |
+| <code>--fs-banner-padding-mobile</code>  | <code>var(--fs-spacing-6) 5%</code>  |
+| <code>--fs-banner-padding-desktop</code> | <code>var(--fs-spacing-9) 15%</code> |
+
+<br />
+
+## Nested Elements
+
+### Link
+
+| Local token                              | Default value/Global token linked |
+| ---------------------------------------- | --------------------------------- |
+| <code>--fs-banner-link-min-width</code>  | <code>11.25rem</code>             |
+| <code>--fs-banner-link-margin-top</code> | <code>var(--fs-spacing-6)</code>  |
+
+### Title
+
+| Local token                                | Default value/Global token linked       |
+| ------------------------------------------ | --------------------------------------- |
+| <code>--fs-banner-title-size</code>        | <code>var(--fs-text-size-lead)</code>   |
+| <code>--fs-banner-title-weight</code>      | <code>var(--fs-text-weight-bold)</code> |
+| <code>--fs-banner-title-line-height</code> | <code>1.2</code>                        |
+
+<br />
+
+## Variants
+
+<br />
+
+### Primary
