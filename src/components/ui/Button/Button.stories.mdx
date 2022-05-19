@@ -1,6 +1,7 @@
 import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs'
 
 import Button from '.'
+import Icon from 'src/components/ui/Icon'
 
 <Meta
   argTypes={{
@@ -10,7 +11,22 @@ import Button from '.'
   title="Atoms/Button"
 />
 
-export const Template = (args) => <Button {...args}>Button</Button>
+export const Template = ({ inverse, ...args }) => {
+  return inverse ? (
+    <div
+      style={{
+        padding: '10px',
+        backgroundColor: '#e3e6e8',
+      }}
+    >
+      <Button inverse {...args}>
+        Button
+      </Button>
+    </div>
+  ) : (
+    <Button {...args}>Button</Button>
+  )
+}
 
 <header>
 
@@ -59,6 +75,18 @@ The `Button` component uses [FastStore UI Button](https://www.faststore.dev/refe
 ## Nested Elements
 
 ### Icon
+
+<Canvas>
+  <Story
+    name="Icon"
+    args={{
+      iconPosition: 'right',
+      icon: <Icon name="List" width="18" height="18" />,
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
 
 | Local token                           | Default value/Global token linked  |
 | ------------------------------------- | ---------------------------------- |
