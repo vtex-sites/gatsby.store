@@ -1974,10 +1974,9 @@
     minimatch "^3.0.4"
     strip-json-comments "^3.1.1"
 
-"@faststore/api@^1.8.33":
+"@faststore/api@https://pkg.csb.dev/vtex/faststore/commit/f17223e4/@faststore/api":
   version "1.8.33"
-  resolved "https://registry.yarnpkg.com/@faststore/api/-/api-1.8.33.tgz#227783e5430bac4fc34501fb969b7ac0e6f75d1d"
-  integrity sha512-OahUnBxxxNxeBQQVAHbc2uCpDbwcpcB3h+laxWaNoEHgy1AczOcO/AAW6A9oTrl2xyzAVK3oE1ER9Ds+xKbm/g==
+  resolved "https://pkg.csb.dev/vtex/faststore/commit/f17223e4/@faststore/api#e9d39efda30171e490c21de9dcf886303970c4a6"
   dependencies:
     "@graphql-tools/schema" "^8.2.0"
     "@rollup/plugin-graphql" "^1.0.0"
