@@ -2,7 +2,7 @@ import { useStorage } from '@faststore/sdk'
 
 const storageKey = 'main::store::searchHistory'
 
-const MAX_HISTORY_SIZE = 5
+const MAX_HISTORY_SIZE = 4
 
 export default function useSearchHistory(
   history: string[] = [],
