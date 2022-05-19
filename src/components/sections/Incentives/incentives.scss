@@ -89,3 +89,66 @@
     background-color: var(--fs-color-primary-bkg-light);
   }
 }
+
+//////////////////////////////////////////////////////////////////////////////////////
+
+[data-fs-incentives] {
+  // --------------------------------------------------------
+  // Design Tokens for Incentives
+  // --------------------------------------------------------
+
+  // Default properties
+  --fs-incentives-display              : flex;
+  --fs-incentives-flex-direction       : column;
+  --fs-incentives-align-items          : center;
+  --fs-incentives-justify-content      : center;
+  --fs-incentives-text-align           : center;
+
+  // p
+  --fs-incentives-font-weight: var(--fs-text-weight-bold);
+  --fs-incentives-line-height: 1.42;
+
+  // span
+
+  // p & span
+
+  // Colored
+  --fs-incentives-colored-padding-top       : var(--fs-spacing-4);
+  --fs-incentives-colored-padding-bottom    : var(--fs-spacing-4);
+  --fs-incentives-colored-background-color  : var(--fs-color-primary-bkg-light);
+
+  // --------------------------------------------------------
+  // Structural Styles
+  // --------------------------------------------------------
+
+  display: var(--fs-incentives-display);
+  flex-direction: var(--fs-incentives-flex-direction);
+  align-items: var(--fs-incentives-align-items);
+  justify-content: var(--fs-incentives-justify-content);
+
+  // Incentives Colored
+  &.incentives--colored {
+    padding-top: var(--fs-incentives-colored-padding-top);
+    padding-bottom: var(--fs-incentives-colored-padding-bottom);
+    background-color: var(--fs-incentives-colored-background-color);
+  }
+}
+
+p, [data-fs-incentives] {
+  font-weight: var(--fs-text-weight-bold);
+  line-height: 1.42;
+}
+
+span, [data-fs-incentives] {
+  display: block;
+  line-height: 1.14;
+  white-space: nowrap;
+}
+
+p, span, [data-fs-incentives] {
+  font-size: var(--fs-text-size-1);
+}
+
+[data-incentive-content][data-fs-incentives] {
+  text-align: var(--fs-incentives-text-align);
+}
