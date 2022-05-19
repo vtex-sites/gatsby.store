@@ -10,12 +10,12 @@ interface Incentive {
 
 export interface IncentivesProps {
   incentives: Incentive[]
-  classes?: string
+  colored?: boolean
 }
 
-function Incentives({ incentives, classes = '' }: IncentivesProps) {
+function Incentives({ incentives, colored = false }: IncentivesProps) {
   return (
-    <div className={`incentives ${classes} layout__content-full`}>
+    <div data-fs-incentives data-fs-incentives-colored={colored}>
       <UIList variant="unordered" className="layout__content">
         {incentives.map((incentive, index) => (
           <li key={String(index)}>

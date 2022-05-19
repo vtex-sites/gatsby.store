@@ -1,8 +1,34 @@
 @import "src/styles/scaffold";
 
-.incentives {
+[data-fs-incentives] {
+  // --------------------------------------------------------
+  // Design Tokens for Incentives
+  // --------------------------------------------------------
+
+  // Default properties
+  --fs-incentives-bkg-color            : var(--fs-color-primary-bkg-light);
+  --fs-incentives-padding-top          : var(--fs-spacing-4);
+  --fs-incentives-padding-bottom       : var(--fs-incentives-padding-top);
+  --fs-incentives-border-color         : var(--fs-border-color-light);
+  --fs-incentives-border-width         : var(--fs-border-width);
+
+  // Title
+  --fs-incentives-title-size           : var(--fs-text-size-1);
+  --fs-incentives-title-weight         : var(--fs-text-weight-bold);
+  --fs-incentives-title-line-height    : 1.42;
+
+  // Description
+  --fs-incentives-description-size          : var(--fs-incentives-title-size);
+  --fs-incentives-description-line-height   : 1.14;
+
+  // --------------------------------------------------------
+  // Structural Styles
+  // --------------------------------------------------------
+
   display: flex;
   justify-content: center;
+  padding-top: var(--fs-incentives-padding-top);
+  padding-bottom: var(--fs-incentives-padding-bottom);
 
   [data-store-list] {
     display: flex;
@@ -38,7 +64,7 @@
 
     li {
       &:not(:last-child) {
-        border-right: 1px solid var(--fs-border-color-light);
+        border-right: var(--fs-incentives-border-width) solid var(--fs-incentives-border-color);
       }
     }
   }
@@ -49,18 +75,16 @@
     align-items: center;
     justify-content: center;
 
-    p, span {
-      font-size: var(--fs-text-size-1);
-    }
-
     p {
-      font-weight: var(--fs-text-weight-bold);
-      line-height: 1.42;
+      font-size: var(--fs-incentives-title-size);
+      font-weight: var(--fs-incentives-title-weight);
+      line-height: var(--fs-incentives-title-line-height);
     }
 
     span {
       display: block;
-      line-height: 1.14;
+      font-size: var(--fs-incentives-description-size);
+      line-height: var(--fs-incentives-description-line-height);
       white-space: nowrap;
     }
 
@@ -82,73 +106,12 @@
       }
     }
   }
-
-  &.incentives--colored {
-    padding-top: var(--fs-spacing-4);
-    padding-bottom: var(--fs-spacing-4);
-    background-color: var(--fs-color-primary-bkg-light);
-  }
 }
 
-//////////////////////////////////////////////////////////////////////////////////////
+// --------------------------------------------------------
+// Variants Styles
+// --------------------------------------------------------
 
-[data-fs-incentives] {
-  // --------------------------------------------------------
-  // Design Tokens for Incentives
-  // --------------------------------------------------------
-
-  // Default properties
-  --fs-incentives-display              : flex;
-  --fs-incentives-flex-direction       : column;
-  --fs-incentives-align-items          : center;
-  --fs-incentives-justify-content      : center;
-  --fs-incentives-text-align           : center;
-
-  // p
-  --fs-incentives-font-weight: var(--fs-text-weight-bold);
-  --fs-incentives-line-height: 1.42;
-
-  // span
-
-  // p & span
-
-  // Colored
-  --fs-incentives-colored-padding-top       : var(--fs-spacing-4);
-  --fs-incentives-colored-padding-bottom    : var(--fs-spacing-4);
-  --fs-incentives-colored-background-color  : var(--fs-color-primary-bkg-light);
-
-  // --------------------------------------------------------
-  // Structural Styles
-  // --------------------------------------------------------
-
-  display: var(--fs-incentives-display);
-  flex-direction: var(--fs-incentives-flex-direction);
-  align-items: var(--fs-incentives-align-items);
-  justify-content: var(--fs-incentives-justify-content);
-
-  // Incentives Colored
-  &.incentives--colored {
-    padding-top: var(--fs-incentives-colored-padding-top);
-    padding-bottom: var(--fs-incentives-colored-padding-bottom);
-    background-color: var(--fs-incentives-colored-background-color);
-  }
-}
-
-p, [data-fs-incentives] {
-  font-weight: var(--fs-text-weight-bold);
-  line-height: 1.42;
-}
-
-span, [data-fs-incentives] {
-  display: block;
-  line-height: 1.14;
-  white-space: nowrap;
-}
-
-p, span, [data-fs-incentives] {
-  font-size: var(--fs-text-size-1);
-}
-
-[data-incentive-content][data-fs-incentives] {
-  text-align: var(--fs-incentives-text-align);
+[data-fs-incentives-colored="true"] {
+  background-color: var(--fs-incentives-bkg-color);
 }
