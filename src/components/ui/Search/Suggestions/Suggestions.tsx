@@ -1,8 +1,9 @@
 import { List as UIList } from '@faststore/ui'
 import SuggestionProductCard from 'src/components/search/SuggestionProductCard'
-import Button from 'src/components/ui/Button'
+import Link from 'src/components/ui/Link'
 import type { ProductSummary_ProductFragment } from '@generated/graphql'
 import type { HTMLAttributes } from 'react'
+import { formatSearchPath } from 'src/sdk/search/utils'
 
 function formatSearchTerm(
   indexSubstring: number,
@@ -80,9 +81,12 @@ function Suggestions({
         <UIList data-fs-search-suggestion-section>
           {terms?.map((suggestion) => (
             <li key={suggestion} data-fs-search-suggestion-item>
-              <Button onClick={() => onSearch(suggestion)}>
+              <Link
+                to={formatSearchPath(suggestion)}
+                onClick={() => onSearch(suggestion)}
+              >
                 {handleSuggestions(suggestion, term)}
-              </Button>
+              </Link>
             </li>
           ))}
         </UIList>
