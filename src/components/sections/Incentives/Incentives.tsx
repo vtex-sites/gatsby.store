@@ -10,22 +10,43 @@ interface Incentive {
 
 export interface IncentivesProps {
   incentives: Incentive[]
+  /**
+   * Controls whether the component will be colored or not.
+   */
   colored?: boolean
+  /**
+   * Controls the component's direction.
+   */
+  variant?: 'horizontal' | 'vertical'
 }
 
-function Incentives({ incentives, colored = false }: IncentivesProps) {
+function Incentives({
+  incentives,
+  variant = 'horizontal',
+  colored = false,
+}: IncentivesProps) {
   return (
-    <div data-fs-incentives data-fs-incentives-colored={colored}>
+    <div
+      data-fs-incentives
+      data-fs-incentives-colored={colored}
+      data-fs-incentives-variant={variant}
+    >
       <UIList variant="unordered" className="layout__content">
         {incentives.map((incentive, index) => (
           <li key={String(index)}>
             <UIIncentive>
               <Icon name={incentive.icon} width={32} height={32} />
-              <div data-incentive-content>
-                {incentive.title && <p>{incentive.title}</p>}
-                <span>{incentive.firstLineText}</span>
+              <div data-fs-incentive-content>
+                {incentive.title && (
+                  <p data-fs-incentive-title>{incentive.title}</p>
+                )}
+                <span data-fs-incentive-description>
+                  {incentive.firstLineText}
+                </span>
                 {incentive.secondLineText && (
-                  <span>{incentive.secondLineText}</span>
+                  <span data-fs-incentive-description>
+                    {incentive.secondLineText}
+                  </span>
                 )}
               </div>
             </UIIncentive>
