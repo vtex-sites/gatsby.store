@@ -5,9 +5,11 @@ import type {
   SearchInputRef,
 } from '@faststore/ui'
 import { SearchInput as UISearchInput } from '@faststore/ui'
+import { navigate } from 'gatsby'
 import { forwardRef, lazy, Suspense, useRef, useState } from 'react'
 import Icon from 'src/components/ui/Icon'
 import useSearchHistory from 'src/sdk/search/useSearchHistory'
+import { formatSearchPath } from 'src/sdk/search/utils'
 import useOnClickOutside from 'src/sdk/ui/useOnClickOutside'
 
 const Suggestions = lazy(() => import('src/components/search/Suggestions'))
@@ -22,6 +24,8 @@ const doSearch = async (term: string) => {
     name: 'search',
     params: { search_term: term },
   })
+
+  navigate(formatSearchPath(term))
 }
 
 const SearchInput = forwardRef<SearchInputRef, SearchInputProps>(
