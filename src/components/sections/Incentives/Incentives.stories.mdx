@@ -34,3 +34,74 @@ It's a component that displays a list of "incentives".
     {Template.bind({})}
   </Story>
 </Canvas>
+
+<ArgsTable story="Incentives" />
+
+| Local token                                 | Default value/Global token linked              |
+| ------------------------------------------- | ---------------------------------------------- |
+| <code>--fs-incentives-bkg-color</code>      | <code>var(--fs-color-primary-bkg-light)</code> |
+| <code>--fs-incentives-padding-top</code>    | <code>var(--fs-spacing-4)</code>               |
+| <code>--fs-incentives-padding-bottom</code> | <code>var(--fs-incentives-padding-top)</code>  |
+| <code>--fs-incentives-border-color</code>   | <code>var(--fs-border-color-light)</code>      |
+| <code>--fs-incentives-border-width</code>   | <code>var(--fs-border-width)</code>            |
+
+<br />
+
+## Nested Elements
+
+### Title
+
+| Local token                                    | Default value/Global token linked       |
+| ---------------------------------------------- | --------------------------------------- |
+| <code>--fs-incentives-title-size</code>        | <code>var(--fs-text-size-1)</code>      |
+| <code>--fs-incentives-title-weight</code>      | <code>var(--fs-text-weight-bold)</code> |
+| <code>--fs-incentives-title-line-height</code> | <code>1.42</code>                       |
+
+### Description
+
+| Local token                                          | Default value/Global token linked            |
+| ---------------------------------------------------- | -------------------------------------------- |
+| <code>--fs-incentives-description-size</code>        | <code>var(--fs-incentives-title-size)</code> |
+| <code>--fs-incentives-description-line-height</code> | <code>1.14</code>                            |
+
+<br />
+
+## Variants
+
+<br />
+
+### Colored
+
+<Canvas>
+  <Story
+    name="Colored"
+    args={{
+      incentives: IncentivesMock,
+      colored: true,
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+| Local token                            | Default value/Global token linked              |
+| -------------------------------------- | ---------------------------------------------- |
+| <code>--fs-incentives-bkg-color</code> | <code>var(--fs-color-primary-bkg-light)</code> |
+
+<br />
+
+### Vertical
+
+<Canvas>
+  <Story
+    name="Vertical"
+    args={{
+      incentives: IncentivesMock,
+      variant: "vertical",
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<br />
