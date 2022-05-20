@@ -2,6 +2,7 @@ import { useSearch } from '@faststore/sdk'
 import ProductGrid from 'src/components/product/ProductGrid'
 import Sentinel from 'src/sdk/search/Sentinel'
 import type { ProductsQueryQuery } from '@generated/graphql'
+import * as styles from 'src/components/sections/ProductGallery/product-gallery.module.scss'
 
 import ProductTiles from '../ProductTiles'
 import { useProducts } from './usePageProducts'
@@ -51,7 +52,7 @@ function GalleryPage({
             page={page}
             pageSize={middleItemIndex}
           />
-          <div className="product-listing__results-sponsored">
+          <div className={styles.fsProductListingResultsSponsored}>
             <h3>Sponsored</h3>
             {/*
               TODO: Refactor this bit of code
