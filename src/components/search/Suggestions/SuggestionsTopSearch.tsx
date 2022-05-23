@@ -89,7 +89,7 @@ const SuggestionsTopSearch = forwardRef<
             <Link
               variant="display"
               to={formatSearchPath(term)}
-              onClick={closeSearchInputDropdown}
+              onClick={() => closeSearchInputDropdown?.()}
             >
               <Badge variant="info">{index + 1}</Badge>
               {term}
