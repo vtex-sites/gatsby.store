@@ -14,7 +14,9 @@ const SearchHistory = ({ history = [] }: SearchHistoryProps) => {
   const { closeSearchInputDropdown } = useSearchInput()
   const { searchHistory, clearSearchHistory } = useSearchHistory(history)
 
-  if (!searchHistory.length) return null
+  if (!searchHistory.length) {
+    return null
+  }
 
   return (
     <section data-fs-search-suggestion-section>
