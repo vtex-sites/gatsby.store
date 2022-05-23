@@ -6,29 +6,29 @@
   // --------------------------------------------------------
 
   // Default properties
-  --fs-incentives-bkg-color            : var(--fs-color-primary-bkg-light);
+  --fs-incentives-bkg-color               : var(--fs-color-primary-bkg-light);
 
-  --fs-incentives-gap                  : var(--fs-spacing-4);
+  --fs-incentives-gap                     : var(--fs-spacing-4);
 
-  --fs-incentives-padding-top          : var(--fs-incentives-gap);
-  --fs-incentives-padding-bottom       : var(--fs-incentives-gap);
+  --fs-incentives-padding-top             : var(--fs-incentives-gap);
+  --fs-incentives-padding-bottom          : var(--fs-incentives-gap);
 
-  --fs-incentives-border-color         : var(--fs-border-color-light);
-  --fs-incentives-border-width         : var(--fs-border-width);
+  --fs-incentives-border-color            : var(--fs-border-color-light);
+  --fs-incentives-border-width            : var(--fs-border-width);
 
   // Title
-  --fs-incentives-title-size           : var(--fs-text-size-1);
-  --fs-incentives-title-weight         : var(--fs-text-weight-bold);
-  --fs-incentives-title-line-height    : 1.42;
-  --fs-incentives-title-color          : var(--fs-color-neutral-7);
+  --fs-incentives-title-size              : var(--fs-text-size-1);
+  --fs-incentives-title-weight            : var(--fs-text-weight-bold);
+  --fs-incentives-title-line-height       : 1.42;
+  --fs-incentives-title-color             : var(--fs-color-neutral-7);
 
   // Description
-  --fs-incentives-description-size          : var(--fs-incentives-title-size);
-  --fs-incentives-description-line-height   : 1.14;
-  --fs-incentives-description-color         : var(--fs-incentives-title-color);
+  --fs-incentives-description-size        : var(--fs-incentives-title-size);
+  --fs-incentives-description-line-height : 1.14;
+  --fs-incentives-description-color       : var(--fs-incentives-title-color);
 
   // Incentive Icon
-  --fs-incentives-icon-color           : var(--fs-incentives-title-color);
+  --fs-incentives-icon-color              : var(--fs-incentives-title-color);
 
   // --------------------------------------------------------
   // Structural Styles
