@@ -7,8 +7,12 @@
 
   // Default properties
   --fs-incentives-bkg-color            : var(--fs-color-primary-bkg-light);
-  --fs-incentives-padding-top          : var(--fs-spacing-4);
-  --fs-incentives-padding-bottom       : var(--fs-incentives-padding-top);
+
+  --fs-incentives-gap                  : var(--fs-spacing-4);
+
+  --fs-incentives-padding-top          : var(--fs-incentives-gap);
+  --fs-incentives-padding-bottom       : var(--fs-incentives-gap);
+
   --fs-incentives-border-color         : var(--fs-border-color-light);
   --fs-incentives-border-width         : var(--fs-border-width);
 
@@ -16,10 +20,15 @@
   --fs-incentives-title-size           : var(--fs-text-size-1);
   --fs-incentives-title-weight         : var(--fs-text-weight-bold);
   --fs-incentives-title-line-height    : 1.42;
+  --fs-incentives-title-color          : var(--fs-color-neutral-7);
 
   // Description
   --fs-incentives-description-size          : var(--fs-incentives-title-size);
   --fs-incentives-description-line-height   : 1.14;
+  --fs-incentives-description-color         : var(--fs-incentives-title-color);
+
+  // Incentive Icon
+  --fs-incentives-icon-color           : var(--fs-incentives-title-color);
 
   // --------------------------------------------------------
   // Structural Styles
@@ -52,7 +61,6 @@
 
     @include media(">=notebook") {
       flex-direction: row;
-      padding: 0 var(--fs-spacing-5);
 
       [data-fs-incentive-content] {
         margin-left: var(--fs-spacing-2);
@@ -66,17 +74,23 @@
   font-size: var(--fs-incentives-title-size);
   font-weight: var(--fs-incentives-title-weight);
   line-height: var(--fs-incentives-title-line-height);
+  color: var(--fs-incentives-title-color);
 }
 
 [data-fs-incentive-description] {
   display: block;
   font-size: var(--fs-incentives-description-size);
   line-height: var(--fs-incentives-description-line-height);
+  color: var(--fs-incentives-description-color);
   white-space: nowrap;
 }
 
 [data-fs-incentive-content] {
   text-align: center;
+}
+
+[data-fs-incentive-icon] {
+  color: var(--fs-incentives-icon-color);
 }
 
 // --------------------------------------------------------
@@ -93,16 +107,16 @@
   }
 
   li:not(:last-child) {
-    padding-bottom: var(--fs-spacing-4);
-    margin-bottom: var(--fs-spacing-4);
+    padding-bottom: var(--fs-incentives-gap);
+    margin-bottom: var(--fs-incentives-gap);
     border-bottom: var(--fs-incentives-border-width) solid var(--fs-incentives-border-color);
   }
 }
 
 [data-fs-incentives-variant="horizontal"] {
   li:not(:last-child) {
-    padding-right: var(--fs-spacing-4);
-    margin-right: var(--fs-spacing-4);
+    padding-right: var(--fs-incentives-gap);
+    margin-right: var(--fs-incentives-gap);
     border-right: var(--fs-incentives-border-width) solid var(--fs-incentives-border-color);
   }
 }

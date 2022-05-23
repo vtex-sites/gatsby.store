@@ -35,7 +35,12 @@ function Incentives({
         {incentives.map((incentive, index) => (
           <li key={String(index)}>
             <UIIncentive>
-              <Icon name={incentive.icon} width={32} height={32} />
+              <Icon
+                data-fs-incentive-icon
+                name={incentive.icon}
+                width={32}
+                height={32}
+              />
               <div data-fs-incentive-content>
                 {incentive.title && (
                   <p data-fs-incentive-title>{incentive.title}</p>
