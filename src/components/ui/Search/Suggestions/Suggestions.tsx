@@ -4,6 +4,7 @@ import Link from 'src/components/ui/Link'
 import type { ProductSummary_ProductFragment } from '@generated/graphql'
 import type { HTMLAttributes } from 'react'
 import { formatSearchPath } from 'src/sdk/search/utils'
+import { useSearchInput } from 'src/components/common/SearchInput/SearchInput'
 
 function formatSearchTerm(
   indexSubstring: number,
@@ -75,6 +76,8 @@ function Suggestions({
   onSearch,
   ...otherProps
 }: SuggestionsProps) {
+  const { closeSearchInputDropdown } = useSearchInput()
+
   return (
     <section data-testid={testId} data-fs-search-suggestions {...otherProps}>
       {terms.length > 0 && (
@@ -83,7 +86,10 @@ function Suggestions({
             <li key={suggestion} data-fs-search-suggestion-item>
               <Link
                 to={formatSearchPath(suggestion)}
-                onClick={() => onSearch(suggestion)}
+                onClick={() => {
+                  onSearch(suggestion)
+                  closeSearchInputDropdown?.()
+                }}
               >
                 {handleSuggestions(suggestion, term)}
               </Link>

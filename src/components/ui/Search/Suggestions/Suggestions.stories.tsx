@@ -1,5 +1,6 @@
 import { SessionProvider } from '@faststore/sdk'
 import { LocationProvider } from '@reach/router'
+import { SearchInputContext } from 'src/components/common/SearchInput/SearchInput'
 
 import Suggestions from '.'
 import type { SuggestionsProps } from '.'
@@ -51,7 +52,9 @@ const Template = (props: SuggestionsProps) => (
   >
     <LocationProvider>
       <SessionProvider>
-        <Suggestions {...props} />
+        <SearchInputContext.Provider value={null}>
+          <Suggestions {...props} />
+        </SearchInputContext.Provider>
       </SessionProvider>
     </LocationProvider>
   </div>

@@ -10,6 +10,7 @@ import type {
 } from '@generated/graphql'
 import { request } from 'src/sdk/graphql/request'
 import { formatSearchPath } from 'src/sdk/search/utils'
+import { useSearchInput } from 'src/components/common/SearchInput/SearchInput'
 
 const TopSearchQuery = gql`
   query SearchSuggestionsQuery {
@@ -65,6 +66,7 @@ const SuggestionsTopSearch = forwardRef<
   { testId = 'top-search', topTerms, ...otherProps },
   ref
 ) {
+  const { closeSearchInputDropdown } = useSearchInput()
   const { terms, loading } = useTopSearch(topTerms)
 
   if (loading) {
@@ -84,7 +86,11 @@ const SuggestionsTopSearch = forwardRef<
       <UIList variant="ordered">
         {terms.map((term, index) => (
           <li key={term} data-fs-search-suggestion-item>
-            <Link variant="display" to={formatSearchPath(term)}>
+            <Link
+              variant="display"
+              to={formatSearchPath(term)}
+              onClick={closeSearchInputDropdown}
+            >
               <Badge variant="info">{index + 1}</Badge>
               {term}
             </Link>

@@ -1,3 +1,5 @@
+import { SearchInputContext } from 'src/components/common/SearchInput/SearchInput'
+
 import { SuggestionsTopSearch } from '.'
 import type { SuggestionsTopSearchProps } from '.'
 
@@ -15,7 +17,9 @@ const Template = (props: SuggestionsTopSearchProps) => (
       background: 'white',
     }}
   >
-    <SuggestionsTopSearch {...props} />
+    <SearchInputContext.Provider value={null}>
+      <SuggestionsTopSearch {...props} />
+    </SearchInputContext.Provider>
   </div>
 )
 
