@@ -67,7 +67,9 @@ const SuggestionsTopSearch = forwardRef<
 ) {
   const { terms, loading } = useTopSearch(topTerms)
 
-  if (loading) return <span>Loading</span>
+  if (loading) {
+    return <span>Loading</span>
+  }
 
   return (
     <section
