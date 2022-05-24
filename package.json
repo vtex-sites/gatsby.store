@@ -31,7 +31,7 @@
     "@envelop/parser-cache": "^2.2.0",
     "@envelop/validation-cache": "^2.2.0",
     "@faststore/api": "https://pkg.csb.dev/vtex/faststore/commit/4591cf21/@faststore/api",
-    "@faststore/sdk": "^1.8.24",
+    "@faststore/sdk": "https://pkg.csb.dev/vtex/faststore/commit/4591cf21/@faststore/sdk",
     "@faststore/ui": "^1.8.24",
     "@vtex/graphql-utils": "^1.8.24",
     "gatsby": "^4.11.1",

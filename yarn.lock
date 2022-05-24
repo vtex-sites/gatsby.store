@@ -1981,18 +1981,6 @@
     minimatch "^3.0.4"
     strip-json-comments "^3.1.1"
 
-"@faststore/api@^1.8.24":
-  version "1.8.24"
-  resolved "https://registry.yarnpkg.com/@faststore/api/-/api-1.8.24.tgz#e2f54073b2817ca035f64afe342a6f60d283efb9"
-  integrity sha512-E3ns3QJkLROhnTMYg3cVJOkrgavZCirNEj3DkPj0WV6D1Bdq77oifPHxrA6XocVnE95CxnPpJ4Dm0wiPTNK5JA==
-  dependencies:
-    "@graphql-tools/schema" "^8.2.0"
-    "@rollup/plugin-graphql" "^1.0.0"
-    dataloader "^2.1.0"
-    fast-deep-equal "^3.1.3"
-    isomorphic-unfetch "^3.1.0"
-    p-limit "^3.1.0"
-
 "@faststore/api@https://pkg.csb.dev/vtex/faststore/commit/4591cf21/@faststore/api":
   version "1.8.32"
   resolved "https://pkg.csb.dev/vtex/faststore/commit/4591cf21/@faststore/api#e2101ff9b797863eaa3f8133d0f01e54e14f8f08"
@@ -2008,6 +1996,12 @@
   version "1.8.24"
   resolved "https://registry.yarnpkg.com/@faststore/sdk/-/sdk-1.8.24.tgz#6dc0f0e9bb7b841eb0d33a19bb94845af3a2092a"
   integrity sha512-THtfpMG07GsakkNrIps6XkBWR7wpqr+vNWeUJopFRaxjZvFGjs/DkkfXOL9P2jNADRAv2VCNyJ+cNm9MRpoRUA==
+  dependencies:
+    idb-keyval "^5.1.3"
+
+"@faststore/sdk@https://pkg.csb.dev/vtex/faststore/commit/4591cf21/@faststore/sdk":
+  version "1.8.32"
+  resolved "https://pkg.csb.dev/vtex/faststore/commit/4591cf21/@faststore/sdk#ed4e0748cca8518f73f9e475645c5b0535e7fcf1"
   dependencies:
     idb-keyval "^5.1.3"
 
