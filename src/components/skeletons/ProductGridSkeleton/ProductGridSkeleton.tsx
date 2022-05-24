@@ -13,7 +13,7 @@ function ProductGridSkeleton({
   loading = true,
 }: PropsWithChildren<Props>) {
   return loading ? (
-    <ul className={styles.productGrid}>
+    <ul className={styles.fsProductGrid}>
       {Array.from({ length: ITEMS_PER_PAGE }, (_, index) => (
         <li key={String(index)}>
           <ProductCardSkeleton bordered />
