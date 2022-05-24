@@ -11,6 +11,8 @@ import type { SuggestionsProps } from 'src/components/ui/Search/Suggestions'
 import { SearchHistory } from '../History'
 import SuggestionsTopSearch from './SuggestionsTopSearch'
 
+const MAX_SUGGESTIONS = 5
+
 const SearchSuggestionsQuery = gql`
   query SearchSuggestionsQuery($term: String!) {
     search(first: 10, term: $term) {
@@ -24,7 +26,7 @@ const SearchSuggestionsQuery = gql`
   }
 `
 
-function useSuggestions(term: string) {
+function useSuggestions(term: string, limit: number = MAX_SUGGESTIONS) {
   const [suggestions, setSuggestions] =
     useState<SearchSuggestionsQueryQuery['search']['suggestions']>()
 
@@ -44,8 +46,8 @@ function useSuggestions(term: string) {
     }
   }, [term])
 
-  const terms = suggestions?.terms ?? []
-  const products = suggestions?.products ?? []
+  const terms = (suggestions?.terms ?? []).slice(0, limit)
+  const products = (suggestions?.products ?? []).slice(0, limit)
 
   return { terms, products, loading }
 }

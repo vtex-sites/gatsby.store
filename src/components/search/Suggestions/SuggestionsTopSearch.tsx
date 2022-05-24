@@ -12,9 +12,11 @@ import { request } from 'src/sdk/graphql/request'
 import { formatSearchPath } from 'src/sdk/search/utils'
 import { useSearchInput } from 'src/components/common/SearchInput/SearchInput'
 
+const MAX_TOP_SEARCH_TERMS = 5
+
 const TopSearchQuery = gql`
   query SearchSuggestionsQuery {
-    search(first: 5) {
+    search {
       suggestions {
         terms
       }
@@ -22,7 +24,10 @@ const TopSearchQuery = gql`
   }
 `
 
-function useTopSearch(initialTerms: string[] = []) {
+function useTopSearch(
+  initialTerms: string[] = [],
+  limit: number = MAX_TOP_SEARCH_TERMS
+) {
   const [topTerms, setTopTerms] =
     useState<SearchSuggestionsQueryQuery['search']['suggestions']['terms']>(
       initialTerms
@@ -39,10 +44,10 @@ function useTopSearch(initialTerms: string[] = []) {
         setTopTerms(data.search.suggestions.terms)
       })
       .finally(() => setLoading(false))
-  }, [])
+  }, [limit])
 
   return {
-    terms: topTerms ?? [],
+    terms: (topTerms ?? []).slice(0, limit),
     loading,
   }
 }
