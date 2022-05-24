@@ -32,7 +32,8 @@
 
   // Partial
   --fs-checkbox-partial-bkg-color            : var(--fs-color-neutral-0);
-  --fs-checkbox-partial-border               : var(--fs-checkbox-border-width) solid var(--fs-color-primary-bkg);
+  --fs-checkbox-partial-border-width         : var(--fs-checkbox-border-width);
+  --fs-checkbox-partial-border-color         : var(--fs-color-primary-bkg);
   --fs-checkbox-partial-hover                : var(--fs-color-primary-bkg-light);
 
   // --------------------------------------------------------
@@ -114,7 +115,7 @@
 
   &[data-fs-store-checkbox-partial="true"] {
     background-color: var(--fs-checkbox-partial-bkg-color);
-    border: var(--fs-checkbox-partial-border);
+    border: var(--fs-checkbox-partial-border-width) solid var(--fs-checkbox-partial-border-color);
 
     &::before {
       position: absolute;
