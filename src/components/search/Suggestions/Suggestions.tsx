@@ -63,7 +63,7 @@ function Suggestions({ term = '', ...otherProps }: SuggestionsProps) {
   }
 
   if (loading) {
-    return <p>Loading...</p>
+    return <p data-fs-search-input-loading-text>Loading...</p>
   }
 
   return (
