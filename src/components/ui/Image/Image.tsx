@@ -12,7 +12,7 @@ declare module 'react' {
   }
 
   interface LinkHTMLAttributes<T> extends AriaAttributes, DOMAttributes<T> {
-    imageSizes?: string
+    imagesizes?: string
     fetchpriority?: string
   }
 }
@@ -30,18 +30,16 @@ const Image = forwardRef<HTMLImageElement, Props>(
     return (
       <>
         {preload && (
-          <Helmet
-            link={[
-              {
-                as: 'image',
-                rel: 'preload',
-                href: src,
-                imagesrcset: srcSet,
-                imagesizes: sizes,
-                fetchpriority: fetchPriority,
-              } as any,
-            ]}
-          />
+          <Helmet>
+            <link
+              as="image"
+              rel="preload"
+              href={src}
+              imageSrcSet={srcSet}
+              imagesizes={sizes}
+              fetchpriority={fetchPriority}
+            />
+          </Helmet>
         )}
         <img
           ref={ref}
