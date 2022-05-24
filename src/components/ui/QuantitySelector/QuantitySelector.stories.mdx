@@ -1,0 +1,107 @@
+import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs'
+
+import QuantitySelector from '.'
+
+<Meta title="Organisms/QuantitySelector" component={QuantitySelector} />
+
+export const Template = (args) => <QuantitySelector {...args} />
+
+<header>
+
+# Quantity Selector
+
+Description here
+
+</header>
+
+### Import
+
+`import QuantitySelector from '../components/ui/QuantitySelector'`
+
+### Usage
+
+<Canvas>
+  <Story name="QuantitySelector">
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### Props
+
+<ArgsTable story="QuantitySelector" />
+
+| Local token                                        | Default value/Global token linked                                                         |
+| -------------------------------------------------- | ----------------------------------------------------------------------------------------- |
+| <code>--fs-qty-selector-width</code>               | <code>calc(var(--fs-control-tap-size) * 2.7)</code>                                       |
+| <code>--fs-qty-selector-height</code>              | <code>calc(var(--fs-control-tap-size) + (var(--fs-qty-selector-border-width) * 2))</code> |
+| <code>--fs-qty-selector-shadow</code>              | <code>none</code>                                                                         |
+| <code>--fs-qty-selector-shadow-hover</code>        | <code>0 0 0 var(--fs-border-width) var(--fs-border-color-active)</code>                   |
+| <code>--fs-qty-selector-bkg-color</code>           | <code>var(--fs-color-body-bkg)</code>                                                     |
+| <code>--fs-qty-selector-bkg-color-hover</code>     | <code>var(--fs-qty-selector-bkg-color)</code>                                             |
+| <code>--fs-qty-selector-border-radius</code>       | <code>var(--fs-border-radius)</code>                                                      |
+| <code>--fs-qty-selector-border-width</code>        | <code>var(--fs-border-width)</code>                                                       |
+| <code>--fs-qty-selector-border-width-hover</code>  | <code>var(--fs-border-width)</code>                                                       |
+| <code>--fs-qty-selector-border-color</code>        | <code>var(--fs-border-color)</code>                                                       |
+| <code>--fs-qty-selector-border-color-hover</code>  | <code>var(--fs-border-color-active)</code>                                                |
+| <code>--fs-qty-selector-transition-function</code> | <code>var(--fs-transition-function)</code>                                                |
+| <code>--fs-qty-selector-transition-property</code> | <code>var(--fs-transition-property)</code>                                                |
+| <code>--fs-qty-selector-transition-timing</code>   | <code>var(--fs-transition-timing)</code>                                                  |
+
+<br />
+
+## Nested Elements
+
+### Text
+
+| Local token                                     | Default value/Global token linked              |
+| ----------------------------------------------- | ---------------------------------------------- |
+| <code>--fs-qty-selector-text-size</code>        | <code>var(--fs-text-size-base)</code>          |
+| <code>--fs-qty-selector-text-color</code>       | <code>var(--fs-color-text)</code>              |
+| <code>--fs-qty-selector-text-color-hover</code> | <code>var(--fs-qty-selector-text-color)</code> |
+
+### Icon
+
+| Local token                                     | Default value/Global token linked          |
+| ----------------------------------------------- | ------------------------------------------ |
+| <code>--fs-qty-selector-icon-color</code>       | <code>var(--fs-color-link)</code>          |
+| <code>--fs-qty-selector-icon-color-hover</code> | <code>var(--fs-border-color-active)</code> |
+
+### Button
+
+| Local token                                           | Default value/Global token linked                          |
+| ----------------------------------------------------- | ---------------------------------------------------------- |
+| <code>--fs-qty-selector-button-shadow</code>          | <code>none</code>                                          |
+| <code>--fs-qty-selector-button-shadow-hover</code>    | <code>none</code>                                          |
+| <code>--fs-qty-selector-button-bkg-color</code>       | <code>transparent</code>                                   |
+| <code>--fs-qty-selector-button-bkg-color-hover</code> | <code>var(--fs-color-primary-bkg-light)</code>             |
+| <code>--fs-qty-selector-button-bkg-color-focus</code> | <code>var(--fs-qty-selector-button-bkg-color-hover)</code> |
+| <code>--fs-qty-selector-button-border-radius</code>   | <code>var(--fs-qty-selector-border-radius)</code>          |
+
+<br />
+
+## Variants
+
+<br />
+
+### Disabled
+
+<Canvas>
+  <Story
+    name="Disabled"
+    args={{
+      disabled: true,
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+| Local token                                              | Default value/Global token linked                          |
+| -------------------------------------------------------- | ---------------------------------------------------------- |
+| <code>--fs-qty-selector-disabled-bkg-color</code>        | <code>var(--fs-color-disabled-bkg)</code>                  |
+| <code>--fs-qty-selector-disabled-text-color</code>       | <code>var(--fs-color-disabled-text)</code>                 |
+| <code>--fs-qty-selector-disabled-icon-color</code>       | <code>var(--fs-border-color-light-disabled)</code>         |
+| <code>--fs-qty-selector-disabled-border-color</code>     | <code>var(--fs-qty-selector-disabled-bkg-color)</code>     |
+| <code>--fs-qty-selector-disabled-button-bkg-color</code> | <code>var(--fs-qty-selector-button-bkg-color-hover)</code> |
+
+<br />
