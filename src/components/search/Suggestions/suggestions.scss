@@ -50,6 +50,10 @@
   [data-fs-search-suggestion-item-icon] {
     margin-right: var(--fs-spacing-1);
   }
+
+  [data-fs-search-suggestion-item-icon] {
+    color: var(--fs-color-neutral-4);
+  }
 }
 
 [data-fs-search-suggestions] {
