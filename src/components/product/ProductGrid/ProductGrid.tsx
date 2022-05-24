@@ -13,7 +13,7 @@ interface Props {
 function ProductGrid({ products, page, pageSize }: Props) {
   return (
     <ProductGridSkeleton loading={products.length === 0}>
-      <ul className={styles.productGrid}>
+      <ul className={styles.fsProductGrid}>
         {products.map(({ node: product }, idx) => (
           <li key={`${product.id}`}>
             <ProductCard
