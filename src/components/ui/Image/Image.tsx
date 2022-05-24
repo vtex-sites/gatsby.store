@@ -7,7 +7,11 @@ import type { ImageOptions } from './useImage'
 // React still don't have imageSizes declared on its types. Somehow,
 // it generated the right html
 declare module 'react' {
-  interface HTMLAttributes<T> extends AriaAttributes, DOMAttributes<T> {
+  interface ImgHTMLAttributes<T> extends AriaAttributes, DOMAttributes<T> {
+    fetchpriority?: string
+  }
+
+  interface LinkHTMLAttributes<T> extends AriaAttributes, DOMAttributes<T> {
     imageSizes?: string
     fetchpriority?: string
   }
@@ -15,10 +19,11 @@ declare module 'react' {
 
 interface Props extends ImageOptions {
   preload?: boolean
+  fetchPriority?: string
 }
 
 const Image = forwardRef<HTMLImageElement, Props>(
-  ({ preload = false, fetchpriority, ...otherProps }, ref) => {
+  ({ preload = false, fetchPriority, ...otherProps }, ref) => {
     const imgProps = useImage(otherProps)
     const { src, sizes = '100vw', srcSet } = imgProps
 
@@ -33,7 +38,7 @@ const Image = forwardRef<HTMLImageElement, Props>(
                 href: src,
                 imagesrcset: srcSet,
                 imagesizes: sizes,
-                fetchpriority,
+                fetchpriority: fetchPriority,
               } as any,
             ]}
           />
@@ -43,7 +48,7 @@ const Image = forwardRef<HTMLImageElement, Props>(
           data-store-image
           {...imgProps}
           alt={imgProps.alt}
-          fetchpriority={fetchpriority}
+          fetchpriority={fetchPriority}
         />
       </>
     )
