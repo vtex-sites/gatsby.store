@@ -23,7 +23,7 @@ const SearchHistory = ({ history = [] }: SearchHistoryProps) => {
       <div data-fs-search-suggestion-header>
         <p data-fs-search-suggestion-title>History</p>
         <Button variant="tertiary" onClick={clearSearchHistory}>
-          Clear
+          Clear History
         </Button>
       </div>
       <UIList variant="ordered">
