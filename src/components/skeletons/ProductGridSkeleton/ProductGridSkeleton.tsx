@@ -1,6 +1,6 @@
 import { ITEMS_PER_PAGE } from 'src/constants'
 import type { PropsWithChildren } from 'react'
-import * as styles from 'src/components/product/ProductGrid/product-grid.module.scss'
+import styles from 'src/components/product/ProductGrid/product-grid.module.scss'
 
 import ProductCardSkeleton from '../ProductCardSkeleton'
 

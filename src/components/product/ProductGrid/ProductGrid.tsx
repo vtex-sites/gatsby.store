@@ -1,8 +1,8 @@
 import ProductGridSkeleton from 'src/components/skeletons/ProductGridSkeleton'
 import type { ProductSummary_ProductFragment } from '@generated/graphql'
-import * as styles from 'src/components/product/ProductGrid/product-grid.module.scss'
 
 import ProductCard from '../ProductCard'
+import styles from './product-grid.module.scss'
 
 interface Props {
   products: Array<{ node: ProductSummary_ProductFragment }>
