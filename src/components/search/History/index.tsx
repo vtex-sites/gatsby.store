@@ -1,2 +1,2 @@
 export { default as SearchHistory } from './SearchHistory'
-export { SearchHistoryProps } from './SearchHistory'
+export type { SearchHistoryProps } from './SearchHistory'
