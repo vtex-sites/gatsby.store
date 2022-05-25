@@ -68,6 +68,10 @@ function Suggestions({ term = '', ...otherProps }: SuggestionsProps) {
     return <p data-fs-search-input-loading-text>Loading...</p>
   }
 
+  if (terms.length === 0 && products.length === 0) {
+    return null
+  }
+
   return (
     <UISuggestions
       term={term}
