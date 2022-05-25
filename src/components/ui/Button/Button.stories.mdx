@@ -45,7 +45,16 @@ The `Button` component uses [FastStore UI Button](https://www.faststore.dev/refe
 ### Usage
 
 <Canvas>
-  <Story name="Button">{Template.bind({})}</Story>
+  <Story
+    name="Button"
+    args={{
+      variant: 'primary',
+      iconPosition: 'left',
+      icon: <Icon name="User" width="18" height="18" />,
+    }}
+  >
+    {Template.bind({})}
+  </Story>
 </Canvas>
 
 <ArgsTable story="Button" />
