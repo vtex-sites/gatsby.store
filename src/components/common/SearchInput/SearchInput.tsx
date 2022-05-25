@@ -1,18 +1,13 @@
 import { sendAnalyticsEvent } from '@faststore/sdk'
 import { SearchInput as UISearchInput } from '@faststore/ui'
 import { navigate } from 'gatsby'
-import {
-  createContext,
-  forwardRef,
-  lazy,
-  Suspense,
-  useContext,
-  useRef,
-  useState,
-} from 'react'
+import { forwardRef, lazy, Suspense, useRef, useState } from 'react'
 import Icon from 'src/components/ui/Icon'
 import useSearchHistory from 'src/sdk/search/useSearchHistory'
-import { formatSearchPath } from 'src/sdk/search/utils'
+import {
+  formatSearchPath,
+  SearchInputContext,
+} from 'src/sdk/search/useSearchInput'
 import useOnClickOutside from 'src/sdk/ui/useOnClickOutside'
 import type { SearchEvent } from '@faststore/sdk'
 import type {
@@ -21,24 +16,6 @@ import type {
 } from '@faststore/ui'
 
 const Suggestions = lazy(() => import('src/components/search/Suggestions'))
-
-interface SearchInputContextValue {
-  onSearchInputSelection?: (term: string) => void
-}
-
-export const SearchInputContext = createContext<SearchInputContextValue | null>(
-  null
-)
-
-export const useSearchInput = () => {
-  const context = useContext(SearchInputContext)
-
-  if (context === null) {
-    throw new Error('Do not outside the SearchInputContext context.')
-  }
-
-  return context
-}
 
 declare type SearchInputProps = {
   onSearchClick?: () => void

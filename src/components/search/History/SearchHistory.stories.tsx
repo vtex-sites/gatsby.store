@@ -1,4 +1,4 @@
-import { SearchInputContext } from 'src/components/common/SearchInput/SearchInput'
+import { SearchInputContext } from 'src/sdk/search/useSearchInput'
 
 import { SearchHistory } from '.'
 import type { SearchHistoryProps } from '.'

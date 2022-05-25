@@ -1,6 +1,6 @@
 import { SessionProvider } from '@faststore/sdk'
 import { LocationProvider } from '@reach/router'
-import { SearchInputContext } from 'src/components/common/SearchInput/SearchInput'
+import { SearchInputContext } from 'src/sdk/search/useSearchInput'
 
 import Suggestions from '.'
 import type { SuggestionsProps } from '.'

@@ -1,9 +1,8 @@
 import { List as UIList } from '@faststore/ui'
-import { useSearchInput } from 'src/components/common/SearchInput/SearchInput'
 import SuggestionProductCard from 'src/components/search/SuggestionProductCard'
 import Icon from 'src/components/ui/Icon'
 import Link from 'src/components/ui/Link'
-import { formatSearchPath } from 'src/sdk/search/utils'
+import useSearchInput, { formatSearchPath } from 'src/sdk/search/useSearchInput'
 import type { ProductSummary_ProductFragment } from '@generated/graphql'
 import type { HTMLAttributes } from 'react'
 

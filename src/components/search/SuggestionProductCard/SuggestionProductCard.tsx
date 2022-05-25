@@ -1,10 +1,10 @@
 import { Card, CardContent, CardImage } from '@faststore/ui'
-import { useSearchInput } from 'src/components/common/SearchInput/SearchInput'
 import { Image } from 'src/components/ui/Image'
 import Link from 'src/components/ui/Link'
 import Price from 'src/components/ui/Price'
 import { useFormattedPrice } from 'src/sdk/product/useFormattedPrice'
 import { useProductLink } from 'src/sdk/product/useProductLink'
+import useSearchInput from 'src/sdk/search/useSearchInput'
 import type { ProductSummary_ProductFragment } from '@generated/graphql'
 
 type SuggestionProductCardProps = {
