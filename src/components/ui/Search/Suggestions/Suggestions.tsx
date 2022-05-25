@@ -1,4 +1,5 @@
 import { List as UIList } from '@faststore/ui'
+import { Fragment } from 'react'
 import SuggestionProductCard from 'src/components/search/SuggestionProductCard'
 import Icon from 'src/components/ui/Icon'
 import Link from 'src/components/ui/Link'
@@ -33,7 +34,7 @@ function handleSuggestions(suggestion: string, searchTerm: string) {
   return (
     <p>
       {suggestionSubstring.map((substring, indexSubstring) => (
-        <>
+        <Fragment key={[substring, indexSubstring].join()}>
           {substring.length > 0 && (
             <b data-fs-search-suggestion-item-bold>
               {indexSubstring === 0
@@ -43,7 +44,7 @@ function handleSuggestions(suggestion: string, searchTerm: string) {
           )}
           {indexSubstring !== suggestionSubstring.length - 1 &&
             formatSearchTerm(indexSubstring, searchTerm, suggestion)}
-        </>
+        </Fragment>
       ))}
     </p>
   )
