@@ -70,19 +70,6 @@ export const ValidateCartMutation = gql`
 
 export const isGift = (item: CartItem) => item.price === 0
 
-const serializeAdditionalProperty = (itemOffered: CartItem['itemOffered']) => {
-  if (
-    !itemOffered.additionalProperty ||
-    itemOffered.additionalProperty?.length === 0
-  ) {
-    return null
-  }
-
-  return itemOffered.additionalProperty
-    .map(({ propertyID }) => propertyID)
-    .join('-')
-}
-
 export const getItemId = (
   item: Pick<CartItem, 'itemOffered' | 'seller' | 'price'>
 ) =>
@@ -90,7 +77,9 @@ export const getItemId = (
     item.itemOffered.sku,
     item.seller.identifier,
     item.price,
-    serializeAdditionalProperty(item.itemOffered),
+    item.itemOffered.additionalProperty
+      ?.map(({ propertyID }) => propertyID)
+      .join('-'),
   ]
     .filter(Boolean)
     .join('::')
