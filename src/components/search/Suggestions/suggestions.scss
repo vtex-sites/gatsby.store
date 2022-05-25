@@ -27,6 +27,12 @@
   }
 }
 
+[data-fs-search-suggestion-section="terms"] {
+  [data-fs-link] {
+    color: var(--fs-color-text-light);
+  }
+}
+
 [data-fs-search-suggestion-item] {
   margin-right: calc(-1 * var(--fs-spacing-3));
   margin-left: calc(-1 * var(--fs-spacing-3));

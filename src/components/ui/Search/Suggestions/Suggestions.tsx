@@ -81,7 +81,7 @@ function Suggestions({
   return (
     <section data-testid={testId} data-fs-search-suggestions {...otherProps}>
       {terms.length > 0 && (
-        <UIList data-fs-search-suggestion-section>
+        <UIList data-fs-search-suggestion-section="terms">
           {terms?.map((suggestion) => (
             <li key={suggestion} data-fs-search-suggestion-item>
               <Link
