@@ -76,7 +76,7 @@ function Suggestions({
   onSearch,
   ...otherProps
 }: SuggestionsProps) {
-  const { closeSearchInputDropdown } = useSearchInput()
+  const { onSearchInputSelection } = useSearchInput()
 
   return (
     <section data-testid={testId} data-fs-search-suggestions {...otherProps}>
@@ -88,7 +88,7 @@ function Suggestions({
                 to={formatSearchPath(suggestion)}
                 onClick={() => {
                   onSearch(suggestion)
-                  closeSearchInputDropdown?.()
+                  onSearchInputSelection?.(suggestion)
                 }}
               >
                 {handleSuggestions(suggestion, term)}

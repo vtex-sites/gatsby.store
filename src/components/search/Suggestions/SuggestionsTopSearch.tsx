@@ -71,7 +71,7 @@ const SuggestionsTopSearch = forwardRef<
   { testId = 'top-search', topTerms, ...otherProps },
   ref
 ) {
-  const { closeSearchInputDropdown } = useSearchInput()
+  const { onSearchInputSelection } = useSearchInput()
   const { terms, loading } = useTopSearch(topTerms)
 
   if (loading) {
@@ -94,7 +94,7 @@ const SuggestionsTopSearch = forwardRef<
             <Link
               variant="display"
               to={formatSearchPath(term)}
-              onClick={() => closeSearchInputDropdown?.()}
+              onClick={() => onSearchInputSelection?.(term)}
             >
               <Badge variant="info">{index + 1}</Badge>
               {term}

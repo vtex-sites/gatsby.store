@@ -23,7 +23,7 @@ import useOnClickOutside from 'src/sdk/ui/useOnClickOutside'
 const Suggestions = lazy(() => import('src/components/search/Suggestions'))
 
 interface SearchInputContextValue {
-  closeSearchInputDropdown?: () => void
+  onSearchInputSelection?: (term: string) => void
 }
 
 export const SearchInputContext = createContext<SearchInputContextValue | null>(
@@ -64,15 +64,15 @@ const SearchInput = forwardRef<SearchInputRef, SearchInputProps>(
     const searchRef = useRef<HTMLDivElement>(null)
     const { addToSearchHistory } = useSearchHistory()
 
-    const closeSearchInputDropdown = () => {
+    const onSearchInputSelection = (term: string) => {
       setSuggestionsOpen(false)
+      setSearchQuery(term)
     }
 
     const handleSearch = (term: string) => {
       addToSearchHistory(term)
       doSearch(term)
-      closeSearchInputDropdown()
-      setSearchQuery(term)
+      onSearchInputSelection(term)
     }
 
     useOnClickOutside(searchRef, () => setSuggestionsOpen(false))
@@ -83,7 +83,7 @@ const SearchInput = forwardRef<SearchInputRef, SearchInputProps>(
         data-store-search-input-wrapper
         data-store-search-input-dropdown-open={suggestionsOpen}
       >
-        <SearchInputContext.Provider value={{ closeSearchInputDropdown }}>
+        <SearchInputContext.Provider value={{ onSearchInputSelection }}>
           <UISearchInput
             ref={ref}
             icon={

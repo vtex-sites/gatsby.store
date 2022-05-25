@@ -11,7 +11,7 @@ export interface SearchHistoryProps {
 }
 
 const SearchHistory = ({ history = [] }: SearchHistoryProps) => {
-  const { closeSearchInputDropdown } = useSearchInput()
+  const { onSearchInputSelection } = useSearchInput()
   const { searchHistory, clearSearchHistory } = useSearchHistory(history)
 
   if (!searchHistory.length) {
@@ -32,7 +32,7 @@ const SearchHistory = ({ history = [] }: SearchHistoryProps) => {
             <Link
               variant="display"
               to={formatSearchPath(item)}
-              onClick={() => closeSearchInputDropdown?.()}
+              onClick={() => onSearchInputSelection?.(item)}
             >
               <Icon
                 name="Clock"

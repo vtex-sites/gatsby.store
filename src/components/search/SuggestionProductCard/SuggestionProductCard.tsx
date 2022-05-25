@@ -13,7 +13,7 @@ type SuggestionProductCardProps = {
 }
 
 function SuggestionProductCard({ product, index }: SuggestionProductCardProps) {
-  const { closeSearchInputDropdown } = useSearchInput()
+  const { onSearchInputSelection } = useSearchInput()
   const { onClick, ...linkProps } = useProductLink({
     product,
     selectedOffer: 0,
@@ -37,7 +37,7 @@ function SuggestionProductCard({ product, index }: SuggestionProductCardProps) {
         variant="display"
         onClick={() => {
           onClick()
-          closeSearchInputDropdown?.()
+          onSearchInputSelection?.(name)
         }}
       >
         <CardContent>
