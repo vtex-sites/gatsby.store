@@ -45,13 +45,11 @@ declare type SearchInputProps = {
   buttonTestId?: string
 } & Omit<UISearchInputProps, 'onSubmit'>
 
-const doSearch = async (term: string) => {
+const sendAnalytics = async (term: string) => {
   sendAnalyticsEvent<SearchEvent>({
     name: 'search',
     params: { search_term: term },
   })
-
-  navigate(formatSearchPath(term))
 }
 
 const SearchInput = forwardRef<SearchInputRef, SearchInputProps>(
@@ -65,14 +63,10 @@ const SearchInput = forwardRef<SearchInputRef, SearchInputProps>(
     const { addToSearchHistory } = useSearchHistory()
 
     const onSearchInputSelection = (term: string) => {
+      addToSearchHistory(term)
+      sendAnalytics(term)
       setSuggestionsOpen(false)
       setSearchQuery(term)
-    }
-
-    const handleSearch = (term: string) => {
-      addToSearchHistory(term)
-      doSearch(term)
-      onSearchInputSelection(term)
     }
 
     useOnClickOutside(searchRef, () => setSuggestionsOpen(false))
@@ -95,7 +89,10 @@ const SearchInput = forwardRef<SearchInputRef, SearchInputProps>(
             }
             placeholder="Search everything at the store"
             onChange={(e) => setSearchQuery(e.target.value)}
-            onSubmit={handleSearch}
+            onSubmit={(term) => {
+              onSearchInputSelection(term)
+              navigate(formatSearchPath(term))
+            }}
             onFocus={() => setSuggestionsOpen(true)}
             value={searchQuery}
             {...props}
@@ -103,7 +100,7 @@ const SearchInput = forwardRef<SearchInputRef, SearchInputProps>(
           {suggestionsOpen && (
             <Suspense fallback={null}>
               <div data-store-search-input-dropdown-wrapper>
-                <Suggestions term={searchQuery} onSearch={handleSearch} />
+                <Suggestions term={searchQuery} />
               </div>
             </Suspense>
           )}

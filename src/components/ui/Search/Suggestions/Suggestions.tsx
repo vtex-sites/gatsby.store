@@ -59,12 +59,6 @@ export interface SuggestionsProps extends HTMLAttributes<HTMLDivElement> {
    * Search term
    */
   term?: string
-  /**
-   * Callback to be executed when a suggestion is selected.
-   *
-   * @memberof SuggestionsProps
-   */
-  onSearch: (term: string) => void
   terms?: string[]
   products?: ProductSummary_ProductFragment[]
 }
@@ -74,7 +68,6 @@ function Suggestions({
   term = '',
   terms = [],
   products = [],
-  onSearch,
   ...otherProps
 }: SuggestionsProps) {
   const { onSearchInputSelection } = useSearchInput()
@@ -88,7 +81,6 @@ function Suggestions({
               <Link
                 to={formatSearchPath(suggestion)}
                 onClick={() => {
-                  onSearch(suggestion)
                   onSearchInputSelection?.(suggestion)
                 }}
               >
