@@ -1,10 +1,10 @@
 import { List as UIList } from '@faststore/ui'
+import { useSearchInput } from 'src/components/common/SearchInput/SearchInput'
 import Button from 'src/components/ui/Button'
 import Icon from 'src/components/ui/Icon'
 import Link from 'src/components/ui/Link'
 import useSearchHistory from 'src/sdk/search/useSearchHistory'
 import { formatSearchPath } from 'src/sdk/search/utils'
-import { useSearchInput } from 'src/components/common/SearchInput/SearchInput'
 
 export interface SearchHistoryProps {
   history?: string[]

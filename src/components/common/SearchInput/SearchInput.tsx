@@ -1,9 +1,4 @@
-import type { SearchEvent } from '@faststore/sdk'
 import { sendAnalyticsEvent } from '@faststore/sdk'
-import type {
-  SearchInputProps as UISearchInputProps,
-  SearchInputRef,
-} from '@faststore/ui'
 import { SearchInput as UISearchInput } from '@faststore/ui'
 import { navigate } from 'gatsby'
 import {
@@ -19,6 +14,11 @@ import Icon from 'src/components/ui/Icon'
 import useSearchHistory from 'src/sdk/search/useSearchHistory'
 import { formatSearchPath } from 'src/sdk/search/utils'
 import useOnClickOutside from 'src/sdk/ui/useOnClickOutside'
+import type { SearchEvent } from '@faststore/sdk'
+import type {
+  SearchInputProps as UISearchInputProps,
+  SearchInputRef,
+} from '@faststore/ui'
 
 const Suggestions = lazy(() => import('src/components/search/Suggestions'))
 

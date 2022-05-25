@@ -1,16 +1,16 @@
-import { gql } from '@vtex/graphql-utils'
 import { List as UIList } from '@faststore/ui'
+import { gql } from '@vtex/graphql-utils'
 import { forwardRef, useEffect, useState } from 'react'
+import { useSearchInput } from 'src/components/common/SearchInput/SearchInput'
 import { Badge } from 'src/components/ui/Badge'
 import Link from 'src/components/ui/Link'
+import { request } from 'src/sdk/graphql/request'
+import { formatSearchPath } from 'src/sdk/search/utils'
 import type { HTMLAttributes } from 'react'
 import type {
   SearchSuggestionsQueryQuery,
   SearchSuggestionsQueryQueryVariables,
 } from '@generated/graphql'
-import { request } from 'src/sdk/graphql/request'
-import { formatSearchPath } from 'src/sdk/search/utils'
-import { useSearchInput } from 'src/components/common/SearchInput/SearchInput'
 
 const MAX_TOP_SEARCH_TERMS = 5
 
