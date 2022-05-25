@@ -284,6 +284,7 @@ export const fragment = graphql`
     }
 
     additionalProperty {
+      propertyID
       name
       value
       valueReference

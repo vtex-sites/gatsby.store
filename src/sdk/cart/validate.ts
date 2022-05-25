@@ -59,6 +59,7 @@ export const ValidateCartMutation = gql`
       }
       gtin
       additionalProperty {
+        propertyID
         name
         value
         valueReference
@@ -69,22 +70,16 @@ export const ValidateCartMutation = gql`
 
 export const isGift = (item: CartItem) => item.price === 0
 
-const getAttachments = (itemOffered: CartItem['itemOffered']) =>
-  itemOffered.additionalProperty.filter(
-    (i) => i.valueReference === 'ATTACHMENT'
-  )
-
-const serializeAttachment = (itemOffered: CartItem['itemOffered']) => {
-  const attachments = getAttachments(itemOffered)
-
-  if (attachments.length === 0) {
+const serializeAdditionalProperty = (itemOffered: CartItem['itemOffered']) => {
+  if (
+    !itemOffered.additionalProperty ||
+    itemOffered.additionalProperty?.length === 0
+  ) {
     return null
   }
 
-  return attachments
-    .map(
-      (attachment) => `${attachment.name}:${JSON.stringify(attachment.value)}`
-    )
+  return itemOffered.additionalProperty
+    .map(({ propertyID }) => propertyID)
     .join('-')
 }
 
@@ -95,7 +90,7 @@ export const getItemId = (
     item.itemOffered.sku,
     item.seller.identifier,
     item.price,
-    serializeAttachment(item.itemOffered),
+    serializeAdditionalProperty(item.itemOffered),
   ]
     .filter(Boolean)
     .join('::')
@@ -124,7 +119,7 @@ export const validateCart = async (cart: Cart): Promise<Cart | null> => {
               sku: itemOffered.sku,
               image: itemOffered.image,
               name: itemOffered.name,
-              additionalProperty: null,
+              additionalProperty: itemOffered.additionalProperty,
             },
           })
         ),
