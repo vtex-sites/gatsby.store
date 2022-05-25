@@ -9,7 +9,7 @@ function Checkbox({ partial, ...otherProps }: CheckboxProps) {
   return (
     <UICheckbox
       data-fs-checkbox
-      data-fs-store-checkbox-partial={partial}
+      data-fs-checkbox-partial={partial}
       {...otherProps}
     />
   )

@@ -113,7 +113,7 @@
     }
   }
 
-  &[data-fs-store-checkbox-partial="true"] {
+  &[data-fs-checkbox-partial="true"] {
     background-color: var(--fs-checkbox-partial-bkg-color);
     border: var(--fs-checkbox-partial-border-width) solid var(--fs-checkbox-partial-border-color);
 
