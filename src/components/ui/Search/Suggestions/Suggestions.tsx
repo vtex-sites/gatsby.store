@@ -1,5 +1,6 @@
 import { List as UIList } from '@faststore/ui'
 import SuggestionProductCard from 'src/components/search/SuggestionProductCard'
+import Icon from 'src/components/ui/Icon'
 import Link from 'src/components/ui/Link'
 import type { ProductSummary_ProductFragment } from '@generated/graphql'
 import type { HTMLAttributes } from 'react'
@@ -91,6 +92,12 @@ function Suggestions({
                   onSearchInputSelection?.(suggestion)
                 }}
               >
+                <Icon
+                  name="MagnifyingGlass"
+                  width={18}
+                  height={18}
+                  data-fs-search-suggestion-item-icon
+                />
                 {handleSuggestions(suggestion, term)}
               </Link>
             </li>
