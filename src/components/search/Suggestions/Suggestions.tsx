@@ -1,7 +1,8 @@
 import { gql } from '@vtex/graphql-utils'
-import { useEffect, useState } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 import UISuggestions from 'src/components/ui/Search/Suggestions'
 import { request } from 'src/sdk/graphql/request'
+import debounce from 'debounce'
 import type {
   SearchSuggestionsQueryQuery,
   SearchSuggestionsQueryQueryVariables,
@@ -32,19 +33,28 @@ function useSuggestions(term: string, limit: number = MAX_SUGGESTIONS) {
 
   const [loading, setLoading] = useState<boolean>(false)
 
-  useEffect(() => {
-    if (term.length > 0) {
-      setLoading(true)
-      request<
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  const debouncedRequest = useCallback(
+    debounce(async (query: string) => {
+      const data = await request<
         SearchSuggestionsQueryQuery,
         SearchSuggestionsQueryQueryVariables
-      >(SearchSuggestionsQuery, { term })
-        .then((data) => {
-          setSuggestions(data.search.suggestions)
-        })
-        .finally(() => setLoading(false))
+      >(SearchSuggestionsQuery, { term: query })
+
+      setSuggestions(data.search.suggestions)
+    }, 1000),
+    []
+  )
+
+  useEffect(() => {
+    if (term.length < 0) {
+      return
     }
-  }, [term])
+
+    setLoading(true)
+    debouncedRequest(term)
+    setLoading(false)
+  }, [debouncedRequest, term])
 
   const terms = (suggestions?.terms ?? []).slice(0, limit)
   const products = (suggestions?.products ?? []).slice(0, limit)
