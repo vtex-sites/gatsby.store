@@ -3,9 +3,9 @@ import { Button, IconButton } from '@faststore/ui'
 import Icon from 'src/components/ui/Icon'
 import { Image } from 'src/components/ui/Image'
 import { useInView } from 'react-intersection-observer'
-import * as styles from 'src/components/ui/ImageGallery/image-gallery-selector.module.scss'
 
 import type { ImageElementData } from './ImageGallery'
+import styles from './image-gallery-selector.module.scss'
 
 interface Props {
   images: ImageElementData[]

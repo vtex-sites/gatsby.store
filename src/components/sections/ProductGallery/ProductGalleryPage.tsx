@@ -51,7 +51,7 @@ function GalleryPage({
             page={page}
             pageSize={middleItemIndex}
           />
-          <div className="product-listing__results-sponsored">
+          <div data-fs-product-listing-sponsored>
             <h3>Sponsored</h3>
             {/*
               TODO: Refactor this bit of code
