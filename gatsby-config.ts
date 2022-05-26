@@ -21,7 +21,17 @@ const gatsbyConfig: GatsbyConfig = {
     PARALLEL_SOURCING: true,
   },
   plugins: [
-    `gatsby-plugin-sass`,
+    {
+      resolve: 'gatsby-plugin-sass',
+      options: {
+        cssLoaderOptions: {
+          esModule: true,
+          modules: {
+            namedExport: false,
+          },
+        },
+      },
+    },
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
