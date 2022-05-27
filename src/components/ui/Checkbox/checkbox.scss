@@ -101,7 +101,8 @@
 
     &:hover {
       background-color: var(--fs-checkbox-disabled-bkg-color);
-      border: var(--fs-checkbox-disabled-border);
+      border: var(--fs-checkbox-disabled-border-width) solid var(--fs-checkbox-disabled-border-color);
+      box-shadow: none;
 
       &::before {
         border-color: var(--fs-checkbox-disabled-border-color);
@@ -138,6 +139,11 @@
 
     &:hover {
       background-color: var(--fs-checkbox-partial-hover);
+    }
+
+    &:disabled {
+      background-color: var(--fs-checkbox-disabled-bkg-color);
+      border: var(--fs-checkbox-disabled-border-width) solid var(--fs-checkbox-disabled-border-color);
     }
   }
 }
