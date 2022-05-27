@@ -94,30 +94,28 @@ function OutOfStock(props: OutOfStockProps) {
   }
 
   return (
-    <UIOutOfStock aria-live="polite" onSubmit={handleSubmit}>
+    <UIOutOfStock onSubmit={handleSubmit}>
       <UIOutOfStockTitle>{title}</UIOutOfStockTitle>
       <UIOutOfStockMessage>
         {notificationMsgIcon} {notificationMsg}
       </UIOutOfStockMessage>
-      <div>
-        <InputText
-          id="out-of-stock-email"
-          value={email}
-          label="Email"
-          aria-label="Email"
-          onChange={(e) => setEmail(e.target.value)}
-        />
-        <Button
-          data-store-out-of-stock-button
-          type="submit"
-          disabled={disabled}
-          variant="primary"
-          icon={buttonIcon}
-          iconPosition="left"
-        >
-          {buttonText}
-        </Button>
-      </div>
+      <InputText
+        id="out-of-stock-email"
+        value={email}
+        label="Email"
+        aria-label="Email"
+        onChange={(e) => setEmail(e.target.value)}
+      />
+      <Button
+        data-store-out-of-stock-button
+        type="submit"
+        disabled={disabled}
+        variant="primary"
+        icon={buttonIcon}
+        iconPosition="left"
+      >
+        {buttonText}
+      </Button>
     </UIOutOfStock>
   )
 }
