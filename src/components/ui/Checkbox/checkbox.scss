@@ -132,7 +132,7 @@
     }
 
     &:checked {
-      &:hover {
+      &:hover:not(:disabled) {
         background-color: var(--fs-checkbox-partial-hover);
       }
     }
