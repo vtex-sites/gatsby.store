@@ -2583,8 +2583,11 @@ export type StoreSort =
 /** Status used to indicate type of message. For instance, in shopping cart messages. */
 export type StoreStatus = 'ERROR' | 'INFO' | 'WARNING'
 
+/** Suggestion term. */
 export type StoreSuggestionTerm = {
+  /** Its occurrences count. */
   count: Scalars['Int']
+  /** The term. */
   value: Scalars['String']
 }
 
