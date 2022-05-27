@@ -14,6 +14,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Applies new local tokens to `Incentives` ([#49](https://github.com/vtex-sites/gatsby.store/pull/49))
 - Uses new WebOps Incremental Static Builds ([#47](https://github.com/vtex-sites/gatsby.store/pull/47))
 - `add_to_cart` and `remove_from_cart` analytics events to `CartItem` ([#43](https://github.com/vtex-sites/gatsby.store/pull/43))
+- `OutOfStock` component ([#70](https://github.com/vtex-sites/nextjs.store/pull/70))
 
 ### Changed
 
