@@ -7,10 +7,14 @@ import type {
   SearchSuggestionsQueryQueryVariables,
 } from '@generated/graphql'
 import type { SuggestionsProps } from 'src/components/ui/Search/Suggestions'
+import { useSession } from '@faststore/sdk'
 
 const SearchSuggestionsQuery = gql`
-  query SearchSuggestionsQuery($term: String!) {
-    search(first: 10, term: $term) {
+  query SearchSuggestionsQuery(
+    $term: String!
+    $selectedFacets: [IStoreSelectedFacet!]
+  ) {
+    search(first: 10, term: $term, selectedFacets: $selectedFacets) {
       suggestions {
         terms
         products {
@@ -22,6 +26,7 @@ const SearchSuggestionsQuery = gql`
 `
 
 function useSuggestions(term: string) {
+  const { channel, locale } = useSession()
   const [suggestions, setSuggestions] =
     useState<SearchSuggestionsQueryQuery['search']['suggestions']>()
 
@@ -33,13 +38,19 @@ function useSuggestions(term: string) {
       request<
         SearchSuggestionsQueryQuery,
         SearchSuggestionsQueryQueryVariables
-      >(SearchSuggestionsQuery, { term })
+      >(SearchSuggestionsQuery, {
+        term,
+        selectedFacets: [
+          { key: 'channel', value: channel ?? '' },
+          { key: 'locale', value: locale },
+        ],
+      })
         .then((data) => {
           setSuggestions(data.search.suggestions)
         })
         .finally(() => setLoading(false))
     }
-  }, [term])
+  }, [channel, locale, term])
 
   const terms = suggestions?.terms ?? []
   const products = suggestions?.products ?? []
