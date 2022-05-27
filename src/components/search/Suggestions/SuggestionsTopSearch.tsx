@@ -7,6 +7,7 @@ import { request } from 'src/sdk/graphql/request'
 import useSearchInput, { formatSearchPath } from 'src/sdk/search/useSearchInput'
 import type { HTMLAttributes } from 'react'
 import type {
+  StoreSuggestionTerm,
   SearchSuggestionsQueryQuery,
   SearchSuggestionsQueryQueryVariables,
 } from '@generated/graphql'
@@ -25,7 +26,7 @@ const TopSearchQuery = gql`
 `
 
 function useTopSearch(
-  initialTerms: string[] = [],
+  initialTerms: StoreSuggestionTerm[] = [],
   limit: number = MAX_TOP_SEARCH_TERMS
 ) {
   const { channel, locale } = useSession()
@@ -68,7 +69,7 @@ export interface SuggestionsTopSearchProps
   /**
    * List of top searched items
    */
-  topTerms?: string[]
+  topTerms?: StoreSuggestionTerm[]
 }
 
 const SuggestionsTopSearch = forwardRef<
@@ -97,14 +98,14 @@ const SuggestionsTopSearch = forwardRef<
       </div>
       <UIList variant="ordered">
         {terms.map((term, index) => (
-          <li key={term} data-fs-search-suggestion-item>
+          <li key={term.value} data-fs-search-suggestion-item>
             <Link
               variant="display"
-              to={formatSearchPath(term)}
-              onClick={() => onSearchInputSelection?.(term)}
+              to={formatSearchPath(term.value)}
+              onClick={() => onSearchInputSelection?.(term.value)}
             >
               <Badge variant="info">{index + 1}</Badge>
-              {term}
+              {term.value}
             </Link>
           </li>
         ))}

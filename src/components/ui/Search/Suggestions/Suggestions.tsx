@@ -59,7 +59,7 @@ export interface SuggestionsProps extends HTMLAttributes<HTMLDivElement> {
    * Search term
    */
   term?: string
-  terms?: string[]
+  terms?: Array<{ value: string }>
   products?: ProductSummary_ProductFragment[]
 }
 
@@ -76,7 +76,7 @@ function Suggestions({
     <section data-testid={testId} data-fs-search-suggestions {...otherProps}>
       {terms.length > 0 && (
         <UIList data-fs-search-suggestion-section="terms">
-          {terms?.map((suggestion) => (
+          {terms?.map(({ value: suggestion }) => (
             <li key={suggestion} data-fs-search-suggestion-item>
               <Link
                 to={formatSearchPath(suggestion)}
