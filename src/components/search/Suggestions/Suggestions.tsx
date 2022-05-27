@@ -8,6 +8,7 @@ import type {
   SearchSuggestionsQueryQueryVariables,
 } from '@generated/graphql'
 import type { SuggestionsProps } from 'src/components/ui/Search/Suggestions'
+import { useSession } from '@faststore/sdk'
 
 import { SearchHistory } from '../History'
 import SuggestionsTopSearch from './SuggestionsTopSearch'
@@ -15,8 +16,11 @@ import SuggestionsTopSearch from './SuggestionsTopSearch'
 const MAX_SUGGESTIONS = 5
 
 const SearchSuggestionsQuery = gql`
-  query SearchSuggestionsQuery($term: String!) {
-    search(first: 10, term: $term) {
+  query SearchSuggestionsQuery(
+    $term: String!
+    $selectedFacets: [IStoreSelectedFacet!]
+  ) {
+    search(first: 10, term: $term, selectedFacets: $selectedFacets) {
       suggestions {
         terms
         products {
@@ -28,6 +32,7 @@ const SearchSuggestionsQuery = gql`
 `
 
 function useSuggestions(term: string, limit: number = MAX_SUGGESTIONS) {
+  const { channel, locale } = useSession()
   const [suggestions, setSuggestions] =
     useState<SearchSuggestionsQueryQuery['search']['suggestions']>()
 
@@ -35,14 +40,27 @@ function useSuggestions(term: string, limit: number = MAX_SUGGESTIONS) {
 
   // eslint-disable-next-line react-hooks/exhaustive-deps
   const debouncedRequest = useCallback(
-    debounce(async (query: string) => {
-      const data = await request<
-        SearchSuggestionsQueryQuery,
-        SearchSuggestionsQueryQueryVariables
-      >(SearchSuggestionsQuery, { term: query })
+    debounce(
+      async (
+        query: string,
+        sessionChannel: string | null,
+        sessionLocale: string
+      ) => {
+        const data = await request<
+          SearchSuggestionsQueryQuery,
+          SearchSuggestionsQueryQueryVariables
+        >(SearchSuggestionsQuery, {
+          term: query,
+          selectedFacets: [
+            { key: 'channel', value: sessionChannel ?? '' },
+            { key: 'locale', value: sessionLocale },
+          ],
+        })
 
-      setSuggestions(data.search.suggestions)
-    }, 1000),
+        setSuggestions(data.search.suggestions)
+      },
+      1000
+    ),
     []
   )
 
@@ -52,9 +70,9 @@ function useSuggestions(term: string, limit: number = MAX_SUGGESTIONS) {
     }
 
     setLoading(true)
-    debouncedRequest(term)
+    debouncedRequest(term, channel, locale)
     setLoading(false)
-  }, [debouncedRequest, term])
+  }, [debouncedRequest, term, channel, locale])
 
   const terms = (suggestions?.terms ?? []).slice(0, limit)
   const products = (suggestions?.products ?? []).slice(0, limit)
