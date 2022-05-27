@@ -10,6 +10,7 @@ import type {
   SearchSuggestionsQueryQuery,
   SearchSuggestionsQueryQueryVariables,
 } from '@generated/graphql'
+import { useSession } from '@faststore/sdk'
 
 const MAX_TOP_SEARCH_TERMS = 5
 
@@ -27,6 +28,7 @@ function useTopSearch(
   initialTerms: string[] = [],
   limit: number = MAX_TOP_SEARCH_TERMS
 ) {
+  const { channel, locale } = useSession()
   const [topTerms, setTopTerms] =
     useState<SearchSuggestionsQueryQuery['search']['suggestions']['terms']>(
       initialTerms
@@ -37,13 +39,19 @@ function useTopSearch(
   useEffect(() => {
     request<SearchSuggestionsQueryQuery, SearchSuggestionsQueryQueryVariables>(
       TopSearchQuery,
-      { term: '' }
+      {
+        term: '',
+        selectedFacets: [
+          { key: 'channel', value: channel ?? '' },
+          { key: 'locale', value: locale },
+        ],
+      }
     )
       .then((data) => {
         setTopTerms(data.search.suggestions.terms)
       })
       .finally(() => setLoading(false))
-  }, [limit])
+  }, [limit, channel, locale])
 
   return {
     terms: (topTerms ?? []).slice(0, limit),
