@@ -21,7 +21,12 @@ export const wrapRootElement: GatsbySSR['wrapRootElement'] = ({ element }) => (
         actions={uiActions}
         effects={uiEffects}
       >
-        <SessionProvider initialState={{ channel: storeConfig.channel }}>
+        <SessionProvider
+          initialState={{
+            channel: storeConfig.channel,
+            locale: storeConfig.locale,
+          }}
+        >
           <CartProvider mode="optimistic" onValidateCart={validateCart}>
             <ModalProvider>{element}</ModalProvider>
           </CartProvider>
