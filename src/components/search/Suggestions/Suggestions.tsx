@@ -16,7 +16,9 @@ const SearchSuggestionsQuery = gql`
   ) {
     search(first: 5, term: $term, selectedFacets: $selectedFacets) {
       suggestions {
-        terms
+        terms {
+          value
+        }
         products {
           ...ProductSummary_product
         }
