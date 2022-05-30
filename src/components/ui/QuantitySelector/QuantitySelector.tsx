@@ -2,6 +2,8 @@ import { QuantitySelector as UIQuantitySelector } from '@faststore/ui'
 import { memo, useEffect, useState } from 'react'
 import Icon from 'src/components/ui/Icon'
 
+import styles from './quantity-selector.module.scss'
+
 interface QuantitySelectorProps {
   max?: number
   min?: number
@@ -59,6 +61,7 @@ export function QuantitySelector({
   return (
     <UIQuantitySelector
       data-fs-quantity-selector={disabled ? 'disabled' : 'true'}
+      className={styles.fsQuantitySelector}
       quantity={quantity}
       leftButtonProps={{
         onClick: decrease,
