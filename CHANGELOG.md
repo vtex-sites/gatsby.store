@@ -17,6 +17,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `add_to_cart` and `remove_from_cart` analytics events to `CartItem` ([#43](https://github.com/vtex-sites/gatsby.store/pull/43))
 
 ### Changed
+
+- `OutOfStock` component ([#70](https://github.com/vtex-sites/nextjs.store/pull/70))
 - Displays 5 products on product suggestion for better mobile experience ([#73](https://github.com/vtex-sites/gatsby.store/pull/73))
 - Uses CSS Modules on `ProductGallery` section [#54](https://github.com/vtex-sites/gatsby.store/pull/54)
 - Uses CSS Modules on `ProductCard` component [#54](https://github.com/vtex-sites/gatsby.store/pull/54)
