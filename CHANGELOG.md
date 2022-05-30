@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- Applies new local tokens to `Checkbox` ([#61](https://github.com/vtex-sites/gatsby.store/pull/61))
 - Attachments to CartItem id ([#53](https://github.com/vtex-sites/gatsby.store/pull/53))
 - Adds tests for analytics events on `CartItem` ([#66](https://github.com/vtex-sites/gatsby.store/pull/66))
 - Applies new local tokens to `Incentives` ([#49](https://github.com/vtex-sites/gatsby.store/pull/49))
@@ -18,6 +19,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 
 - `OutOfStock` component ([#70](https://github.com/vtex-sites/nextjs.store/pull/70))
+- Displays 5 products on product suggestion for better mobile experience ([#73](https://github.com/vtex-sites/gatsby.store/pull/73))
 - Uses CSS Modules on `ProductGallery` section [#54](https://github.com/vtex-sites/gatsby.store/pull/54)
 - Uses CSS Modules on `ProductCard` component [#54](https://github.com/vtex-sites/gatsby.store/pull/54)
 - Uses CSS Modules on `ProductGrid` component [#54](https://github.com/vtex-sites/gatsby.store/pull/54)

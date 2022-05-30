@@ -75,3 +75,5 @@ static/~partytown
 
 # VTEX Webops
 .webops
+
+storybook-static/
