@@ -35,6 +35,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Removed
 
+- Unused `-default` at css variables ([#82](https://github.com/vtex-sites/gatsby.store/pull/82))
+
 ### Fixed
 
 - Search suggestions missing locale info ([#69](https://github.com/vtex-sites/gatsby.store/pull/69))
