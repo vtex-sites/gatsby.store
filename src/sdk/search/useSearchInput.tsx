@@ -1,4 +1,5 @@
 import { formatSearchState, initSearchState } from '@faststore/sdk'
+import type { PropsWithChildren } from 'react'
 import { createContext, useContext } from 'react'
 
 export const formatSearchPath = (term: string) => {
@@ -16,14 +17,23 @@ interface SearchInputContextValue {
   onSearchInputSelection?: (term: string) => void
 }
 
-export const SearchInputContext = createContext<SearchInputContextValue | null>(
-  null
-)
+const SearchInputContext = createContext<SearchInputContextValue | null>(null)
+
+export function SearchInputProvider({
+  onSearchInputSelection,
+  children,
+}: PropsWithChildren<SearchInputContextValue>) {
+  return (
+    <SearchInputContext.Provider value={{ onSearchInputSelection }}>
+      {children}
+    </SearchInputContext.Provider>
+  )
+}
 
 const useSearchInput = () => {
   const context = useContext(SearchInputContext)
 
-  if (context === null) {
+  if (!context) {
     throw new Error('Do not use outside the SearchInputContext context.')
   }
 

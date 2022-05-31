@@ -1,4 +1,4 @@
-import { SearchInputContext } from 'src/sdk/search/useSearchInput'
+import { SearchInputProvider } from 'src/sdk/search/useSearchInput'
 
 import { SearchHistory } from '.'
 import type { SearchHistoryProps } from '.'
@@ -18,9 +18,9 @@ const Template = (props: SearchHistoryProps) => {
         background: 'white',
       }}
     >
-      <SearchInputContext.Provider value={null}>
+      <SearchInputProvider>
         <SearchHistory {...props} />
-      </SearchInputContext.Provider>
+      </SearchInputProvider>
     </div>
   )
 }

@@ -6,7 +6,7 @@ import Icon from 'src/components/ui/Icon'
 import useSearchHistory from 'src/sdk/search/useSearchHistory'
 import {
   formatSearchPath,
-  SearchInputContext,
+  SearchInputProvider,
 } from 'src/sdk/search/useSearchInput'
 import useOnClickOutside from 'src/sdk/ui/useOnClickOutside'
 import type { SearchEvent } from '@faststore/sdk'
@@ -54,7 +54,7 @@ const SearchInput = forwardRef<SearchInputRef, SearchInputProps>(
         data-store-search-input-wrapper
         data-store-search-input-dropdown-open={suggestionsOpen}
       >
-        <SearchInputContext.Provider value={{ onSearchInputSelection }}>
+        <SearchInputProvider onSearchInputSelection={onSearchInputSelection}>
           <UISearchInput
             ref={ref}
             icon={
@@ -81,7 +81,7 @@ const SearchInput = forwardRef<SearchInputRef, SearchInputProps>(
               </div>
             </Suspense>
           )}
-        </SearchInputContext.Provider>
+        </SearchInputProvider>
       </div>
     )
   }
