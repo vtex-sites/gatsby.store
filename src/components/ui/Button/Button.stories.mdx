@@ -21,7 +21,6 @@ This component allows users to take actions, make choices or trigger an event wi
 
 - [Overview](#overview)
 - [Usage](#usage)
-- [Props](#props)
 - [Hierarchy](#hierarchy)
 - [Variants](#variants)
 - [Related components](#related-components)
@@ -41,6 +40,8 @@ The `Button` component uses [FastStore UI Button](https://www.faststore.dev/refe
     </Button>
   </Story>
 </Canvas>
+
+---
 
 ## Usage
 
@@ -69,8 +70,6 @@ export const Usage = ({ inverse, ...args }) => {
   </Story>
 </Canvas>
 
-## Props
-
 <ArgsTable story="Button" />
 
 | Local token                                  | Default value/Global token linked                                                                 |
@@ -93,7 +92,7 @@ export const Usage = ({ inverse, ...args }) => {
 | <code>--fs-button-transition-property</code> | <code>var(--fs-transition-property)</code>                                                        |
 | <code>--fs-button-transition-timing</code>   | <code>var(--fs-transition-timing)</code>                                                          |
 
-<br />
+---
 
 export const Template = ({ inverse, ...args }) => {
   return inverse ? (
@@ -108,8 +107,6 @@ export const Template = ({ inverse, ...args }) => {
 }
 
 ## Hierarchy
-
-<br />
 
 ### Primary
 
@@ -131,8 +128,6 @@ export const Template = ({ inverse, ...args }) => {
 | <code>--fs-button-primary-border-color-hover</code>  | <code>var(--fs-button-primary-border-color)</code> |
 | <code>--fs-button-primary-border-color-active</code> | <code>var(--fs-button-primary-border-color)</code> |
 | <code>--fs-button-primary-shadow-hover</code>        | <code>var(--fs-button-shadow-hover)</code>         |
-
-<br />
 
 #### Inverse
 
@@ -177,8 +172,6 @@ export const Template = ({ inverse, ...args }) => {
 | <code>--fs-button-secondary-border-color-hover</code>  | <code>var(--fs-button-secondary-bkg-color-hover)</code>  |
 | <code>--fs-button-secondary-border-color-active</code> | <code>var(--fs-button-secondary-bkg-color-active)</code> |
 | <code>--fs-button-secondary-shadow-hover</code>        | <code>var(--fs-button-shadow-hover)</code>               |
-
-<br />
 
 #### Inverse
 
@@ -227,8 +220,6 @@ export const Template = ({ inverse, ...args }) => {
 | <code>--fs-button-tertiary-border-color-active</code> | <code>var(--fs-button-tertiary-border-color)</code> |
 | <code>--fs-button-tertiary-shadow-hover</code>        | <code>var(--fs-button-shadow-hover)</code>          |
 
-<br />
-
 #### Inverse
 
 <Canvas>
@@ -250,11 +241,9 @@ export const Template = ({ inverse, ...args }) => {
 | <code>--fs-button-tertiary-inverse-border-color-active</code> | <code>var(--fs-button-tertiary-border-color)</code>       |
 | <code>--fs-button-tertiary-inverse-shadow-hover</code>        | <code>var(--fs-button-shadow-hover)</code>                |
 
-<br />
+---
 
 ## Variants
-
-<br />
 
 ### Disabled
 
@@ -268,8 +257,6 @@ export const Template = ({ inverse, ...args }) => {
 | -------------------------------------------- | ------------------------------------------ |
 | <code>--fs-button-disabled-bkg-color</code>  | <code>var(--fs-color-disabled-bkg)</code>  |
 | <code>--fs-button-disabled-text-color</code> | <code>var(--fs-color-disabled-text)</code> |
-
-<br />
 
 ### Icon
 
@@ -290,8 +277,6 @@ export const Template = ({ inverse, ...args }) => {
 | ------------------------------------- | ---------------------------------- |
 | <code>--fs-button-icon-padding</code> | <code>0 var(--fs-spacing-1)</code> |
 
-<br />
-
 ### Small
 
 <Canvas>
@@ -306,11 +291,9 @@ export const Template = ({ inverse, ...args }) => {
 | <code>--fs-button-small-min-height</code> | <code>var(--fs-spacing-5)</code>                     |
 | <code>--fs-button-small-gap</code>        | <code>var(--fs-spacing-1)</code>                     |
 
-<br />
+---
 
 ## Related components
-
-<br />
 
 <div style={{ display: 'flex', justifyContent: 'space-between' }}>
   <article style={{ width: '45%' }}>
