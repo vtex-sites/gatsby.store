@@ -1,21 +1,21 @@
+import { useSession } from '@faststore/sdk'
 import { List as UIList } from '@faststore/ui'
 import { gql } from '@vtex/graphql-utils'
-import { forwardRef, useEffect, useState } from 'react'
+import { forwardRef } from 'react'
 import { Badge } from 'src/components/ui/Badge'
 import Link from 'src/components/ui/Link'
-import { request } from 'src/sdk/graphql/request'
+import { useQuery } from 'src/sdk/graphql/useQuery'
 import useSearchInput, { formatSearchPath } from 'src/sdk/search/useSearchInput'
 import type { HTMLAttributes } from 'react'
 import type {
   StoreSuggestionTerm,
-  SearchSuggestionsQueryQuery,
-  SearchSuggestionsQueryQueryVariables,
+  SearchSuggestionsQueryQuery as Query,
+  SearchSuggestionsQueryQueryVariables as Variables,
 } from '@generated/graphql'
-import { useSession } from '@faststore/sdk'
 
 const MAX_TOP_SEARCH_TERMS = 5
 
-const TopSearchQuery = gql`
+const query = gql`
   query SearchSuggestionsQuery {
     search {
       suggestions {
@@ -30,33 +30,18 @@ function useTopSearch(
   limit: number = MAX_TOP_SEARCH_TERMS
 ) {
   const { channel, locale } = useSession()
-  const [topTerms, setTopTerms] =
-    useState<SearchSuggestionsQueryQuery['search']['suggestions']['terms']>(
-      initialTerms
-    )
 
-  const [loading, setLoading] = useState(true)
-
-  useEffect(() => {
-    request<SearchSuggestionsQueryQuery, SearchSuggestionsQueryQueryVariables>(
-      TopSearchQuery,
-      {
-        term: '',
-        selectedFacets: [
-          { key: 'channel', value: channel ?? '' },
-          { key: 'locale', value: locale },
-        ],
-      }
-    )
-      .then((data) => {
-        setTopTerms(data.search.suggestions.terms)
-      })
-      .finally(() => setLoading(false))
-  }, [limit, channel, locale])
+  const { data, error } = useQuery<Query, Variables>(query, {
+    term: '',
+    selectedFacets: [
+      { key: 'channel', value: channel ?? '' },
+      { key: 'locale', value: locale },
+    ],
+  })
 
   return {
-    terms: (topTerms ?? []).slice(0, limit),
-    loading,
+    terms: (data?.search.suggestions.terms ?? initialTerms).slice(0, limit),
+    isLoading: !error && !data,
   }
 }
 
@@ -80,9 +65,9 @@ const SuggestionsTopSearch = forwardRef<
   ref
 ) {
   const { onSearchInputSelection } = useSearchInput()
-  const { terms, loading } = useTopSearch(topTerms)
+  const { terms, isLoading } = useTopSearch(topTerms)
 
-  if (loading) {
+  if (isLoading) {
     return <p data-fs-search-input-loading-text>Loading...</p>
   }
 
