@@ -11,6 +11,8 @@ import Icon from 'src/components/ui/Icon'
   title="Atoms/Button"
 />
 
+export const Template = (args) => <Button {...args}>Button</Button>
+
 <header>
 
 # Button
@@ -21,9 +23,10 @@ This component allows users to take actions, make choices or trigger an event wi
 
 - [Overview](#overview)
 - [Usage](#usage)
+- [Nested Elements](#nested-elements)
 - [Hierarchy](#hierarchy)
 - [Variants](#variants)
-- [Related components](#related-components)
+- [Related Components](#related-components)
 
 ## Overview
 
@@ -64,6 +67,8 @@ export const Usage = ({ inverse, ...args }) => {
     name="Button"
     args={{
       variant: 'primary',
+      iconPosition: 'right',
+      icon: <Icon name="ShoppingCart" width="18" height="18" />,
     }}
   >
     {Usage.bind({})}
@@ -94,17 +99,28 @@ export const Usage = ({ inverse, ...args }) => {
 
 ---
 
-export const Template = ({ inverse, ...args }) => {
-  return inverse ? (
-    <div style={{ marginBottom: 10, padding: 10, backgroundColor: '#171a1c' }}>
-      <Button inverse {...args}>
-        Button
-      </Button>
-    </div>
-  ) : (
-    <Button {...args}>Button</Button>
-  )
-}
+## Nested Elements
+
+### Icon
+
+<Canvas>
+  <Story
+    name="Icon"
+    args={{
+      variant: 'primary',
+      iconPosition: 'right',
+      icon: <Icon name="User" width="18" height="18" />,
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+| Local token                           | Default value/Global token linked  |
+| ------------------------------------- | ---------------------------------- |
+| <code>--fs-button-icon-padding</code> | <code>0 var(--fs-spacing-1)</code> |
+
+---
 
 ## Hierarchy
 
@@ -129,9 +145,9 @@ export const Template = ({ inverse, ...args }) => {
 | <code>--fs-button-primary-border-color-active</code> | <code>var(--fs-button-primary-border-color)</code> |
 | <code>--fs-button-primary-shadow-hover</code>        | <code>var(--fs-button-shadow-hover)</code>         |
 
-#### Inverse
+### Primary Inverse
 
-<Canvas>
+<Canvas style={{ backgroundColor: '#171a1c' }}>
   <Story name="Primary Inverse" args={{ inverse: true, variant: 'primary' }}>
     {Template.bind({})}
   </Story>
@@ -149,8 +165,6 @@ export const Template = ({ inverse, ...args }) => {
 | <code>--fs-button-primary-inverse-border-color-hover</code>  | <code>var(--fs-button-primary-border-color)</code>    |
 | <code>--fs-button-primary-inverse-border-color-active</code> | <code>var(--fs-button-primary-border-color)</code>    |
 | <code>--fs-button-primary-inverse-shadow-hover</code>        | <code>var(--fs-button-shadow-hover)</code>            |
-
-<br />
 
 ### Secondary
 
@@ -173,9 +187,9 @@ export const Template = ({ inverse, ...args }) => {
 | <code>--fs-button-secondary-border-color-active</code> | <code>var(--fs-button-secondary-bkg-color-active)</code> |
 | <code>--fs-button-secondary-shadow-hover</code>        | <code>var(--fs-button-shadow-hover)</code>               |
 
-#### Inverse
+### Secondary Inverse
 
-<Canvas>
+<Canvas style={{ backgroundColor: '#171a1c' }}>
   <Story
     name="Secondary Inverse"
     args={{ inverse: true, variant: 'secondary' }}
@@ -196,8 +210,6 @@ export const Template = ({ inverse, ...args }) => {
 | <code>--fs-button-secondary-inverse-border-color-hover</code>  | <code>var(--fs-button-secondary-inverse-bkg-color-hover)</code>  |
 | <code>--fs-button-secondary-inverse-border-color-active</code> | <code>var(--fs-button-secondary-inverse-bkg-color-active)</code> |
 | <code>--fs-button-secondary-inverse-shadow-hover</code>        | <code>var(--fs-button-shadow-hover)</code>                       |
-
-<br />
 
 ### Tertiary
 
@@ -220,9 +232,9 @@ export const Template = ({ inverse, ...args }) => {
 | <code>--fs-button-tertiary-border-color-active</code> | <code>var(--fs-button-tertiary-border-color)</code> |
 | <code>--fs-button-tertiary-shadow-hover</code>        | <code>var(--fs-button-shadow-hover)</code>          |
 
-#### Inverse
+### Tertiary Inverse
 
-<Canvas>
+<Canvas style={{ backgroundColor: '#171a1c' }}>
   <Story name="Tertiary Inverse" args={{ inverse: true, variant: 'tertiary' }}>
     {Template.bind({})}
   </Story>
@@ -258,25 +270,6 @@ export const Template = ({ inverse, ...args }) => {
 | <code>--fs-button-disabled-bkg-color</code>  | <code>var(--fs-color-disabled-bkg)</code>  |
 | <code>--fs-button-disabled-text-color</code> | <code>var(--fs-color-disabled-text)</code> |
 
-### Icon
-
-<Canvas>
-  <Story
-    name="Icon"
-    args={{
-      variant: 'primary',
-      iconPosition: 'right',
-      icon: <Icon name="User" width="18" height="18" />,
-    }}
-  >
-    {Template.bind({})}
-  </Story>
-</Canvas>
-
-| Local token                           | Default value/Global token linked  |
-| ------------------------------------- | ---------------------------------- |
-| <code>--fs-button-icon-padding</code> | <code>0 var(--fs-spacing-1)</code> |
-
 ### Small
 
 <Canvas>
@@ -293,9 +286,9 @@ export const Template = ({ inverse, ...args }) => {
 
 ---
 
-## Related components
+## Related Components
 
-<div style={{ display: 'flex', justifyContent: 'space-between' }}>
+<section style={{ display: 'flex', justifyContent: 'space-between' }}>
   <article style={{ width: '45%' }}>
     <div
       style={{
@@ -309,13 +302,11 @@ export const Template = ({ inverse, ...args }) => {
       <ButtonBuy>Button Buy</ButtonBuy>
     </div>
     <br />
-    <h4>
-      <bold>Button Buy</bold>
-    </h4>
-    <h5>
+    <h3>Button Buy</h3>
+    <p>
       A button with the intent of directly sending the user to the checkout/cart
       step.
-    </h5>
+    </p>
   </article>
   <article style={{ width: '45%' }}>
     <div
@@ -327,12 +318,10 @@ export const Template = ({ inverse, ...args }) => {
         alignItems: 'center',
       }}
     >
-      <ButtonLink>Button Link</ButtonLink>
+      <ButtonLink href="/">Button Link</ButtonLink>
     </div>
     <br />
-    <h4>
-      <bold>Button Link</bold>
-    </h4>
-    <h5>A button that acts as a link to navigate users between pages.</h5>
+    <h3>Button Link</h3>
+    <p>A button that acts as a link to navigate users between pages.</p>
   </article>
-</div>
+</section>
