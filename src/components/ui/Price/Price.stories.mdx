@@ -1,0 +1,152 @@
+import { Meta, Canvas, Story, ArgsTable } from '@storybook/addon-docs'
+
+import Price from '.'
+
+<Meta
+  title="Atoms/Price"
+  component={Price}
+  argTypes={{
+    value: {
+      type: {
+        name: 'number',
+      },
+      description: '`number`',
+    },
+    variant: {
+      description: 'The current variant for prices.',
+      options: ['installment', 'listing', 'savings', 'selling', 'spot'],
+      control: { type: 'select' },
+    },
+    formatter: {
+      table: { disable: true },
+    },
+  }}
+/>
+
+export const Template = (args) => <Price {...args} />
+
+<header>
+
+# Price
+
+Prices are used to display the price of a given product, discount and total values.
+
+</header>
+
+## Usage
+
+`import Price from '../components/ui/Price'`
+
+<Canvas>
+  <Story
+    name="default"
+    args={{
+      variant: '',
+      value: 100,
+      SRText: 'Price:',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<ArgsTable story="default" />
+
+---
+
+## Variations
+
+### Installment
+
+<Canvas>
+  <Story
+    name="installment"
+    args={{
+      variant: 'installment',
+      value: 100,
+      SRText: 'Price:',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<ArgsTable story="installment" />
+
+### Listing
+
+<Canvas>
+  <Story
+    name="listing"
+    args={{
+      variant: 'listing',
+      value: 100,
+      SRText: 'Original price:',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<ArgsTable story="listing" />
+
+| Local token                                          | Default value/Global token linked                                                                        |
+| ---------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
+| <code>--fs-price-listing-color</code>                | <div style={{ backgroundColor: 'var(--fs-color-text-light)' }} /><code>var(--fs-color-text-light)</code> |
+| <code>--fs-price-listing-text-decoration-line</code> | <code>line-through</code>                                                                                |
+
+### Savings
+
+<Canvas>
+  <Story
+    name="savings"
+    args={{
+      variant: 'savings',
+      value: 100,
+      SRText: 'Price:',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<ArgsTable story="savings" />
+
+### Selling
+
+<Canvas>
+  <Story
+    name="selling"
+    args={{
+      variant: 'selling',
+      value: 100,
+      SRText: 'Price:',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<ArgsTable story="selling" />
+
+### Spot
+
+<Canvas>
+  <Story
+    name="spot"
+    args={{
+      variant: 'spot',
+      value: 100,
+      SRText: 'Price:',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<ArgsTable story="spot" />
+
+| Local token                              | Default value/Global token linked       |
+| ---------------------------------------- | --------------------------------------- |
+| <code>--fs-price-spot-margin-left</code> | <code>var(--fs-spacing-1)</code>        |
+| <code>--fs-price-spot-font-weight</code> | <code>var(--fs-text-weight-bold)</code> |
