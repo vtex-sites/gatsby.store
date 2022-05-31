@@ -2,6 +2,8 @@ import { Button as UIButton, Icon as UIIcon } from '@faststore/ui'
 import type { ReactNode, AriaAttributes } from 'react'
 import type { ButtonProps as UIButtonProps } from '@faststore/ui'
 
+import styles from './button.module.scss'
+
 export type Variant = 'primary' | 'secondary' | 'tertiary'
 export type Size = 'small' | 'regular'
 export type IconPosition = 'left' | 'right'
@@ -45,11 +47,12 @@ function Button({
 }: ButtonProps) {
   return (
     <UIButton
-      data-fs-button
       aria-label={ariaLabel}
-      data-fs-button-variant={variant}
-      data-fs-button-size={size}
+      className={styles.fsButton}
+      data-fs-button
       data-fs-button-inverse={inverse}
+      data-fs-button-size={size}
+      data-fs-button-variant={variant}
       {...props}
     >
       {iconPosition === 'left' && <UIIcon component={icon} />}
