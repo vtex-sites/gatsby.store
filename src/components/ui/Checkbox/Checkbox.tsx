@@ -1,6 +1,8 @@
 import { Checkbox as UICheckbox } from '@faststore/ui'
 import type { CheckboxProps as UICheckboxProps } from '@faststore/ui'
 
+import styles from './checkbox.module.scss'
+
 export type CheckboxProps = {
   partial?: boolean
 } & UICheckboxProps
@@ -8,7 +10,7 @@ export type CheckboxProps = {
 function Checkbox({ partial, ...otherProps }: CheckboxProps) {
   return (
     <UICheckbox
-      data-fs-checkbox
+      className={styles.fsCheckbox}
       data-fs-checkbox-partial={partial}
       {...otherProps}
     />
