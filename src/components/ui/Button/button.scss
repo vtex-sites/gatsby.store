@@ -18,7 +18,7 @@
   --fs-button-border-color                         : transparent;
 
   --fs-button-text-size                            : var(--fs-text-size-base);
-  --fs-button-text-weight                          : bold;
+  --fs-button-text-weight                          : var(--fs-text-weight-bold);
 
   --fs-button-transition-function                  : var(--fs-transition-function);
   --fs-button-transition-property                  : var(--fs-transition-property);
