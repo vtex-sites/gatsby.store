@@ -1,20 +1,21 @@
-import { Button as UIButton } from '@faststore/ui'
 import Icon from 'src/components/ui/Icon'
-import type { ButtonProps } from '@faststore/ui'
+
+import Button from '../Button'
+import type { ButtonProps } from '../Button'
 
 type Props = ButtonProps
 
-function ButtonBuy({ children, ...props }: Props) {
+function ButtonBuy({ children, ...otherProps }: Props) {
   return (
-    <UIButton
+    <Button
       data-fs-button
-      data-store-buy-button
+      data-fs-button-buy
       data-fs-button-variant="buy"
-      {...props}
+      {...otherProps}
     >
       <Icon name="ShoppingCart" width={18} height={18} weight="bold" />
       {children}
-    </UIButton>
+    </Button>
   )
 }
 

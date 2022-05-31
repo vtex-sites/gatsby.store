@@ -4,11 +4,11 @@ import { useRef } from 'react'
 import type { LinkProps } from '@faststore/ui'
 import type { FocusEvent } from 'react'
 
-import type { UIButtonProps } from './Button'
+import type { ButtonProps } from '../Button'
 
 type Props = {
   disabled?: boolean
-} & UIButtonProps &
+} & ButtonProps &
   LinkProps<typeof GatsbyLink>
 
 function ButtonLink({
