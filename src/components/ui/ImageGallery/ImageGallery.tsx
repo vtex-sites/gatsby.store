@@ -1,8 +1,8 @@
 import { useState } from 'react'
 import { Image } from 'src/components/ui/Image'
-import * as styles from 'src/components/ui/ImageGallery/image-gallery.module.scss'
 
 import { ImageGallerySelector, ImageZoom } from '.'
+import styles from './image-gallery.module.scss'
 
 export interface ImageElementData {
   url: string
@@ -31,7 +31,7 @@ function ImageGallery({ images }: ImageGalleryProps) {
           width={804}
           height={804 * (3 / 4)}
           loading="eager"
-          fetchpriority="high"
+          fetchPriority="high"
         />
       </ImageZoom>
       {hasSelector && (

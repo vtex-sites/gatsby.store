@@ -10,8 +10,6 @@
 @import "src/components/common/Navbar/navbar.scss";
 
 // Product
-@import "src/components/product/ProductCard/product-card.scss";
-@import "src/components/product/ProductGrid/product-grid.scss";
 @import "src/components/product/OutOfStock/out-of-stock.scss";
 
 // Search
@@ -24,7 +22,6 @@
 @import "src/components/sections/Breadcrumb/breadcrumb.scss";
 @import "src/components/sections/Incentives/incentives.scss";
 @import "src/components/sections/ProductDetails/product-details.scss";
-@import "src/components/sections/ProductGallery/product-gallery.scss";
 @import "src/components/sections/ProductShelf/product-shelf.scss";
 @import "src/components/sections/ScrollToTopButton/scroll-to-top-button.scss";
 @import "src/components/sections/Section/section.scss";
@@ -50,7 +47,6 @@
 @import "src/components/ui/Link/link.scss";
 @import "src/components/ui/Price/price.scss";
 @import "src/components/ui/ProductTitle/product-title.scss";
-@import "src/components/ui/QuantitySelector/quantity-selector.scss";
 @import "src/components/ui/Select/select.scss";
 @import "src/components/ui/SlideOver/slide-over.scss";
 @import "src/components/ui/SROnly/sr-only.scss";
