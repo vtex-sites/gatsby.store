@@ -12,6 +12,7 @@ import ErrorBoundary from 'src/sdk/error/ErrorBoundary'
 import TestProvider from 'src/sdk/tests'
 import { uiActions, uiEffects, uiInitialState } from 'src/sdk/ui'
 import { ModalProvider } from 'src/sdk/ui/modal'
+import { validateSession } from 'src/sdk/session/validate'
 import type { GatsbyBrowser } from 'gatsby'
 
 import storeConfig from './store.config'
@@ -32,6 +33,7 @@ export const wrapRootElement: GatsbyBrowser['wrapRootElement'] = ({
             channel: storeConfig.channel,
             locale: storeConfig.locale,
           }}
+          onValidateSession={validateSession}
         >
           <CartProvider mode="optimistic" onValidateCart={validateCart}>
             <ModalProvider>{element}</ModalProvider>
