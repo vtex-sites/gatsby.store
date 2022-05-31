@@ -1,7 +1,14 @@
 import { sendAnalyticsEvent } from '@faststore/sdk'
 import { SearchInput as UISearchInput } from '@faststore/ui'
 import { navigate } from 'gatsby'
-import { forwardRef, lazy, Suspense, useRef, useState } from 'react'
+import {
+  forwardRef,
+  lazy,
+  Suspense,
+  useRef,
+  useState,
+  useDeferredValue,
+} from 'react'
 import Icon from 'src/components/ui/Icon'
 import useSearchHistory from 'src/sdk/search/useSearchHistory'
 import {
@@ -35,6 +42,7 @@ const SearchInput = forwardRef<SearchInputRef, SearchInputProps>(
     ref
   ) {
     const [searchQuery, setSearchQuery] = useState<string>('')
+    const searchQueryDeferred = useDeferredValue(searchQuery)
     const [suggestionsOpen, setSuggestionsOpen] = useState<boolean>(false)
     const searchRef = useRef<HTMLDivElement>(null)
     const { addToSearchHistory } = useSearchHistory()
@@ -77,7 +85,7 @@ const SearchInput = forwardRef<SearchInputRef, SearchInputProps>(
           {suggestionsOpen && (
             <Suspense fallback={null}>
               <div data-store-search-input-dropdown-wrapper>
-                <Suggestions term={searchQuery} />
+                <Suggestions term={searchQueryDeferred} />
               </div>
             </Suspense>
           )}

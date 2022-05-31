@@ -1,21 +1,19 @@
 import { gql } from '@vtex/graphql-utils'
-import { useCallback, useEffect, useState } from 'react'
 import UISuggestions from 'src/components/ui/Search/Suggestions'
-import { request } from 'src/sdk/graphql/request'
-import debounce from 'debounce'
 import type {
-  SearchSuggestionsQueryQuery,
-  SearchSuggestionsQueryQueryVariables,
+  SearchSuggestionsQueryQuery as Query,
+  SearchSuggestionsQueryQueryVariables as Variables,
 } from '@generated/graphql'
 import type { SuggestionsProps } from 'src/components/ui/Search/Suggestions'
 import { useSession } from '@faststore/sdk'
+import { useQuery } from 'src/sdk/graphql/useQuery'
 
 import { SearchHistory } from '../History'
 import SuggestionsTopSearch from './SuggestionsTopSearch'
 
 const MAX_SUGGESTIONS = 5
 
-const SearchSuggestionsQuery = gql`
+const query = gql`
   query SearchSuggestionsQuery(
     $term: String!
     $selectedFacets: [IStoreSelectedFacet!]
@@ -35,57 +33,26 @@ const SearchSuggestionsQuery = gql`
 
 function useSuggestions(term: string, limit: number = MAX_SUGGESTIONS) {
   const { channel, locale } = useSession()
-  const [suggestions, setSuggestions] =
-    useState<SearchSuggestionsQueryQuery['search']['suggestions']>()
 
-  const [loading, setLoading] = useState<boolean>(false)
+  const { data, error } = useQuery<Query, Variables>(query, {
+    term,
+    selectedFacets: [
+      { key: 'channel', value: channel ?? '' },
+      { key: 'locale', value: locale },
+    ],
+  })
 
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  const debouncedRequest = useCallback(
-    debounce(
-      async (
-        query: string,
-        sessionChannel: string | null,
-        sessionLocale: string
-      ) => {
-        const data = await request<
-          SearchSuggestionsQueryQuery,
-          SearchSuggestionsQueryQueryVariables
-        >(SearchSuggestionsQuery, {
-          term: query,
-          selectedFacets: [
-            { key: 'channel', value: sessionChannel ?? '' },
-            { key: 'locale', value: sessionLocale },
-          ],
-        })
-
-        setSuggestions(data.search.suggestions)
-      },
-      1000
-    ),
-    []
-  )
-
-  useEffect(() => {
-    if (term.length < 0) {
-      return
-    }
-
-    setLoading(true)
-    debouncedRequest(term, channel, locale)
-    setLoading(false)
-  }, [debouncedRequest, term, channel, locale])
-
-  const terms = (suggestions?.terms ?? []).slice(0, limit)
-  const products = (suggestions?.products ?? []).slice(0, limit)
-
-  return { terms, products, loading }
+  return {
+    terms: (data?.search.suggestions.terms ?? []).slice(0, limit),
+    products: (data?.search.suggestions.products ?? []).slice(0, limit),
+    isLoading: !error && !data,
+  }
 }
 
 function Suggestions({ term = '', ...otherProps }: SuggestionsProps) {
-  const { terms, products, loading } = useSuggestions(term)
+  const { terms, products, isLoading } = useSuggestions(term)
 
-  if (term.length === 0 && !loading) {
+  if (term.length === 0 && !isLoading) {
     return (
       <>
         <SearchHistory />
@@ -94,7 +61,7 @@ function Suggestions({ term = '', ...otherProps }: SuggestionsProps) {
     )
   }
 
-  if (loading) {
+  if (isLoading) {
     return <p data-fs-search-input-loading-text>Loading...</p>
   }
 
