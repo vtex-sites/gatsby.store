@@ -10,7 +10,7 @@ module.exports = {
   },
 
   // Default channel
-  channel: '{"salesChannel":"1"}',
+  channel: '{"salesChannel":"1","regionId":""}',
   locale: 'en-US',
 
   // Production URLs
