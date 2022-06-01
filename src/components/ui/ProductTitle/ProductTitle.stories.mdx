@@ -1,0 +1,65 @@
+import { Meta, Canvas, Story, ArgsTable } from '@storybook/addon-docs'
+import ProductTitle from '.'
+import { DiscountBadge } from 'src/components/ui/Badge'
+
+<Meta
+  title="Molecules/ProductTitle"
+  component={ProductTitle}
+  argTypes={{
+    title: {
+      control: { type: 'radio' },
+      options: ['h1', 'h2', 'bold', 'italic'],
+      mapping: {
+        h1: <h1 className="text__title-product">Apple Magic Mouse</h1>,
+        h2: <h2>Apple Magic Mouse</h2>,
+        bold: <b>Apple Magic Mouse</b>,
+        italic: <i>Apple Magic Mouse</i>,
+      },
+      defaultValue: 'h1',
+    },
+    label: {
+      control: { type: 'radio' },
+      options: ['low', 'medium', 'hight'],
+      mapping: {
+        low: <DiscountBadge listPrice={100} spotPrice={90} big />,
+        medium: <DiscountBadge listPrice={100} spotPrice={70} big />,
+        hight: <DiscountBadge listPrice={100} spotPrice={10} big />,
+      },
+      defaultValue: 'low',
+    },
+    refNumber: {
+      defaultValue: '99995945',
+    },
+  }}
+/>
+
+export const Template = (args) => <ProductTitle {...args} />
+
+<header>
+
+# ProductTitle
+
+The product title that is commonly used on Product Details Page (PDP).
+
+</header>
+
+### Import
+
+`import ProductTitle from '../components/ui/ProductTitle'`
+
+### Usage
+
+<Canvas>
+  <Story name="Default">{Template.bind({})}</Story>
+</Canvas>
+
+<ArgsTable story="Default" />
+
+## Nested Elements
+
+### Ref Number
+
+| Local token                                           | Default value/Global token linked                                                                   |
+| ----------------------------------------------------- | --------------------------------------------------------------------------------------------------- |
+| <code>--fs-product-title-ref-number-margin-top</code> | <code>var(--fs-spacing-3)</code>                                                                    |
+| <code>--fs-product-title-ref-number-color</code>      | <div style={{ backgroundColor: '--fs-color-text-light' }} /><code>var(--fs-color-text-light)</code> |

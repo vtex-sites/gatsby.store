@@ -1,0 +1,35 @@
+@import "src/styles/scaffold";
+
+.fs-product-title {
+  // --------------------------------------------------------
+  // Design Tokens for Checkbox
+  // --------------------------------------------------------
+
+  // Default properties
+  --fs-product-title-ref-number-margin-top : var(--fs-spacing-3);
+  --fs-product-title-ref-number-color      : var(--fs-color-text-light);
+
+  // --------------------------------------------------------
+  // Structural Styles
+  // --------------------------------------------------------
+
+  @include media(">=tablet") { padding: var(--fs-spacing-4) var(--fs-spacing-5); }
+
+  [data-fs-product-title-header] {
+    display: flex;
+    column-gap: var(--fs-spacing-2);
+    justify-content: space-between;
+
+    [data-store-badge] { white-space: nowrap; }
+
+    @include media(">=tablet", "<notebook") {
+      flex-direction: column;
+      row-gap: var(--fs-spacing-3);
+    }
+  }
+
+  [data-fs-product-title-ref-number] {
+    margin-top: var(--fs-product-title-ref-number-margin-top);
+    color: var(--fs-product-title-ref-number-color);
+  }
+}
