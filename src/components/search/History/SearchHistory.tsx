@@ -3,10 +3,11 @@ import Button from 'src/components/ui/Button'
 import Icon from 'src/components/ui/Icon'
 import Link from 'src/components/ui/Link'
 import useSearchHistory from 'src/sdk/search/useSearchHistory'
-import useSearchInput, { formatSearchPath } from 'src/sdk/search/useSearchInput'
+import useSearchInput from 'src/sdk/search/useSearchInput'
+import type { History } from 'src/sdk/search/useSearchHistory'
 
 export interface SearchHistoryProps {
-  history?: string[]
+  history?: History[]
 }
 
 const SearchHistory = ({ history = [] }: SearchHistoryProps) => {
@@ -27,11 +28,11 @@ const SearchHistory = ({ history = [] }: SearchHistoryProps) => {
       </div>
       <UIList variant="ordered">
         {searchHistory.map((item) => (
-          <li key={item} data-fs-search-suggestion-item>
+          <li key={item.term} data-fs-search-suggestion-item>
             <Link
               variant="display"
-              to={formatSearchPath(item)}
-              onClick={() => onSearchInputSelection?.(item)}
+              to={item.path}
+              onClick={() => onSearchInputSelection?.(item.term, item.path)}
             >
               <Icon
                 name="Clock"
@@ -39,7 +40,7 @@ const SearchHistory = ({ history = [] }: SearchHistoryProps) => {
                 height={18}
                 data-fs-search-suggestion-item-icon
               />
-              {item}
+              {item.term}
             </Link>
           </li>
         ))}

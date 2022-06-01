@@ -13,8 +13,8 @@ export const formatSearchPath = (term: string) => {
   return `${pathname}${search}`
 }
 
-interface SearchInputContextValue {
-  onSearchInputSelection?: (term: string) => void
+export interface SearchInputContextValue {
+  onSearchInputSelection?: (term: string, path: string) => void
 }
 
 const SearchInputContext = createContext<SearchInputContextValue | null>(null)

@@ -14,7 +14,7 @@ type SuggestionProductCardProps = {
 
 function SuggestionProductCard({ product, index }: SuggestionProductCardProps) {
   const { onSearchInputSelection } = useSearchInput()
-  const { onClick, ...linkProps } = useProductLink({
+  const { onClick, to, ...linkProps } = useProductLink({
     product,
     selectedOffer: 0,
     index,
@@ -33,11 +33,12 @@ function SuggestionProductCard({ product, index }: SuggestionProductCardProps) {
     <Card data-fs-suggestion-product-card data-testid="suggestion-product-card">
       <Link
         {...linkProps}
+        to={to}
         title={name}
         variant="display"
         onClick={() => {
           onClick()
-          onSearchInputSelection?.(name)
+          onSearchInputSelection?.(name, to)
         }}
       >
         <CardContent>

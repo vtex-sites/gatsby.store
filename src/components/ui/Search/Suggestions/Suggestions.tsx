@@ -81,7 +81,10 @@ function Suggestions({
               <Link
                 to={formatSearchPath(suggestion)}
                 onClick={() => {
-                  onSearchInputSelection?.(suggestion)
+                  onSearchInputSelection?.(
+                    suggestion,
+                    formatSearchPath(suggestion)
+                  )
                 }}
               >
                 <Icon

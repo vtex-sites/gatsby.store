@@ -15,6 +15,7 @@ import {
   formatSearchPath,
   SearchInputProvider,
 } from 'src/sdk/search/useSearchInput'
+import type { SearchInputContextValue } from 'src/sdk/search/useSearchInput'
 import useOnClickOutside from 'src/sdk/ui/useOnClickOutside'
 import type { SearchEvent } from '@faststore/sdk'
 import type {
@@ -47,12 +48,13 @@ const SearchInput = forwardRef<SearchInputRef, SearchInputProps>(
     const searchRef = useRef<HTMLDivElement>(null)
     const { addToSearchHistory } = useSearchHistory()
 
-    const onSearchInputSelection = (term: string) => {
-      addToSearchHistory(term)
-      sendAnalytics(term)
-      setSuggestionsOpen(false)
-      setSearchQuery(term)
-    }
+    const onSearchInputSelection: SearchInputContextValue['onSearchInputSelection'] =
+      (term, path) => {
+        addToSearchHistory({ term, path })
+        sendAnalytics(term)
+        setSuggestionsOpen(false)
+        setSearchQuery(term)
+      }
 
     useOnClickOutside(searchRef, () => setSuggestionsOpen(false))
 
@@ -75,8 +77,10 @@ const SearchInput = forwardRef<SearchInputRef, SearchInputProps>(
             placeholder="Search everything at the store"
             onChange={(e) => setSearchQuery(e.target.value)}
             onSubmit={(term) => {
-              onSearchInputSelection(term)
-              navigate(formatSearchPath(term))
+              const path = formatSearchPath(term)
+
+              onSearchInputSelection(term, path)
+              navigate(path)
             }}
             onFocus={() => setSuggestionsOpen(true)}
             value={searchQuery}
