@@ -8,12 +8,11 @@ import { DiscountBadge } from 'src/components/ui/Badge'
   argTypes={{
     title: {
       control: { type: 'radio' },
-      options: ['h1', 'h2', 'bold', 'italic'],
+      options: ['h1', 'h2', 'h3'],
       mapping: {
-        h1: <h1 className="text__title-product">Apple Magic Mouse</h1>,
+        h1: <h1>Apple Magic Mouse</h1>,
         h2: <h2>Apple Magic Mouse</h2>,
-        bold: <b>Apple Magic Mouse</b>,
-        italic: <i>Apple Magic Mouse</i>,
+        h3: <h3>Apple Magic Mouse</h3>,
       },
       defaultValue: 'h1',
     },
@@ -54,6 +53,12 @@ The product title that is commonly used on Product Details Page (PDP).
 </Canvas>
 
 <ArgsTable story="Default" />
+
+| Local token                                 | Default value/Global token linked          |
+| ------------------------------------------- | ------------------------------------------ |
+| <code>--fs-product-title-font-size</code>   | <code>var(--fs-text-size-4)</code>         |
+| <code>--fs-product-title-font-weight</code> | <code>var(--fs-text-weight-regular)</code> |
+| <code>--fs-product-title-line-height</code> | <code>1.12</code>                          |
 
 ## Nested Elements
 

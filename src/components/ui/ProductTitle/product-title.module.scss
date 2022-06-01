@@ -6,6 +6,10 @@
   // --------------------------------------------------------
 
   // Default properties
+  --fs-product-title-font-size             : var(--fs-text-size-4);
+  --fs-product-title-font-weight           : var(--fs-text-weight-regular);
+  --fs-product-title-line-height           : 1.12;
+
   --fs-product-title-ref-number-margin-top : var(--fs-spacing-3);
   --fs-product-title-ref-number-color      : var(--fs-color-text-light);
 
@@ -19,6 +23,13 @@
     display: flex;
     column-gap: var(--fs-spacing-2);
     justify-content: space-between;
+
+    // title prop
+    &:first-child {
+      font-size: var(--fs-product-title-font-size);
+      font-weight: var(--fs-product-title-font-weight);
+      line-height: var(--fs-product-title-line-height);
+    }
 
     [data-store-badge] { white-space: nowrap; }
 
