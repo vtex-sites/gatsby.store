@@ -2,7 +2,7 @@
 
 .fs-product-title {
   // --------------------------------------------------------
-  // Design Tokens for Checkbox
+  // Design Tokens for ProductTitle
   // --------------------------------------------------------
 
   // Default properties
@@ -24,7 +24,7 @@
     column-gap: var(--fs-spacing-2);
     justify-content: space-between;
 
-    // title prop
+    // Title prop
     &:first-child {
       font-size: var(--fs-product-title-font-size);
       font-weight: var(--fs-product-title-font-weight);

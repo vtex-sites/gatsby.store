@@ -20,7 +20,7 @@ interface ProductTitleProp {
 
 function ProductTitle({ title, label, refNumber }: ProductTitleProp) {
   return (
-    <div className={styles.fsProductTitle}>
+    <header className={styles.fsProductTitle}>
       <div data-fs-product-title-header>
         {title}
         {!!label && label}
@@ -31,7 +31,7 @@ function ProductTitle({ title, label, refNumber }: ProductTitleProp) {
           Ref.: {refNumber}
         </div>
       )}
-    </div>
+    </header>
   )
 }
 
