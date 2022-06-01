@@ -20,7 +20,11 @@ function Price({ classes = '', SRText, ...props }: Props) {
   return (
     <>
       <SROnly text={SRText} />
-      <UIPrice className={`${styles.fsPrice} ${classes}`} {...props} />
+      <UIPrice
+        data-fs-price
+        className={`${styles.fsPrice} ${classes}`}
+        {...props}
+      />
     </>
   )
 }

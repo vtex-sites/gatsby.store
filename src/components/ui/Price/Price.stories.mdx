@@ -11,6 +11,10 @@ import Price from '.'
         name: 'number',
       },
       description: '`number`',
+      defaultValue: 100,
+    },
+    SRText: {
+      defaultValue: 'Price:',
     },
     variant: {
       description: 'The current variant for prices.',
@@ -33,6 +37,56 @@ Prices are used to display the price of a given product, discount and total valu
 
 </header>
 
+## Overview
+
+The `Price` component uses [FastStore UI Price](https://www.faststore.dev/reference/ui/atoms/Price) as base.
+
+<Canvas>
+  <Story name="overview-default">{Template.bind({})}</Story>
+  <Story
+    name="overview-installment"
+    args={{
+      variant: 'installment',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="overview-listing"
+    args={{
+      variant: 'listing',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="overview-savings"
+    args={{
+      variant: 'savings',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="overview-selling"
+    args={{
+      variant: 'selling',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="overview-spot"
+    args={{
+      variant: 'spot',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+---
+
 ## Usage
 
 `import Price from '../components/ui/Price'`
@@ -42,8 +96,6 @@ Prices are used to display the price of a given product, discount and total valu
     name="default"
     args={{
       variant: '',
-      value: 100,
-      SRText: 'Price:',
     }}
   >
     {Template.bind({})}
@@ -54,9 +106,9 @@ Prices are used to display the price of a given product, discount and total valu
 
 <ArgsTable story="default" />
 
-## Variations
+---
 
-<br />
+## Variations
 
 ### Installment
 
@@ -65,8 +117,6 @@ Prices are used to display the price of a given product, discount and total valu
     name="installment"
     args={{
       variant: 'installment',
-      value: 100,
-      SRText: 'Price:',
     }}
   >
     {Template.bind({})}
@@ -82,7 +132,6 @@ Prices are used to display the price of a given product, discount and total valu
     name="listing"
     args={{
       variant: 'listing',
-      value: 100,
       SRText: 'Original price:',
     }}
   >
@@ -92,10 +141,10 @@ Prices are used to display the price of a given product, discount and total valu
 
 <ArgsTable story="listing" />
 
-| Local token                                          | Default value/Global token linked                                                                        |
-| ---------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
-| <code>--fs-price-listing-color</code>                | <div style={{ backgroundColor: 'var(--fs-color-text-light)' }} /><code>var(--fs-color-text-light)</code> |
-| <code>--fs-price-listing-text-decoration-line</code> | <code>line-through</code>                                                                                |
+| Local token                                     | Default value/Global token linked                                                                        |
+| ----------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
+| <code>--fs-price-listing-color</code>           | <div style={{ backgroundColor: 'var(--fs-color-text-light)' }} /><code>var(--fs-color-text-light)</code> |
+| <code>--fs-price-listing-text-decoration</code> | <code>line-through</code>                                                                                |
 
 ### Savings
 
@@ -104,8 +153,6 @@ Prices are used to display the price of a given product, discount and total valu
     name="savings"
     args={{
       variant: 'savings',
-      value: 100,
-      SRText: 'Price:',
     }}
   >
     {Template.bind({})}
@@ -121,8 +168,6 @@ Prices are used to display the price of a given product, discount and total valu
     name="selling"
     args={{
       variant: 'selling',
-      value: 100,
-      SRText: 'Price:',
     }}
   >
     {Template.bind({})}
@@ -138,8 +183,6 @@ Prices are used to display the price of a given product, discount and total valu
     name="spot"
     args={{
       variant: 'spot',
-      value: 100,
-      SRText: 'Price:',
     }}
   >
     {Template.bind({})}
