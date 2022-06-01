@@ -1,4 +1,5 @@
 import { CartProvider, SessionProvider, UIProvider } from '@faststore/sdk'
+import { validateSession } from 'src/sdk/session/validate'
 import type { ReactNode } from 'react'
 import type { GatsbySSR } from 'gatsby'
 
@@ -26,6 +27,7 @@ export const wrapRootElement: GatsbySSR['wrapRootElement'] = ({ element }) => (
             channel: storeConfig.channel,
             locale: storeConfig.locale,
           }}
+          onValidateSession={validateSession}
         >
           <CartProvider mode="optimistic" onValidateCart={validateCart}>
             <ModalProvider>{element}</ModalProvider>
