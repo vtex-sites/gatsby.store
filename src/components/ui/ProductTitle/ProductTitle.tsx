@@ -27,9 +27,9 @@ function ProductTitle({ title, label, refNumber }: ProductTitleProp) {
       </div>
 
       {refNumber && (
-        <div data-fs-product-title-ref-number className="text__legend">
+        <p data-fs-product-title-ref-number className="text__legend">
           Ref.: {refNumber}
-        </div>
+        </p>
       )}
     </header>
   )
