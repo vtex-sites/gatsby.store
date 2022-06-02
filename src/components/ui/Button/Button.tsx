@@ -8,7 +8,8 @@ export type Variant = 'primary' | 'secondary' | 'tertiary'
 export type Size = 'small' | 'regular'
 export type IconPosition = 'left' | 'right'
 
-export interface ButtonProps extends Omit<UIButtonProps, 'aria-label'> {
+export interface ButtonProps
+  extends Omit<UIButtonProps, 'aria-label' | 'disabled'> {
   /**
    * Specifies the component variant
    */
@@ -33,6 +34,10 @@ export interface ButtonProps extends Omit<UIButtonProps, 'aria-label'> {
    * For accessibility purposes, defines an ARIA label to the element when no label is provided
    */
   'aria-label'?: AriaAttributes['aria-label']
+  /**
+   * Specifies that this button should be disabled
+   */
+  disabled?: boolean
 }
 
 function Button({
@@ -43,6 +48,7 @@ function Button({
   iconPosition,
   children,
   'aria-label': ariaLabel,
+  disabled,
   ...props
 }: ButtonProps) {
   return (
@@ -53,6 +59,7 @@ function Button({
       data-fs-button-inverse={inverse}
       data-fs-button-size={size}
       data-fs-button-variant={variant}
+      disabled={disabled}
       {...props}
     >
       {iconPosition === 'left' && <UIIcon component={icon} />}
