@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - Applies new local tokens to `Alert` ([#77](https://github.com/vtex-sites/gatsby.store/pull/77))
+- Add Storybook documentation for `QuantitySelector` component ([#85](https://github.com/vtex-sites/gatsby.store/pull/85))
 - Applies new local tokens to `Checkbox` ([#61](https://github.com/vtex-sites/gatsby.store/pull/61))
 - Attachments to CartItem id ([#53](https://github.com/vtex-sites/gatsby.store/pull/53))
 - Adds tests for analytics events on `CartItem` ([#66](https://github.com/vtex-sites/gatsby.store/pull/66))
@@ -19,6 +20,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- Uses CSS Modules on `Checkbox` component [#81](https://github.com/vtex-sites/gatsby.store/pull/81)
 - Uses CSS Modules on `QuantitySelector` component [#75](https://github.com/vtex-sites/gatsby.store/pull/75)
 - `OutOfStock` component ([#70](https://github.com/vtex-sites/nextjs.store/pull/70))
 - Displays 5 products on product suggestion for better mobile experience ([#73](https://github.com/vtex-sites/gatsby.store/pull/73))
@@ -35,6 +37,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Deprecated
 
 ### Removed
+
+- Unused `-default` at css variables ([#82](https://github.com/vtex-sites/gatsby.store/pull/82))
 
 ### Fixed
 

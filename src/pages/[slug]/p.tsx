@@ -186,45 +186,39 @@ export const getServerData = async ({
 }) => {
   const ONE_YEAR_CACHE = `s-maxage=31536000, stale-while-revalidate`
 
-  try {
-    const id = slug.split('-').pop()
+  const id = slug.split('-').pop()
 
-    const { execute } = await import('src/server/index')
-    const { data } = await execute({
-      operationName: querySSR,
-      variables: { id },
+  const { execute } = await import('src/server/index')
+  const { data, errors } = await execute({
+    operationName: querySSR,
+    variables: { id },
+  })
+
+  if (errors && errors?.length > 0) {
+    throw new Error(`${errors[0]}`)
+  }
+
+  if (data === null) {
+    const params = new URLSearchParams({
+      from: encodeURIComponent(`/${slug}/p`),
     })
 
-    if (data === null) {
-      const originalUrl = `/${slug}/p`
-
-      return {
-        status: 301,
-        props: {},
-        headers: {
-          'cache-control': ONE_YEAR_CACHE,
-          location: `/404/?from=${encodeURIComponent(originalUrl)}`,
-        },
-      }
-    }
-
     return {
-      status: 200,
-      props: data ?? {},
-      headers: {
-        'cache-control': ONE_YEAR_CACHE,
-      },
-    }
-  } catch (err) {
-    console.error(err)
-
-    return {
-      status: 500,
+      status: 301,
       props: {},
       headers: {
-        'cache-control': 'public, max-age=0, must-revalidate',
+        'cache-control': ONE_YEAR_CACHE,
+        location: `/404/?${params.toString()}}`,
       },
     }
+  }
+
+  return {
+    status: 200,
+    props: data ?? {},
+    headers: {
+      'cache-control': ONE_YEAR_CACHE,
+    },
   }
 }
 
