@@ -4,6 +4,11 @@ import './src/styles/global/resets.scss'
 import './src/styles/global/typography.scss'
 import './src/styles/global/layout.scss'
 
+import '@fontsource/orelega-one'
+
+import '@fontsource/roboto-mono'
+import '@fontsource/roboto-mono/700.css'
+
 import { CartProvider, SessionProvider, UIProvider } from '@faststore/sdk'
 import Layout from 'src/Layout'
 import AnalyticsHandler from 'src/sdk/analytics'
