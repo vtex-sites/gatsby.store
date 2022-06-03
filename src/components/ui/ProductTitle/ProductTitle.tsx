@@ -20,7 +20,7 @@ interface ProductTitleProp {
 
 function ProductTitle({ title, label, refNumber }: ProductTitleProp) {
   return (
-    <header className={styles.fsProductTitle}>
+    <header data-fs-product-title className={styles.fsProductTitle}>
       <div data-fs-product-title-header>
         {title}
         {!!label && label}

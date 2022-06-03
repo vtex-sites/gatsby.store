@@ -1,6 +1,8 @@
 import { Meta, Canvas, Story, ArgsTable } from '@storybook/addon-docs'
-import ProductTitle from '.'
+
 import { DiscountBadge } from 'src/components/ui/Badge'
+import ProductTitle from '.'
+import { TokenTable, TokenRow } from 'src/../.storybook/components'
 
 <Meta
   title="Molecules/ProductTitle"
@@ -42,11 +44,11 @@ The product title that is commonly used on Product Details Page (PDP).
 
 </header>
 
-### Import
+---
+
+## Usage
 
 `import ProductTitle from '../components/ui/ProductTitle'`
-
-### Usage
 
 <Canvas>
   <Story name="Default">{Template.bind({})}</Story>
@@ -54,17 +56,32 @@ The product title that is commonly used on Product Details Page (PDP).
 
 <ArgsTable story="Default" />
 
-| Local token                                 | Default value/Global token linked          |
-| ------------------------------------------- | ------------------------------------------ |
-| <code>--fs-product-title-font-size</code>   | <code>var(--fs-text-size-4)</code>         |
-| <code>--fs-product-title-font-weight</code> | <code>var(--fs-text-weight-regular)</code> |
-| <code>--fs-product-title-line-height</code> | <code>1.12</code>                          |
+<TokenTable>
+  <TokenRow
+    token="--fs-product-title-text-size"
+    value="var(--fs-text-size-4)"
+  />
+  <TokenRow
+    token="--fs-product-title-text-weight"
+    value="var(--fs-text-weight-regular)"
+  />
+  <TokenRow token="--fs-product-title-line-height" value="1.12" />
+</TokenTable>
+
+---
 
 ## Nested Elements
 
 ### Ref Number
 
-| Local token                                           | Default value/Global token linked                                                                   |
-| ----------------------------------------------------- | --------------------------------------------------------------------------------------------------- |
-| <code>--fs-product-title-ref-number-margin-top</code> | <code>var(--fs-spacing-3)</code>                                                                    |
-| <code>--fs-product-title-ref-number-color</code>      | <div style={{ backgroundColor: '--fs-color-text-light' }} /><code>var(--fs-color-text-light)</code> |
+<TokenTable>
+  <TokenRow
+    token="--fs-product-title-ref-number-margin-top"
+    value="var(--fs-spacing-3)"
+  />
+  <TokenRow
+    token="--fs-product-title-ref-number-color"
+    value="var(--fs-color-text-light)"
+    isColor
+  />
+</TokenTable>
