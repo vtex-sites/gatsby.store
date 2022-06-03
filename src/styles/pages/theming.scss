@@ -1,0 +1,141 @@
+.footer,
+.navbar {
+  display: none;
+}
+
+.content {
+  width: 100%;
+
+  section:nth-child(3) {
+    li [data-product-card-image] {
+      background-position: center;
+      background-size: cover;
+      img { opacity: 0; }
+    }
+
+    li:nth-child(1) [data-product-card-image] {
+      background-image: url("https://user-images.githubusercontent.com/11613011/171760864-a1899065-6d63-490a-8aff-430f15638789.jpg");
+    }
+
+    li:nth-child(2) [data-product-card-image] {
+      background-image: url("https://user-images.githubusercontent.com/11613011/171760872-ca7a9ea8-6429-4fdb-a5f5-a7ad1a6f84f9.jpg");
+    }
+
+    li:nth-child(3) [data-product-card-image] {
+      background-image: url("https://user-images.githubusercontent.com/11613011/171760876-c5b4bc10-c27f-42d0-b1f4-de31bbda3fb5.jpg");
+    }
+
+    li:nth-child(4) [data-product-card-image] {
+      background-image: url("https://user-images.githubusercontent.com/11613011/171760879-1675010a-2622-40d2-8902-afa22fd28382.jpg");
+    }
+
+    li:nth-child(5) [data-product-card-image] {
+      background-image: url("https://user-images.githubusercontent.com/11613011/171760881-5c9534de-d564-494a-81ad-4ed080699b19.jpg");
+    }
+  }
+
+  section:nth-child(6) {
+    li [data-product-card-image] {
+      background-position: center;
+      background-size: cover;
+
+      img {
+        opacity: 0;
+      }
+    }
+
+    li:nth-child(1) [data-product-card-image] {
+      background-image: url("https://user-images.githubusercontent.com/11613011/171734185-08d5a1a6-5624-4d42-99fd-b8008d875f67.jpg");
+    }
+
+    li:nth-child(2) [data-product-card-image] {
+      background-image: url("https://user-images.githubusercontent.com/11613011/171760879-1675010a-2622-40d2-8902-afa22fd28382.jpg");
+    }
+
+    li:nth-child(3) [data-product-card-image] {
+      background-image: url("https://user-images.githubusercontent.com/11613011/171760872-ca7a9ea8-6429-4fdb-a5f5-a7ad1a6f84f9.jpg");
+    }
+
+    li:nth-child(4) [data-product-card-image] {
+      background-image: url("https://user-images.githubusercontent.com/11613011/171760881-5c9534de-d564-494a-81ad-4ed080699b19.jpg");
+    }
+
+    li:nth-child(5) [data-product-card-image] {
+      background-image: url("https://user-images.githubusercontent.com/11613011/171760864-a1899065-6d63-490a-8aff-430f15638789.jpg");
+    }
+  }
+
+  [data-store-tiles] {
+    li [data-product-card-image] {
+      background-position: center;
+      background-size: cover;
+
+      img {
+        opacity: 0;
+      }
+    }
+
+    li:nth-child(1) [data-product-card-image] {
+      background-image: url("https://user-images.githubusercontent.com/11613011/171760872-ca7a9ea8-6429-4fdb-a5f5-a7ad1a6f84f9.jpg");
+    }
+
+    li:nth-child(2) [data-product-card-image] {
+      background-image: url("https://user-images.githubusercontent.com/11613011/171734190-2d5c5d13-6e64-4178-8ae7-468158acadcf.jpg");
+    }
+
+    li:nth-child(3) [data-product-card-image] {
+      background-image: url("https://user-images.githubusercontent.com/11613011/171734179-e4b16e39-2022-45bd-9678-039c8bb6bc95.jpg");
+    }
+  }
+
+  [data-fs-hero] {
+    [data-hero-image] {
+      background-image: url("https://user-images.githubusercontent.com/11613011/171738799-97728f4c-b413-46a6-8dd6-9e8d8b0867fc.png");
+      background-position: center;
+      background-size: cover;
+
+      img {
+        opacity: 0;
+      }
+    }
+  }
+}
+
+.form {
+  padding-bottom: 0;
+
+  h2 {
+    width: 80%;
+    margin-bottom: var(--fs-spacing-2);
+    font-size: var(--fs-text-size-title-page);
+    font-weight: var(--fs-text-weight-black);
+  }
+
+  p { line-height: 1.4; }
+
+  article { width: 30%; }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    row-gap: var(--fs-spacing-3);
+    width: 30%;
+  }
+
+  button { margin-top: var(--fs-spacing-1); }
+
+  .form__wrapper { background-color: aliceblue; }
+
+  .layout__content {
+    display: flex;
+    column-gap: 10%;
+    align-items: flex-start;
+    justify-content: center;
+    padding: var(--fs-spacing-13) 0;
+  }
+
+  .checkbox__wrapper {
+    display: flex;
+    column-gap: var(--fs-spacing-1);
+  }
+}
