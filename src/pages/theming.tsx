@@ -37,7 +37,7 @@ function Page(props: Props) {
   const siteUrl = `https://${host}${pathname}`
 
   return (
-    <div className="new-theme content">
+    <div className="content">
       {/* SEO */}
       <GatsbySeo
         title={title}

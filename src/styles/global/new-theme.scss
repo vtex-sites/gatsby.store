@@ -9,6 +9,10 @@
 // Colors (Branding Core)
 // --------------------------------------------------------
 
+.body {
+  background-color: var(--fs-color-body-bkg);
+}
+
 .new-theme {
   // PALETTE
   // Tone values must range from lightest to darkest.

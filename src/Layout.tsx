@@ -22,7 +22,7 @@ function Layout({ children }: PropsWithChildren<unknown>) {
 
   return (
     <>
-      <div id="layout">
+      <div className="body new-theme" id="layout">
         <Alert
           icon="Bell"
           content={
