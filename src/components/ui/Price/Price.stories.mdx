@@ -1,6 +1,7 @@
 import { Meta, Canvas, Story, ArgsTable } from '@storybook/addon-docs'
 
 import Price from '.'
+import { TokenTable, TokenRow } from 'src/../.storybook/components'
 
 <Meta
   title="Atoms/Price"
@@ -135,10 +136,14 @@ The `Price` component uses [FastStore UI Price](https://www.faststore.dev/refere
   </Story>
 </Canvas>
 
-| Local token                                     | Default value/Global token linked                                                                        |
-| ----------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
-| <code>--fs-price-listing-color</code>           | <div style={{ backgroundColor: 'var(--fs-color-text-light)' }} /><code>var(--fs-color-text-light)</code> |
-| <code>--fs-price-listing-text-decoration</code> | <code>line-through</code>                                                                                |
+<TokenTable>
+  <TokenRow
+    token="--fs-price-listing-color"
+    value="var(--fs-color-text-light)"
+    isColor
+  />
+  <TokenRow token="--fs-price-listing-text-decoration" value="line-through" />
+</TokenTable>
 
 ### Savings
 
@@ -180,7 +185,10 @@ The `Price` component uses [FastStore UI Price](https://www.faststore.dev/refere
   </Story>
 </Canvas>
 
-| Local token                              | Default value/Global token linked       |
-| ---------------------------------------- | --------------------------------------- |
-| <code>--fs-price-spot-margin-left</code> | <code>var(--fs-spacing-1)</code>        |
-| <code>--fs-price-spot-font-weight</code> | <code>var(--fs-text-weight-bold)</code> |
+<TokenTable>
+  <TokenRow token="--fs-price-spot-margin-left" value="var(--fs-spacing-1)" />
+  <TokenRow
+    token="--fs-price-spot-font-weight"
+    value="var(--fs-text-weight-bold)"
+  />
+</TokenTable>
