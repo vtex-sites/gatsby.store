@@ -1,49 +1,11 @@
-import { useSession } from '@faststore/sdk'
 import { List as UIList } from '@faststore/ui'
-import { gql } from '@vtex/graphql-utils'
 import { forwardRef } from 'react'
 import { Badge } from 'src/components/ui/Badge'
 import Link from 'src/components/ui/Link'
-import { useQuery } from 'src/sdk/graphql/useQuery'
 import useSearchInput, { formatSearchPath } from 'src/sdk/search/useSearchInput'
+import useTopSearch from 'src/sdk/search/useTopSearch'
 import type { HTMLAttributes } from 'react'
-import type {
-  StoreSuggestionTerm,
-  SearchSuggestionsQueryQuery as Query,
-  SearchSuggestionsQueryQueryVariables as Variables,
-} from '@generated/graphql'
-
-const MAX_TOP_SEARCH_TERMS = 5
-
-const query = gql`
-  query SearchSuggestionsQuery {
-    search {
-      suggestions {
-        terms
-      }
-    }
-  }
-`
-
-function useTopSearch(
-  initialTerms: StoreSuggestionTerm[] = [],
-  limit: number = MAX_TOP_SEARCH_TERMS
-) {
-  const { channel, locale } = useSession()
-
-  const { data, error } = useQuery<Query, Variables>(query, {
-    term: '',
-    selectedFacets: [
-      { key: 'channel', value: channel ?? '' },
-      { key: 'locale', value: locale },
-    ],
-  })
-
-  return {
-    terms: (data?.search.suggestions.terms ?? initialTerms).slice(0, limit),
-    isLoading: !error && !data,
-  }
-}
+import type { StoreSuggestionTerm } from '@generated/graphql'
 
 export interface SuggestionsTopSearchProps
   extends HTMLAttributes<HTMLDivElement> {
