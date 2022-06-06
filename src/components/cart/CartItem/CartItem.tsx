@@ -67,7 +67,6 @@ interface Props {
 function CartItem({ item }: Props) {
   const btnProps = useRemoveButton(item)
   const { updateItemQuantity } = useCart()
-
   const { sendCartItemEvent } = useCartItemEvent()
 
   const onQuantityChange = useCallback(
