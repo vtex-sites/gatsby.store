@@ -10,23 +10,37 @@ import { TokenTable, TokenRow } from 'src/../.storybook/components'
   argTypes={{
     title: {
       control: { type: 'radio' },
-      options: ['h1', 'h2', 'h3'],
+      options: [
+        '<h1>Apple Magic Mouse</h1>',
+        '<h2>Apple Magic Mouse</h2>',
+        '<h3>Apple Magic Mouse</h3>',
+      ],
       mapping: {
-        h1: <h1>Apple Magic Mouse</h1>,
-        h2: <h2>Apple Magic Mouse</h2>,
-        h3: <h3>Apple Magic Mouse</h3>,
+        '<h1>Apple Magic Mouse</h1>': <h1>Apple Magic Mouse</h1>,
+        '<h2>Apple Magic Mouse</h2>': <h2>Apple Magic Mouse</h2>,
+        '<h3>Apple Magic Mouse</h3>': <h3>Apple Magic Mouse</h3>,
       },
-      defaultValue: 'h1',
+      defaultValue: '<h1>Apple Magic Mouse</h1>',
     },
     label: {
       control: { type: 'radio' },
-      options: ['low', 'medium', 'hight'],
+      options: [
+        '<DiscountBadge listPrice={100} spotPrice={90} big />',
+        '<DiscountBadge listPrice={100} spotPrice={70} big />',
+        '<DiscountBadge listPrice={100} spotPrice={10} big />',
+      ],
       mapping: {
-        low: <DiscountBadge listPrice={100} spotPrice={90} big />,
-        medium: <DiscountBadge listPrice={100} spotPrice={70} big />,
-        hight: <DiscountBadge listPrice={100} spotPrice={10} big />,
+        '<DiscountBadge listPrice={100} spotPrice={90} big />': (
+          <DiscountBadge listPrice={100} spotPrice={90} big />
+        ),
+        '<DiscountBadge listPrice={100} spotPrice={70} big />': (
+          <DiscountBadge listPrice={100} spotPrice={70} big />
+        ),
+        '<DiscountBadge listPrice={100} spotPrice={10} big />': (
+          <DiscountBadge listPrice={100} spotPrice={10} big />
+        ),
       },
-      defaultValue: 'low',
+      defaultValue: '<DiscountBadge listPrice={100} spotPrice={90} big />',
     },
     refNumber: {
       defaultValue: '99995945',
