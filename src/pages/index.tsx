@@ -1,21 +1,21 @@
+import 'src/styles/pages/homepage.scss'
+
 import { useSession } from '@faststore/sdk'
 import { graphql } from 'gatsby'
 import { GatsbySeo, JsonLd } from 'gatsby-plugin-next-seo'
+import { Suspense } from 'react'
 import BannerText from 'src/components/sections/BannerText'
 import Hero from 'src/components/sections/Hero'
 import IncentivesHeader from 'src/components/sections/Incentives/IncentivesHeader'
+import IncentivesMock from 'src/components/sections/Incentives/incentivesMock'
 import ProductShelf from 'src/components/sections/ProductShelf'
 import ProductTiles from 'src/components/sections/ProductTiles'
-import { mark } from 'src/sdk/tests/mark'
+import ProductShelfSkeleton from 'src/components/skeletons/ProductShelfSkeleton'
+import ProductTilesSkeleton from 'src/components/skeletons/ProductTilesSkeleton'
 import { ITEMS_PER_SECTION } from 'src/constants'
+import { mark } from 'src/sdk/tests/mark'
 import type { PageProps } from 'gatsby'
 import type { HomePageQueryQuery } from '@generated/graphql'
-import IncentivesMock from 'src/components/sections/Incentives/incentivesMock'
-import ProductShelfSkeleton from 'src/components/skeletons/ProductShelfSkeleton'
-import { Suspense } from 'react'
-import ProductTilesSkeleton from 'src/components/skeletons/ProductTilesSkeleton'
-
-import 'src/styles/pages/homepage.scss'
 
 export type Props = PageProps<HomePageQueryQuery>
 
@@ -86,7 +86,6 @@ function Page(props: Props) {
           first={ITEMS_PER_SECTION}
           selectedFacets={[{ key: 'productClusterIds', value: '140' }]}
           title="Most Wanted"
-          suspenseData
         />
       </Suspense>
 
@@ -109,7 +108,6 @@ function Page(props: Props) {
           first={ITEMS_PER_SECTION}
           selectedFacets={[{ key: 'productClusterIds', value: '142' }]}
           title="Deals & Promotions"
-          suspenseData
         />
       </Suspense>
     </>
