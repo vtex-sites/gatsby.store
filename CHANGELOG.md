@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - Applies new local tokens to `ProductTitle` ([#84](https://github.com/vtex-sites/gatsby.store/pull/84))
+- Creates `Radio` component ([#89](https://github.com/vtex-sites/gatsby.store/pull/89))
 - Applies new local tokens to `Price` ([#83](https://github.com/vtex-sites/gatsby.store/pull/83))
 - Applies new local tokens to `Alert` ([#77](https://github.com/vtex-sites/gatsby.store/pull/77))
 - Refactors `Button` component and adds Storybook doc ([#52](https://github.com/vtex-sites/gatsby.store/pull/52))
@@ -23,6 +24,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- Updates `Checkbox` tokens ([#89](https://github.com/vtex-sites/gatsby.store/pull/89))
 - Uses `Hero` component from FSUI ([#92](https://github.com/vtex-sites/gatsby.store/pull/92))
 - Uses CSS Modules on `Checkbox` component ([#81](https://github.com/vtex-sites/gatsby.store/pull/81))
 - Uses CSS Modules on `QuantitySelector` component ([#75](https://github.com/vtex-sites/gatsby.store/pull/75))
