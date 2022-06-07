@@ -82,7 +82,7 @@ The `CartItem` component uses [FastStore UI Card](https://www.faststore.dev/refe
   <TokenRow token="--fs-cart-item-padding" value="var(--fs-spacing-3)" />
   <TokenRow
     token="--fs-cart-item-bkg-color"
-    value="var(--fs-color-neutral-0)"
+    value="var(--fs-control-bkg)"
     isColor
   />
   <TokenDivider />
@@ -110,7 +110,7 @@ The `CartItem` component uses [FastStore UI Card](https://www.faststore.dev/refe
 <TokenTable>
   <TokenRow
     token="--fs-cart-item-image-border-radius"
-    value="var(--fs-border-radius)"
+    value="var(--fs-cart-item-border-radius)"
   />
 </TokenTable>
 
@@ -122,9 +122,11 @@ The `CartItem` component uses [FastStore UI Card](https://www.faststore.dev/refe
     value="var(--fs-spacing-0)"
   />
   <TokenRow token="--fs-cart-item-title-line-height" value="1.2" />
-  <TokenRow token="--fs-cart-item-title-color" value="inherit" />
-  <TokenRow token="--fs-cart-item-title-text-decoration" value="none" />
-  <TokenRow token="--fs-cart-item-title-outline" value="none" />
+  <TokenRow
+    token="--fs-cart-item-title-color"
+    value="var(--fs-color-text)"
+    isColor
+  />
 </TokenTable>
 
 ### Actions
