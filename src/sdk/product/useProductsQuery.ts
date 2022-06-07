@@ -81,7 +81,11 @@ export const useProductsQuery = (
   const { data } = useQuery<ProductsQueryQuery, ProductsQueryQueryVariables>(
     query,
     localizedVariables,
-    options
+    {
+      fallbackData: null,
+      suspense: true,
+      ...options,
+    }
   )
 
   return data?.search.products
