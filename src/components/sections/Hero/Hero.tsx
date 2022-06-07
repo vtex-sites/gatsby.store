@@ -58,7 +58,6 @@ const Hero = ({
           <div data-fs-hero-wrapper className="layout__content">
             <div data-fs-hero-info>
               <h1 id="hero-heading">{title}</h1>
-
               <p data-fs-hero-text-body>{subtitle}</p>
               {!!link && (
                 <ButtonLink to={link} inverse={colorVariant === 'main'}>
