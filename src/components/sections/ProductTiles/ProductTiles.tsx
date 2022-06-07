@@ -27,13 +27,8 @@ const getRatio = (products: number, idx: number) => {
   return 3 / 4
 }
 
-const options = {
-  suspense: true,
-  fallbackData: { search: { products: undefined } },
-}
-
 const ProductTiles = ({ title, ...variables }: TilesProps) => {
-  const products = useProductsQuery(variables, options)
+  const products = useProductsQuery(variables)
 
   if (products?.edges.length === 0) {
     return null

@@ -50,7 +50,7 @@
 
   [data-fs-button-buy] { width: 100%; }
 
-  .price[data-store-price] {
+  [data-fs-price] {
     display: block;
 
     &[data-variant="spot"] {
