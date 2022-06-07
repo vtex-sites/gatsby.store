@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- Applies new local tokens to `CartItem` ([#95](https://github.com/vtex-sites/gatsby.store/pull/95))
 - Applies new local tokens to `ProductTitle` ([#84](https://github.com/vtex-sites/gatsby.store/pull/84))
 - Creates `Radio` component ([#89](https://github.com/vtex-sites/gatsby.store/pull/89))
 - Applies new local tokens to `Price` ([#83](https://github.com/vtex-sites/gatsby.store/pull/83))
@@ -25,6 +26,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 
 - Uses `--docs` option on storybook script ([#97](https://github.com/vtex-sites/gatsby.store/pull/97))
+- Improves storybook doc's table rows ([#96](https://github.com/vtex-sites/gatsby.store/pull/96))
 - Updates `Checkbox` tokens ([#89](https://github.com/vtex-sites/gatsby.store/pull/89))
 - Uses `Hero` component from FSUI ([#92](https://github.com/vtex-sites/gatsby.store/pull/92))
 - Uses CSS Modules on `Checkbox` component ([#81](https://github.com/vtex-sites/gatsby.store/pull/81))
