@@ -17,6 +17,8 @@ import type {
 import { useSession, sendAnalyticsEvent } from '@faststore/sdk'
 import type { AnalyticsItem } from 'src/sdk/analytics/types'
 
+import styles from './cart-item.module.scss'
+
 function useCartItemEvent() {
   const {
     currency: { code },
@@ -79,7 +81,7 @@ function CartItem({ item }: Props) {
 
   return (
     <Card
-      className="cart-item"
+      className={styles.fsCartItem}
       data-testid="cart-item"
       data-sku={item.itemOffered.sku}
       data-seller={item.seller.identifier}
