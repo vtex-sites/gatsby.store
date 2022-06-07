@@ -2,29 +2,29 @@
 
 .fs-cart-item {
   // --------------------------------------------------------
-  // Design Tokens for Checkbox
+  // Design Tokens for CartItem
   // --------------------------------------------------------
 
   // Default properties
-  --fs-cart-item-padding: var(--fs-spacing-3);
-  --fs-cart-item-bkg-color: var(--fs-color-neutral-0);
+  --fs-cart-item-padding               : var(--fs-spacing-3);
+  --fs-cart-item-bkg-color             : var(--fs-color-neutral-0);
 
-  --fs-cart-item-border-width: var(--fs-border-width);
-  --fs-cart-item-border-color: var(--fs-border-color-light);
-  --fs-cart-item-border-radius: var(--fs-border-radius);
+  --fs-cart-item-border-width          : var(--fs-border-width);
+  --fs-cart-item-border-color          : var(--fs-border-color-light);
+  --fs-cart-item-border-radius         : var(--fs-border-radius);
 
   // Image
-  --fs-cart-item-image-border-radius: var(--fs-border-radius);
+  --fs-cart-item-image-border-radius   : var(--fs-border-radius);
 
   // Title
-  --fs-cart-item-title-margin-bottom: var(--fs-spacing-0);
-  --fs-cart-item-title-line-height: 1.2;
-  --fs-cart-item-title-color: inherit;
-  --fs-cart-item-title-text-decoration: none;
-  --fs-cart-item-title-outline: none;
+  --fs-cart-item-title-margin-bottom   : var(--fs-spacing-0);
+  --fs-cart-item-title-line-height     : 1.2;
+  --fs-cart-item-title-color           : inherit;
+  --fs-cart-item-title-text-decoration : none;
+  --fs-cart-item-title-outline         : none;
 
   // Actions
-  --fs-cart-item-actions-margin-top: var(--fs-spacing-3);
+  --fs-cart-item-actions-margin-top    : var(--fs-spacing-3);
 
   // --------------------------------------------------------
   // Structural Styles
