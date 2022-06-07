@@ -86,7 +86,7 @@ function CartItem({ item }: Props) {
       data-sku={item.itemOffered.sku}
       data-seller={item.seller.identifier}
     >
-      <CardContent>
+      <CardContent data-fs-cart-item-content>
         <CardImage>
           <Image
             src={item.itemOffered.image[0].url}
@@ -95,11 +95,11 @@ function CartItem({ item }: Props) {
             height={72}
           />
         </CardImage>
-        <div data-cart-item-summary>
-          <p className="text__body" data-cart-item-title>
+        <div data-fs-cart-item-summary>
+          <p className="text__body" data-fs-cart-item-title>
             {item.itemOffered.isVariantOf.name}
           </p>
-          <span data-cart-item-prices>
+          <span data-fs-cart-item-prices>
             <Price
               value={item.listPrice}
               formatter={useFormattedPrice}
@@ -122,7 +122,7 @@ function CartItem({ item }: Props) {
         </div>
       </CardContent>
 
-      <CardActions>
+      <CardActions data-fs-cart-item-actions>
         <Button
           variant="tertiary"
           icon={<Icon name="XCircle" width={18} height={18} />}
