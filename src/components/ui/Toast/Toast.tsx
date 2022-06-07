@@ -2,26 +2,30 @@ import { useEffect, useRef, useState } from 'react'
 import { useUI } from 'src/sdk/ui'
 import Icon from 'src/components/ui/Icon'
 
+import styles from './toast.module.scss'
+
 function Toast() {
   const { toasts, popToast } = useUI()
   const toast = toasts[toasts.length - 1]
   const timeoutRef = useRef<NodeJS.Timeout>()
 
-  const [fade, setFade] = useState<'in' | 'out'>()
+  const [visible, setVisible] = useState(false)
 
   useEffect(() => {
-    toast && setFade('in')
-  }, [toast])
-
-  useEffect(() => {
-    if (fade !== 'in') {
+    if (!toast) {
       return undefined
     }
 
-    timeoutRef.current = setTimeout(() => setFade('out'), 6e3)
+    const timeout = setTimeout(() => setVisible(true), 10)
+
+    return () => clearTimeout(timeout)
+  }, [toast])
+
+  useEffect(() => {
+    timeoutRef.current = setTimeout(() => setVisible(false), 6e3)
 
     return () => timeoutRef.current && clearTimeout(timeoutRef.current)
-  }, [fade])
+  }, [toast])
 
   if (toast === undefined) {
     return null
@@ -30,9 +34,10 @@ function Toast() {
   return (
     <div
       role="status"
+      className={styles.fsToast}
       data-fs-toast
-      data-fs-toast-state={fade}
-      onAnimationEnd={() => fade === 'out' && popToast()}
+      data-fs-toast-visible={visible}
+      onTransitionEnd={() => !visible && popToast()}
     >
       {toast.icon && (
         <div data-fs-toast-icon-container>

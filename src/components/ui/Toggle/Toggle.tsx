@@ -4,6 +4,8 @@ import type { InputHTMLAttributes } from 'react'
 import Icon from 'src/components/ui/Icon'
 import SROnly from 'src/components/ui/SROnly'
 
+import styles from './toggle.module.scss'
+
 export interface ToggleProps
   extends InputHTMLAttributes<Omit<HTMLInputElement, 'disabled' | 'type'>> {
   /**
@@ -40,7 +42,11 @@ const Toggle = forwardRef<HTMLInputElement, ToggleProps>(function Toggle(
   ref
 ) {
   return (
-    <div data-fs-toggle data-fs-toggle-variant={variant}>
+    <div
+      data-fs-toggle
+      data-fs-toggle-variant={variant}
+      className={styles.fsToggle}
+    >
       <div data-fs-toggle-container>
         <UIInput
           id={id}
@@ -51,13 +57,7 @@ const Toggle = forwardRef<HTMLInputElement, ToggleProps>(function Toggle(
           {...otherProps}
         />
         <span data-fs-toggle-knob>
-          <Icon
-            data-fs-toggle-knob-icon
-            width={15}
-            height={15}
-            weight="bold"
-            name="Checked"
-          />
+          <Icon width={15} height={15} weight="bold" name="Checked" />
         </span>
       </div>
       {displayLabel ? (
