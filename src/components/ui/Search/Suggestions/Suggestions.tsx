@@ -1,6 +1,9 @@
 import { List as UIList } from '@faststore/ui'
+import { Fragment } from 'react'
 import SuggestionProductCard from 'src/components/search/SuggestionProductCard'
-import Button from 'src/components/ui/Button'
+import Icon from 'src/components/ui/Icon'
+import Link from 'src/components/ui/Link'
+import useSearchInput, { formatSearchPath } from 'src/sdk/search/useSearchInput'
 import type { ProductSummary_ProductFragment } from '@generated/graphql'
 import type { HTMLAttributes } from 'react'
 
@@ -31,7 +34,7 @@ function handleSuggestions(suggestion: string, searchTerm: string) {
   return (
     <p>
       {suggestionSubstring.map((substring, indexSubstring) => (
-        <>
+        <Fragment key={[substring, indexSubstring].join()}>
           {substring.length > 0 && (
             <b data-fs-search-suggestion-item-bold>
               {indexSubstring === 0
@@ -41,7 +44,7 @@ function handleSuggestions(suggestion: string, searchTerm: string) {
           )}
           {indexSubstring !== suggestionSubstring.length - 1 &&
             formatSearchTerm(indexSubstring, searchTerm, suggestion)}
-        </>
+        </Fragment>
       ))}
     </p>
   )
@@ -56,12 +59,6 @@ export interface SuggestionsProps extends HTMLAttributes<HTMLDivElement> {
    * Search term
    */
   term?: string
-  /**
-   * Callback to be executed when a suggestion is selected.
-   *
-   * @memberof SuggestionsProps
-   */
-  onSearch: (term: string) => void
   terms?: Array<{ value: string }>
   products?: ProductSummary_ProductFragment[]
 }
@@ -71,18 +68,33 @@ function Suggestions({
   term = '',
   terms = [],
   products = [],
-  onSearch,
   ...otherProps
 }: SuggestionsProps) {
+  const { onSearchInputSelection } = useSearchInput()
+
   return (
     <section data-testid={testId} data-fs-search-suggestions {...otherProps}>
       {terms.length > 0 && (
-        <UIList data-fs-search-suggestion-section>
+        <UIList data-fs-search-suggestion-section="terms">
           {terms?.map(({ value: suggestion }) => (
             <li key={suggestion} data-fs-search-suggestion-item>
-              <Button onClick={() => onSearch(suggestion)}>
+              <Link
+                to={formatSearchPath(suggestion)}
+                onClick={() => {
+                  onSearchInputSelection?.(
+                    suggestion,
+                    formatSearchPath(suggestion)
+                  )
+                }}
+              >
+                <Icon
+                  name="MagnifyingGlass"
+                  width={18}
+                  height={18}
+                  data-fs-search-suggestion-item-icon
+                />
                 {handleSuggestions(suggestion, term)}
-              </Button>
+              </Link>
             </li>
           ))}
         </UIList>

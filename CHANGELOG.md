@@ -9,6 +9,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- The search input now includes the last 4 previously searched terms (`SearchHistory`) ([#67](https://github.com/vtex-sites/gatsby.store/pull/67)).
+- The top 5 searches (`SuggestionsTopSearch`) are now integrated into the search input ([#67](https://github.com/vtex-sites/gatsby.store/pull/67)).
 - Applies new local tokens to `OutOfStock` ([#99](https://github.com/vtex-sites/gatsby.store/pull/99))
 - Applies new local tokens to `CartItem` ([#95](https://github.com/vtex-sites/gatsby.store/pull/95))
 - Applies new local tokens to `ProductTitle` ([#84](https://github.com/vtex-sites/gatsby.store/pull/84))
@@ -54,6 +56,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Unused `-default` at css variables ([#82](https://github.com/vtex-sites/gatsby.store/pull/82))
 
 ### Fixed
+
+- The search input showing more than 5 suggested products ([#67](https://github.com/vtex-sites/gatsby.store/pull/67)).
+- The search input's dropdown not closing when a suggested product was selected ([#67](https://github.com/vtex-sites/gatsby.store/pull/67).
 - Region Input ([#98](https://github.com/vtex-sites/gatsby.store/pull/98))
 - Search suggestions missing locale info ([#69](https://github.com/vtex-sites/gatsby.store/pull/69))
 - Limit custom props only for `img` and `link` tags ([#60](https://github.com/vtex-sites/gatsby.store/pull/60))

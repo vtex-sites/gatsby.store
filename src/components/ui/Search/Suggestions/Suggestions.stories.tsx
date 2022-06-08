@@ -1,5 +1,6 @@
 import { SessionProvider } from '@faststore/sdk'
 import { LocationProvider } from '@reach/router'
+import { SearchInputProvider } from 'src/sdk/search/useSearchInput'
 
 import Suggestions from '.'
 import type { SuggestionsProps } from '.'
@@ -51,7 +52,9 @@ const Template = (props: SuggestionsProps) => (
   >
     <LocationProvider>
       <SessionProvider>
-        <Suggestions {...props} />
+        <SearchInputProvider>
+          <Suggestions {...props} />
+        </SearchInputProvider>
       </SessionProvider>
     </LocationProvider>
   </div>
@@ -61,7 +64,10 @@ export const Default = Template.bind({})
 
 Default.args = {
   term: 'Ste',
-  terms: ['Steel', 'Stellar'],
+  terms: [
+    { value: 'Steel', count: 1 },
+    { value: 'Stellar', count: 2 },
+  ],
   products: [
     product({ id: '1', name: 'Handmade Steel Towels Practical' }),
     product({ id: '2', name: 'Steel Towels' }),

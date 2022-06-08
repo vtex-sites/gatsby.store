@@ -1,10 +1,11 @@
 import { Card, CardContent, CardImage } from '@faststore/ui'
-import type { ProductSummary_ProductFragment } from '@generated/graphql'
-import Link from 'src/components/ui/Link'
 import { Image } from 'src/components/ui/Image'
+import Link from 'src/components/ui/Link'
 import Price from 'src/components/ui/Price'
 import { useFormattedPrice } from 'src/sdk/product/useFormattedPrice'
 import { useProductLink } from 'src/sdk/product/useProductLink'
+import useSearchInput from 'src/sdk/search/useSearchInput'
+import type { ProductSummary_ProductFragment } from '@generated/graphql'
 
 type SuggestionProductCardProps = {
   product: ProductSummary_ProductFragment
@@ -12,7 +13,13 @@ type SuggestionProductCardProps = {
 }
 
 function SuggestionProductCard({ product, index }: SuggestionProductCardProps) {
-  const linkProps = useProductLink({ product, selectedOffer: 0, index })
+  const { onSearchInputSelection } = useSearchInput()
+  const { onClick, to, ...linkProps } = useProductLink({
+    product,
+    selectedOffer: 0,
+    index,
+  })
+
   const {
     isVariantOf: { name },
     image: [img],
@@ -24,7 +31,16 @@ function SuggestionProductCard({ product, index }: SuggestionProductCardProps) {
 
   return (
     <Card data-fs-suggestion-product-card data-testid="suggestion-product-card">
-      <Link {...linkProps} title={name} variant="display">
+      <Link
+        {...linkProps}
+        to={to}
+        title={name}
+        variant="display"
+        onClick={() => {
+          onClick()
+          onSearchInputSelection?.(name, to)
+        }}
+      >
         <CardContent>
           <CardImage>
             <Image

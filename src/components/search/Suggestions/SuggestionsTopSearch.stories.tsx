@@ -1,3 +1,6 @@
+import { SearchInputProvider } from 'src/sdk/search/useSearchInput'
+import { SessionProvider } from '@faststore/sdk'
+
 import { SuggestionsTopSearch } from '.'
 import type { SuggestionsTopSearchProps } from '.'
 
@@ -15,19 +18,23 @@ const Template = (props: SuggestionsTopSearchProps) => (
       background: 'white',
     }}
   >
-    <SuggestionsTopSearch {...props} />
+    <SessionProvider initialState={{}}>
+      <SearchInputProvider>
+        <SuggestionsTopSearch {...props} />
+      </SearchInputProvider>
+    </SessionProvider>
   </div>
 )
 
 export const Default = Template.bind({})
 
 Default.args = {
-  searchedItems: [
-    { name: 'Office Supplies', href: '/office-supplies' },
-    { name: 'Headphones', href: '/headphones' },
-    { name: 'Notebooks', href: '/notebooks' },
-    { name: 'Laser Printer', href: '/laser-printer' },
-    { name: 'Bluetooth Keyboard', href: '/bluetooth-keyboard' },
+  topTerms: [
+    { value: 'Office Supplies', count: 5 },
+    { value: 'Headphones', count: 4 },
+    { value: 'Notebooks', count: 3 },
+    { value: 'Laser Printer', count: 2 },
+    { value: 'Bluetooth Keyboard', count: 1 },
   ],
 }
 
