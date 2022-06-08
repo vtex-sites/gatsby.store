@@ -5538,6 +5538,15 @@
   resolved "https://registry.yarnpkg.com/@vercel/webpack-asset-relocator-loader/-/webpack-asset-relocator-loader-1.7.0.tgz#d3b707e0aba3111719f941dacb2408eff3c27319"
   integrity sha512-1Dy3BdOliDwxA7VZSIg55E1d/us2KvsCQOZV25fgufG//CsnZBGiSAL7qewTQf7YVHH0A9PHgzwMmKIZ8aFYVw==
 
+"@vtex/gatsby-source-cms@^0.2.5":
+  version "0.2.5"
+  resolved "https://registry.yarnpkg.com/@vtex/gatsby-source-cms/-/gatsby-source-cms-0.2.5.tgz#fc6c35fb170a47174928a418028c1f52972c1234"
+  integrity sha512-rPL1DIuFld4tsTKSGEt4FyF/0mh/RC89dteTtV75EuE+UvT6HR/FkGIR35pS/caJ1DpGfnM+fmpw9Lgl4e+3aA==
+  dependencies:
+    camelcase "^6.2.0"
+    fetch-retry "^4.1.1"
+    isomorphic-unfetch "^3.1.0"
+
 "@vtex/prettier-config@1.0.0":
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/@vtex/prettier-config/-/prettier-config-1.0.0.tgz#a7a7091ecff1da340d398000f4855dc9910aa9c9"
@@ -11144,14 +11153,6 @@ fd@~0.0.2:
   version "0.0.3"
   resolved "https://registry.yarnpkg.com/fd/-/fd-0.0.3.tgz#b3240de86dbf5a345baae7382a07d4713566ff0c"
   integrity sha512-iAHrIslQb3U68OcMSP0kkNWabp7sSN6d2TBSb2JO3gcLJVDd4owr/hKM4SFJovFOUeeXeItjYgouEDTMWiVAnA==
-
-fetch-blob@^3.1.2, fetch-blob@^3.1.4:
-  version "3.2.0"
-  resolved "https://registry.yarnpkg.com/fetch-blob/-/fetch-blob-3.2.0.tgz#f09b8d4bbd45adc6f0c20b7e787e793e309dcce9"
-  integrity sha512-7yAQpD2UMJzLi1Dqv7qFYnPbaPx7ZfFK6PiIxQ4PfkGPyNyl2Ugx+a/umUonmKqjhM4DnfbMvdX6otXq83soQQ==
-  dependencies:
-    node-domexception "^1.0.0"
-    web-streams-polyfill "^3.0.3"
 
 fetch-retry@^5.0.2:
   version "5.0.2"
