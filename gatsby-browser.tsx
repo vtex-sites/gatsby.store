@@ -4,15 +4,14 @@ import './src/styles/global/resets.scss'
 import './src/styles/global/typography.scss'
 import './src/styles/global/layout.scss'
 
-import { CartProvider, SessionProvider, UIProvider } from '@faststore/sdk'
+import { CartProvider, SessionProvider } from '@faststore/sdk'
 import Layout from 'src/Layout'
 import AnalyticsHandler from 'src/sdk/analytics'
 import { validateCart } from 'src/sdk/cart/validate'
 import ErrorBoundary from 'src/sdk/error/ErrorBoundary'
-import TestProvider from 'src/sdk/tests'
-import { uiActions, uiEffects, uiInitialState } from 'src/sdk/ui'
-import { ModalProvider } from 'src/sdk/ui/modal'
 import { validateSession } from 'src/sdk/session/validate'
+import TestProvider from 'src/sdk/tests'
+import UIProvider from 'src/sdk/ui/Provider'
 import type { GatsbyBrowser } from 'gatsby'
 
 import storeConfig from './store.config'
@@ -23,11 +22,7 @@ export const wrapRootElement: GatsbyBrowser['wrapRootElement'] = ({
   <ErrorBoundary>
     <AnalyticsHandler />
     <TestProvider>
-      <UIProvider
-        initialState={uiInitialState}
-        actions={uiActions}
-        effects={uiEffects}
-      >
+      <UIProvider>
         <SessionProvider
           initialState={{
             channel: storeConfig.channel,
@@ -36,7 +31,7 @@ export const wrapRootElement: GatsbyBrowser['wrapRootElement'] = ({
           onValidateSession={validateSession}
         >
           <CartProvider mode="optimistic" onValidateCart={validateCart}>
-            <ModalProvider>{element}</ModalProvider>
+            {element}
           </CartProvider>
         </SessionProvider>
       </UIProvider>
