@@ -28,6 +28,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- Merges UIProvider and ModalProvider into a single context provider ([#93](https://github.com/vtex-sites/gatsby.store/pull/93))
 - Synchronizes the components' code of both starters ([#94](https://github.com/vtex-sites/gatsby.store/pull/94))
 - Uses `--docs` option on storybook script ([#97](https://github.com/vtex-sites/gatsby.store/pull/97))
 - Improves storybook doc's table rows ([#96](https://github.com/vtex-sites/gatsby.store/pull/96))
