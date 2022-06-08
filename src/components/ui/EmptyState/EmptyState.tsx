@@ -1,7 +1,20 @@
 import type { PropsWithChildren } from 'react'
 
-function EmptyState({ children }: PropsWithChildren<unknown>) {
-  return <section data-fs-empty-state>{children}</section>
+type Variant = 'default' | 'rounded'
+
+interface Props {
+  variant?: Variant
+}
+
+function EmptyState({
+  children,
+  variant = 'default',
+}: PropsWithChildren<Props>) {
+  return (
+    <section data-fs-empty-state data-fs-empty-state-variant={variant}>
+      {children}
+    </section>
+  )
 }
 
 export default EmptyState

@@ -10,7 +10,14 @@ import type {
 } from '@faststore/ui'
 import { SearchInput as UISearchInput } from '@faststore/ui'
 import { navigate } from 'gatsby'
-import { forwardRef, lazy, Suspense, useRef, useState } from 'react'
+import {
+  forwardRef,
+  lazy,
+  Suspense,
+  useCallback,
+  useRef,
+  useState,
+} from 'react'
 import Icon from 'src/components/ui/Icon'
 import useSearchHistory from 'src/sdk/search/useSearchHistory'
 import useOnClickOutside from 'src/sdk/ui/useOnClickOutside'
@@ -22,20 +29,29 @@ declare type SearchInputProps = {
   buttonTestId?: string
 } & Omit<UISearchInputProps, 'onSubmit'>
 
-const doSearch = async (term: string) => {
-  const { pathname, search } = formatSearchState(
-    initSearchState({
-      term,
-      base: '/s',
-    })
+const useSearchHandler = (callback: (term: string) => void) => {
+  const { addToSearchHistory } = useSearchHistory()
+
+  return useCallback(
+    (term: string) => {
+      const { pathname, search } = formatSearchState(
+        initSearchState({
+          term,
+          base: '/s',
+        })
+      )
+
+      sendAnalyticsEvent<SearchEvent>({
+        name: 'search',
+        params: { search_term: term },
+      })
+
+      addToSearchHistory(term)
+      callback(term)
+      navigate(`${pathname}${search}`)
+    },
+    [addToSearchHistory, callback]
   )
-
-  sendAnalyticsEvent<SearchEvent>({
-    name: 'search',
-    params: { search_term: term },
-  })
-
-  navigate(`${pathname}${search}`)
 }
 
 const SearchInput = forwardRef<SearchInputRef, SearchInputProps>(
@@ -46,13 +62,10 @@ const SearchInput = forwardRef<SearchInputRef, SearchInputProps>(
     const [searchQuery, setSearchQuery] = useState<string>('')
     const [suggestionsOpen, setSuggestionsOpen] = useState<boolean>(false)
     const searchRef = useRef<HTMLDivElement>(null)
-    const { addToSearchHistory } = useSearchHistory()
-    const handleSearch = (term: string) => {
-      addToSearchHistory(term)
-      doSearch(term)
+    const handleSearch = useSearchHandler((term: string) => {
       setSuggestionsOpen(false)
       setSearchQuery(term)
-    }
+    })
 
     useOnClickOutside(searchRef, () => setSuggestionsOpen(false))
 

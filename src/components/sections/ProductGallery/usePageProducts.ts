@@ -4,7 +4,6 @@ import {
   useProductsQueryPrefetch,
   useProductsQuery,
 } from 'src/sdk/product/useProductsQuery'
-import type { ProductsQueryQuery } from '@generated/graphql'
 
 export const useProductsPrefetch = (page: number | null) => {
   const {
@@ -27,10 +26,7 @@ export const useProductsPrefetch = (page: number | null) => {
   }, [page, prefetch])
 }
 
-export const useProducts = (
-  page: number,
-  fallbackData?: ProductsQueryQuery
-) => {
+export const useProducts = (page: number) => {
   const {
     itemsPerPage,
     state: { sort, term, selectedFacets },
@@ -44,10 +40,7 @@ export const useProducts = (
       term: term ?? '',
       selectedFacets,
     },
-    {
-      fallbackData,
-      revalidateOnMount: false,
-    }
+    { suspense: true }
   )
 
   return productList?.edges

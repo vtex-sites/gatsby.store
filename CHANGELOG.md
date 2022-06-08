@@ -25,6 +25,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- Synchronizes the components' code of both starters ([#94](https://github.com/vtex-sites/gatsby.store/pull/94))
 - Uses `--docs` option on storybook script ([#97](https://github.com/vtex-sites/gatsby.store/pull/97))
 - Improves storybook doc's table rows ([#96](https://github.com/vtex-sites/gatsby.store/pull/96))
 - Updates `Checkbox` tokens ([#89](https://github.com/vtex-sites/gatsby.store/pull/89))
