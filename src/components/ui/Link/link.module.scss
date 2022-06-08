@@ -1,6 +1,6 @@
 @import "src/styles/scaffold";
 
-[data-fs-link] {
+.fs-link[data-fs-link] {
   // --------------------------------------------------------
   // Design Tokens for Link
   // --------------------------------------------------------
@@ -9,7 +9,6 @@
   --fs-link-min-width                  : auto;
   --fs-link-min-height                 : var(--fs-link-min-width);
   --fs-link-padding                    : var(--fs-spacing-2) var(--fs-spacing-0);
-
   --fs-link-border-radius              : var(--fs-border-radius);
 
   --fs-link-text-line-height           : 1.5;
@@ -34,6 +33,7 @@
   // Inline
   --fs-link-inline-padding             : 0;
   --fs-link-inline-text-decoration     : underline;
+  --fs-link-inline-text-color          : var(--fs-link-text-color);
 
   // Footer
   --fs-link-footer-text-size           : var(--fs-text-size-1);
@@ -52,46 +52,47 @@
   &:hover { text-decoration: var(--fs-link-text-decoration-hover); }
 
   &:visited { color: var(--fs-link-text-color-visited); }
-}
 
-a, [data-fs-link] {
-  border-radius: var(--fs-link-border-radius);
-  transition: var(--fs-link-transition-property) var(--fs-link-transition-timing) var(--fs-link-transition-function);
+  a, [data-fs-link] {
+    border-radius: var(--fs-link-border-radius);
+    transition: var(--fs-link-transition-property) var(--fs-link-transition-timing) var(--fs-link-transition-function);
 
-  @include focus-ring-visible;
-}
+    @include focus-ring-visible;
+  }
 
-// --------------------------------------------------------
-// Variants Styles
-// --------------------------------------------------------
+  // --------------------------------------------------------
+  // Variants Styles
+  // --------------------------------------------------------
 
-[data-fs-link-variant="default"] {
-  line-height: var(--fs-link-text-line-height);
-  color: var(--fs-link-text-color);
-}
+  &[data-fs-link-variant="default"] {
+    line-height: var(--fs-link-text-line-height);
+    color: var(--fs-link-text-color);
+  }
 
-[data-fs-link-variant="display"] {
-  line-height: var(--fs-link-display-text-line-height);
-  color: var(--fs-link-display-text-color);
+  &[data-fs-link-variant="display"] {
+    line-height: var(--fs-link-display-text-line-height);
+    color: var(--fs-link-display-text-color);
 
-  &:visited { color: var(--fs-link-display-text-color-visited); }
-}
+    &:visited { color: var(--fs-link-display-text-color-visited); }
+  }
 
-[data-fs-link-variant="inline"] {
-  display: inline-block;
-  padding: var(--fs-link-inline-padding);
-  text-decoration: var(--fs-link-inline-text-decoration);
-}
+  &[data-fs-link-variant="inline"] {
+    display: inline-block;
+    padding: var(--fs-link-inline-padding);
+    color: var(--fs-link-inline-text-color);
+    text-decoration: var(--fs-link-inline-text-decoration);
+  }
 
-[data-fs-link-variant="footer"] {
-  font-size: var(--fs-link-footer-text-size);
-  color: var(--fs-link-footer-text-color);
+  &[data-fs-link-variant="footer"] {
+    font-size: var(--fs-link-footer-text-size);
+    color: var(--fs-link-footer-text-color);
 
-  @include media(">=notebook") { padding: var(--fs-link-footer-padding); }
-}
+    @include media(">=notebook") { padding: var(--fs-link-footer-padding); }
+  }
 
-[data-fs-link-inverse="true"] {
-  color: var(--fs-link-inverse-text-color);
+  &[data-fs-link-inverse="true"] {
+    color: var(--fs-link-inverse-text-color);
 
-  &:visited { color: var(--fs-link-inverse-text-color-visited); }
+    &:visited { color: var(--fs-link-inverse-text-color-visited); }
+  }
 }

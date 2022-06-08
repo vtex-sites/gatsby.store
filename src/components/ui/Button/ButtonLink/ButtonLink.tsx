@@ -4,11 +4,12 @@ import { useRef } from 'react'
 import type { LinkProps } from '@faststore/ui'
 import type { FocusEvent } from 'react'
 
-import type { UIButtonProps } from './Button'
+import type { ButtonProps } from '../Button'
+import styles from '../button.module.scss'
 
 type Props = {
   disabled?: boolean
-} & UIButtonProps &
+} & ButtonProps &
   LinkProps<typeof GatsbyLink>
 
 function ButtonLink({
@@ -26,6 +27,7 @@ function ButtonLink({
     <UILink
       as={GatsbyLink}
       innerRef={linkRef}
+      className={styles.fsButton}
       data-fs-button
       data-fs-button-link
       data-fs-button-variant={variant}

@@ -46,6 +46,24 @@
 
 .sbdocs-table td {
   width: 50%;
+  background-color: white;
+}
+
+.sbdocs-table .token-divider td {
+  background-color: var(--fs-color-neutral-1);
+}
+
+.sbdocs-table .token-divider td:first-child {
+  border-right: none;
+}
+
+.sbdocs-table .token-divider td:last-child {
+  border-left: none;
+}
+
+.sbdocs-table td code {
+  line-height: 1.3;
+  white-space: break-spaces;
 }
 
 .sbdocs-table td > div {
@@ -55,4 +73,12 @@
   margin-right: .5rem;
   border: 1px solid gray;
   border-radius: 100%;
+}
+
+.sbdocs-content > section {
+  margin-top: var(--fs-spacing-4);
+}
+
+.sbdocs-content > section > article > div {
+  border-radius: var(--fs-border-radius);
 }

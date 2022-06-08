@@ -28,7 +28,7 @@ interface Props {
 
 function ProductGallery({ title, searchTerm }: Props) {
   const [isFilterOpen, setIsFilterOpen] = useState<boolean>(false)
-  const { pages, addNextPage, addPrevPage, state: searchState } = useSearch()
+  const { pages, addNextPage, addPrevPage } = useSearch()
 
   const { data } = useGalleryQuery()
   const facets = useDelayedFacets(data)
@@ -130,7 +130,6 @@ function ProductGallery({ title, searchTerm }: Props) {
                 <GalleryPage
                   key={`gallery-page-${page}`}
                   showSponsoredProducts={false}
-                  fallbackData={page === searchState.page ? data : undefined}
                   page={page}
                   title={title}
                 />

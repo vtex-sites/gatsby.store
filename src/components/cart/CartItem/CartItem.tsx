@@ -17,6 +17,8 @@ import type {
 import { useSession, sendAnalyticsEvent } from '@faststore/sdk'
 import type { AnalyticsItem } from 'src/sdk/analytics/types'
 
+import styles from './cart-item.module.scss'
+
 function useCartItemEvent() {
   const {
     currency: { code },
@@ -65,7 +67,6 @@ interface Props {
 function CartItem({ item }: Props) {
   const btnProps = useRemoveButton(item)
   const { updateItemQuantity } = useCart()
-
   const { sendCartItemEvent } = useCartItemEvent()
 
   const onQuantityChange = useCallback(
@@ -79,12 +80,12 @@ function CartItem({ item }: Props) {
 
   return (
     <Card
-      className="cart-item"
+      className={styles.fsCartItem}
       data-testid="cart-item"
       data-sku={item.itemOffered.sku}
       data-seller={item.seller.identifier}
     >
-      <CardContent>
+      <CardContent data-fs-cart-item-content>
         <CardImage>
           <Image
             src={item.itemOffered.image[0].url}
@@ -93,11 +94,11 @@ function CartItem({ item }: Props) {
             height={72}
           />
         </CardImage>
-        <div data-cart-item-summary>
-          <p className="text__body" data-cart-item-title>
+        <div data-fs-cart-item-summary>
+          <p className="text__body" data-fs-cart-item-title>
             {item.itemOffered.isVariantOf.name}
           </p>
-          <span data-cart-item-prices>
+          <span data-fs-cart-item-prices>
             <Price
               value={item.listPrice}
               formatter={useFormattedPrice}
@@ -120,7 +121,7 @@ function CartItem({ item }: Props) {
         </div>
       </CardContent>
 
-      <CardActions>
+      <CardActions data-fs-cart-item-actions>
         <Button
           variant="tertiary"
           icon={<Icon name="XCircle" width={18} height={18} />}

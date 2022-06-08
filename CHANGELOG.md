@@ -11,6 +11,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - The search input now includes the last 4 previously searched terms (`SearchHistory`) ([#67](https://github.com/vtex-sites/gatsby.store/pull/67)).
 - The top 5 searches (`SuggestionsTopSearch`) are now integrated into the search input ([#67](https://github.com/vtex-sites/gatsby.store/pull/67)).
+- Applies new local tokens to `OutOfStock` ([#99](https://github.com/vtex-sites/gatsby.store/pull/99))
+- Applies new local tokens to `CartItem` ([#95](https://github.com/vtex-sites/gatsby.store/pull/95))
+- Applies new local tokens to `ProductTitle` ([#84](https://github.com/vtex-sites/gatsby.store/pull/84))
+- Creates `Radio` component ([#89](https://github.com/vtex-sites/gatsby.store/pull/89))
+- Applies new local tokens to `Price` ([#83](https://github.com/vtex-sites/gatsby.store/pull/83))
+- Applies new local tokens to `Alert` ([#77](https://github.com/vtex-sites/gatsby.store/pull/77))
+- Refactors `Button` component and adds Storybook doc ([#52](https://github.com/vtex-sites/gatsby.store/pull/52))
 - Add Storybook documentation for `QuantitySelector` component ([#85](https://github.com/vtex-sites/gatsby.store/pull/85))
 - Applies new local tokens to `Checkbox` ([#61](https://github.com/vtex-sites/gatsby.store/pull/61))
 - Attachments to CartItem id ([#53](https://github.com/vtex-sites/gatsby.store/pull/53))
@@ -21,30 +28,38 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
-- Uses CSS Modules on `Checkbox` component [#81](https://github.com/vtex-sites/gatsby.store/pull/81)
-- Uses CSS Modules on `QuantitySelector` component [#75](https://github.com/vtex-sites/gatsby.store/pull/75)
-- `OutOfStock` component ([#70](https://github.com/vtex-sites/nextjs.store/pull/70))
+- Synchronizes the components' code of both starters ([#94](https://github.com/vtex-sites/gatsby.store/pull/94))
+- Uses `--docs` option on storybook script ([#97](https://github.com/vtex-sites/gatsby.store/pull/97))
+- Improves storybook doc's table rows ([#96](https://github.com/vtex-sites/gatsby.store/pull/96))
+- Updates `Checkbox` tokens ([#89](https://github.com/vtex-sites/gatsby.store/pull/89))
+- Uses `Hero` component from FSUI ([#92](https://github.com/vtex-sites/gatsby.store/pull/92))
+- Uses CSS Modules on `Checkbox` component ([#81](https://github.com/vtex-sites/gatsby.store/pull/81))
+- Uses CSS Modules on `QuantitySelector` component ([#75](https://github.com/vtex-sites/gatsby.store/pull/75))
+- `OutOfStock` component ([#70](https://github.com/vtex-sites/gatsby.store/pull/70))
 - Displays 5 products on product suggestion for better mobile experience ([#73](https://github.com/vtex-sites/gatsby.store/pull/73))
-- Uses CSS Modules on `ProductGallery` section [#54](https://github.com/vtex-sites/gatsby.store/pull/54)
-- Uses CSS Modules on `ProductCard` component [#54](https://github.com/vtex-sites/gatsby.store/pull/54)
-- Uses CSS Modules on `ProductGrid` component [#54](https://github.com/vtex-sites/gatsby.store/pull/54)
+- Uses CSS Modules on `ProductGallery` section ([#54](https://github.com/vtex-sites/gatsby.store/pull/54))
+- Uses CSS Modules on `ProductCard` component ([#54](https://github.com/vtex-sites/gatsby.store/pull/54))
+- Uses CSS Modules on `ProductGrid` component ([#54](https://github.com/vtex-sites/gatsby.store/pull/54))
 - Upgrade Gatsby and other dependencies ([#59](https://github.com/vtex-sites/gatsby.store/pull/59))
-- LCP images to be fetched with a higher priority and improve the score ([#51](https://github.com/vtex-sites/gatsby.store/pull/51)).
+- LCP images to be fetched with a higher priority and improve the score ([#51](https://github.com/vtex-sites/gatsby.store/pull/51))
 - Applies styles to `Toast` ([#28](https://github.com/vtex-sites/gatsby.store/pull/28))
 - Added base files (`Getting Started`, `Theming`, `Colors`, `Typography` and `Icons`) to Storybook ([#26](https://github.com/vtex-sites/gatsby.store/pull/26))
 - Updated tokens' naming scheme ([#26](https://github.com/vtex-sites/gatsby.store/pull/26))
-- Uses CSS Modules to import CSS at `ImageGallery` component [#41](https://github.com/vtex-sites/gatsby.store/pull/41)
+- Uses CSS Modules to import CSS at `ImageGallery` component ([#41](https://github.com/vtex-sites/gatsby.store/pull/41))
 
 ### Deprecated
 
 ### Removed
-
+- Fix Region Input's behavior when setting zipCode ([#98](https://github.com/vtex-sites/gatsby.store/pull/98))
+- Removes unnecessary logic in suspense hooks ([#91](https://github.com/vtex-sites/gatsby.store/pull/91))
+- `Hero` component from `components/ui`([#92](https://github.com/vtex-sites/gatsby.store/pull/92))
 - Unused `-default` at css variables ([#82](https://github.com/vtex-sites/gatsby.store/pull/82))
 
 ### Fixed
 
 - The search input showing more than 5 suggested products ([#67](https://github.com/vtex-sites/gatsby.store/pull/67)).
 - The search input's dropdown not closing when a suggested product was selected ([#67](https://github.com/vtex-sites/gatsby.store/pull/67).
+- Region Input ([#98](https://github.com/vtex-sites/gatsby.store/pull/98))
 - Search suggestions missing locale info ([#69](https://github.com/vtex-sites/gatsby.store/pull/69))
 - Limit custom props only for `img` and `link` tags ([#60](https://github.com/vtex-sites/gatsby.store/pull/60))
 - `ArrowsClockwise` icon closing tag ([#57](https://github.com/vtex-sites/gatsby.store/pull/57))
