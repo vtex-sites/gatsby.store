@@ -53,7 +53,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Unused `-default` at css variables ([#82](https://github.com/vtex-sites/gatsby.store/pull/82))
 
 ### Fixed
-
+- Region Input ([#98](https://github.com/vtex-sites/gatsby.store/pull/98))
 - Search suggestions missing locale info ([#69](https://github.com/vtex-sites/gatsby.store/pull/69))
 - Limit custom props only for `img` and `link` tags ([#60](https://github.com/vtex-sites/gatsby.store/pull/60))
 - `ArrowsClockwise` icon closing tag ([#57](https://github.com/vtex-sites/gatsby.store/pull/57))
