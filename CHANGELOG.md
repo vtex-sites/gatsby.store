@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- Applies new local tokens to `OutOfStock` ([#99](https://github.com/vtex-sites/gatsby.store/pull/99))
 - Applies new local tokens to `CartItem` ([#95](https://github.com/vtex-sites/gatsby.store/pull/95))
 - Applies new local tokens to `ProductTitle` ([#84](https://github.com/vtex-sites/gatsby.store/pull/84))
 - Creates `Radio` component ([#89](https://github.com/vtex-sites/gatsby.store/pull/89))
@@ -32,7 +33,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Uses `Hero` component from FSUI ([#92](https://github.com/vtex-sites/gatsby.store/pull/92))
 - Uses CSS Modules on `Checkbox` component ([#81](https://github.com/vtex-sites/gatsby.store/pull/81))
 - Uses CSS Modules on `QuantitySelector` component ([#75](https://github.com/vtex-sites/gatsby.store/pull/75))
-- `OutOfStock` component ([#70](https://github.com/vtex-sites/nextjs.store/pull/70))
+- `OutOfStock` component ([#70](https://github.com/vtex-sites/gatsby.store/pull/70))
 - Displays 5 products on product suggestion for better mobile experience ([#73](https://github.com/vtex-sites/gatsby.store/pull/73))
 - Uses CSS Modules on `ProductGallery` section ([#54](https://github.com/vtex-sites/gatsby.store/pull/54))
 - Uses CSS Modules on `ProductCard` component ([#54](https://github.com/vtex-sites/gatsby.store/pull/54))
