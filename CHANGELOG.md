@@ -51,12 +51,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Deprecated
 
 ### Removed
+
 - Fix Region Input's behavior when setting zipCode ([#98](https://github.com/vtex-sites/gatsby.store/pull/98))
 - Removes unnecessary logic in suspense hooks ([#91](https://github.com/vtex-sites/gatsby.store/pull/91))
 - `Hero` component from `components/ui`([#92](https://github.com/vtex-sites/gatsby.store/pull/92))
 - Unused `-default` at css variables ([#82](https://github.com/vtex-sites/gatsby.store/pull/82))
 
 ### Fixed
+
+- Duplicated query at `useTopSearch` hook ([#105](https://github.com/vtex-sites/gatsby.store/pull/105))
 - Use `SpotPrice` for low/high price on `aggretateOffer` ([#102](https://github.com/vtex-sites/gatsby.store/pull/102))
 - The search input showing more than 5 suggested products ([#67](https://github.com/vtex-sites/gatsby.store/pull/67)).
 - The search input's dropdown not closing when a suggested product was selected ([#67](https://github.com/vtex-sites/gatsby.store/pull/67).
