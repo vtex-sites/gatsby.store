@@ -10,10 +10,15 @@ import type {
 const MAX_TOP_SEARCH_TERMS = 5
 
 const query = gql`
-  query SearchSuggestionsQuery {
-    search {
+  query TopSearchSuggestionsQuery(
+    $term: String!
+    $selectedFacets: [IStoreSelectedFacet!]
+  ) {
+    search(first: 5, term: $term, selectedFacets: $selectedFacets) {
       suggestions {
-        terms
+        terms {
+          value
+        }
       }
     }
   }
