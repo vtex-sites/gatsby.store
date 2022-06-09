@@ -5,7 +5,7 @@ export default {
   component: Link,
   title: 'Atoms/Link',
   argTypes: {
-    to: {
+    href: {
       type: { name: 'string', required: true },
     },
     ref: {
@@ -39,7 +39,7 @@ const Template = ({ inverse, ...args }: LinkProps) =>
 export const Default = Template.bind({})
 
 Default.args = {
-  to: '#',
+  href: '#',
   variant: 'default',
   inverse: false,
 }
@@ -47,7 +47,7 @@ Default.args = {
 export const Display = Template.bind({})
 
 Display.args = {
-  to: '#',
+  href: '#',
   variant: 'display',
   inverse: false,
 }
@@ -55,7 +55,7 @@ Display.args = {
 export const Footer = Template.bind({})
 
 Footer.args = {
-  to: '#',
+  href: '#',
   variant: 'footer',
   inverse: false,
 }
@@ -63,7 +63,7 @@ Footer.args = {
 export const Inline = Template.bind({})
 
 Inline.args = {
-  to: '#',
+  href: '#',
   variant: 'inline',
   inverse: false,
 }
