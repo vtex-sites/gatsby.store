@@ -12,6 +12,12 @@ module.exports = {
     hideUnavailableItems: true,
   },
 
+  // Headless CMS
+  cms: {
+    tenant: 'storeframework',
+    workspace: 'master',
+  },
+
   // Default channel
   channel: '{"salesChannel":"1","regionId":""}',
   locale: 'en-US',
