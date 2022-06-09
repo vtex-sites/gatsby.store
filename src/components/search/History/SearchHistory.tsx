@@ -31,7 +31,7 @@ const SearchHistory = ({ history = [] }: SearchHistoryProps) => {
           <li key={item.term} data-fs-search-suggestion-item>
             <Link
               variant="display"
-              to={item.path}
+              href={item.path}
               onClick={() => onSearchInputSelection?.(item.term, item.path)}
             >
               <Icon

@@ -1,8 +1,8 @@
 import { Alert as UIAlert, Icon as UIIcon } from '@faststore/ui'
-import { Link } from 'gatsby'
 import { useCallback } from 'react'
 import Button from 'src/components/ui/Button'
 import Icon from 'src/components/ui/Icon'
+import Link from 'src/components/ui/Link'
 import type { ReactNode, MouseEvent } from 'react'
 import type { AlertProps } from '@faststore/ui'
 
@@ -58,7 +58,7 @@ function Alert({
       <p data-fs-alert-content>{children}</p>
 
       {link && (
-        <Link data-fs-alert-link to={link.to}>
+        <Link data-fs-alert-link href={link.to}>
           {link.text}
         </Link>
       )}

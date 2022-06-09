@@ -62,7 +62,7 @@ export const useProductLink = ({
   }, [code, product, index, selectedOffer, href])
 
   return {
-    to: `/${slug}/p`,
+    href: `/${slug}/p`,
     onClick,
     'data-testid': 'product-link',
   }

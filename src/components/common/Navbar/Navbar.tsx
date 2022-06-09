@@ -1,5 +1,4 @@
 import { List as UIList } from '@faststore/ui'
-import { Link as LinkGatsby } from 'gatsby'
 import { Suspense, useRef, useState } from 'react'
 import CartToggle from 'src/components/cart/CartToggle'
 import SearchInput from 'src/components/common/SearchInput'
@@ -51,7 +50,7 @@ function NavLinks({ onClickLink }: NavLinksProps) {
         </li>
         {collections.map(({ href, name }) => (
           <li key={name}>
-            <Link variant="display" to={href} onClick={onClickLink}>
+            <Link variant="display" href={href} onClick={onClickLink}>
               {name}
             </Link>
           </li>
@@ -77,15 +76,15 @@ function NavbarSlider() {
     >
       <div className="navbar__modal-body">
         <header className="navbar__modal-header">
-          <LinkGatsby
-            to="/"
+          <Link
+            href="/"
             aria-label="Go to FastStore home"
             title="Go to FastStore home"
             className="navbar__logo"
             onClick={fadeOut}
           >
             <Logo />
-          </LinkGatsby>
+          </Link>
 
           <ButtonIcon
             aria-label="Close Menu"
@@ -127,14 +126,14 @@ function Navbar() {
                 icon={<Icon name="List" width={32} height={32} />}
                 onClick={openNavbar}
               />
-              <LinkGatsby
-                to="/"
+              <Link
+                href="/"
                 aria-label="Go to Faststore home"
                 title="Go to Faststore home"
                 className="navbar__logo"
               >
                 <Logo />
-              </LinkGatsby>
+              </Link>
             </>
           )}
           <SearchInput />
