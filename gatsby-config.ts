@@ -109,8 +109,8 @@ const gatsbyConfig: GatsbyConfig = {
     {
       resolve: '@vtex/gatsby-source-cms',
       options: {
-        workspace: 'danzan',
-        tenant: 'storeframework',
+        workspace: config.cms.workspace,
+        tenant: config.cms.tenant,
       },
     },
     {
