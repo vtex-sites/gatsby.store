@@ -57,7 +57,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Unused `-default` at css variables ([#82](https://github.com/vtex-sites/gatsby.store/pull/82))
 
 ### Fixed
-
+- Use SpotPrice for low/high price on aggretateOffer ([#102](https://github.com/vtex-sites/gatsby.store/pull/102))
 - The search input showing more than 5 suggested products ([#67](https://github.com/vtex-sites/gatsby.store/pull/67)).
 - The search input's dropdown not closing when a suggested product was selected ([#67](https://github.com/vtex-sites/gatsby.store/pull/67).
 - Region Input ([#98](https://github.com/vtex-sites/gatsby.store/pull/98))
