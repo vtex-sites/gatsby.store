@@ -23,18 +23,24 @@ export type Props = PageProps<
   ProductPageQueryQuery,
   ProductPageQueryQueryVariables,
   unknown,
-  ServerProductPageQueryQuery
+  ServerProductPageQueryQuery | null
 > & { slug: string }
 
 function Page(props: Props) {
   const { locale, currency } = useSession()
   const {
     data: { site },
-    serverData: { product },
+    serverData,
     location: { host },
     slug,
   } = props
 
+  // No data was found
+  if (serverData === null) {
+    return null
+  }
+
+  const { product } = serverData
   const title = product?.seo.title ?? site?.siteMetadata?.title ?? ''
   const description =
     product?.seo.description ?? site?.siteMetadata?.description ?? ''
@@ -185,27 +191,25 @@ export const getServerData = async ({
   params: Record<string, string>
 }) => {
   const ONE_YEAR_CACHE = `s-maxage=31536000, stale-while-revalidate`
-
   const id = slug.split('-').pop()
 
+  const { isNotFoundError } = await import('@faststore/api')
   const { execute } = await import('src/server/index')
-  const { data, errors } = await execute({
+  const { data, errors = [] } = await execute({
     operationName: querySSR,
     variables: { id },
   })
 
-  if (errors && errors?.length > 0) {
-    throw new Error(`${errors[0]}`)
-  }
+  const notFound = errors.find(isNotFoundError)
 
-  if (data === null) {
+  if (notFound) {
     const params = new URLSearchParams({
       from: encodeURIComponent(`/${slug}/p`),
     })
 
     return {
       status: 301,
-      props: {},
+      props: null,
       headers: {
         'cache-control': ONE_YEAR_CACHE,
         location: `/404/?${params.toString()}}`,
@@ -213,9 +217,13 @@ export const getServerData = async ({
     }
   }
 
+  if (errors.length > 0) {
+    throw errors[0]
+  }
+
   return {
     status: 200,
-    props: data ?? {},
+    props: data,
     headers: {
       'cache-control': ONE_YEAR_CACHE,
     },
