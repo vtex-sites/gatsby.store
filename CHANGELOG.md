@@ -9,6 +9,20 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+### Changed
+
+### Deprecated
+
+### Removed
+
+### Fixed
+
+### Security
+
+## [22.23.0.beta] - 2022-06-10
+
+### Added
+
 - The search input now includes the last 4 previously searched terms (`SearchHistory`) ([#67](https://github.com/vtex-sites/gatsby.store/pull/67)).
 - The top 5 searches (`SuggestionsTopSearch`) are now integrated into the search input ([#67](https://github.com/vtex-sites/gatsby.store/pull/67)).
 - Applies new local tokens to `OutOfStock` ([#99](https://github.com/vtex-sites/gatsby.store/pull/99))
@@ -48,8 +62,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Updated tokens' naming scheme ([#26](https://github.com/vtex-sites/gatsby.store/pull/26))
 - Uses CSS Modules to import CSS at `ImageGallery` component ([#41](https://github.com/vtex-sites/gatsby.store/pull/41))
 
-### Deprecated
-
 ### Removed
 
 - Fix Region Input's behavior when setting zipCode ([#98](https://github.com/vtex-sites/gatsby.store/pull/98))
@@ -68,8 +80,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Limit custom props only for `img` and `link` tags ([#60](https://github.com/vtex-sites/gatsby.store/pull/60))
 - `ArrowsClockwise` icon closing tag ([#57](https://github.com/vtex-sites/gatsby.store/pull/57))
 - Fix Storybook `@reach/router` issue ([#48](https://github.com/vtex-sites/gatsby.store/pull/48))
-
-### Security
 
 ## [22.19.0.beta] - 2022-05-06
 
