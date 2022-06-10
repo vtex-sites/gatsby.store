@@ -68,7 +68,7 @@ function BannerText({
           </div>
           <BannerLink data-fs-banner-text-link>
             <ButtonLink
-              to={actionPath}
+              href={actionPath}
               variant={variant}
               inverse={colorVariant === 'main'}
             >
