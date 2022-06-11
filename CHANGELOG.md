@@ -12,6 +12,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- Unifies `Link` component usage by adding support for both external and client-side links ([#103](https://github.com/vtex-sites/gatsby.store/pull/103))
+
 ### Deprecated
 
 ### Removed
