@@ -23,7 +23,7 @@ function ButtonLink({
 
   return (
     <Link
-      innerRef={linkRef}
+      ref={linkRef}
       className={styles.fsButton}
       data-fs-button
       data-fs-button-link
