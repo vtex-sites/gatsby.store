@@ -58,7 +58,7 @@ function Alert({
       <p data-fs-alert-content>{children}</p>
 
       {link && (
-        <Link data-fs-alert-link href={link.to}>
+        <Link data-fs-alert-link variant="inline" href={link.to}>
           {link.text}
         </Link>
       )}

@@ -49,8 +49,6 @@
   span { font-weight: var(--fs-text-weight-bold); }
 
   [data-fs-alert-link] {
-    display: flex;
-    align-items: center;
     min-width: 0;
     height: var(--fs-alert-height);
     padding: 0 var(--fs-spacing-1);
