@@ -7,8 +7,7 @@ import type { LinkProps } from 'src/components/ui/Link'
 import type { ButtonProps } from '../Button'
 import styles from '../button.module.scss'
 
-type ButtonLinkProps = ButtonProps &
-  Omit<LinkProps, 'variant'> & { disabled?: boolean }
+type ButtonLinkProps = ButtonProps & Omit<LinkProps, 'variant'>
 
 function ButtonLink({
   variant = 'primary',
