@@ -26,16 +26,16 @@ type Props = PageProps<
   CollectionPageQueryQuery,
   CollectionPageQueryQueryVariables,
   unknown,
-  ServerCollectionPageQueryQuery
+  ServerCollectionPageQueryQuery | null
 > & { slug: string }
 
 const useSearchParams = (props: Props): SearchState => {
   const {
     location: { href, pathname },
-    serverData: { collection },
+    serverData,
   } = props
 
-  const selectedFacets = collection?.meta.selectedFacets
+  const selectedFacets = serverData?.collection?.meta.selectedFacets
 
   return useMemo(() => {
     const maybeState = href ? parseSearchState(new URL(href)) : null
@@ -56,7 +56,7 @@ const useSearchParams = (props: Props): SearchState => {
 function Page(props: Props) {
   const {
     data: { site },
-    serverData: { collection },
+    serverData,
     location: { host },
     slug,
   } = props
@@ -64,6 +64,12 @@ function Page(props: Props) {
   const { locale } = useSession()
   const searchParams = useSearchParams(props)
 
+  // No data was found
+  if (serverData === null) {
+    return null
+  }
+
+  const { collection } = serverData
   const { page } = searchParams
   const title = collection?.seo.title ?? site?.siteMetadata?.title ?? ''
   const pageQuery = page !== 0 ? `?page=${page}` : ''
@@ -176,25 +182,23 @@ export const getServerData = async ({
   params: Record<string, string>
 }) => {
   const ONE_YEAR_CACHE = `s-maxage=31536000, stale-while-revalidate`
-
+  const { isNotFoundError } = await import('@faststore/api')
   const { execute } = await import('src/server/index')
-  const { data, errors } = await execute({
+  const { data, errors = [] } = await execute({
     operationName: querySSR,
     variables: { slug },
   })
 
-  if (errors && errors?.length > 0) {
-    throw new Error(`${errors[0]}`)
-  }
+  const notFound = errors.find(isNotFoundError)
 
-  if (data === null) {
+  if (notFound) {
     const params = new URLSearchParams({
       from: encodeURIComponent(`/${slug}`),
     })
 
     return {
       status: 301,
-      props: {},
+      props: null,
       headers: {
         'cache-control': ONE_YEAR_CACHE,
         location: `/404/?${params.toString()}}`,
@@ -202,9 +206,13 @@ export const getServerData = async ({
     }
   }
 
+  if (errors.length > 0) {
+    throw errors[0]
+  }
+
   return {
     status: 200,
-    props: data ?? {},
+    props: data,
     headers: {
       'cache-control': ONE_YEAR_CACHE,
     },

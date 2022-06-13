@@ -1,3 +1,4 @@
+import { isFastStoreError } from '@faststore/api'
 import type { GatsbyFunctionRequest, GatsbyFunctionResponse } from 'gatsby'
 
 import { execute } from '../server'
@@ -35,7 +36,7 @@ const handler = async (
   const { operationName, variables, query } = parseRequest(req)
 
   try {
-    const response = await execute(
+    const result = await execute(
       {
         operationName,
         variables,
@@ -44,14 +45,15 @@ const handler = async (
       { req }
     )
 
-    if (Array.isArray(response.errors)) {
-      // TODO: Return 400 on userError
-      res.status(500)
+    if (Array.isArray(result.errors)) {
+      const error = result.errors.find(isFastStoreError)
+
+      res.status(error?.extensions.status ?? 500)
     }
 
     res.setHeader('cache-control', 'no-cache, no-store')
     res.setHeader('content-type', 'application/json')
-    res.send(JSON.stringify(response))
+    res.send(JSON.stringify(result))
   } catch (err) {
     console.error(err)
 

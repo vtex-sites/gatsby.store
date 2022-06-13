@@ -16,6 +16,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Removed
 
 ### Fixed
+- Status code when error occurs (404/500) ([#108](https://github.com/vtex-sites/gatsby.store/pull/108))
 
 ### Security
 
