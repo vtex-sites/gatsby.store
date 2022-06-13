@@ -7,7 +7,7 @@
  */
 
 import { options } from '../global'
-import { cypress } from '../../store.config'
+import { cypress, storeUrl } from '../../store.config'
 
 const { pages } = cypress
 
@@ -35,7 +35,7 @@ describe('Home Page Seo', () => {
     cy.get('link[rel="canonical"]')
       .should('exist')
       .should(($link) => {
-        expect($link.attr('href')).to.eq(`https://${window.location.host}/`)
+        expect($link.attr('href')).to.eq(storeUrl)
       })
   })
 
@@ -101,9 +101,7 @@ describe('Product Page Seo', () => {
     cy.get('link[rel="canonical"]')
       .should('exist')
       .should(($link) => {
-        expect($link.attr('href')).to.eq(
-          `https://${window.location.host}${pages.pdp}`
-        )
+        expect($link.attr('href')).to.eq(`${storeUrl}${pages.pdp}`)
       })
   })
 
@@ -193,9 +191,7 @@ describe('Collection Page Seo', () => {
     cy.get('link[rel="canonical"]')
       .should('exist')
       .should(($link) => {
-        expect($link.attr('href')).to.eq(
-          `https://${window.location.host}${pages.collection}/`
-        )
+        expect($link.attr('href')).to.eq(`${storeUrl}${pages.collection}`)
       })
   })
 
@@ -250,9 +246,7 @@ describe('Filtered Collection Page Seo', () => {
     cy.get('link[rel="canonical"]')
       .should('exist')
       .should(($link) => {
-        expect($link.attr('href')).to.eq(
-          `https://${window.location.host}${pages.collection}/`
-        )
+        expect($link.attr('href')).to.eq(`${storeUrl}${pages.collection}`)
       })
   })
 

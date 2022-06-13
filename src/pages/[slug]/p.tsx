@@ -17,6 +17,8 @@ import type {
 } from '@generated/graphql'
 import { ITEMS_PER_SECTION } from 'src/constants'
 
+import storeConfig from '../../../store.config'
+
 import 'src/styles/pages/pdp.scss'
 
 export type Props = PageProps<
@@ -31,8 +33,6 @@ function Page(props: Props) {
   const {
     data: { site },
     serverData,
-    location: { host },
-    slug,
   } = props
 
   // No data was found
@@ -40,13 +40,14 @@ function Page(props: Props) {
     return null
   }
 
-  const { product } = serverData
-  const title = product?.seo.title ?? site?.siteMetadata?.title ?? ''
-  const description =
-    product?.seo.description ?? site?.siteMetadata?.description ?? ''
+  const {
+    product,
+    product: { seo },
+  } = serverData
 
-  const canonical =
-    host !== undefined ? `https://${host}/${slug}/p` : `/${slug}/p`
+  const title = seo.title || site?.siteMetadata?.title || ''
+  const description = seo.description || site?.siteMetadata?.description || ''
+  const canonical = `https://${storeConfig.storeUrl}${seo.canonical}`
 
   return (
     <>
@@ -58,7 +59,7 @@ function Page(props: Props) {
         language={locale}
         openGraph={{
           type: 'og:product',
-          url: `${site?.siteMetadata?.siteUrl}${slug}`,
+          url: canonical,
           title,
           description,
           images: product.image.map((img) => ({
@@ -131,21 +132,20 @@ export const querySSG = graphql`
 `
 
 export const querySSR = gql`
-  query ServerProductPageQuery($id: String!) {
-    product(locator: [{ key: "id", value: $id }]) {
+  query ServerProductPageQuery($slug: String!) {
+    product(locator: [{ key: "slug", value: $slug }]) {
       id: productID
-      slug
 
       seo {
         title
         description
+        canonical
       }
 
       brand {
         name
       }
 
-      slug
       sku
       gtin
       name
@@ -191,13 +191,11 @@ export const getServerData = async ({
   params: Record<string, string>
 }) => {
   const ONE_YEAR_CACHE = `s-maxage=31536000, stale-while-revalidate`
-  const id = slug.split('-').pop()
-
   const { isNotFoundError } = await import('@faststore/api')
   const { execute } = await import('src/server/index')
   const { data, errors = [] } = await execute({
     operationName: querySSR,
-    variables: { id },
+    variables: { slug },
   })
 
   const notFound = errors.find(isNotFoundError)
