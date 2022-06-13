@@ -2767,6 +2767,7 @@ export type CollectionPageQueryQuery = {
       titleTemplate: string | null
       title: string | null
       description: string | null
+      siteUrl: string | null
     } | null
   } | null
 }
@@ -2799,18 +2800,17 @@ export type ProductPageQueryQuery = {
 }
 
 export type ServerProductPageQueryQueryVariables = Exact<{
-  id: Scalars['String']
+  slug: Scalars['String']
 }>
 
 export type ServerProductPageQueryQuery = {
   product: {
-    slug: string
     sku: string
     gtin: string
     name: string
     description: string
     id: string
-    seo: { title: string; description: string }
+    seo: { title: string; description: string; canonical: string }
     brand: { name: string }
     breadcrumbList: {
       itemListElement: Array<{ item: string; name: string; position: number }>
@@ -2848,6 +2848,7 @@ export type HomePageQueryQuery = {
       title: string | null
       description: string | null
       titleTemplate: string | null
+      siteUrl: string | null
     } | null
   } | null
 }

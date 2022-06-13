@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
+- 301 redirects when visiting old VTEX product routes ([#87](https://github.com/vtex-sites/gatsby.store/pull/87))
 
 ### Changed
 

@@ -57,7 +57,6 @@ function Page(props: Props) {
   const {
     data: { site },
     serverData,
-    location: { host },
     slug,
   } = props
 
@@ -73,10 +72,7 @@ function Page(props: Props) {
   const { page } = searchParams
   const title = collection?.seo.title ?? site?.siteMetadata?.title ?? ''
   const pageQuery = page !== 0 ? `?page=${page}` : ''
-  const canonical =
-    host !== undefined
-      ? `https://${host}/${slug}/${pageQuery}`
-      : `/${slug}/${pageQuery}`
+  const canonical = `${site?.siteMetadata?.siteUrl}/${slug}${pageQuery}`
 
   return (
     <SearchProvider
@@ -147,6 +143,7 @@ export const querySSG = graphql`
         titleTemplate
         title
         description
+        siteUrl
       }
     }
   }

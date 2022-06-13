@@ -22,13 +22,12 @@ export type Props = PageProps<HomePageQueryQuery>
 function Page(props: Props) {
   const {
     data: { site },
-    location: { pathname, host },
   } = props
 
   const { locale } = useSession()
 
   const title = site?.siteMetadata?.title ?? ''
-  const siteUrl = `https://${host}${pathname}`
+  const siteUrl = `${site?.siteMetadata?.siteUrl}`
 
   return (
     <>
@@ -121,6 +120,7 @@ export const querySSG = graphql`
         title
         description
         titleTemplate
+        siteUrl
       }
     }
   }
