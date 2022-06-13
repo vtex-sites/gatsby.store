@@ -17,8 +17,6 @@ import type {
 } from '@generated/graphql'
 import { ITEMS_PER_SECTION } from 'src/constants'
 
-import storeConfig from '../../../store.config'
-
 import 'src/styles/pages/pdp.scss'
 
 export type Props = PageProps<
@@ -47,7 +45,7 @@ function Page(props: Props) {
 
   const title = seo.title || site?.siteMetadata?.title || ''
   const description = seo.description || site?.siteMetadata?.description || ''
-  const canonical = `https://${storeConfig.storeUrl}${seo.canonical}`
+  const canonical = `${site?.siteMetadata?.siteUrl}${seo.canonical}`
 
   return (
     <>

@@ -2767,6 +2767,7 @@ export type CollectionPageQueryQuery = {
       titleTemplate: string | null
       title: string | null
       description: string | null
+      siteUrl: string | null
     } | null
   } | null
 }
@@ -2847,6 +2848,7 @@ export type HomePageQueryQuery = {
       title: string | null
       description: string | null
       titleTemplate: string | null
+      siteUrl: string | null
     } | null
   } | null
 }
