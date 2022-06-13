@@ -7,15 +7,6 @@ import type { LinkProps as UILinkProps } from '@faststore/ui'
 
 import styles from './link.module.scss'
 
-// From Gatsby's internals: https://github.com/gatsbyjs/gatsby/blob/2975c4d1271e3da52b531ad2f49261c362e5ae13/packages/gatsby-link/src/index.js#L42-L46
-function externalLinkChecker(href: string) {
-  return (
-    href.startsWith('//') ||
-    href.startsWith('http://') ||
-    href.startsWith('https://')
-  )
-}
-
 type Variant = 'default' | 'display' | 'footer' | 'inline'
 type FrameworkLinkProps = Omit<GatsbyLinkProps<Record<string, unknown>>, 'to'>
 
@@ -25,29 +16,24 @@ export type LinkProps<T extends ElementType = 'a'> = UILinkProps<T> &
     href: string
     variant?: Variant
     inverse?: boolean
-    externalLink?: boolean
   }
 
 const Link = forwardRef<HTMLAnchorElement, LinkProps>(function Link<
   T extends ElementType = 'a'
 >(
-  {
-    href,
-    inverse,
-    children,
-    externalLink,
-    variant = 'default',
-    ...otherProps
-  }: LinkProps<T>,
+  { href, inverse, children, variant = 'default', ...otherProps }: LinkProps<T>,
   ref: Ref<HTMLAnchorElement> | undefined
 ) {
-  const isExternalLink = useMemo(() => externalLinkChecker(href), [href])
+  const isInternalLink = useMemo(
+    () => href[0] === '/' && href[1] !== '/',
+    [href]
+  )
 
-  if (externalLink || isExternalLink) {
+  if (isInternalLink) {
     return (
       <UILink
-        ref={ref}
-        href={href}
+        as={GatsbyLink}
+        to={href}
         data-fs-link
         data-fs-link-variant={variant}
         data-fs-link-inverse={inverse}
@@ -61,8 +47,8 @@ const Link = forwardRef<HTMLAnchorElement, LinkProps>(function Link<
 
   return (
     <UILink
-      as={GatsbyLink}
-      to={href}
+      ref={ref}
+      href={href}
       data-fs-link
       data-fs-link-variant={variant}
       data-fs-link-inverse={inverse}
