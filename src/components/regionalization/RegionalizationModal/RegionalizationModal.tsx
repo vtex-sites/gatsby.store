@@ -38,7 +38,7 @@ function RegionModal() {
         <div data-regionalization-modal-input>
           <RegionalizationInput closeModal={fadeOut} />
         </div>
-        <Link to="/">
+        <Link href="/">
           <span data-regionalization-modal-link>
             {"Don't know my Postal Code"}
           </span>

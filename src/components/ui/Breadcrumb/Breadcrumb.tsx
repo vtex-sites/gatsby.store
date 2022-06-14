@@ -42,7 +42,7 @@ function BaseBreadcrumb({
       divider=""
       className={isDesktop ? 'hidden-mobile' : 'display-mobile'}
     >
-      <Link aria-label="Go to homepage" to="/">
+      <Link aria-label="Go to homepage" href="/">
         <Icon name="House" width={18} height={18} weight="bold" />
       </Link>
 
@@ -51,14 +51,14 @@ function BaseBreadcrumb({
           return breadcrumbList.length === index + 1 ? (
             <span key={String(index)}>{name}</span>
           ) : (
-            <Link to={item} key={String(index)}>
+            <Link href={item} key={String(index)}>
               {name}
             </Link>
           )
         })}
 
       {collapseBreadcrumb && firstItem && (
-        <Link to={firstItem.item}>{firstItem.name}</Link>
+        <Link href={firstItem.item}>{firstItem.name}</Link>
       )}
 
       {collapseBreadcrumb && (
@@ -86,7 +86,7 @@ function BaseBreadcrumb({
           return lastItems.length === index + 1 ? (
             <span key={String(index)}>{name}</span>
           ) : (
-            <Link to={item} key={String(index)}>
+            <Link href={item} key={String(index)}>
               {name}
             </Link>
           )

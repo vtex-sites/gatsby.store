@@ -48,7 +48,7 @@ const SuggestionsTopSearch = forwardRef<
           <li key={term.value} data-fs-search-suggestion-item>
             <Link
               variant="display"
-              to={formatSearchPath(term.value)}
+              href={formatSearchPath(term.value)}
               onClick={() =>
                 onSearchInputSelection?.(
                   term.value,

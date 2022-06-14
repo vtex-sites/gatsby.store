@@ -1,6 +1,7 @@
 import { useSearch } from '@faststore/sdk'
 import { GatsbySeo } from 'gatsby-plugin-next-seo'
 import { lazy, Suspense } from 'react'
+import type { MouseEvent } from 'react'
 import Filter from 'src/components/search/Filter'
 import Sort from 'src/components/search/Sort'
 import FilterSkeleton from 'src/components/skeletons/FilterSkeleton'
@@ -102,12 +103,12 @@ function ProductGallery({ title, searchTerm }: Props) {
             <div data-fs-product-listing-pagination="top">
               <GatsbySeo defer linkTags={[{ rel: 'prev', href: prev.link }]} />
               <ButtonLink
-                onClick={(e) => {
+                onClick={(e: MouseEvent<HTMLElement>) => {
                   e.currentTarget.blur()
                   e.preventDefault()
                   addPrevPage()
                 }}
-                to={prev.link}
+                href={prev.link}
                 rel="prev"
                 variant="secondary"
                 iconPosition="left"
@@ -142,12 +143,12 @@ function ProductGallery({ title, searchTerm }: Props) {
               <GatsbySeo defer linkTags={[{ rel: 'next', href: next.link }]} />
               <ButtonLink
                 data-testid="show-more"
-                onClick={(e) => {
+                onClick={(e: MouseEvent<HTMLElement>) => {
                   e.currentTarget.blur()
                   e.preventDefault()
                   addNextPage()
                 }}
-                to={next.link}
+                href={next.link}
                 rel="next"
                 variant="secondary"
               >

@@ -1,16 +1,13 @@
-import { Icon as UIIcon, Link as UILink } from '@faststore/ui'
-import { Link as GatsbyLink } from 'gatsby'
 import { useRef } from 'react'
-import type { LinkProps } from '@faststore/ui'
 import type { FocusEvent } from 'react'
+import { Icon as UIIcon } from '@faststore/ui'
+import Link from 'src/components/ui/Link'
+import type { LinkProps } from 'src/components/ui/Link'
 
 import type { ButtonProps } from '../Button'
 import styles from '../button.module.scss'
 
-type Props = {
-  disabled?: boolean
-} & ButtonProps &
-  LinkProps<typeof GatsbyLink>
+type ButtonLinkProps = ButtonProps & Omit<LinkProps, 'variant'>
 
 function ButtonLink({
   variant = 'primary',
@@ -20,13 +17,12 @@ function ButtonLink({
   children,
   disabled = false,
   ...otherProps
-}: Props) {
+}: ButtonLinkProps) {
   const linkRef = useRef<HTMLAnchorElement | null>(null)
 
   return (
-    <UILink
-      as={GatsbyLink}
-      innerRef={linkRef}
+    <Link
+      ref={linkRef}
       className={styles.fsButton}
       data-fs-button
       data-fs-button-link
@@ -45,7 +41,7 @@ function ButtonLink({
       {iconPosition === 'left' && <UIIcon component={icon} />}
       {children}
       {iconPosition === 'right' && <UIIcon component={icon} />}
-    </UILink>
+    </Link>
   )
 }
 

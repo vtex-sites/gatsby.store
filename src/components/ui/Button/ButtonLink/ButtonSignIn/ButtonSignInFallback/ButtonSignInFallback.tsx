@@ -5,7 +5,7 @@ function ButtonSignInFallback() {
   return (
     <ButtonLink
       data-fs-button-signin-link
-      to="/login"
+      href="/login"
       className="text__title-mini signin-link"
       variant="tertiary"
     >
