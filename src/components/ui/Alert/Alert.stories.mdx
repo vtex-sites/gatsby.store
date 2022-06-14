@@ -6,6 +6,8 @@ import {
   TokenTable,
   TokenRow,
   TokenDivider,
+  BestPractices,
+  BestPracticesRule,
 } from 'src/../.storybook/components'
 
 <Meta
@@ -130,3 +132,35 @@ The `Alert` component uses [FastStore UI Alert](https://www.faststore.dev/refere
     value="var(--fs-border-radius)"
   />
 </TokenTable>
+
+---
+
+## Do's and Don'ts
+
+<BestPractices>
+  <BestPracticesRule
+    recommendedUsage={
+      <Alert
+        icon={<Icon name="ShieldCheck" width={24} height={24} />}
+        link={{ text: 'Buy Now', to: '/' }}
+        dismissible
+      >
+        Free shipping starts at $300
+      </Alert>
+    }
+    recommendedDescription="Write short messages to inform about the behavior of a system, feature, or page. Consider using 30 to 40 characters max."
+    discouragedUsage={
+      <Alert
+        icon={<Icon name="ShieldCheck" width={24} height={24} />}
+        link={{ text: 'Really long link to add here', to: '/' }}
+        dismissible
+      >
+        Alert with a veeeery long description lorem ipsum dolor sit amet,
+        consectetur adipiscing elit. Donec sollicitudin erat non felis feugiat
+        porta. Nam vitae turpis metus. Maecenas feugiat justo tristique libero
+        ultricies.
+      </Alert>
+    }
+    discouragedDescription="Don't use long texts. Important information can be lost."
+  />
+</BestPractices>
