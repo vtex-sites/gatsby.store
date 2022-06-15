@@ -1,0 +1,92 @@
+@import "src/styles/scaffold";
+
+.fs-price-range {
+  // --------------------------------------------------------
+  // Design Tokens for Price Range
+  // --------------------------------------------------------
+  --fs-price-range-height: .5rem;
+  --fs-price-range-border-radius: var(--fs-border-radius);
+
+  --fs-price-range-bkg-color: var(--fs-color-primary-bkg-light);
+  --fs-price-range-range-bkg-color: var(--fs-color-primary-bkg);
+
+  --fs-price-range-thumb-bkg-color: var(--fs-color-tertiary-bkg-light);
+  --fs-price-range-thumb-radius: var(--fs-border-radius-circle);
+  --fs-price-range-thumb-size: 1rem;
+  --fs-price-range-thumb-border-color: var(--fs-border-color);
+  --fs-price-range-thumb-border-width: var(--fs-border-width);
+
+  // --------------------------------------------------------
+  // Structural Styles
+  // --------------------------------------------------------
+  [data-store-slider] {
+    position: relative;
+    width: 100%;
+    height: var(--fs-price-range-height);
+    background-color: var(--fs-price-range-bkg-color);
+    border-radius: var(--fs-price-range-border-radius);
+  }
+
+  [data-slider-range] {
+    position: absolute;
+    height: var(--fs-price-range-height);
+    background-color: var(--fs-price-range-range-bkg-color);
+    border-radius: var(--fs-price-range-border-radius);
+  }
+
+  // TODO: Figure out a way for not repeating all styles for both
+  // webkit and and mozilla
+
+  /* Thumb styles for Webkit based browsers (Chrome, Edge) */
+  [data-slider-thumb],
+  [data-slider-thumb]::-webkit-slider-thumb {
+    width: var(--fs-price-range-thumb-size);
+    height: var(--fs-price-range-thumb-size);
+    pointer-events: auto;
+    cursor: col-resize;
+    background-color: var(--fs-price-range-thumb-bkg-color);
+    border: solid;
+    border-color: var(--fs-price-range-thumb-border-color);
+    border-width: var(--fs-price-range-thumb-border-width);
+    border-radius: var(--fs-price-range-thumb-radius);
+    appearance: none;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  /* Thumb styles for Mozilla */
+  [data-slider-thumb]::-moz-range-thumb {
+    width: var(--fs-price-range-thumb-size);
+    height: var(--fs-price-range-thumb-size);
+    pointer-events: auto;
+    cursor: col-resize;
+    background-color: var(--fs-price-range-thumb-bkg-color);
+    border: solid;
+    border-color: var(--fs-price-range-thumb-border-color);
+    border-width: var(--fs-price-range-thumb-border-width);
+    border-radius: var(--fs-price-range-thumb-radius);
+  }
+
+  [data-slider-thumb] {
+    position: absolute;
+    width: inherit;
+    height: 0;
+    margin: calc(var(--fs-price-range-height) / 2) 0;
+    pointer-events: none;
+    border: none;
+  }
+
+  [data-slider-thumb="left"] {
+    z-index: 1;
+  }
+
+  [data-slider-thumb="right"] {
+    z-index: 2;
+  }
+
+  [data-price-range-values] {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+}
