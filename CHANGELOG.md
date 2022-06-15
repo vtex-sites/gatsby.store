@@ -8,6 +8,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
+
+- Creates new Storybook section `BestPractices` ([#110](https://github.com/vtex-sites/gatsby.store/pull/110))
 - 301 redirects when visiting old VTEX product routes ([#87](https://github.com/vtex-sites/gatsby.store/pull/87))
 
 ### Changed
@@ -20,6 +22,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Removed
 
 ### Fixed
+
 - Status code when error occurs (404/500) ([#108](https://github.com/vtex-sites/gatsby.store/pull/108))
 
 ### Security

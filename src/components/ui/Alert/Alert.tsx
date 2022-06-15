@@ -14,7 +14,7 @@ export type Props = AlertProps & {
    */
   icon?: ReactNode
   /**
-   * Add the possibility to make the component dismissible
+   * Enables dismissible feature
    */
   dismissible?: boolean
   /**
