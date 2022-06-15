@@ -9,6 +9,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- Applies new local tokens to `Dropdown` ([#111](https://github.com/vtex-sites/gatsby.store/pull/111))
+- Creates and styles `Dropdown` component ([#111](https://github.com/vtex-sites/gatsby.store/pull/111))
 - Creates new Storybook section `BestPractices` ([#110](https://github.com/vtex-sites/gatsby.store/pull/110))
 - 301 redirects when visiting old VTEX product routes ([#87](https://github.com/vtex-sites/gatsby.store/pull/87))
 

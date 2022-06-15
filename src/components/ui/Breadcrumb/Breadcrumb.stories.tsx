@@ -7,7 +7,7 @@ export default {
 }
 
 const breadcrumbList = [
-  { item: 'technlogy', name: 'Technology', position: 1 },
+  { item: 'technology', name: 'Technology', position: 1 },
   {
     item: 'technology/electronics',
     name: 'Electronics',
