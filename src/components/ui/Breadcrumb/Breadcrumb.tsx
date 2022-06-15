@@ -69,11 +69,13 @@ function BaseBreadcrumb({
             {mediumItems.map(({ item, name }, index) => (
               <DropdownItem
                 data-breadcrumb-dropdown-item
+                icon={
+                  <Icon name="ArrowElbowDownRight" width={24} height={24} />
+                }
                 onClick={() => navigate(item)}
                 key={String(index)}
               >
-                <Icon name="ArrowElbowDownRight" width={24} height={24} />
-                <span>{name}</span>
+                {name}
               </DropdownItem>
             ))}
           </DropdownMenu>
