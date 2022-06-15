@@ -11,6 +11,7 @@ function PriceRange(props: Props) {
 
   return (
     <UIPriceRange
+      data-fs-price-range
       className={styles.fsPriceRange}
       formatter={formatter}
       {...props}
