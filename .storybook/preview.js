@@ -59,6 +59,7 @@ export const parameters = {
   },
   viewMode: 'docs',
   options: {
+    showToolbar: true,
     storySort: {
       method: 'alphabetical',
       order: [
