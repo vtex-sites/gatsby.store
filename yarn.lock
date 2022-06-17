@@ -2037,9 +2037,20 @@
     minimatch "^3.0.4"
     strip-json-comments "^3.1.1"
 
-"@faststore/api@https://pkg.csb.dev/vtex/faststore/commit/3d9c0250/@faststore/api":
+"@faststore/api@https://pkg.csb.dev/vtex/faststore/commit/334ed954/@faststore/api":
+  version "1.9.9"
+  resolved "https://pkg.csb.dev/vtex/faststore/commit/334ed954/@faststore/api#3ed195780ee7ec93aa97ed3e7449d367c6b2ec5d"
+  dependencies:
+    "@graphql-tools/schema" "^8.2.0"
+    "@rollup/plugin-graphql" "^1.0.0"
+    dataloader "^2.1.0"
+    fast-deep-equal "^3.1.3"
+    isomorphic-unfetch "^3.1.0"
+    p-limit "^3.1.0"
+
+"@faststore/api@https://pkg.csb.dev/vtex/faststore/commit/77cac243/@faststore/api":
   version "1.9.7"
-  resolved "https://pkg.csb.dev/vtex/faststore/commit/3d9c0250/@faststore/api#028786b335286b856eca89f0a9e1b5067f3cd709"
+  resolved "https://pkg.csb.dev/vtex/faststore/commit/77cac243/@faststore/api#a3f6882c650650a72b8b81163bf1f6953705ed7b"
   dependencies:
     "@graphql-tools/schema" "^8.2.0"
     "@rollup/plugin-graphql" "^1.0.0"
@@ -2063,15 +2074,30 @@
   resolved "https://registry.yarnpkg.com/@faststore/lighthouse/-/lighthouse-1.9.4.tgz#4aa001769edb9dd4a8228874fe78f49029adce13"
   integrity sha512-M+ioC6JPO3XHQpXSfpIR9BYuzgl6hebLM4D6Ufp8HkQLxMMBaKh7GKEEBYGhjW+BgxgmG/id0TV/+NwzmgrPdQ==
 
-"@faststore/sdk@^1.9.4":
-  version "1.9.4"
-  resolved "https://pkg.csb.dev/vtex/faststore/commit/3d9c0250/@faststore/sdk#768ca0dc7b284bb4bcbabec16f691f7d9a9226ff"
+"@faststore/sdk@https://pkg.csb.dev/vtex/faststore/commit/334ed954/@faststore/sdk":
+  version "1.9.9"
+  resolved "https://pkg.csb.dev/vtex/faststore/commit/334ed954/@faststore/sdk#174281de119b351de8d169a1b5ab8c7c7fa727ec"
   dependencies:
     idb-keyval "^5.1.3"
 
-"@faststore/ui@https://pkg.csb.dev/vtex/faststore/commit/3d9c0250/@faststore/ui":
+"@faststore/sdk@https://pkg.csb.dev/vtex/faststore/commit/77cac243/@faststore/sdk":
   version "1.9.4"
-  resolved "https://pkg.csb.dev/vtex/faststore/commit/3d9c0250/@faststore/ui#d55fdef9055f64d631b4184a765014f50ebc725e"
+  resolved "https://pkg.csb.dev/vtex/faststore/commit/77cac243/@faststore/sdk#c73f8c95e48af90feb7f91407c65be6c225b2ef6"
+  dependencies:
+    idb-keyval "^5.1.3"
+
+"@faststore/ui@https://pkg.csb.dev/vtex/faststore/commit/334ed954/@faststore/ui":
+  version "1.9.9"
+  resolved "https://pkg.csb.dev/vtex/faststore/commit/334ed954/@faststore/ui#65ac31c85129ec92ff54654eac4c804ace9c39e1"
+  dependencies:
+    "@reach/popover" "^0.16.0"
+    "@storybook/addon-a11y" "^6.4.4"
+    react-swipeable "^6.1.2"
+    tabbable "^5.2.1"
+
+"@faststore/ui@https://pkg.csb.dev/vtex/faststore/commit/77cac243/@faststore/ui":
+  version "1.9.4"
+  resolved "https://pkg.csb.dev/vtex/faststore/commit/77cac243/@faststore/ui#a6d4eee598387542edcdd1c460b56ac1c02672bc"
   dependencies:
     "@reach/popover" "^0.16.0"
     "@storybook/addon-a11y" "^6.4.4"
@@ -2625,7 +2651,7 @@
     relay-compiler "12.0.0"
     tslib "~2.3.0"
 
-"@graphql-tools/relay-operation-optimizer@^6.4.14":
+"@graphql-tools/relay-operation-optimizer@^6.4.0", "@graphql-tools/relay-operation-optimizer@^6.4.14":
   version "6.4.14"
   resolved "https://registry.yarnpkg.com/@graphql-tools/relay-operation-optimizer/-/relay-operation-optimizer-6.4.14.tgz#812f32123a1351615a72b4e832852daac7bd64b3"
   integrity sha512-vqch2M/sIUfMmlRJ4eCupiHlVPXWOPVpHX9yCZwRrpNg0Eaokyc57NSjJuKVV3KcvcJKf03qfMK2PxFbfDvN9A==
@@ -14878,7 +14904,7 @@ lodash.merge@^4.6.2:
   resolved "https://registry.yarnpkg.com/lodash.merge/-/lodash.merge-4.6.2.tgz#558aa53b43b661e1925a0afdfa36a9a1085fe57a"
   integrity sha512-0KpjqXRVvrYyCsX1swR/XTK0va6VQkQM6MNo7PqW77ByjAhoARA8EfrP1N4+KlKj8YS0ZUCtRT/YUuhyYDujIQ==
 
-lodash.mergewith@4.6.2, lodash.mergewith@^4.6.2:
+lodash.mergewith@^4.6.2:
   version "4.6.2"
   resolved "https://registry.yarnpkg.com/lodash.mergewith/-/lodash.mergewith-4.6.2.tgz#617121f89ac55f59047c7aec1ccd6654c6590f55"
   integrity sha512-GK3g5RPZWTRSeLSpgP8Xhra+pnjBC56q9FZYe1d5RN3TJ35dbkGy3YqBSMbyCrlbi+CM9Z3Jk5yTL7RCsqboyQ==
