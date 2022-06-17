@@ -4,7 +4,7 @@ import type {
   BrowserProductQueryQuery,
   BrowserProductQueryQueryVariables,
 } from '@generated/graphql'
-import { gql } from '@vtex/graphql-utils'
+import { gql } from '@faststore/graphql-utils'
 
 import { useQuery } from '../graphql/useQuery'
 

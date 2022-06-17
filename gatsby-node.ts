@@ -45,7 +45,7 @@ export const onCreateBabelConfig: GatsbyNode['onCreateBabelConfig'] = ({
   actions,
 }) => {
   actions.setBabelPlugin({
-    name: `@vtex/graphql-utils/babel`,
+    name: `@faststore/graphql-utils/babel`,
     options: {},
   })
 }
