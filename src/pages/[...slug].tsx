@@ -1,5 +1,5 @@
 import { parseSearchState, SearchProvider, useSession } from '@faststore/sdk'
-import { gql } from '@vtex/graphql-utils'
+import { gql } from '@faststore/graphql-utils'
 import { graphql } from 'gatsby'
 import { BreadcrumbJsonLd, GatsbySeo } from 'gatsby-plugin-next-seo'
 import { useMemo } from 'react'
