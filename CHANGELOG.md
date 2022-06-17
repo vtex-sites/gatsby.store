@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- Displays the `Sandbox` tab on the storybook along with `Viewport` toolbar and `Accessibility` checks ([#115](https://github.com/vtex-sites/gatsby.store/pull/115))
 - Applies new local tokens to `EmptyState` ([#113](https://github.com/vtex-sites/gatsby.store/pull/113))
 - Applies new local tokens to `Dropdown` ([#111](https://github.com/vtex-sites/gatsby.store/pull/111))
 - Creates and styles `Dropdown` component ([#111](https://github.com/vtex-sites/gatsby.store/pull/111))
@@ -27,6 +28,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 
+- Some console errors when running the storybook ([#115](https://github.com/vtex-sites/gatsby.store/pull/115))
 - Status code when error occurs (404/500) ([#108](https://github.com/vtex-sites/gatsby.store/pull/108))
 
 ### Security
