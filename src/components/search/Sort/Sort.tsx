@@ -15,10 +15,7 @@ const OptionsMap = {
 const keys = Object.keys(OptionsMap) as Array<keyof typeof OptionsMap>
 
 function Sort() {
-  const {
-    setSort,
-    state: { sort },
-  } = useSearch()
+  const { state, setState } = useSearch()
 
   return (
     <Select
@@ -26,8 +23,16 @@ function Sort() {
       className="sort / text__title-mini-alt"
       label="Sort by"
       options={OptionsMap}
-      onChange={(e) => setSort(keys[e.target.selectedIndex])}
-      value={sort}
+      onChange={(e) => {
+        const sort = keys[e.target.selectedIndex]
+
+        setState({
+          ...state,
+          sort,
+          page: 0,
+        })
+      }}
+      value={state.sort}
       testId="search-sort"
     />
   )
