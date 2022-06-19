@@ -19,6 +19,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- Move logo's svg code from JS into static asset ([#116](https://github.com/vtex-sites/gatsby.store/pull/116))
 - Upgrade dependencies ([#114](https://github.com/vtex-sites/gatsby.store/pull/114))
 - Storybook's version from 6.4.20 to 6.5.9 ([#109](https://github.com/vtex-sites/gatsby.store/pull/109))
 - Unifies `Link` component usage by adding support for both external and client-side links ([#103](https://github.com/vtex-sites/gatsby.store/pull/103))
