@@ -1,7 +1,6 @@
 import { CartProvider, SessionProvider } from '@faststore/sdk'
 import { validateSession } from 'src/sdk/session/validate'
 import UIProvider from 'src/sdk/ui/Provider'
-import type { ReactNode } from 'react'
 import type { GatsbySSR } from 'gatsby'
 
 import ThirdPartyScripts from './src/components/ThirdPartyScripts'
@@ -54,7 +53,7 @@ type StyleComponent = {
   }
 }
 
-const isStyleComponent = (node: ReactNode): node is StyleComponent =>
+const isStyleComponent = (node: any): node is StyleComponent =>
   typeof node === 'object' && node != null && (node as any).type === 'style'
 
 /**

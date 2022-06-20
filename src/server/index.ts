@@ -5,7 +5,6 @@ import {
   useExtendContext,
   useMaskedErrors,
 } from '@envelop/core'
-import { useGraphQlJit } from '@envelop/graphql-jit'
 import { useParserCache } from '@envelop/parser-cache'
 import { useValidationCache } from '@envelop/validation-cache'
 import { getContextFactory, getSchema, isFastStoreError } from '@faststore/api'
@@ -56,7 +55,7 @@ const getEnvelop = async () =>
       useAsyncSchema(apiSchema),
       useExtendContext(apiContextFactory),
       useMaskedErrors({ formatError }),
-      useGraphQlJit(),
+
       useValidationCache(),
       useParserCache(),
     ],

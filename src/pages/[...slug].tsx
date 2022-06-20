@@ -1,4 +1,9 @@
-import { parseSearchState, SearchProvider, useSession } from '@faststore/sdk'
+import {
+  parseSearchState,
+  SearchProvider,
+  useSession,
+  formatSearchState,
+} from '@faststore/sdk'
 import { gql } from '@faststore/graphql-utils'
 import { graphql } from 'gatsby'
 import { BreadcrumbJsonLd, GatsbySeo } from 'gatsby-plugin-next-seo'
@@ -37,20 +42,20 @@ const useSearchParams = (props: Props): SearchState => {
 
   const selectedFacets = serverData?.collection?.meta.selectedFacets
 
-  return useMemo(() => {
-    const maybeState = href ? parseSearchState(new URL(href)) : null
+  const hrefState = useMemo(() => {
+    const newState = parseSearchState(
+      new URL(href ?? pathname, 'http://localhost')
+    )
 
-    return {
-      page: maybeState?.page ?? 0,
-      base: maybeState?.base ?? pathname,
-      selectedFacets:
-        maybeState && maybeState.selectedFacets.length > 0
-          ? maybeState.selectedFacets
-          : selectedFacets ?? [],
-      term: maybeState?.term ?? null,
-      sort: maybeState?.sort ?? 'score_desc',
+    // In case we are in an incomplete url
+    if (newState.selectedFacets.length === 0) {
+      newState.selectedFacets = selectedFacets ?? []
     }
+
+    return formatSearchState(newState).href
   }, [href, pathname, selectedFacets])
+
+  return useMemo(() => parseSearchState(new URL(hrefState)), [hrefState])
 }
 
 function Page(props: Props) {

@@ -31,11 +31,6 @@ export const query = gql`
         pageInfo {
           totalCount
         }
-        edges {
-          node {
-            ...ProductSummary_product
-          }
-        }
       }
       facets {
         ...Filter_facets
