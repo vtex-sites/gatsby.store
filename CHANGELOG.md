@@ -30,6 +30,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 
+- A test related infinite scroll pagination that only failed in development mode ([#118](https://github.com/vtex-sites/gatsby.store/pull/118))
 - Some console errors when running the storybook ([#115](https://github.com/vtex-sites/gatsby.store/pull/115))
 - Status code when error occurs (404/500) ([#108](https://github.com/vtex-sites/gatsby.store/pull/108))
 
