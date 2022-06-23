@@ -1,12 +1,11 @@
 import Tiles, { Tile } from 'src/components/ui/Tiles'
 import ProductCard from 'src/components/product/ProductCard'
-import ProductTilesSkeleton from 'src/components/skeletons/ProductTilesSkeleton'
 import { useProductsQuery } from 'src/sdk/product/useProductsQuery'
 import type { ProductsQueryQueryVariables } from '@generated/graphql'
 
 import Section from '../Section'
 
-interface TilesProps extends Partial<ProductsQueryQueryVariables> {
+export interface TilesProps extends Partial<ProductsQueryQueryVariables> {
   title: string | JSX.Element
 }
 
@@ -38,21 +37,19 @@ const ProductTiles = ({ title, ...variables }: TilesProps) => {
     <Section className="layout__section layout__content">
       <h2 className="text__title-section">{title}</h2>
       <div>
-        <ProductTilesSkeleton variant="wide" loading={!products}>
-          <Tiles>
-            {products?.edges.map((product, idx) => (
-              <Tile key={product.node.id}>
-                <ProductCard
-                  data-testid="tile-card"
-                  product={product.node}
-                  index={idx + 1}
-                  variant="wide"
-                  aspectRatio={getRatio(products.edges.length, idx)}
-                />
-              </Tile>
-            ))}
-          </Tiles>
-        </ProductTilesSkeleton>
+        <Tiles>
+          {products?.edges.map((product, idx) => (
+            <Tile key={product.node.id}>
+              <ProductCard
+                data-testid="tile-card"
+                product={product.node}
+                index={idx + 1}
+                variant="wide"
+                aspectRatio={getRatio(products.edges.length, idx)}
+              />
+            </Tile>
+          ))}
+        </Tiles>
       </div>
     </Section>
   )
