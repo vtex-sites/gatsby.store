@@ -16,6 +16,12 @@ interface Props {
 const moveScroll = (container: HTMLDivElement | null, value: number) => {
   if (container) {
     if (container.scrollHeight > container.clientHeight) {
+      // TODO: Temporary workaround for scroll-behavior with scrollTop – Safari 15.4) https://developer.apple.com/forums/thread/703294
+      container.style.overflow = 'auto'
+      window.requestAnimationFrame(() =>
+        container.scrollTo({ top: value, behavior: 'smooth' })
+      )
+      setTimeout(() => (container.style.overflow = 'hidden'), 2000)
       container.scrollTop += value
     } else {
       container.scrollLeft += value
