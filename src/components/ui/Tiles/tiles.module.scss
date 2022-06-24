@@ -11,7 +11,7 @@
 
   // Tile
   --fs-tiles-tile-min-width     : 9rem;
-  --fs-tiles-tile-height        : 24rem;
+  --fs-tiles-tile-height-mobile : 24rem;
   --fs-tiles-tile-height-tablet : 28rem;
   --fs-tiles-tile-border-radius : var(--fs-border-radius);
 
@@ -33,7 +33,7 @@
 
   [data-fs-tile] {
     min-width: var(--fs-tiles-tile-min-width);
-    height: var(--fs-tiles-tile-height);
+    height: var(--fs-tiles-tile-height-mobile);
     border-radius: var(--fs-tiles-tile-border-radius);
 
     @include media(">=tablet") { height: var(--fs-tiles-tile-height-tablet); }

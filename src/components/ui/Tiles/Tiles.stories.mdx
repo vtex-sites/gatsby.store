@@ -1,5 +1,5 @@
 import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs'
-import { TokenTable, TokenRow } from 'src/../.storybook/components'
+import { TokenTable, TokenRow, Callout } from 'src/../.storybook/components'
 
 import { SessionProvider } from '@faststore/sdk'
 
@@ -66,7 +66,11 @@ This component works like layout boxes/cards, which can be arranged in different
 
 According to the quantity of items to be displayed, tiles will be arranged differently.
 
-For now, the minimum items is 2 and the maximum is 4, but this component will be improved to accept different possibilities, for example the use of only one tile occupying the entire space of the section.
+<Callout>
+  The minimum number of items is 2, and the maximum is 4. In the future, this
+  component will be improved to accept different possibilities, for example,
+  using only one tile occupying the entire section space.
+</Callout>
 
 ---
 
@@ -131,13 +135,13 @@ For now, the minimum items is 2 and the maximum is 4, but this component will be
 
 ---
 
-## Components
+## Compound Components
 
 ### Tile
 
 <TokenTable>
   <TokenRow token="--fs-tiles-tile-min-width" value="9rem" />
-  <TokenRow token="--fs-tiles-tile-height" value="24rem" />
+  <TokenRow token="--fs-tiles-tile-height-mobile" value="24rem" />
   <TokenRow token="--fs-tiles-tile-height-tablet" value="28rem" />
   <TokenRow
     token="--fs-tiles-tile-border-radius"
