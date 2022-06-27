@@ -163,11 +163,13 @@ function ProductDetails({ product: staleProduct }: Props) {
               Add to Cart
             </ButtonBuy>
           )}
-          <OutOfStock
-            onSubmit={(email) => {
-              console.info(email)
-            }}
-          />
+          {!availability && (
+            <OutOfStock
+              onSubmit={(email) => {
+                console.info(email)
+              }}
+            />
+          )}
         </section>
 
         <section className="product-details__content">
