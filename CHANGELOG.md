@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- Creates Doc page for `Regionalization` Feature ([#123](https://github.com/vtex-sites/gatsby.store/pull/123))
 - Displays the `Sandbox` tab on the storybook along with `Viewport` toolbar and `Accessibility` checks ([#115](https://github.com/vtex-sites/gatsby.store/pull/115))
 - PriceRange component to PLP and StoryBook ([#112](https://github.com/vtex-sites/gatsby.store/pull/112))
 - Applies new local tokens to `EmptyState` ([#113](https://github.com/vtex-sites/gatsby.store/pull/113))
