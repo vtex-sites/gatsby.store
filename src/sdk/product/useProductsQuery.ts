@@ -83,7 +83,6 @@ export const useProductsQuery = (
     query,
     localizedVariables,
     {
-      fallbackData: null,
       suspense: true,
       ...options,
     }

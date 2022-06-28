@@ -3,15 +3,12 @@ import 'src/styles/pages/homepage.scss'
 import { useSession } from '@faststore/sdk'
 import { graphql } from 'gatsby'
 import { GatsbySeo, JsonLd } from 'gatsby-plugin-next-seo'
-import { Suspense } from 'react'
 import BannerText from 'src/components/sections/BannerText'
 import Hero from 'src/components/sections/Hero'
 import IncentivesHeader from 'src/components/sections/Incentives/IncentivesHeader'
 import IncentivesMock from 'src/components/sections/Incentives/incentivesMock'
 import ProductShelf from 'src/components/sections/ProductShelf'
 import ProductTiles from 'src/components/sections/ProductTiles'
-import ProductShelfSkeleton from 'src/components/skeletons/ProductShelfSkeleton'
-import ProductTilesSkeleton from 'src/components/skeletons/ProductTilesSkeleton'
 import { ITEMS_PER_SECTION } from 'src/constants'
 import { mark } from 'src/sdk/tests/mark'
 import type { PageProps } from 'gatsby'
@@ -80,21 +77,17 @@ function Page(props: Props) {
 
       <IncentivesHeader incentives={IncentivesMock} />
 
-      <Suspense fallback={<ProductShelfSkeleton loading />}>
-        <ProductShelf
-          first={ITEMS_PER_SECTION}
-          selectedFacets={[{ key: 'productClusterIds', value: '140' }]}
-          title="Most Wanted"
-        />
-      </Suspense>
+      <ProductShelf
+        first={ITEMS_PER_SECTION}
+        selectedFacets={[{ key: 'productClusterIds', value: '140' }]}
+        title="Most Wanted"
+      />
 
-      <Suspense fallback={<ProductTilesSkeleton loading />}>
-        <ProductTiles
-          first={3}
-          selectedFacets={[{ key: 'productClusterIds', value: '141' }]}
-          title="Just Arrived"
-        />
-      </Suspense>
+      <ProductTiles
+        first={3}
+        selectedFacets={[{ key: 'productClusterIds', value: '141' }]}
+        title="Just Arrived"
+      />
 
       <BannerText
         title="Receive our news and promotions in advance. Enjoy and get 10% off on your first purchase."
@@ -102,13 +95,11 @@ function Page(props: Props) {
         actionLabel="Call to action"
       />
 
-      <Suspense fallback={<ProductShelfSkeleton loading />}>
-        <ProductShelf
-          first={ITEMS_PER_SECTION}
-          selectedFacets={[{ key: 'productClusterIds', value: '142' }]}
-          title="Deals & Promotions"
-        />
-      </Suspense>
+      <ProductShelf
+        first={ITEMS_PER_SECTION}
+        selectedFacets={[{ key: 'productClusterIds', value: '142' }]}
+        title="Deals & Promotions"
+      />
     </>
   )
 }
