@@ -16,9 +16,7 @@ import type { GatsbyBrowser } from 'gatsby'
 
 import storeConfig from './store.config'
 
-export const wrapRootElement: GatsbyBrowser['wrapRootElement'] = ({
-  element,
-}) => (
+export const wrapRootElement: GatsbyBrowser['wrapRootElement'] = () => (
   <ErrorBoundary>
     <AnalyticsHandler />
     <TestProvider>
@@ -31,7 +29,7 @@ export const wrapRootElement: GatsbyBrowser['wrapRootElement'] = ({
           onValidateSession={validateSession}
         >
           <CartProvider mode="optimistic" onValidateCart={validateCart}>
-            {element}
+            a
           </CartProvider>
         </SessionProvider>
       </UIProvider>
@@ -39,8 +37,6 @@ export const wrapRootElement: GatsbyBrowser['wrapRootElement'] = ({
   </ErrorBoundary>
 )
 
-export const wrapPageElement: GatsbyBrowser['wrapPageElement'] = ({
-  element,
-}) => {
-  return <Layout>{element}</Layout>
+export const wrapPageElement: GatsbyBrowser['wrapPageElement'] = () => {
+  return <Layout>a</Layout>
 }

@@ -11,7 +11,7 @@ import ErrorBoundary from './src/sdk/error/ErrorBoundary'
 import TestProvider from './src/sdk/tests'
 import storeConfig from './store.config'
 
-export const wrapRootElement: GatsbySSR['wrapRootElement'] = ({ element }) => (
+export const wrapRootElement: GatsbySSR['wrapRootElement'] = () => (
   <ErrorBoundary>
     <AnalyticsHandler />
     <TestProvider>
@@ -24,7 +24,7 @@ export const wrapRootElement: GatsbySSR['wrapRootElement'] = ({ element }) => (
           onValidateSession={validateSession}
         >
           <CartProvider mode="optimistic" onValidateCart={validateCart}>
-            {element}
+            a
           </CartProvider>
         </SessionProvider>
       </UIProvider>
@@ -32,8 +32,8 @@ export const wrapRootElement: GatsbySSR['wrapRootElement'] = ({ element }) => (
   </ErrorBoundary>
 )
 
-export const wrapPageElement: GatsbySSR['wrapPageElement'] = ({ element }) => {
-  return <Layout>{element}</Layout>
+export const wrapPageElement: GatsbySSR['wrapPageElement'] = () => {
+  return <Layout>a</Layout>
 }
 
 export const onRenderBody: GatsbySSR['onRenderBody'] = ({
