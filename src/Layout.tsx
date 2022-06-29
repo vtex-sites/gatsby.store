@@ -14,13 +14,13 @@ const RegionModal = lazy(
   () => import('src/components/regionalization/RegionalizationModal')
 )
 
-function Layout({ children }: PropsWithChildren<unknown>) {
+function Layout({ children }: PropsWithChildren) {
   const { cart: displayCart, modal: displayModal } = useUI()
 
   return (
     <>
       <Alert icon="Bell" link={{ text: 'Buy now', to: '/office' }} dismissible>
-        Get 10% off today:&nbsp;<span>NEW10</span>
+        Get 10%dsads off today:&nbsp;<span>NEW10</span>
       </Alert>
 
       <Navbar />
