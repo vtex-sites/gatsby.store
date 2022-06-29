@@ -5,8 +5,14 @@ import ProductCard from '../ProductCard'
 import styles from './product-grid.module.scss'
 
 interface Props {
+  /**
+   * Products listed on the grid.
+   */
   products: Array<{ node: ProductSummary_ProductFragment }>
   page: number
+  /**
+   * Quantity of products listed.
+   */
   pageSize: number
 }
 

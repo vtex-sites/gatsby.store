@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- Applies new local tokens to `ProductGrid` ([#127](https://github.com/vtex-sites/gatsby.store/pull/127))
 - Applies new local tokens to `Tiles` ([#120](https://github.com/vtex-sites/gatsby.store/pull/120))
 - Applies new local tokens to `Accordion` ([#126](https://github.com/vtex-sites/gatsby.store/pull/126))
 - Applies new local tokens to `ImageGallery` ([#125](https://github.com/vtex-sites/gatsby.store/pull/125))
