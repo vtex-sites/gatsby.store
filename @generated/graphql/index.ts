@@ -3318,6 +3318,11 @@ export type ServerProductPageQueryQueryVariables = Exact<{
 
 export type ServerProductPageQueryQuery = { product: { sku: string, gtin: string, name: string, description: string, id: string, seo: { title: string, description: string, canonical: string }, brand: { name: string }, breadcrumbList: { itemListElement: Array<{ item: string, name: string, position: number }> }, image: Array<{ url: string, alternateName: string }>, offers: { lowPrice: number, highPrice: number, priceCurrency: string, offers: Array<{ availability: string, price: number, priceValidUntil: string, priceCurrency: string, itemCondition: string, listPrice: number, seller: { identifier: string } }> }, isVariantOf: { productGroupID: string, name: string }, additionalProperty: Array<{ propertyID: string, name: string, value: any, valueReference: string }> } };
 
+export type CmsHomePageQueryQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type CmsHomePageQueryQuery = { site: { siteMetadata: { title: string | null, description: string | null, titleTemplate: string | null } | null } | null, cmsHome: { sections: Array<{ data: any, name: string }> } | null };
+
 export type HomePageQueryQueryVariables = Exact<{ [key: string]: never; }>;
 
 
