@@ -1,5 +1,5 @@
 import { lazy, Suspense } from 'react'
-import Alert from 'src/components/cms/Alert'
+import Alert from 'src/components/cms/common/Alert'
 import Footer from 'src/components/common/Footer'
 import Navbar from 'src/components/common/Navbar'
 import Toast from 'src/components/common/Toast'
@@ -14,7 +14,7 @@ const RegionModal = lazy(
   () => import('src/components/regionalization/RegionalizationModal')
 )
 
-function Layout({ children }: PropsWithChildren<unknown>) {
+function Layout({ children }: PropsWithChildren) {
   const { cart: displayCart, modal: displayModal } = useUI()
 
   return (
