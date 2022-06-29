@@ -24,7 +24,7 @@ export const wrapRootElement: GatsbySSR['wrapRootElement'] = () => (
           onValidateSession={validateSession}
         >
           <CartProvider mode="optimistic" onValidateCart={validateCart}>
-            a
+            ac
           </CartProvider>
         </SessionProvider>
       </UIProvider>

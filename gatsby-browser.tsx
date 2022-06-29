@@ -29,7 +29,7 @@ export const wrapRootElement: GatsbyBrowser['wrapRootElement'] = () => (
           onValidateSession={validateSession}
         >
           <CartProvider mode="optimistic" onValidateCart={validateCart}>
-            a
+            ab
           </CartProvider>
         </SessionProvider>
       </UIProvider>
