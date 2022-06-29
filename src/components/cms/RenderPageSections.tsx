@@ -18,7 +18,7 @@ const COMPONENTS: Record<string, ComponentType<any>> = {
 }
 
 interface Props {
-  sections?: Array<{ name: string; data: unknown }>
+  sections?: Array<{ name: string; data: Record<string, unknown> }>
 }
 
 function RenderPageSections({ sections }: Props) {
