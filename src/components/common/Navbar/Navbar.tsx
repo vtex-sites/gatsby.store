@@ -24,8 +24,8 @@ interface NavLinksProps {
 
 const collections = [
   {
-    name: 'Office',
-    href: '/office',
+    name: 'Test',
+    href: '/aaaa',
   },
   {
     name: 'Home Appliances',
