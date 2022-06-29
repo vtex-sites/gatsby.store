@@ -3,6 +3,7 @@ import { SearchProvider, SessionProvider } from '@faststore/sdk'
 import storeConfig from 'store.config'
 import Sentinel from 'src/sdk/search/Sentinel'
 import { productGridItems } from 'src/../.storybook/mocks/productGridItems'
+import { LocationProvider } from '@reach/router'
 
 import { useProducts } from '../../sections/ProductGallery/usePageProducts'
 
@@ -35,13 +36,15 @@ import {
 
 export const Template = (args) => {
   return (
-    <SessionProvider
-      initialstate={{
-        channel: storeConfig.channel,
-      }}
-    >
-      <ProductGrid {...args} />
-    </SessionProvider>
+    <LocationProvider>
+      <SessionProvider
+        initialstate={{
+          channel: storeConfig.channel,
+        }}
+      >
+        <ProductGrid {...args} />
+      </SessionProvider>
+    </LocationProvider>
   )
 }
 
