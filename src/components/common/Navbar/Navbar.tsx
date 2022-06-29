@@ -24,7 +24,7 @@ interface NavLinksProps {
 
 const collections = [
   {
-    name: 'Office',
+    name: 'aOffice',
     href: '/office',
   },
   {
@@ -125,7 +125,7 @@ function Navbar() {
                 onClick={openNavbar}
               />
               <Link
-                href="/"
+                href="/a"
                 aria-label="Go to Faststore home"
                 title="Go to Faststore home"
                 className="navbar__logo"
