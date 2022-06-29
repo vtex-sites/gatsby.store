@@ -3332,78 +3332,21 @@ export type ProductPageQueryQueryVariables = Exact<{ [key: string]: never; }>;
 export type ProductPageQueryQuery = { site: { siteMetadata: { title: string | null, description: string | null, titleTemplate: string | null, siteUrl: string | null } | null } | null };
 
 export type ServerProductPageQueryQueryVariables = Exact<{
-  slug: Scalars['String']
-}>
+  slug: Scalars['String'];
+}>;
 
-export type ServerProductPageQueryQuery = {
-  product: {
-    sku: string
-    gtin: string
-    name: string
-    description: string
-    id: string
-    seo: { title: string; description: string; canonical: string }
-    brand: { name: string }
-    breadcrumbList: {
-      itemListElement: Array<{ item: string; name: string; position: number }>
-    }
-    image: Array<{ url: string; alternateName: string }>
-    offers: {
-      lowPrice: number
-      highPrice: number
-      priceCurrency: string
-      offers: Array<{
-        availability: string
-        price: number
-        priceValidUntil: string
-        priceCurrency: string
-        itemCondition: string
-        listPrice: number
-        seller: { identifier: string }
-      }>
-    }
-    isVariantOf: {
-      productGroupID: string
-      name: string
-      skuVariants: {
-        activeVariations: any | null
-        slugsMap: any | null
-        availableVariations: any | null
-      } | null
-    }
-    additionalProperty: Array<{
-      propertyID: string
-      name: string
-      value: any
-      valueReference: string
-    }>
-  }
-}
 
-export type HomePageQueryQueryVariables = Exact<{ [key: string]: never }>
+export type ServerProductPageQueryQuery = { product: { sku: string, gtin: string, name: string, description: string, id: string, seo: { title: string, description: string, canonical: string }, brand: { name: string }, breadcrumbList: { itemListElement: Array<{ item: string, name: string, position: number }> }, image: Array<{ url: string, alternateName: string }>, offers: { lowPrice: number, highPrice: number, priceCurrency: string, offers: Array<{ availability: string, price: number, priceValidUntil: string, priceCurrency: string, itemCondition: string, listPrice: number, seller: { identifier: string } }> }, isVariantOf: { productGroupID: string, name: string }, additionalProperty: Array<{ propertyID: string, name: string, value: any, valueReference: string }> } };
 
-export type HomePageQueryQuery = {
-  site: {
-    siteMetadata: {
-      title: string | null
-      description: string | null
-      titleTemplate: string | null
-      siteUrl: string | null
-    } | null
-  } | null
-}
+export type HomePageQueryQueryVariables = Exact<{ [key: string]: never; }>;
 
-export type SearchPageQueryQueryVariables = Exact<{ [key: string]: never }>
 
-export type SearchPageQueryQuery = {
-  site: {
-    siteMetadata: {
-      titleTemplate: string | null
-      title: string | null
-      description: string | null
-    } | null
-  } | null
-}
+export type HomePageQueryQuery = { site: { siteMetadata: { title: string | null, description: string | null, titleTemplate: string | null, siteUrl: string | null } | null } | null };
+
+export type SearchPageQueryQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type SearchPageQueryQuery = { site: { siteMetadata: { titleTemplate: string | null, title: string | null, description: string | null } | null } | null };
 
 export type ValidateCartMutationMutationVariables = Exact<{
   cart: IStoreCart
