@@ -429,7 +429,7 @@ Since we have pages and components rendered with and without CMS we replicate th
 
 ### CMS configs
 
-It's possible to change the CMS tenant and workspace at the `store.config.js`
+It's possible to change the CMS tenant and workspace at `store.config.js`.
 
 ## 🎓 Learning the Frameworks
 
