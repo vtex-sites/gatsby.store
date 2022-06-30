@@ -9,6 +9,12 @@ module.exports = {
     hideUnavailableItems: true,
   },
 
+  // Headless CMS
+  cms: {
+    tenant: 'storeframework',
+    workspace: 'master',
+  },
+
   // Default channel
   channel: '{"salesChannel":"1","regionId":""}',
   locale: 'en-US',
@@ -27,6 +33,7 @@ module.exports = {
       home: '/',
       pdp: '/apple-magic-mouse/p',
       collection: '/office',
+      cmsHome: '/cms',
     },
   },
 
@@ -39,6 +46,7 @@ module.exports = {
       collection_filtered:
         '/office/?category-1=office&marca=acer&facets=category-1%2Cmarca',
       search: '/s?q=orange',
+      cmsHome: '/cms',
     },
   },
 

@@ -107,6 +107,13 @@ const gatsbyConfig: GatsbyConfig = {
       },
     },
     {
+      resolve: '@vtex/gatsby-source-cms',
+      options: {
+        workspace: config.cms.workspace,
+        tenant: config.cms.tenant,
+      },
+    },
+    {
       resolve: 'gatsby-plugin-gatsby-cloud',
     },
     {

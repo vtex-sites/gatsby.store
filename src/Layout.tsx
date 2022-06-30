@@ -1,5 +1,5 @@
 import { lazy, Suspense } from 'react'
-import Alert from 'src/components/common/Alert'
+import Alert from 'src/components/cms/common/Alert'
 import Footer from 'src/components/common/Footer'
 import Navbar from 'src/components/common/Navbar'
 import Toast from 'src/components/common/Toast'
@@ -14,14 +14,12 @@ const RegionModal = lazy(
   () => import('src/components/regionalization/RegionalizationModal')
 )
 
-function Layout({ children }: PropsWithChildren<unknown>) {
+function Layout({ children }: PropsWithChildren) {
   const { cart: displayCart, modal: displayModal } = useUI()
 
   return (
     <>
-      <Alert icon="Bell" link={{ text: 'Buy now', to: '/office' }} dismissible>
-        Get 10% off today:&nbsp;<span>NEW10</span>
-      </Alert>
+      <Alert />
 
       <Navbar />
 
