@@ -77,6 +77,72 @@ describe('Home Page Seo', () => {
   })
 })
 
+describe('CMS Home Page Seo', () => {
+  beforeEach(() => {
+    cy.clearIDB()
+  })
+
+  it('has meta/canonical/link tags', () => {
+    cy.visit(pages.cmsHome, options)
+    cy.waitForHydration()
+
+    cy.title().should('exist')
+    cy.get('meta[name="description"]').should('exist')
+    cy.get('meta[name="robots"]')
+      .should('exist')
+      .should(($el) => {
+        expect($el.attr('content')).to.eq('index,follow')
+      })
+    cy.get('meta[name="googlebot"]')
+      .should('exist')
+      .should(($el) => {
+        expect($el.attr('content')).to.eq('index,follow')
+      })
+    cy.get('link[rel="canonical"]')
+      .should('exist')
+      .should(($link) => {
+        expect($link.attr('href')).to.eq(storeUrl)
+      })
+  })
+
+  it('has structured data', () => {
+    cy.visit(pages.cmsHome, options)
+    cy.waitForHydration()
+
+    cy.get('script[type="application/ld+json"]')
+      .should('exist')
+      .should(($el) => {
+        const jsonld = JSON.parse($el.text())
+
+        expect(jsonld['@context']).to.eq('https://schema.org')
+        expect(jsonld['@type']).to.eq('WebSite')
+      })
+  })
+
+  it('has OpenGraph tags', () => {
+    cy.visit(pages.cmsHome, options)
+    cy.waitForHydration()
+
+    cy.get('meta[property="og:type"]')
+      .should('exist')
+      .should(($el) => {
+        expect($el.attr('content')).to.eq('website')
+      })
+
+    cy.get('meta[property="og:title"]')
+      .should('exist')
+      .should(($el) => {
+        expect($el.attr('content')).to.be.a('string')
+      })
+
+    cy.get('meta[property="og:description"]')
+      .should('exist')
+      .should(($el) => {
+        expect($el.attr('content')).to.be.a('string')
+      })
+  })
+})
+
 describe('Product Page Seo', () => {
   beforeEach(() => {
     cy.clearIDB()
