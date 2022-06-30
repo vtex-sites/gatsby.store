@@ -13,7 +13,7 @@ module.exports = lhConfig({
     'categories:best-practices': [
       'error',
       {
-        minScore: 0.9,
+        minScore: 1.0,
       },
     ],
     deprecations: 'warn',
