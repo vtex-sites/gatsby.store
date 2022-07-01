@@ -10,6 +10,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - Applies new local tokens to `Navbar` ([#132](https://github.com/vtex-sites/gatsby.store/pull/132))
+
+### Changed
+
+### Deprecated
+
+### Removed
+
+### Fixed
+
+## [22.26.0.beta] - 2022-07-01
+
+### Added
+
 - Applies new local tokens to `Filter` ([#128](https://github.com/vtex-sites/gatsby.store/pull/128))
 - Applies new local tokens to `ProductGrid` ([#127](https://github.com/vtex-sites/gatsby.store/pull/127))
 - Applies new local tokens to `Tiles` ([#120](https://github.com/vtex-sites/gatsby.store/pull/120))
@@ -33,17 +46,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Storybook's version from 6.4.20 to 6.5.9 ([#109](https://github.com/vtex-sites/gatsby.store/pull/109))
 - Unifies `Link` component usage by adding support for both external and client-side links ([#103](https://github.com/vtex-sites/gatsby.store/pull/103))
 
-### Deprecated
-
-### Removed
-
 ### Fixed
 
 - `ImageGallerySelector` scroll that isn't working on Safari ([##121](https://github.com/vtex-sites/gatsby.store/pull/121))
 - Some console errors when running the storybook ([#115](https://github.com/vtex-sites/gatsby.store/pull/115))
 - Status code when error occurs (404/500) ([#108](https://github.com/vtex-sites/gatsby.store/pull/108))
-
-### Security
 
 ## [22.23.0.beta] - 2022-06-10
 
