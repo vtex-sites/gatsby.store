@@ -1,11 +1,11 @@
-import { useMemo } from 'react'
 import { gql } from '@faststore/graphql-utils'
 import { createSessionStore } from '@faststore/sdk'
+import { useMemo } from 'react'
 import type { Session } from '@faststore/sdk'
-import storeConfig from 'store.config'
 
-import { createValidationStore, useStore } from '../useStore'
+import storeConfig from '../../../store.config'
 import { request } from '../graphql/request'
+import { createValidationStore, useStore } from '../useStore'
 import type {
   ValidateSessionMutation,
   ValidateSessionMutationVariables,
@@ -17,7 +17,7 @@ export const mutation = gql`
       locale
       channel
       country
-      postalCode
+      postalCodes
       currency {
         code
         symbol
