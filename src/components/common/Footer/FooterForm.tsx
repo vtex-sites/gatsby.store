@@ -1,7 +1,7 @@
 import type { ChangeEvent } from 'react'
 import { useCallback, useState } from 'react'
-import { useNewsletter } from '@faststore/sdk'
 import { Form, Label, Input, LoadingButton } from '@faststore/ui'
+import { useNewsletter } from 'src/sdk/newsletter/useNewsletter'
 
 export function FooterForm() {
   const { addUser, loading } = useNewsletter()

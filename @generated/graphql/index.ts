@@ -707,6 +707,14 @@ export type FloatQueryOperatorInput = {
   nin: InputMaybe<Array<InputMaybe<Scalars['Float']>>>
 }
 
+/** Person data input to newsletter. */
+export type IPersonNewsletter = {
+  /** Person's email. */
+  email: Scalars['String']
+  /** Person's name. */
+  name: Scalars['String']
+}
+
 /** Shopping cart input. */
 export type IStoreCart = {
   /** Order information, including `orderNumber` and `acceptedOffer`. */
@@ -858,10 +866,16 @@ export type JsonQueryOperatorInput = {
 }
 
 export type Mutation = {
+  /** Adds a user to the newsletter list. */
+  addToNewsletter: Maybe<PersonNewsletter>
   /** Checks for changes between the cart presented in the UI and the cart stored in the ecommerce platform. If changes are detected, it returns the cart stored on the platform. Otherwise, it returns `null`. */
   validateCart: Maybe<StoreCart>
   /** Updates a web session with the specified values. */
   validateSession: Maybe<StoreSession>
+}
+
+export type MutationAddToNewsletterArgs = {
+  data: IPersonNewsletter
 }
 
 export type MutationValidateCartArgs = {
@@ -900,6 +914,12 @@ export type PageInfo = {
   pageCount: Scalars['Int']
   perPage: Maybe<Scalars['Int']>
   totalCount: Scalars['Int']
+}
+
+/** Response after adding to newsletter. */
+export type PersonNewsletter = {
+  /** . */
+  id: Scalars['String']
 }
 
 export type Query = {
@@ -2959,6 +2979,12 @@ export type CartItemFragment = {
     }>
   }
 }
+
+export type AddToNewsletterMutationVariables = Exact<{
+  data: IPersonNewsletter
+}>
+
+export type AddToNewsletterMutation = { addToNewsletter: { id: string } | null }
 
 export type BrowserProductQueryQueryVariables = Exact<{
   locator: Array<IStoreSelectedFacet> | IStoreSelectedFacet
