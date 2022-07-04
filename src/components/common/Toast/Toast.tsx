@@ -1,5 +1,5 @@
 import { lazy, Suspense, useEffect } from 'react'
-import { useCart } from 'src/sdk/cart/useCart'
+import { useCart } from 'src/sdk/cart'
 import { useUI } from 'src/sdk/ui/Provider'
 
 const UIToast = lazy(() => import('src/components/ui/Toast'))

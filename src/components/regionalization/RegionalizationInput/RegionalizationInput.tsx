@@ -1,7 +1,6 @@
-import { useSession } from '@faststore/sdk'
 import { useRef, useState } from 'react'
 import InputText from 'src/components/ui/InputText'
-import { validateSession } from 'src/sdk/session/validate'
+import { sessionStore, useSession, validateSession } from 'src/sdk/session'
 
 interface Props {
   closeModal: () => void
@@ -9,7 +8,7 @@ interface Props {
 
 function RegionInput({ closeModal }: Props) {
   const inputRef = useRef<HTMLInputElement>(null)
-  const { setSession, isValidating, ...session } = useSession()
+  const { isValidating, ...session } = useSession()
   const [errorMessage, setErrorMessage] = useState<string>('')
   const [input, setInput] = useState<string>('')
 
@@ -29,7 +28,7 @@ function RegionInput({ closeModal }: Props) {
       })
 
       if (newSession) {
-        setSession(newSession)
+        sessionStore.set(newSession)
       }
 
       closeModal()
