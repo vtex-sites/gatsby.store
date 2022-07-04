@@ -6,7 +6,7 @@ import type { SuggestionsTopSearchProps } from '.'
 
 export default {
   component: SuggestionsTopSearch,
-  title: 'Organisms/Search/TopSearch',
+  title: 'Features/Search/TopSearch',
 }
 
 const Template = (props: SuggestionsTopSearchProps) => (
