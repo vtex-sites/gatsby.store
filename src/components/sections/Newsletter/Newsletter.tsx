@@ -1,6 +1,7 @@
 import type { ComponentPropsWithRef, FormEvent, ReactNode } from 'react'
 import { forwardRef, useRef } from 'react'
-import { Form, Label, Input, Button } from '@faststore/ui'
+import { Form, Label, Input, LoadingButton } from '@faststore/ui'
+import { useNewsletter } from 'src/sdk/newsletter/useNewsletter'
 
 export interface NewsletterProps
   extends Omit<ComponentPropsWithRef<'form'>, 'title' | 'onSubmit'> {
@@ -12,22 +13,22 @@ export interface NewsletterProps
    * A subtitle for the section.
    */
   subtitle?: ReactNode
-  /**
-   * Callback function when submitted.
-   */
-  onSubmit: (value: string) => void
 }
 
 const Newsletter = forwardRef<HTMLFormElement, NewsletterProps>(
-  function Newsletter({ title, subtitle, onSubmit, ...otherProps }, ref) {
+  function Newsletter({ title, subtitle, ...otherProps }, ref) {
+    const { addUser, loading } = useNewsletter()
+
+    const nameInputRef = useRef<HTMLInputElement>(null)
     const emailInputRef = useRef<HTMLInputElement>(null)
 
     const handleSubmit = (event: FormEvent) => {
       event.preventDefault()
 
-      if (emailInputRef.current?.value !== '') {
-        onSubmit(emailInputRef.current?.value ?? '')
-      }
+      addUser({
+        name: nameInputRef.current?.value ?? '',
+        email: emailInputRef.current?.value ?? '',
+      })
     }
 
     return (
@@ -44,14 +45,25 @@ const Newsletter = forwardRef<HTMLFormElement, NewsletterProps>(
           </div>
 
           <div data-newsletter-controls>
+            <Label htmlFor="newsletter-name">Your name</Label>
+            <Input
+              id="newsletter-name"
+              type="text"
+              name="newsletter-name"
+              ref={nameInputRef}
+              required
+            />
             <Label htmlFor="newsletter-email">Your email</Label>
             <Input
               id="newsletter-email"
               type="email"
               name="newsletter-email"
               ref={emailInputRef}
+              required
             />
-            <Button type="submit">Subscribe</Button>
+            <LoadingButton type="submit" loading={loading}>
+              Subscribe
+            </LoadingButton>
           </div>
         </Form>
       </section>
