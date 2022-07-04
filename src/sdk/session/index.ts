@@ -1,11 +1,15 @@
+import { useMemo } from 'react'
 import { gql } from '@faststore/graphql-utils'
+import { createSessionStore } from '@faststore/sdk'
 import type { Session } from '@faststore/sdk'
+import storeConfig from 'store.config'
 
+import { createValidationStore, useStore } from '../useStore'
+import { request } from '../graphql/request'
 import type {
   ValidateSessionMutation,
   ValidateSessionMutationVariables,
 } from '../../../@generated/graphql/index'
-import { request } from '../graphql/request'
 
 export const mutation = gql`
   mutation ValidateSession($session: IStoreSession!, $search: String!) {
@@ -35,4 +39,34 @@ export const validateSession = async (session: Session) => {
   >(mutation, { session, search: window.location.search })
 
   return data.validateSession
+}
+
+const [validationStore, onValidate] = createValidationStore(validateSession)
+
+export const sessionStore = createSessionStore(
+  {
+    currency: {
+      code: 'USD',
+      symbol: '$',
+    },
+    locale: storeConfig.locale,
+    channel: storeConfig.channel,
+    country: 'USA',
+    postalCode: null,
+    person: null,
+  },
+  onValidate
+)
+
+export const useSession = () => {
+  const session = useStore(sessionStore)
+  const isValidating = useStore(validationStore)
+
+  return useMemo(
+    () => ({
+      ...session,
+      isValidating,
+    }),
+    [isValidating, session]
+  )
 }
