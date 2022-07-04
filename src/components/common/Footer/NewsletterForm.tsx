@@ -3,7 +3,7 @@ import { useCallback, useState } from 'react'
 import { Form, Label, Input, LoadingButton } from '@faststore/ui'
 import { useNewsletter } from 'src/sdk/newsletter/useNewsletter'
 
-export function FooterForm() {
+export function NewsletterForm() {
   const { addUser, loading } = useNewsletter()
 
   const [email, setEmail] = useState('')
