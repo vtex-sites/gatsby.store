@@ -5,7 +5,7 @@ import type { SearchHistoryProps } from '.'
 
 export default {
   component: SearchHistory,
-  title: 'Organisms/Search/History',
+  title: 'Features/Search/History',
 }
 
 const Template = (props: SearchHistoryProps) => {
