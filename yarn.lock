@@ -1937,10 +1937,9 @@
     minimatch "^3.0.4"
     strip-json-comments "^3.1.1"
 
-"@faststore/api@^1.10.6":
+"@faststore/api@https://pkg.csb.dev/vtex/faststore/commit/35c256d4/@faststore/api":
   version "1.10.6"
-  resolved "https://registry.yarnpkg.com/@faststore/api/-/api-1.10.6.tgz#ef01ebe2019d795a3b49291b9b3a96a328e51293"
-  integrity sha512-ZwOxEZ+eItI1dA1tPgG8lVZhBTlSpPIeVcOVKUNZEy/e6dkhMX5pz0RionidGVzMSR5aAawQ20xqYr4kXGJLzg==
+  resolved "https://pkg.csb.dev/vtex/faststore/commit/35c256d4/@faststore/api#9fe62f0aa743d9e51fd421a4ca52b0c28967b4f6"
   dependencies:
     "@graphql-tools/schema" "^8.2.0"
     "@rollup/plugin-graphql" "^1.0.0"
@@ -1949,9 +1948,9 @@
     isomorphic-unfetch "^3.1.0"
     p-limit "^3.1.0"
 
-"@faststore/api@https://pkg.csb.dev/vtex/faststore/commit/35c256d4/@faststore/api":
+"@faststore/api@https://pkg.csb.dev/vtex/faststore/commit/72b7a0eb/@faststore/api":
   version "1.10.6"
-  resolved "https://pkg.csb.dev/vtex/faststore/commit/35c256d4/@faststore/api#9fe62f0aa743d9e51fd421a4ca52b0c28967b4f6"
+  resolved "https://pkg.csb.dev/vtex/faststore/commit/72b7a0eb/@faststore/api#271576199e5f61ab05e0af3083eb479043ee9a44"
   dependencies:
     "@graphql-tools/schema" "^8.2.0"
     "@rollup/plugin-graphql" "^1.0.0"
