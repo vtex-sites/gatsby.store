@@ -1937,9 +1937,10 @@
     minimatch "^3.0.4"
     strip-json-comments "^3.1.1"
 
-"@faststore/api@https://pkg.csb.dev/vtex/faststore/commit/72b7a0eb/@faststore/api":
-  version "1.10.6"
-  resolved "https://pkg.csb.dev/vtex/faststore/commit/72b7a0eb/@faststore/api#271576199e5f61ab05e0af3083eb479043ee9a44"
+"@faststore/api@^1.10.8":
+  version "1.10.8"
+  resolved "https://registry.yarnpkg.com/@faststore/api/-/api-1.10.8.tgz#be0d7297e4514e6d328b42cdf722cb6099b2c08b"
+  integrity sha512-os6ebn8j3N1lVekZLCenDwNJI+CR8JQ04Fz4CimYrQhD461q8Hl7BzfVe5FB+aERzHLBlrUm1OkE5IaCkKD7VA==
   dependencies:
     "@graphql-tools/schema" "^8.2.0"
     "@rollup/plugin-graphql" "^1.0.0"
