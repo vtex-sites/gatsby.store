@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- Adds [MSW Addon](https://storybook.js.org/addons/msw-storybook-addon) ([#143](https://github.com/vtex-sites/gatsby.store/pull/143))
 - Uses new cross selling API on PDP ([#159](https://github.com/vtex-sites/nextjs.store/pull/159))
 - Applies new local tokens to `SuggestionProductCard` ([#135](https://github.com/vtex-sites/gatsby.store/pull/135))
 - Applies new local tokens to `Navbar` ([#132](https://github.com/vtex-sites/gatsby.store/pull/132))
