@@ -1,6 +1,8 @@
 import { Incentive as UIIncentive, List as UIList } from '@faststore/ui'
 import Icon from 'src/components/ui/Icon'
 
+import styles from './incentives.module.scss'
+
 interface Incentive {
   icon: string
   title?: string
@@ -30,6 +32,7 @@ function Incentives({
       data-fs-incentives
       data-fs-incentives-colored={colored}
       data-fs-incentives-variant={variant}
+      className={styles.fsIncentives}
     >
       <UIList variant="unordered" className="layout__content">
         {incentives.map((incentive, index) => (
