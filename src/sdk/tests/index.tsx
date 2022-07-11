@@ -9,7 +9,7 @@ import type { PropsWithChildren } from 'react'
 
 let renders = 0
 
-function TestProvider({ children }: PropsWithChildren<unknown>) {
+function TestProvider({ children }: PropsWithChildren) {
   const [id, setId] = useState('')
 
   useEffect(() => {
