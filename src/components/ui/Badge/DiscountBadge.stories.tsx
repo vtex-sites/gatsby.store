@@ -3,7 +3,7 @@ import type { DiscountBadgeProps } from './DiscountBadge'
 
 export default {
   component: DiscountBadge,
-  title: 'Molecules/Badge',
+  title: 'Molecules/Badge/DiscountBadge ⚠️',
 }
 
 const TemplateDiscount = ({ ...args }: DiscountBadgeProps) => (
