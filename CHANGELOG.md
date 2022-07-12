@@ -9,6 +9,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- Applies new local tokens to `SlideOver` ([#142](https://github.com/vtex-sites/gatsby.store/pull/142))
+- Applies new local tokens to `CartSidebar` ([#142](https://github.com/vtex-sites/gatsby.store/pull/142))
 - Adds [MSW Addon](https://storybook.js.org/addons/msw-storybook-addon) ([#143](https://github.com/vtex-sites/gatsby.store/pull/143))
 - Global tokens doc page on storybook ([#140](https://github.com/vtex-sites/gatsby.store/pull/140))
 - Uses new cross selling API on PDP ([#137](https://github.com/vtex-sites/gatsby.store/pull/137))
