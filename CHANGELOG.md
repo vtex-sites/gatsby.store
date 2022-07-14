@@ -9,12 +9,22 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
-- Uses new cross selling API on PDP ([#159](https://github.com/vtex-sites/nextjs.store/pull/159))
+- Applies CSS Modules to `Incentives` ([#147](https://github.com/vtex-sites/gatsby.store/pull/147))
+- Applies new local tokens to `Footer` ([#147](https://github.com/vtex-sites/gatsby.store/pull/147))
+- Applies new local tokens to `Breadcrumb` ([#146](https://github.com/vtex-sites/gatsby.store/pull/146))
+- Applies new local tokens to `SlideOver` ([#142](https://github.com/vtex-sites/gatsby.store/pull/142))
+- Applies new local tokens to `CartSidebar` ([#142](https://github.com/vtex-sites/gatsby.store/pull/142))
+- Adds [MSW Addon](https://storybook.js.org/addons/msw-storybook-addon) ([#143](https://github.com/vtex-sites/gatsby.store/pull/143))
+- Global tokens doc page on storybook ([#140](https://github.com/vtex-sites/gatsby.store/pull/140))
+- Uses new cross selling API on PDP ([#137](https://github.com/vtex-sites/gatsby.store/pull/137))
 - Applies new local tokens to `SuggestionProductCard` ([#135](https://github.com/vtex-sites/gatsby.store/pull/135))
 - Applies new local tokens to `Navbar` ([#132](https://github.com/vtex-sites/gatsby.store/pull/132))
 
 
 ### Changed
+
+- Updates `IncentivesFooter` content ([#147](https://github.com/vtex-sites/gatsby.store/pull/147))
+- Updated Getting Started doc page and overall improvements ([#140](https://github.com/vtex-sites/gatsby.store/pull/140))
 
 ### Deprecated
 
@@ -22,6 +32,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 
+- Transfers responsibility of `InputText`'s main attributes and callbacks to the renderer ([#144](https://github.com/vtex-sites/gatsby.store/pull/144))
 - priceCurrency field on SEO meta data ([#139](https://github.com/vtex-sites/gatsby.store/pull/139))
 
 ## [22.26.0.beta] - 2022-07-01
@@ -53,6 +64,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 
+- SonarQube warnings and error ([#145](https://github.com/vtex-sites/gatsby.store/pull/145))
 - `ImageGallerySelector` scroll that isn't working on Safari ([##121](https://github.com/vtex-sites/gatsby.store/pull/121))
 - Some console errors when running the storybook ([#115](https://github.com/vtex-sites/gatsby.store/pull/115))
 - Status code when error occurs (404/500) ([#108](https://github.com/vtex-sites/gatsby.store/pull/108))

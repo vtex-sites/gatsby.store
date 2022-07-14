@@ -1,5 +1,6 @@
 import { SearchInputProvider } from 'src/sdk/search/useSearchInput'
 import { SessionProvider } from '@faststore/sdk'
+import { rest } from 'msw'
 
 import { SuggestionsTopSearch } from '.'
 import type { SuggestionsTopSearchProps } from '.'
@@ -40,4 +41,28 @@ Default.args = {
 
 Default.parameters = {
   backgrounds: { default: 'dark' },
+  msw: {
+    handlers: [
+      rest.get('/api/graphql', (_, res, ctx) => {
+        return res(
+          ctx.json({
+            data: {
+              search: {
+                suggestions: {
+                  terms: [
+                    {
+                      value: 'Option 1',
+                    },
+                    {
+                      value: 'Option 2',
+                    },
+                  ],
+                },
+              },
+            },
+          })
+        )
+      }),
+    ],
+  },
 }

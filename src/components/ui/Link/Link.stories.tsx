@@ -3,7 +3,7 @@ import Link from '.'
 
 export default {
   component: Link,
-  title: 'Atoms/Link',
+  title: 'Atoms/Link ⚠️',
   argTypes: {
     href: {
       type: { name: 'string', required: true },
