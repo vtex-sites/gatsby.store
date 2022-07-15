@@ -4,4 +4,9 @@
   "editor.quickSuggestions": {
       "strings": true
     },
+    "workbench.colorCustomizations": {
+      "activityBar.background": "#52153F",
+      "titleBar.activeBackground": "#721E59",
+      "titleBar.activeForeground": "#FDF8FC"
+    },
 }
