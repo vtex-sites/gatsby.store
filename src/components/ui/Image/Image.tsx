@@ -43,7 +43,7 @@ const Image = forwardRef<HTMLImageElement, Props>(
         )}
         <img
           ref={ref}
-          data-store-image
+          data-fs-image
           {...imgProps}
           alt={imgProps.alt}
           fetchpriority={fetchPriority}

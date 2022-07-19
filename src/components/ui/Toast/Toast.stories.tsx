@@ -4,7 +4,7 @@ import Toast from '.'
 
 export default {
   component: Toast,
-  title: 'Atoms/Toast',
+  title: 'Atoms/Toast ⚠️',
 }
 
 const Template = () => {

@@ -9,6 +9,43 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- Applies CSS Modules to `Incentives` ([#147](https://github.com/vtex-sites/gatsby.store/pull/147))
+- Applies new local tokens to `Footer` ([#147](https://github.com/vtex-sites/gatsby.store/pull/147))
+- Applies new local tokens to `Breadcrumb` ([#146](https://github.com/vtex-sites/gatsby.store/pull/146))
+- Applies new local tokens to `SlideOver` ([#142](https://github.com/vtex-sites/gatsby.store/pull/142))
+- Applies new local tokens to `CartSidebar` ([#142](https://github.com/vtex-sites/gatsby.store/pull/142))
+- Adds [MSW Addon](https://storybook.js.org/addons/msw-storybook-addon) ([#143](https://github.com/vtex-sites/gatsby.store/pull/143))
+- Global tokens doc page on storybook ([#140](https://github.com/vtex-sites/gatsby.store/pull/140))
+- Uses new cross selling API on PDP ([#137](https://github.com/vtex-sites/gatsby.store/pull/137))
+- Applies new local tokens to `SuggestionProductCard` ([#135](https://github.com/vtex-sites/gatsby.store/pull/135))
+- Applies new local tokens to `Navbar` ([#132](https://github.com/vtex-sites/gatsby.store/pull/132))
+
+### Changed
+
+- Updates `IncentivesFooter` content ([#147](https://github.com/vtex-sites/gatsby.store/pull/147))
+- Updated Getting Started doc page and overall improvements ([#140](https://github.com/vtex-sites/gatsby.store/pull/140))
+
+### Deprecated
+
+### Removed
+
+### Fixed
+
+- Transfers responsibility of `InputText`'s main attributes and callbacks to the renderer ([#144](https://github.com/vtex-sites/gatsby.store/pull/144))
+- priceCurrency field on SEO meta data ([#139](https://github.com/vtex-sites/gatsby.store/pull/139))
+
+## [22.26.0.beta] - 2022-07-01
+
+### Added
+
+- Applies new local tokens to `Filter` ([#128](https://github.com/vtex-sites/gatsby.store/pull/128))
+- Applies new local tokens to `ProductGrid` ([#127](https://github.com/vtex-sites/gatsby.store/pull/127))
+- Applies new local tokens to `Tiles` ([#120](https://github.com/vtex-sites/gatsby.store/pull/120))
+- Applies new local tokens to `Accordion` ([#126](https://github.com/vtex-sites/gatsby.store/pull/126))
+- Applies new local tokens to `ImageGallery` ([#125](https://github.com/vtex-sites/gatsby.store/pull/125))
+- Creates Doc page for `Regionalization` Feature ([#124](https://github.com/vtex-sites/gatsby.store/pull/124))
+- Applies new local tokens to `RegionalizationBar` ([#124](https://github.com/vtex-sites/gatsby.store/pull/124))
+- Applies new local tokens to `Modal` and `RegionalizationModal` ([#123](https://github.com/vtex-sites/gatsby.store/pull/123))
 - Displays the `Sandbox` tab on the storybook along with `Viewport` toolbar and `Accessibility` checks ([#115](https://github.com/vtex-sites/gatsby.store/pull/115))
 - PriceRange component to PLP and StoryBook ([#112](https://github.com/vtex-sites/gatsby.store/pull/112))
 - Applies new local tokens to `EmptyState` ([#113](https://github.com/vtex-sites/gatsby.store/pull/113))
@@ -24,17 +61,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Storybook's version from 6.4.20 to 6.5.9 ([#109](https://github.com/vtex-sites/gatsby.store/pull/109))
 - Unifies `Link` component usage by adding support for both external and client-side links ([#103](https://github.com/vtex-sites/gatsby.store/pull/103))
 
-### Deprecated
-
-### Removed
-
 ### Fixed
 
 - A test related infinite scroll pagination that only failed in development mode ([#118](https://github.com/vtex-sites/gatsby.store/pull/118))
+- SonarQube warnings and error ([#145](https://github.com/vtex-sites/gatsby.store/pull/145))
+- `ImageGallerySelector` scroll that isn't working on Safari ([##121](https://github.com/vtex-sites/gatsby.store/pull/121))
 - Some console errors when running the storybook ([#115](https://github.com/vtex-sites/gatsby.store/pull/115))
 - Status code when error occurs (404/500) ([#108](https://github.com/vtex-sites/gatsby.store/pull/108))
-
-### Security
 
 ## [22.23.0.beta] - 2022-06-10
 

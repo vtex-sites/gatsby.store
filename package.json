@@ -29,10 +29,10 @@
     "@envelop/core": "^1.2.0",
     "@envelop/parser-cache": "^2.2.0",
     "@envelop/validation-cache": "^2.2.0",
-    "@faststore/api": "^1.9.11",
-    "@faststore/graphql-utils": "^1.9.9",
-    "@faststore/sdk": "^1.9.11",
-    "@faststore/ui": "^1.9.11",
+    "@faststore/api": "^1.10.8",
+    "@faststore/graphql-utils": "^1.10.6",
+    "@faststore/sdk": "^1.10.6",
+    "@faststore/ui": "^1.10.7",
     "gatsby": "^4.16.0",
     "gatsby-plugin-gatsby-cloud": "^4.16.0",
     "gatsby-plugin-manifest": "^4.16.0",
@@ -54,7 +54,7 @@
   "devDependencies": {
     "@babel/core": "^7.17.8",
     "@cypress/code-coverage": "^3.9.10",
-    "@faststore/lighthouse": "^1.9.10",
+    "@faststore/lighthouse": "^1.10.6",
     "@graphql-codegen/cli": "^2.6.2",
     "@graphql-codegen/typescript": "^2.5.1",
     "@graphql-codegen/typescript-operations": "^2.4.2",
@@ -86,6 +86,8 @@
     "husky": "^5.2.0",
     "is-ci": "^3.0.0",
     "lint-staged": "^10.5.4",
+    "msw": "^0.43.1",
+    "msw-storybook-addon": "^1.6.3",
     "postcss": "^8.4.4",
     "prettier": "^2.2.0",
     "storybook-addon-gatsby": "^0.0.5",
@@ -113,5 +115,8 @@
     "*.scss": [
       "stylelint --fix"
     ]
+  },
+  "msw": {
+    "workerDirectory": "static"
   }
 }

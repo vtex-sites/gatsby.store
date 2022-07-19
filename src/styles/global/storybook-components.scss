@@ -1,23 +1,17 @@
 // Cart
-@import "src/components/cart/CartSidebar/cart-sidebar.scss";
 @import "src/components/cart/CartToggle/cart-toggle.scss";
 @import "src/components/cart/OrderSummary/order-summary.scss";
 
 // Common
-@import "src/components/common/Footer/footer.scss";
 @import "src/components/common/SearchInput/search-input.scss";
-@import "src/components/common/Navbar/navbar.scss";
 
 // Search
-@import "src/components/search/Filter/filter.scss";
 @import "src/components/search/Suggestions/suggestions.scss";
-@import "src/components/search/SuggestionProductCard/suggestion-product-card.scss";
 
 // Sections
 @import "src/components/sections/BannerText/banner-text.scss";
 @import "src/components/sections/Breadcrumb/breadcrumb.scss";
 @import "src/components/sections/Hero/hero.scss";
-@import "src/components/sections/Incentives/incentives.scss";
 @import "src/components/sections/ProductDetails/product-details.scss";
 @import "src/components/sections/ProductShelf/product-shelf.scss";
 @import "src/components/sections/ScrollToTopButton/scroll-to-top-button.scss";
@@ -31,11 +25,7 @@
 @import "src/components/skeletons/SkeletonElement/skeleton-element.scss";
 
 // UI
-@import "src/components/ui/Accordion/accordion.scss";
 @import "src/components/ui/Badge/badge.scss";
-@import "src/components/ui/Breadcrumb/breadcrumb.scss";
-@import "src/components/ui/Image/image.scss";
 @import "src/components/ui/InputText/input-text.scss";
-@import "src/components/ui/SlideOver/slide-over.scss";
+@import "src/components/ui/SlideOver/overlay.scss";
 @import "src/components/ui/SROnly/sr-only.scss";
-@import "src/components/ui/Tiles/tiles.scss";

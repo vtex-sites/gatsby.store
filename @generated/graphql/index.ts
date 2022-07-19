@@ -714,9 +714,9 @@ export type IStoreCart = {
 }
 
 export type IStoreCurrency = {
-  /** Currency code, e.g: USD */
+  /** Currency code (e.g: USD). */
   code: Scalars['String']
-  /** Currency symbol, e.g: $ */
+  /** Currency symbol (e.g: $). */
   symbol: Scalars['String']
 }
 
@@ -742,7 +742,7 @@ export type IStoreOffer = {
   seller: IStoreOrganization
 }
 
-/** Offer input. */
+/** Order input. */
 export type IStoreOrder = {
   /** Array with information on each accepted offer. */
   acceptedOffer: Array<IStoreOffer>
@@ -791,9 +791,11 @@ export type IStorePropertyValue = {
   valueReference: Scalars['String']
 }
 
-/** Selected facet input. */
+/** Selected search facet input. */
 export type IStoreSelectedFacet = {
+  /** Selected search facet key. */
   key: Scalars['String']
+  /** Selected search facet value. */
   value: Scalars['String']
 }
 
@@ -856,9 +858,9 @@ export type JsonQueryOperatorInput = {
 }
 
 export type Mutation = {
-  /** Returns the order if anything has changed in it, or `null` if the order is valid. */
+  /** Checks for changes between the cart presented in the UI and the cart stored in the ecommerce platform. If changes are detected, it returns the cart stored on the platform. Otherwise, it returns `null`. */
   validateCart: Maybe<StoreCart>
-  /** Validate session information. */
+  /** Updates a web session with the specified values. */
   validateSession: Maybe<StoreSession>
 }
 
@@ -901,24 +903,24 @@ export type PageInfo = {
 }
 
 export type Query = {
-  /** All collections query. */
+  /** Returns information about all collections. */
   allCollections: StoreCollectionConnection
   allDirectory: DirectoryConnection
   allFile: FileConnection
-  /** All products query. */
+  /** Returns information about all products. */
   allProducts: StoreProductConnection
   allSite: SiteConnection
   allSiteBuildMetadata: SiteBuildMetadataConnection
   allSiteFunction: SiteFunctionConnection
   allSitePage: SitePageConnection
   allSitePlugin: SitePluginConnection
-  /** Collection query. */
+  /** Returns the details of a collection based on the collection slug. */
   collection: StoreCollection
   directory: Maybe<Directory>
   file: Maybe<File>
-  /** Product query. */
+  /** Returns the details of a product based on the specified locator. */
   product: StoreProduct
-  /** Search query. */
+  /** Returns the result of a product, facet, or suggestion search. */
   search: StoreSearchResult
   site: Maybe<Site>
   siteBuildMetadata: Maybe<SiteBuildMetadata>
@@ -1082,6 +1084,7 @@ export type QuerySiteArgs = {
   buildTime: InputMaybe<DateQueryOperatorInput>
   children: InputMaybe<NodeFilterListInput>
   flags: InputMaybe<SiteFlagsFilterInput>
+  graphqlTypegen: InputMaybe<BooleanQueryOperatorInput>
   host: InputMaybe<StringQueryOperatorInput>
   id: InputMaybe<StringQueryOperatorInput>
   internal: InputMaybe<InternalFilterInput>
@@ -1150,6 +1153,7 @@ export type Site = Node & {
   buildTime: Maybe<Scalars['Date']>
   children: Array<Node>
   flags: Maybe<SiteFlags>
+  graphqlTypegen: Maybe<Scalars['Boolean']>
   host: Maybe<Scalars['String']>
   id: Scalars['ID']
   internal: Internal
@@ -1445,6 +1449,7 @@ export type SiteFieldsEnum =
   | 'children___parent___parent___id'
   | 'flags___FAST_DEV'
   | 'flags___PARALLEL_SOURCING'
+  | 'graphqlTypegen'
   | 'host'
   | 'id'
   | 'internal___content'
@@ -1508,6 +1513,7 @@ export type SiteFilterInput = {
   buildTime: InputMaybe<DateQueryOperatorInput>
   children: InputMaybe<NodeFilterListInput>
   flags: InputMaybe<SiteFlagsFilterInput>
+  graphqlTypegen: InputMaybe<BooleanQueryOperatorInput>
   host: InputMaybe<StringQueryOperatorInput>
   id: InputMaybe<StringQueryOperatorInput>
   internal: InputMaybe<InternalFilterInput>
@@ -2305,7 +2311,7 @@ export type StoreCart = {
 
 /** Shopping cart message. */
 export type StoreCartMessage = {
-  /** Shopping cart message status, which can be `INFO`, `WARNING` OR `ERROR`. */
+  /** Shopping cart message status, which can be `INFO`, `WARNING` or `ERROR`. */
   status: StoreStatus
   /** Shopping cart message text. */
   text: Scalars['String']
@@ -2327,19 +2333,19 @@ export type StoreCollection = {
   type: StoreCollectionType
 }
 
-/** Collection connection pagination information. */
+/** Collection connections, including pagination information and collections returned by the query. */
 export type StoreCollectionConnection = {
-  /** Array with collection connection page edges. */
+  /** Array with collection connection page edges, each containing a collection and a corresponding cursor.. */
   edges: Array<StoreCollectionEdge>
-  /** Collection connection page information. */
+  /** Collection pagination information. */
   pageInfo: StorePageInfo
 }
 
-/** Collection pagination edge. */
+/** Each collection edge contains a `node`, with product collection information, and a `cursor`, that can be used as a reference for pagination. */
 export type StoreCollectionEdge = {
-  /** Collection pagination cursor. */
+  /** Collection cursor. Used as pagination reference. */
   cursor: Scalars['String']
-  /** Collection pagination node. */
+  /** Each collection node contains the information of a product collection returned by the query. */
   node: StoreCollection
 }
 
@@ -2359,16 +2365,20 @@ export type StoreCollectionMeta = {
 
 /** Product collection type. Possible values are `Department`, `Category`, `Brand` or `Cluster`. */
 export type StoreCollectionType =
+  /** Product brand. */
   | 'Brand'
+  /** Second level of product categorization. */
   | 'Category'
+  /** Product cluster. */
   | 'Cluster'
+  /** First level of product categorization. */
   | 'Department'
 
 /** Currency information. */
 export type StoreCurrency = {
-  /** Currency code, e.g: USD */
+  /** Currency code (e.g: USD). */
   code: Scalars['String']
-  /** Currency symbol, e.g: $ */
+  /** Currency symbol (e.g: $). */
   symbol: Scalars['String']
 }
 
@@ -2390,13 +2400,18 @@ export type StoreFacetRange = {
   key: Scalars['String']
   /** Facet label. */
   label: Scalars['String']
+  /** Maximum facet range value. */
   max: StoreFacetValueRange
-  /** Array with information on each facet value. */
+  /** Minimum facet range value. */
   min: StoreFacetValueRange
 }
 
 /** Search facet type. */
-export type StoreFacetType = 'BOOLEAN' | 'RANGE'
+export type StoreFacetType =
+  /** Indicates boolean search facet. */
+  | 'BOOLEAN'
+  /** Indicates range type search facet. */
+  | 'RANGE'
 
 /** Information of a specific facet value. */
 export type StoreFacetValueBoolean = {
@@ -2410,8 +2425,11 @@ export type StoreFacetValueBoolean = {
   value: Scalars['String']
 }
 
+/** Search facet range value information. Used for minimum and maximum range values. */
 export type StoreFacetValueRange = {
+  /** Search facet range absolute value. */
   absolute: Scalars['Float']
+  /** Search facet range selected value. */
   selected: Scalars['Float']
 }
 
@@ -2471,15 +2489,15 @@ export type StoreOrganization = {
   identifier: Scalars['String']
 }
 
-/** Page information. */
+/** Whenever you make a query that allows for pagination, such as `allProducts` or `allCollections`, you can check `StorePageInfo` to learn more about the complete set of items and use it to paginate your queries. */
 export type StorePageInfo = {
-  /** Page cursor end. */
+  /** Cursor corresponding to the last possible item. */
   endCursor: Scalars['String']
-  /** Indicates whether next page exists. */
+  /** Indicates whether there is at least one more page with items after the ones returned in the current query. */
   hasNextPage: Scalars['Boolean']
-  /** Indicates whether previous page exists. */
+  /** Indicates whether there is at least one more page with items before the ones returned in the current query. */
   hasPreviousPage: Scalars['Boolean']
-  /** Page cursor start. */
+  /** Cursor corresponding to the first possible item. */
   startCursor: Scalars['String']
   /** Total number of items (products or collections), not pages. */
   totalCount: Scalars['Int']
@@ -2531,19 +2549,19 @@ export type StoreProduct = {
   slug: Scalars['String']
 }
 
-/** Product connection pagination information. */
+/** Product connections, including pagination information and products returned by the query. */
 export type StoreProductConnection = {
-  /** Array with product connection page edges. */
+  /** Array with product connection edges, each containing a product and a corresponding cursor. */
   edges: Array<StoreProductEdge>
-  /** Product connection page information. */
+  /** Product pagination information. */
   pageInfo: StorePageInfo
 }
 
-/** Product pagination edge. */
+/** Each product edge contains a `node`, with product information, and a `cursor`, that can be used as a reference for pagination. */
 export type StoreProductEdge = {
-  /** Product pagination cursor. */
+  /** Product cursor. Used as pagination reference. */
   cursor: Scalars['String']
-  /** Product pagination node. */
+  /** Each product node contains the information of a product returned by the query. */
   node: StoreProduct
 }
 
@@ -2625,18 +2643,26 @@ export type StoreSession = {
   postalCode: Maybe<Scalars['String']>
 }
 
-/** Product sorting options used in search. */
+/** Product search results sorting options. */
 export type StoreSort =
+  /** Sort by discount value, from highest to lowest. */
   | 'discount_desc'
+  /** Sort by name, in alphabetical order. */
   | 'name_asc'
+  /** Sort by name, in reverse alphabetical order. */
   | 'name_desc'
+  /** Sort by orders, from highest to lowest. */
   | 'orders_desc'
+  /** Sort by price, from lowest to highest. */
   | 'price_asc'
+  /** Sort by price, from highest to lowest. */
   | 'price_desc'
+  /** Sort by release date, from  highest to lowest. */
   | 'release_desc'
+  /** Sort by product score, from highest to lowest. */
   | 'score_desc'
 
-/** Status used to indicate type of message. For instance, in shopping cart messages. */
+/** Status used to indicate a message type. For instance, a shopping cart informative or error message. */
 export type StoreStatus = 'ERROR' | 'INFO' | 'WARNING'
 
 /** Suggestion term. */
