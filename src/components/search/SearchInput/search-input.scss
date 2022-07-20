@@ -11,6 +11,7 @@
   [data-store-input] {
     width: 100%;
     padding: var(--fs-spacing-1) var(--fs-spacing-7) var(--fs-spacing-1) var(--fs-spacing-2);
+    background-color: var(--fs-color-body-bkg);
     border: var(--fs-border-width) solid var(--fs-border-color);
     border-radius: var(--fs-border-radius);
     transition: box-shadow .2s ease, border .2s ease;
@@ -65,10 +66,6 @@
 
 [data-store-search-input-wrapper] {
   position: relative;
-
-  [data-fs-search-suggestion-section] + [data-fs-search-input-loading-text] {
-    padding-top: var(--fs-spacing-3);
-  }
 }
 
 [data-store-search-input-dropdown-wrapper] {
@@ -92,6 +89,7 @@
   z-index: 1;
   width: 100vw;
   padding: var(--fs-spacing-3);
+  padding-top: 0;
   background-color: var(--fs-color-neutral-0);
 
   &:empty {
@@ -112,5 +110,9 @@
     border-top: none;
     border-radius: 0 0 var(--fs-border-radius) var(--fs-border-radius);
     box-shadow: var(--fs-shadow);
+  }
+
+  [data-fs-search-input-loading-text] {
+    padding-top: var(--fs-spacing-3);
   }
 }
