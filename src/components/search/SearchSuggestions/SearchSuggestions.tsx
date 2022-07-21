@@ -1,11 +1,13 @@
 import { List as UIList } from '@faststore/ui'
+import type { HTMLAttributes } from 'react'
 import { Fragment } from 'react'
-import SuggestionProductCard from 'src/components/search/SuggestionProductCard'
+import SearchProductCard from 'src/components/search/SearchProductCard'
 import Icon from 'src/components/ui/Icon'
 import Link from 'src/components/ui/Link'
 import useSearchInput, { formatSearchPath } from 'src/sdk/search/useSearchInput'
 import type { ProductSummary_ProductFragment } from '@generated/graphql'
-import type { HTMLAttributes } from 'react'
+
+import styles from '../search.module.scss'
 
 function formatSearchTerm(
   indexSubstring: number,
@@ -36,7 +38,7 @@ function handleSuggestions(suggestion: string, searchTerm: string) {
       {suggestionSubstring.map((substring, indexSubstring) => (
         <Fragment key={[substring, indexSubstring].join()}>
           {substring.length > 0 && (
-            <b data-fs-search-suggestion-item-bold>
+            <b data-fs-search-item-bold>
               {indexSubstring === 0
                 ? substring.charAt(0).toUpperCase() + substring.slice(1)
                 : substring}
@@ -50,35 +52,47 @@ function handleSuggestions(suggestion: string, searchTerm: string) {
   )
 }
 
-export interface SuggestionsProps extends HTMLAttributes<HTMLDivElement> {
+export interface SearchSuggestionsProps extends HTMLAttributes<HTMLDivElement> {
   /**
    * ID to find this component in testing tools (e.g.: cypress, testing library, and jest).
    */
   testId?: string
   /**
-   * Search term
+   * Term researched.
    */
   term?: string
+  /**
+   * Suggestion terms.
+   */
   terms?: Array<{ value: string }>
+  /**
+   * Array with top search terms.
+   */
   products?: ProductSummary_ProductFragment[]
 }
 
-function Suggestions({
+function SearchSuggestions({
   testId = 'suggestions',
   term = '',
   terms = [],
   products = [],
   ...otherProps
-}: SuggestionsProps) {
+}: SearchSuggestionsProps) {
   const { onSearchInputSelection } = useSearchInput()
 
   return (
-    <section data-testid={testId} data-fs-search-suggestions {...otherProps}>
+    <section
+      data-testid={testId}
+      data-fs-search
+      className={styles.fsSearch}
+      {...otherProps}
+    >
       {terms.length > 0 && (
-        <UIList data-fs-search-suggestion-section="terms">
+        <UIList data-fs-search-section="terms">
           {terms?.map(({ value: suggestion }) => (
-            <li key={suggestion} data-fs-search-suggestion-item>
+            <li key={suggestion} data-fs-search-item>
               <Link
+                data-fs-search-item-link
                 href={formatSearchPath(suggestion)}
                 onClick={() => {
                   onSearchInputSelection?.(
@@ -91,7 +105,7 @@ function Suggestions({
                   name="MagnifyingGlass"
                   width={18}
                   height={18}
-                  data-fs-search-suggestion-item-icon
+                  data-fs-search-item-icon
                 />
                 {handleSuggestions(suggestion, term)}
               </Link>
@@ -101,12 +115,14 @@ function Suggestions({
       )}
 
       {products.length > 0 && (
-        <div data-fs-search-suggestion-section>
-          <p data-fs-search-suggestion-title="small">Suggested Products</p>
+        <div data-fs-search-section>
+          <div data-fs-search-header>
+            <p data-fs-search-title>Suggested Products</p>
+          </div>
           <UIList>
             {products.map((product, index) => (
-              <li key={product.id} data-fs-search-suggestion-item>
-                <SuggestionProductCard product={product} index={index} />
+              <li key={product.id} data-fs-search-item>
+                <SearchProductCard product={product} index={index} />
               </li>
             ))}
           </UIList>
@@ -116,4 +132,4 @@ function Suggestions({
   )
 }
 
-export default Suggestions
+export default SearchSuggestions
