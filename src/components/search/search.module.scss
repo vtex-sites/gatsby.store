@@ -21,7 +21,7 @@
   --fs-search-item-link-padding-left  : var(--fs-search-item-link-padding-right);
 
   // Item
-  --fs-search-item-font-size          : var(--fs-text-size-2);
+  --fs-search-item-text-size          : var(--fs-text-size-2);
   --fs-search-item-line-height        : 1.25;
   --fs-search-item-bkg-color-hover    : var(--fs-color-tertiary-bkg-hover);
 
@@ -61,7 +61,7 @@
   [data-fs-search-item] {
     margin-right: calc(-1 * var(--fs-search-item-link-padding-right));
     margin-left: calc(-1 * var(--fs-search-item-link-padding-right));
-    font-size: var(--fs-search-item-font-size);
+    font-size: var(--fs-search-item-text-size);
     line-height: var(--fs-search-item-line-height);
 
     &:hover {
