@@ -23,6 +23,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- Cypress version from 9.5.4 to 9.6.0 to match WebOps' ([#151](https://github.com/vtex-sites/gatsby.store/pull/151))
 - Renames and refactors the components of Search feature ([#150](https://github.com/vtex-sites/gatsby.store/pull/150))
 - A flaky PLP infinite scroll test to be more stable ([#149](https://github.com/vtex-sites/gatsby.store/pull/149))
 - Cypress version from 6.6.0 to 9.5.4 to match WebOps' ([#148](https://github.com/vtex-sites/gatsby.store/pull/148))
