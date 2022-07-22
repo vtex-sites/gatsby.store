@@ -3,6 +3,8 @@ import { forwardRef, useRef } from 'react'
 import { Form, Label, Input, LoadingButton } from '@faststore/ui'
 import { useNewsletter } from 'src/sdk/newsletter/useNewsletter'
 
+import Section from '../Section'
+
 export interface NewsletterProps
   extends Omit<ComponentPropsWithRef<'form'>, 'title' | 'onSubmit'> {
   /**
@@ -17,34 +19,37 @@ export interface NewsletterProps
 
 const Newsletter = forwardRef<HTMLFormElement, NewsletterProps>(
   function Newsletter({ title, subtitle, ...otherProps }, ref) {
-    const { addUser, loading } = useNewsletter()
-
+    const { subscribeUser, loading } = useNewsletter()
     const nameInputRef = useRef<HTMLInputElement>(null)
     const emailInputRef = useRef<HTMLInputElement>(null)
 
     const handleSubmit = (event: FormEvent) => {
       event.preventDefault()
-
-      addUser({
-        name: nameInputRef.current?.value ?? '',
-        email: emailInputRef.current?.value ?? '',
+      subscribeUser({
+        data: {
+          name: nameInputRef.current?.value ?? '',
+          email: emailInputRef.current?.value ?? '',
+        },
       })
+      const formElement = event.currentTarget as HTMLFormElement
+
+      formElement.reset()
     }
 
     return (
-      <section data-store-newsletter>
+      <Section data-fs-newsletter>
         <Form
-          data-newsletter-form
+          data-fs-newsletter-form
           ref={ref}
           onSubmit={handleSubmit}
           {...otherProps}
         >
-          <div data-newsletter-header>
+          <div data-fs-newsletter-header>
             {title}
             {Boolean(subtitle) && subtitle}
           </div>
 
-          <div data-newsletter-controls>
+          <div data-fs-newsletter-controls>
             <Label htmlFor="newsletter-name">Your name</Label>
             <Input
               id="newsletter-name"
@@ -66,7 +71,7 @@ const Newsletter = forwardRef<HTMLFormElement, NewsletterProps>(
             </LoadingButton>
           </div>
         </Form>
-      </section>
+      </Section>
     )
   }
 )
