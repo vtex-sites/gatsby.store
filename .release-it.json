@@ -2,7 +2,9 @@
   "git": {
     "commitMessage": "chore(release): ${version}"
   },
-
+  "npm": {
+    "publish": false
+  },
   "plugins": {
     "@release-it/conventional-changelog": {
       "preset": {
