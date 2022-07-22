@@ -94,7 +94,6 @@
     "postcss": "^8.4.4",
     "prettier": "^2.2.0",
     "release-it": "^15.1.3",
-    "standard-version": "^9.5.0",
     "storybook-addon-gatsby": "^0.0.5",
     "stylelint": "^14.6.0",
     "stylelint-config-recess-order": "^3.0.0",
