@@ -9,6 +9,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- Creates Themes doc pages on storybook ([#156](https://github.com/vtex-sites/gatsby.store/pull/156))
+- Added a new theme for testing purposes called midnight ([#156](https://github.com/vtex-sites/gatsby.store/pull/156))
+- Extracted all BaseStore visual to a new theme called soft-blue ([#156](https://github.com/vtex-sites/gatsby.store/pull/156))
 - Newsletter form and `useNewsletter` hook ([#134](https://github.com/vtex-sites/gatsby.store/pull/134))
 - Applies new local tokens to `SearchHistory`, `SearchTop`, `SearchDropdown` and `SearchSuggestions` ([#150](https://github.com/vtex-sites/gatsby.store/pull/150))
 - Applies CSS Modules to `Incentives` ([#147](https://github.com/vtex-sites/gatsby.store/pull/147))
@@ -24,6 +27,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- Updates global tokens to follow Brandless approach ([#156](https://github.com/vtex-sites/gatsby.store/pull/156))
 - Cypress version from 9.5.4 to 9.6.0 to match WebOps' ([#151](https://github.com/vtex-sites/gatsby.store/pull/151))
 - Renames and refactors the components of Search feature ([#150](https://github.com/vtex-sites/gatsby.store/pull/150))
 - A flaky PLP infinite scroll test to be more stable ([#149](https://github.com/vtex-sites/gatsby.store/pull/149))
