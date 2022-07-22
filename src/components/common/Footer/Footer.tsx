@@ -1,8 +1,8 @@
 import {
-  Icon as UIIcon,
   List as UIList,
   PaymentMethods as UIPaymentMethods,
 } from '@faststore/ui'
+import Logo from 'src/components/ui/Logo'
 import IncentivesFooter from 'src/components/sections/Incentives/IncentivesFooter'
 import Icon from 'src/components/ui/Icon'
 import Link from 'src/components/ui/Link'
@@ -51,58 +51,46 @@ export function Footer({
             <UIList variant="unordered">
               <li>
                 <Link
+                  variant="footer"
                   href="https://www.facebook.com/"
                   title="Facebook"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <UIIcon
-                    component={
-                      <Icon width="24px" height="24px" name="Facebook" />
-                    }
-                  />
+                  <Icon width="24px" height="24px" name="Facebook" />
                 </Link>
               </li>
               <li>
                 <Link
+                  variant="footer"
                   href="https://www.instagram.com/"
                   title="Instagram"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <UIIcon
-                    component={
-                      <Icon width="24px" height="24px" name="Instagram" />
-                    }
-                  />
+                  <Icon width="24px" height="24px" name="Instagram" />
                 </Link>
               </li>
               <li>
                 <Link
+                  variant="footer"
                   href="https://www.pinterest.com/"
                   title="Pinterest"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <UIIcon
-                    component={
-                      <Icon width="24px" height="24px" name="Pinterest" />
-                    }
-                  />
+                  <Icon width="24px" height="24px" name="Pinterest" />
                 </Link>
               </li>
               <li>
                 <Link
+                  variant="footer"
                   href="https://twitter.com/"
                   title="Twitter"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <UIIcon
-                    component={
-                      <Icon width="24px" height="24px" name="Twitter" />
-                    }
-                  />
+                  <Icon width="24px" height="24px" name="Twitter" />
                 </Link>
               </li>
             </UIList>
@@ -111,17 +99,7 @@ export function Footer({
       </div>
 
       <div data-fs-footer-note className="layout__content">
-        <UIIcon
-          component={
-            <img
-              src="/logo.svg"
-              alt="BaseStore logo"
-              width="124px"
-              height="32px"
-              loading="lazy"
-            />
-          }
-        />
+        <Logo />
 
         {sectionPaymentMethods && (
           <UIPaymentMethods data-fs-footer-payment-methods>

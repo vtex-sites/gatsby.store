@@ -1,8 +1,10 @@
-import './src/styles/fonts.css'
 import './src/styles/global/tokens.scss'
 import './src/styles/global/resets.scss'
 import './src/styles/global/typography.scss'
 import './src/styles/global/layout.scss'
+
+// Replace this with your theme style file
+import './src/styles/themes/custom-theme.scss'
 
 import { CartProvider, SessionProvider } from '@faststore/sdk'
 import Layout from 'src/Layout'
