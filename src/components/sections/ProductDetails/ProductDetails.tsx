@@ -120,6 +120,10 @@ function ProductDetails({ product: staleProduct }: Props) {
             }
             refNumber={productId}
           />
+
+          {/* Review information */}
+          <p>Aggregate ratings: 4.7</p>
+          <p>Number of reviews: 3</p>
         </header>
 
         <ImageGallery images={productImages} />
