@@ -33,6 +33,7 @@
     "@faststore/graphql-utils": "^1.10.6",
     "@faststore/sdk": "^1.10.6",
     "@faststore/ui": "^1.10.7",
+    "@graphql-tools/schema": "^8.5.0",
     "gatsby": "^4.16.0",
     "gatsby-plugin-gatsby-cloud": "^4.16.0",
     "gatsby-plugin-manifest": "^4.16.0",

@@ -1,6 +1,6 @@
 import type { GatsbyNode } from 'gatsby'
 
-import { apiSchema } from './src/server'
+import { extendedSchema } from './src/server'
 
 export const onCreateWebpackConfig: GatsbyNode['onCreateWebpackConfig'] = ({
   actions: { setWebpackConfig },
@@ -54,7 +54,8 @@ export const createSchemaCustomization: GatsbyNode['createSchemaCustomization'] 
   async (gatsbyApi) => {
     const { actions } = gatsbyApi
 
-    const schema = await apiSchema
+    // const schema = await faststoreApiSchema
+    const schema = await extendedSchema
 
     actions.addThirdPartySchema({ schema })
   }
