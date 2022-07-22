@@ -38,8 +38,12 @@ export const wrapPageElement: GatsbySSR['wrapPageElement'] = ({ element }) => {
 
 export const onRenderBody: GatsbySSR['onRenderBody'] = ({
   setHeadComponents,
+  setBodyAttributes,
 }) => {
   setHeadComponents([<ThirdPartyScripts key="ThirdPartyScripts" />])
+  setBodyAttributes({
+    className: storeConfig.theme,
+  })
 }
 
 // Gatsby types the returned elements from `getHeadComponents` as
