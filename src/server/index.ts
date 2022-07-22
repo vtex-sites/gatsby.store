@@ -1,14 +1,21 @@
 /* eslint-disable react-hooks/rules-of-hooks */
 import {
   envelop,
-  useAsyncSchema,
   useExtendContext,
   useMaskedErrors,
+  useSchema,
 } from '@envelop/core'
 import { useParserCache } from '@envelop/parser-cache'
 import { useValidationCache } from '@envelop/validation-cache'
-import { getContextFactory, getSchema, isFastStoreError } from '@faststore/api'
+import {
+  getContextFactory,
+  getSchema,
+  isFastStoreError,
+  getTypeDefs,
+} from '@faststore/api'
 import { GraphQLError } from 'graphql'
+import { makeExecutableSchema, mergeSchemas } from '@graphql-tools/schema'
+import { mergeTypeDefs } from '@graphql-tools/merge'
 import type { FormatErrorHandler } from '@envelop/core'
 import type { Options as APIOptions } from '@faststore/api'
 
@@ -35,7 +42,50 @@ const apiOptions: APIOptions = {
   },
 }
 
-export const apiSchema = getSchema(apiOptions)
+// Setup type extensions
+const typeDefs = `
+  extend type StoreAggregateRating {
+    ratingValue: Float
+    reviewCount: Int
+  }
+
+  extend type StoreProduct {
+    unitMultiplier: Float
+    measurementUnit: String
+  }
+`
+
+// Setup custom resolvers
+const resolvers = {
+  StoreAggregateRating: {
+    ratingValue: () => 4.7,
+    reviewCount: () => 4,
+  },
+  StoreProduct: {
+    unitMultiplier: (root: any) => root?.unitMultiplier,
+    measurementUnit: (root: any) => root?.measurementUnit,
+  },
+}
+
+export const faststoreApiSchema = getSchema(apiOptions)
+
+// Merge custom TypeDefs with the ones from @faststore/api
+const mergedTypeDefs = mergeTypeDefs([getTypeDefs(), typeDefs])
+
+const getMergedSchemas = async () =>
+  mergeSchemas({
+    schemas: [
+      await faststoreApiSchema,
+      makeExecutableSchema({
+        resolvers,
+        typeDefs: mergedTypeDefs,
+      }),
+    ],
+    resolvers,
+  })
+
+// Merge schemas into a final schema
+export const extendedSchema = getMergedSchemas()
 
 const apiContextFactory = getContextFactory(apiOptions)
 
@@ -52,7 +102,8 @@ const formatError: FormatErrorHandler = (err) => {
 const getEnvelop = async () =>
   envelop({
     plugins: [
-      useAsyncSchema(apiSchema),
+      // useAsyncSchema(faststoreApiSchema),
+      useSchema(await getMergedSchemas()),
       useExtendContext(apiContextFactory),
       useMaskedErrors({ formatError }),
 
@@ -79,6 +130,7 @@ export const execute = async (
   }
 
   const enveloped = await envelopPromise
+
   const {
     parse,
     contextFactory,

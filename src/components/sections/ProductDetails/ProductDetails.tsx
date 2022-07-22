@@ -52,6 +52,9 @@ function ProductDetails({ product: staleProduct }: Props) {
       },
       breadcrumbList: breadcrumbs,
       additionalProperty,
+      aggregateRating,
+      unitMultiplier,
+      measurementUnit,
     },
   } = data
 
@@ -120,6 +123,14 @@ function ProductDetails({ product: staleProduct }: Props) {
             }
             refNumber={productId}
           />
+
+          {/* Review information */}
+          <p>Aggregate ratings: {aggregateRating.ratingValue}</p>
+          <p>Number of reviews: {aggregateRating.reviewCount}</p>
+
+          {/* Unit multipler info */}
+          <p>Multiplicador de unidade: {unitMultiplier}</p>
+          <p>Únidade de medida: {measurementUnit}</p>
         </header>
 
         <ImageGallery images={productImages} />
@@ -248,6 +259,14 @@ export const fragment = graphql`
     name
     gtin
     description
+
+    aggregateRating {
+      ratingValue
+      reviewCount
+    }
+
+    unitMultiplier
+    measurementUnit
 
     isVariantOf {
       productGroupID

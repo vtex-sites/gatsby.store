@@ -2574,7 +2574,7 @@
     tslib "~2.2.0"
     value-or-promise "1.0.6"
 
-"@graphql-tools/schema@^8.2.0":
+"@graphql-tools/schema@^8.2.0", "@graphql-tools/schema@^8.5.0":
   version "8.5.0"
   resolved "https://registry.yarnpkg.com/@graphql-tools/schema/-/schema-8.5.0.tgz#0332b3a2e674d16e9bf8a58dfd47432449ce2368"
   integrity sha512-VeFtKjM3SA9/hCJJfr95aEdC3G0xIKM9z0Qdz4i+eC1g2fdZYnfWFt2ucW4IME+2TDd0enHlKzaV0qk2SLVUww==
