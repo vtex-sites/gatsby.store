@@ -1927,10 +1927,10 @@
     minimatch "^3.0.4"
     strip-json-comments "^3.1.1"
 
-"@faststore/api@^1.10.8":
-  version "1.10.8"
-  resolved "https://registry.yarnpkg.com/@faststore/api/-/api-1.10.8.tgz#be0d7297e4514e6d328b42cdf722cb6099b2c08b"
-  integrity sha512-os6ebn8j3N1lVekZLCenDwNJI+CR8JQ04Fz4CimYrQhD461q8Hl7BzfVe5FB+aERzHLBlrUm1OkE5IaCkKD7VA==
+"@faststore/api@^1.10.19":
+  version "1.10.19"
+  resolved "https://registry.yarnpkg.com/@faststore/api/-/api-1.10.19.tgz#daa99085130e65d5d62b442f8138b29e38914dcb"
+  integrity sha512-DK6lEU/4MMoEbLgCOU+BB8s82tkpNKp12YaWdwdxmr61hUVOkwUY3Qs3wX27nn2rL2xPgvNu0/MBIdP7GxPziQ==
   dependencies:
     "@graphql-tools/schema" "^8.2.0"
     "@rollup/plugin-graphql" "^1.0.0"

@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- Newsletter form and `useNewsletter` hook ([#134](https://github.com/vtex-sites/gatsby.store/pull/134))
 - Applies new local tokens to `SearchHistory`, `SearchTop`, `SearchDropdown` and `SearchSuggestions` ([#150](https://github.com/vtex-sites/gatsby.store/pull/150))
 - Applies CSS Modules to `Incentives` ([#147](https://github.com/vtex-sites/gatsby.store/pull/147))
 - Applies new local tokens to `Footer` ([#147](https://github.com/vtex-sites/gatsby.store/pull/147))
@@ -20,7 +21,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Uses new cross selling API on PDP ([#137](https://github.com/vtex-sites/gatsby.store/pull/137))
 - Applies new local tokens to `SuggestionProductCard` ([#135](https://github.com/vtex-sites/gatsby.store/pull/135))
 - Applies new local tokens to `Navbar` ([#132](https://github.com/vtex-sites/gatsby.store/pull/132))
-- Newsletter form and `useNewsletter` hook ([#134](https://github.com/vtex-sites/gatsby.store/pull/134))
 
 ### Changed
 
