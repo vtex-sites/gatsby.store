@@ -2,7 +2,6 @@ import { Input as UIInput, Label as UILabel } from '@faststore/ui'
 import type { MutableRefObject } from 'react'
 import type { InputProps } from '@faststore/ui'
 import Button from 'src/components/ui/Button'
-import ButtonIcon from 'src/components/ui/Button/ButtonIcon'
 import Icon from 'src/components/ui/Icon'
 
 type DefaultProps = {
@@ -95,7 +94,9 @@ const InputText = ({
 
       {shouldDisplayButton &&
         (error ? (
-          <ButtonIcon
+          <Button
+            variant="tertiary"
+            data-fs-button-icon
             data-fs-button-size="small"
             aria-label="Clear Field"
             icon={<Icon name="XCircle" width={20} height={20} />}
