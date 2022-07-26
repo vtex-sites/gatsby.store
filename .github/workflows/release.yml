@@ -8,9 +8,10 @@ on:
 
 jobs:
   release:
-    name: FastStore
+    name: Release
     timeout-minutes: 5
     runs-on: ubuntu-latest
+    if: github.repository == 'vtex-sites/gatsby.store'
 
 
     steps:
