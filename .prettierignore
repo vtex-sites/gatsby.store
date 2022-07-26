@@ -6,3 +6,4 @@ coverage/
 .cache/
 __generated__
 src/typings/
+static/mockServiceWorker.js
