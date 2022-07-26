@@ -1,3 +1,22 @@
+# Changelog
+
+All notable changes to this project will be documented in this file.
+
+The format is based on [Conventional Changelog](https://github.com/conventional-changelog/conventional-changelog),
+and this project adheres to [Calendar Versioning](https://calver.org/).
+
+### 22.29.1 (2022-07-26)
+
+
+### Bug Fixes
+
+* prettier ignore auto generated file ([#157](https://github.com/vtex-sites/gatsby.store/issues/157)) ([b55f6c7](https://github.com/vtex-sites/gatsby.store/commit/b55f6c7db9f6dc324a894fb830c70e94070437a1))
+
+
+### Chores
+
+* automatic changelog releases ([#153](https://github.com/vtex-sites/gatsby.store/issues/153)) ([2ce858d](https://github.com/vtex-sites/gatsby.store/commit/2ce858d20c6baddffac294503a89396324a49929))
+
 ## [22.26.0.beta] - 2022-07-01
 
 ### Added
