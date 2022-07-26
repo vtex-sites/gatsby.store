@@ -1,3 +1,43 @@
+# Changelog
+
+All notable changes to this project will be documented in this file.
+
+The format is based on [Conventional Changelog](https://github.com/conventional-changelog/conventional-changelog),
+and this project adheres to [Calendar Versioning](https://calver.org/).
+
+## [22.30.0](https://github.com/vtex-sites/gatsby.store/compare/v22.26.0.beta...v22.30.0) (2022-07-26)
+
+
+### Features
+
+* Add css modules, tokens and refactor `Search` components ([#150](https://github.com/vtex-sites/gatsby.store/issues/150)) ([38d54e1](https://github.com/vtex-sites/gatsby.store/commit/38d54e145fcb488d1d2a4de5b443d497c041383b))
+* Add MSW addon config ([#143](https://github.com/vtex-sites/gatsby.store/issues/143)) ([32237a0](https://github.com/vtex-sites/gatsby.store/commit/32237a065488124f932d47598d96093a4c96b61d))
+* Add priceCurrency to Offer ([#139](https://github.com/vtex-sites/gatsby.store/issues/139)) ([0c5c5a8](https://github.com/vtex-sites/gatsby.store/commit/0c5c5a8fa9a218e1ae4f8e3f3ec8fff3f280506a))
+* Add tokens to `SuggestionProductCard` ([#135](https://github.com/vtex-sites/gatsby.store/issues/135)) ([b38c741](https://github.com/vtex-sites/gatsby.store/commit/b38c741b56cce3e7b37c77a8e4d5b1464f8cbdc3))
+* Adds new tokens to `Breadcrumb` ([#146](https://github.com/vtex-sites/gatsby.store/issues/146)) ([1219255](https://github.com/vtex-sites/gatsby.store/commit/12192553f01b0bc039f986c875c83ad791e03b94)), closes [#162](https://github.com/vtex-sites/gatsby.store/issues/162)
+* Adds new tokens to `Navbar` ([#132](https://github.com/vtex-sites/gatsby.store/issues/132)) ([8909b7b](https://github.com/vtex-sites/gatsby.store/commit/8909b7b3853af17b6b81da9441e61e4e0df8d7ed))
+* adds tokens to `Footer` ([#147](https://github.com/vtex-sites/gatsby.store/issues/147)) ([4315630](https://github.com/vtex-sites/gatsby.store/commit/431563005c216740ac37ede24801ac289ccffb1f)), closes [#155](https://github.com/vtex-sites/gatsby.store/issues/155)
+* Adds tokens to `SlideOver` ([#142](https://github.com/vtex-sites/gatsby.store/issues/142)) ([34a91df](https://github.com/vtex-sites/gatsby.store/commit/34a91df40cbe42c35773594df6f5d24db795dcc1)), closes [#145](https://github.com/vtex-sites/gatsby.store/issues/145)
+* Newsletter form and useNewsletter hook ([#134](https://github.com/vtex-sites/gatsby.store/issues/134)) ([2b38bba](https://github.com/vtex-sites/gatsby.store/commit/2b38bba51c699c4523ca31e000547f0b056bdb5c))
+* Support for cross selling API ([#137](https://github.com/vtex-sites/gatsby.store/issues/137)) ([57ac913](https://github.com/vtex-sites/gatsby.store/commit/57ac91384997d5708fa1747bd95df99f97a275a3))
+* Theming Brandless ([#156](https://github.com/vtex-sites/gatsby.store/issues/156)) ([89802ce](https://github.com/vtex-sites/gatsby.store/commit/89802ce6ff87aaee97d42707dfab5a015f501fbe)), closes [#119](https://github.com/vtex-sites/gatsby.store/issues/119) [#175](https://github.com/vtex-sites/gatsby.store/issues/175)
+
+
+### Bug Fixes
+
+* SonarQube warnings/error ([#145](https://github.com/vtex-sites/gatsby.store/issues/145)) ([7a99d4f](https://github.com/vtex-sites/gatsby.store/commit/7a99d4f35c499074d9c1ca2e929981aceef3b25a))
+* Transfers responsibility of `InputText`'s main attributes and callbacks to the renderer ([#144](https://github.com/vtex-sites/gatsby.store/issues/144)) ([1309954](https://github.com/vtex-sites/gatsby.store/commit/1309954451b54273feb0e73cfaac87478ac793fc))
+
+
+### Chores
+
+* automatic changelog releases ([#153](https://github.com/vtex-sites/gatsby.store/issues/153)) ([2ce858d](https://github.com/vtex-sites/gatsby.store/commit/2ce858d20c6baddffac294503a89396324a49929))
+* Improve integration tests by upgrading Cypress to 9.6.0 ([#151](https://github.com/vtex-sites/gatsby.store/issues/151)) ([afeb30e](https://github.com/vtex-sites/gatsby.store/commit/afeb30e4026413ef04774a186fe8e2d3c9bf23c0))
+* Improve integration tests by upgrading Cypress to 9.6.5 ([#148](https://github.com/vtex-sites/gatsby.store/issues/148)) ([e583194](https://github.com/vtex-sites/gatsby.store/commit/e583194f4d8f391664e2fdd1b8ff3148e461e27e))
+* Remove `ButtonIcon` ([#155](https://github.com/vtex-sites/gatsby.store/issues/155)) ([d59bc26](https://github.com/vtex-sites/gatsby.store/commit/d59bc263f68029df865843134ca9432b8ff20e09))
+* Stabilize a flaky PLP test ([#149](https://github.com/vtex-sites/gatsby.store/issues/149)) ([6028f5d](https://github.com/vtex-sites/gatsby.store/commit/6028f5d202ebc7f012cbb41db9b9c75e80fa7ef0))
+* Storybook Docs Updates ([#140](https://github.com/vtex-sites/gatsby.store/issues/140)) ([14863c0](https://github.com/vtex-sites/gatsby.store/commit/14863c02034000b981ca043f1d1387296037eb1b)), closes [#147](https://github.com/vtex-sites/gatsby.store/issues/147)
+
 ## [22.26.0.beta] - 2022-07-01
 
 ### Added
