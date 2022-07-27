@@ -57,7 +57,7 @@ describe('add_to_cart event', () => {
 
       const item = event.ecommerce.items.find((i) => i.item_variant === skuId)
 
-      expect(item).to.not.be.undefined
+      expect(item).to.be.undefined
       expect(item).to.have.property('currency-break')
       expect(item).to.have.property('item_name')
       expect(item).to.have.property('quantity').and.to.have.eq(1)
