@@ -19,5 +19,6 @@ describe('Accessibility tests', () => {
 
     cy.injectAxe()
     cy.checkA11y()
+
   })
 })

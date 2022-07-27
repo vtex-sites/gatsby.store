@@ -63,4 +63,22 @@ describe('add_to_cart event', () => {
       expect(item).to.have.property('quantity').and.to.have.eq(1)
     })
   }
+  context('when adding a product to the cart', () => {
+    it('adds add_to_cart event in the data layer at product description page', () => {
+      cy.visit(pages.pdp, options)
+      cy.waitForHydration()
+
+      cy.itemsInCart(1)
+
+      // Add to cart
+      cy.getById('buy-button')
+        .click()
+        .then(($btn) => {
+          cy.itemsInCart(1)
+          const skuId = $btn.attr('data-sku')
+
+          testAddToCartEvent({ skuId, numberOfEvents: 1 })
+        })
+    })
+  })
 })
