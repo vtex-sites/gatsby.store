@@ -5,6 +5,41 @@ All notable changes to this project will be documented in this file.
 The format is based on [Conventional Changelog](https://github.com/conventional-changelog/conventional-changelog),
 and this project adheres to [Calendar Versioning](https://calver.org/).
 
+
+### Features
+
+- Creates Themes doc pages on storybook ([#156](https://github.com/vtex-sites/gatsby.store/pull/156))
+- Added a new theme for testing purposes called midnight ([#156](https://github.com/vtex-sites/gatsby.store/pull/156))
+- Extracted all BaseStore visual to a new theme called soft-blue ([#156](https://github.com/vtex-sites/gatsby.store/pull/156))
+- Newsletter form and `useNewsletter` hook ([#134](https://github.com/vtex-sites/gatsby.store/pull/134))
+- Applies new local tokens to `SearchHistory`, `SearchTop`, `SearchDropdown` and `SearchSuggestions` ([#150](https://github.com/vtex-sites/gatsby.store/pull/150))
+- Applies CSS Modules to `Incentives` ([#147](https://github.com/vtex-sites/gatsby.store/pull/147))
+- Applies new local tokens to `Footer` ([#147](https://github.com/vtex-sites/gatsby.store/pull/147))
+- Applies new local tokens to `Breadcrumb` ([#146](https://github.com/vtex-sites/gatsby.store/pull/146))
+- Applies new local tokens to `SlideOver` ([#142](https://github.com/vtex-sites/gatsby.store/pull/142))
+- Applies new local tokens to `CartSidebar` ([#142](https://github.com/vtex-sites/gatsby.store/pull/142))
+- Adds [MSW Addon](https://storybook.js.org/addons/msw-storybook-addon) ([#143](https://github.com/vtex-sites/gatsby.store/pull/143))
+- Global tokens doc page on storybook ([#140](https://github.com/vtex-sites/gatsby.store/pull/140))
+- Uses new cross selling API on PDP ([#137](https://github.com/vtex-sites/gatsby.store/pull/137))
+- Applies new local tokens to `SuggestionProductCard` ([#135](https://github.com/vtex-sites/gatsby.store/pull/135))
+- Applies new local tokens to `Navbar` ([#132](https://github.com/vtex-sites/gatsby.store/pull/132))
+
+### Refactoring
+
+- Updates global tokens to follow Brandless approach ([#156](https://github.com/vtex-sites/gatsby.store/pull/156))
+- Cypress version from 9.5.4 to 9.6.0 to match WebOps' ([#151](https://github.com/vtex-sites/gatsby.store/pull/151))
+- Renames and refactors the components of Search feature ([#150](https://github.com/vtex-sites/gatsby.store/pull/150))
+- A flaky PLP infinite scroll test to be more stable ([#149](https://github.com/vtex-sites/gatsby.store/pull/149))
+- Cypress version from 6.6.0 to 9.5.4 to match WebOps' ([#148](https://github.com/vtex-sites/gatsby.store/pull/148))
+- Updates `IncentivesFooter` content ([#147](https://github.com/vtex-sites/gatsby.store/pull/147))
+- Updated Getting Started doc page and overall improvements ([#140](https://github.com/vtex-sites/gatsby.store/pull/140))
+- Removed `ButtonIcon` component ([#155](https://github.com/vtex-sites/gatsby.store/pull/155))
+
+### Bug Fixes
+
+- Transfers responsibility of `InputText`'s main attributes and callbacks to the renderer ([#144](https://github.com/vtex-sites/gatsby.store/pull/144))
+- priceCurrency field on SEO meta data ([#139](https://github.com/vtex-sites/gatsby.store/pull/139))
+
 ### [22.29.3](https://github.com/vtex-sites/gatsby.store/compare/22.29.2...22.29.3) (2022-07-26)
 
 ### [22.29.2](https://github.com/vtex-sites/gatsby.store/compare/22.29.1...22.29.2) (2022-07-26)
