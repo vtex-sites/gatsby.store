@@ -5,6 +5,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Conventional Changelog](https://github.com/conventional-changelog/conventional-changelog),
 and this project adheres to [Calendar Versioning](https://calver.org/).
 
+### [22.29.5](https://github.com/vtex-sites/gatsby.store/compare/22.29.4...22.29.5) (2022-07-28)
+
+
+### Chores
+
+* Update PR template to reflect recent changelog changes and add checklist regarding PR titles and commit messages ([#160](https://github.com/vtex-sites/gatsby.store/issues/160)) ([6bba877](https://github.com/vtex-sites/gatsby.store/commit/6bba877af2ca3707c7cf1a6f79cdd014e0ea2ab3))
+
 ### [22.29.4](https://github.com/vtex-sites/gatsby.store/compare/22.29.3...22.29.4) (2022-07-28)
 
 ### Features
