@@ -121,9 +121,13 @@ function ProductDetails({ product: staleProduct }: Props) {
             refNumber={productId}
           />
 
-          {/* Review information */}
-          <p>Aggregate ratings: 4.7</p>
+          {/* Phase 1 */}
+          <p>Aggregate rating: 4.7</p>
           <p>Number of reviews: 3</p>
+
+          {/* Phase 2 */}
+          <p>Unit multiplier: 0.3</p>
+          <p>Measurement unit: kg</p>
         </header>
 
         <ImageGallery images={productImages} />
