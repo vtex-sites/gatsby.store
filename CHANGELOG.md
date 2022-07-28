@@ -5,9 +5,8 @@ All notable changes to this project will be documented in this file.
 The format is based on [Conventional Changelog](https://github.com/conventional-changelog/conventional-changelog),
 and this project adheres to [Calendar Versioning](https://calver.org/).
 
-## [Unreleased]
 
-### Added
+### Features
 
 - Creates Themes doc pages on storybook ([#156](https://github.com/vtex-sites/gatsby.store/pull/156))
 - Added a new theme for testing purposes called midnight ([#156](https://github.com/vtex-sites/gatsby.store/pull/156))
@@ -25,7 +24,7 @@ and this project adheres to [Calendar Versioning](https://calver.org/).
 - Applies new local tokens to `SuggestionProductCard` ([#135](https://github.com/vtex-sites/gatsby.store/pull/135))
 - Applies new local tokens to `Navbar` ([#132](https://github.com/vtex-sites/gatsby.store/pull/132))
 
-### Changed
+### Refactoring
 
 - Updates global tokens to follow Brandless approach ([#156](https://github.com/vtex-sites/gatsby.store/pull/156))
 - Cypress version from 9.5.4 to 9.6.0 to match WebOps' ([#151](https://github.com/vtex-sites/gatsby.store/pull/151))
@@ -34,14 +33,9 @@ and this project adheres to [Calendar Versioning](https://calver.org/).
 - Cypress version from 6.6.0 to 9.5.4 to match WebOps' ([#148](https://github.com/vtex-sites/gatsby.store/pull/148))
 - Updates `IncentivesFooter` content ([#147](https://github.com/vtex-sites/gatsby.store/pull/147))
 - Updated Getting Started doc page and overall improvements ([#140](https://github.com/vtex-sites/gatsby.store/pull/140))
+- Removed `ButtonIcon` component ([#155](https://github.com/vtex-sites/gatsby.store/pull/155))
 
-### Deprecated
-
-### Removed
-
-- `ButtonIcon` component ([#155](https://github.com/vtex-sites/gatsby.store/pull/155))
-
-### Fixed
+### Bug Fixes
 
 - Transfers responsibility of `InputText`'s main attributes and callbacks to the renderer ([#144](https://github.com/vtex-sites/gatsby.store/pull/144))
 - priceCurrency field on SEO meta data ([#139](https://github.com/vtex-sites/gatsby.store/pull/139))
