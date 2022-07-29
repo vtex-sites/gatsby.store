@@ -7,7 +7,6 @@ and this project adheres to [Calendar Versioning](https://calver.org/).
 
 ### [22.29.5](https://github.com/vtex-sites/gatsby.store/compare/22.29.4...22.29.5) (2022-07-28)
 
-
 ### Chores
 
 * Update PR template to reflect recent changelog changes and add checklist regarding PR titles and commit messages ([#160](https://github.com/vtex-sites/gatsby.store/issues/160)) ([6bba877](https://github.com/vtex-sites/gatsby.store/commit/6bba877af2ca3707c7cf1a6f79cdd014e0ea2ab3))
@@ -16,6 +15,7 @@ and this project adheres to [Calendar Versioning](https://calver.org/).
 
 ### Features
 
+- Add import of `ProductTitle` from faststore ([#150](https://github.com/vtex-sites/gatsby.store/pull/150))
 - Creates Themes doc pages on storybook ([#156](https://github.com/vtex-sites/gatsby.store/pull/156))
 - Added a new theme for testing purposes called midnight ([#156](https://github.com/vtex-sites/gatsby.store/pull/156))
 - Extracted all BaseStore visual to a new theme called soft-blue ([#156](https://github.com/vtex-sites/gatsby.store/pull/156))
