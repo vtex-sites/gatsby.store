@@ -5,6 +5,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Conventional Changelog](https://github.com/conventional-changelog/conventional-changelog),
 and this project adheres to [Calendar Versioning](https://calver.org/).
 
+## [22.30.0](https://github.com/vtex-sites/gatsby.store/compare/22.29.5...22.30.0) (2022-08-01)
+
+
+### Features
+
+* Adds new tokens to `Skeleton` [FS-269] ([#162](https://github.com/vtex-sites/gatsby.store/issues/162)) ([8423be3](https://github.com/vtex-sites/gatsby.store/commit/8423be3df7da4dc04d84f1b89fc4f6564ca476ba)), closes [#171](https://github.com/vtex-sites/gatsby.store/issues/171)
+
 ### [22.29.5](https://github.com/vtex-sites/gatsby.store/compare/22.29.4...22.29.5) (2022-07-28)
 
 
