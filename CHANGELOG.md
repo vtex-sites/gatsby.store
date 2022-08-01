@@ -15,7 +15,6 @@ and this project adheres to [Calendar Versioning](https://calver.org/).
 
 ### Features
 
-- Add import of `ProductTitle` from faststore ([#164](https://github.com/vtex-sites/gatsby.store/pull/164))
 - Creates Themes doc pages on storybook ([#156](https://github.com/vtex-sites/gatsby.store/pull/156))
 - Added a new theme for testing purposes called midnight ([#156](https://github.com/vtex-sites/gatsby.store/pull/156))
 - Extracted all BaseStore visual to a new theme called soft-blue ([#156](https://github.com/vtex-sites/gatsby.store/pull/156))
