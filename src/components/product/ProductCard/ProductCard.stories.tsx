@@ -1,13 +1,9 @@
-import { SessionProvider } from '@faststore/sdk'
-import storeConfig from 'store.config'
-import { LocationProvider } from '@reach/router'
-
 import type { ProductCardProps } from '.'
 import Icon from '../../ui/Icon'
 import Button from '../../ui/Button'
 import ProductCard from '.'
 
-export default {
+const story = {
   component: ProductCard,
   title: 'Molecules/ProductCard ⚠️',
   argTypes: {
@@ -75,13 +71,9 @@ const Template = ({ ButtonBuy, ...args }: ProductCardProps) => {
   ) : null
 
   return (
-    <LocationProvider>
-      <SessionProvider initialState={{ channel: storeConfig.channel }}>
-        <div style={{ width: 300 }}>
-          <ProductCard ButtonBuy={button} {...args} />
-        </div>
-      </SessionProvider>
-    </LocationProvider>
+    <div style={{ width: 300 }}>
+      <ProductCard ButtonBuy={button} {...args} />
+    </div>
   )
 }
 
@@ -98,13 +90,9 @@ const TemplateWide = ({ ButtonBuy, ...args }: ProductCardProps) => {
   ) : null
 
   return (
-    <LocationProvider>
-      <SessionProvider initialState={{ channel: storeConfig.channel }}>
-        <div style={{ width: 400 }}>
-          <ProductCard ButtonBuy={button} {...args} />
-        </div>
-      </SessionProvider>
-    </LocationProvider>
+    <div style={{ width: 400 }}>
+      <ProductCard ButtonBuy={button} {...args} />
+    </div>
   )
 }
 
@@ -128,3 +116,5 @@ Wide.args = {
   aspectRatio: 1.5,
   ButtonBuy: false,
 }
+
+export default story

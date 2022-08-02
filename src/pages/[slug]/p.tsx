@@ -1,4 +1,3 @@
-import { useSession } from '@faststore/sdk'
 import { gql } from '@faststore/graphql-utils'
 import { graphql } from 'gatsby'
 import {
@@ -8,6 +7,8 @@ import {
 } from 'gatsby-plugin-next-seo'
 import ProductDetails from 'src/components/sections/ProductDetails'
 import ProductShelf from 'src/components/sections/ProductShelf'
+import { ITEMS_PER_SECTION } from 'src/constants'
+import { useSession } from 'src/sdk/session'
 import { mark } from 'src/sdk/tests/mark'
 import type { PageProps } from 'gatsby'
 import type {
@@ -15,7 +16,6 @@ import type {
   ServerProductPageQueryQuery,
   ProductPageQueryQueryVariables,
 } from '@generated/graphql'
-import { ITEMS_PER_SECTION } from 'src/constants'
 
 import 'src/styles/pages/pdp.scss'
 

@@ -1,12 +1,12 @@
-import { useSession } from '@faststore/sdk'
+import { gql } from '@faststore/graphql-utils'
 import { useMemo } from 'react'
 import type {
   BrowserProductQueryQuery,
   BrowserProductQueryQueryVariables,
 } from '@generated/graphql'
-import { gql } from '@faststore/graphql-utils'
 
 import { useQuery } from '../graphql/useQuery'
+import { useSession } from '../session'
 
 const query = gql`
   query BrowserProductQuery($locator: [IStoreSelectedFacet!]!) {
