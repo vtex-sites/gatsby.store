@@ -43,20 +43,7 @@ export const validateSession = async (session: Session) => {
 
 const [validationStore, onValidate] = createValidationStore(validateSession)
 
-export const sessionStore = createSessionStore(
-  {
-    currency: {
-      code: 'USD',
-      symbol: '$',
-    },
-    locale: storeConfig.locale,
-    channel: storeConfig.channel,
-    country: 'USA',
-    postalCode: null,
-    person: null,
-  },
-  onValidate
-)
+export const sessionStore = createSessionStore(storeConfig.session, onValidate)
 
 export const useSession = () => {
   const session = useStore(sessionStore)
