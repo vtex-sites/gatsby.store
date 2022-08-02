@@ -14,7 +14,7 @@ import SearchProductCard from './SearchProductCard'
 import SearchSuggestions from './SearchSuggestions'
 import { SearchTop } from './SearchTop'
 import { SearchHistory } from './SearchHistory'
-import { product, searchTerms, searchHistory } from 'src/../.storybook/mocks'
+import { product, searchTerms } from 'src/../.storybook/mocks'
 import { msw, products } from './searchMock.ts'
 import SearchSharedTokenTable from './SearchSharedTokenTable.mdx'
 import { LocationProvider } from '@reach/router'
@@ -143,7 +143,7 @@ import SearchInput from 'src/components/search/SearchInput'
           <>Responsible for showing the latest terms searched by the user.</>
         }
       >
-        <SearchHistory history={searchHistory} style={{ width: '100%' }} />
+        <SearchHistory style={{ width: '100%' }} />
       </SectionItem>
       <SectionItem
         title="SearchDropdown"
@@ -162,7 +162,7 @@ import SearchInput from 'src/components/search/SearchInput'
           justifyContent: 'start',
         }}
       >
-        <SearchDropdown history={searchHistory} />
+        <SearchDropdown />
       </SectionItem>
       <SectionItem
         title="SearchInput"
