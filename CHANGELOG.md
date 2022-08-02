@@ -5,6 +5,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Conventional Changelog](https://github.com/conventional-changelog/conventional-changelog),
 and this project adheres to [Calendar Versioning](https://calver.org/).
 
+## [22.31.0](https://github.com/vtex-sites/gatsby.store/compare/22.30.0...22.31.0) (2022-08-02)
+
+
+### Features
+
+* Add `ProductTitle` import from faststore ([#164](https://github.com/vtex-sites/gatsby.store/issues/164)) ([5638fb2](https://github.com/vtex-sites/gatsby.store/commit/5638fb2bac9110f22ea53f252591563fbd0fe358))
+
 ## [22.30.0](https://github.com/vtex-sites/gatsby.store/compare/22.29.5...22.30.0) (2022-08-01)
 
 
