@@ -6,6 +6,7 @@ import Layout from './src/Layout'
 import AnalyticsHandler from './src/sdk/analytics'
 import ErrorBoundary from './src/sdk/error/ErrorBoundary'
 import TestProvider from './src/sdk/tests'
+import storeConfig from './store.config'
 
 export const wrapRootElement: GatsbySSR['wrapRootElement'] = ({ element }) => (
   <ErrorBoundary>

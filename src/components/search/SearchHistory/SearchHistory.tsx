@@ -5,6 +5,8 @@ import Link from 'src/components/ui/Link'
 import useSearchHistory from 'src/sdk/search/useSearchHistory'
 import useSearchInput from 'src/sdk/search/useSearchInput'
 
+import styles from '../search.module.scss'
+
 const SearchHistory = () => {
   const { onSearchInputSelection } = useSearchInput()
   const { searchHistory, clearSearchHistory } = useSearchHistory()
