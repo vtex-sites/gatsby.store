@@ -33,7 +33,7 @@
     "@faststore/api": "^1.10.19",
     "@faststore/graphql-utils": "^1.10.20",
     "@faststore/sdk": "^1.10.18",
-    "@faststore/ui": "^1.10.29",
+    "@faststore/ui": "^1.10.30",
     "gatsby": "^4.16.0",
     "gatsby-plugin-gatsby-cloud": "^4.16.0",
     "gatsby-plugin-manifest": "^4.16.0",
