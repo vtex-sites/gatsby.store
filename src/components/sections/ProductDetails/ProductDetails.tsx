@@ -15,6 +15,7 @@ import type { ProductDetailsFragment_ProductFragment } from '@generated/graphql'
 import type { CurrencyCode, ViewItemEvent } from '@faststore/sdk'
 import type { AnalyticsItem } from 'src/sdk/analytics/types'
 import OutOfStock from 'src/components/product/OutOfStock'
+import Selectors from 'src/components/ui/SkuSelector/Selectors'
 
 import Section from '../Section'
 
@@ -44,7 +45,7 @@ function ProductDetails({ product: staleProduct }: Props) {
       name: variantName,
       brand,
       isVariantOf,
-      isVariantOf: { name, productGroupID: productId },
+      isVariantOf: { name, productGroupID: productId, skuVariants },
       image: productImages,
       offers: {
         offers: [{ availability, price, listPrice, seller }],
@@ -125,6 +126,13 @@ function ProductDetails({ product: staleProduct }: Props) {
         <ImageGallery images={productImages} />
 
         <section className="product-details__settings">
+          {skuVariants && (
+            <Selectors
+              slugsMap={skuVariants.slugsMap}
+              availableVariations={skuVariants.availableVariations}
+              activeVariations={skuVariants.activeVariations}
+            />
+          )}
           <section className="product-details__values">
             <div className="product-details__prices">
               <Price
