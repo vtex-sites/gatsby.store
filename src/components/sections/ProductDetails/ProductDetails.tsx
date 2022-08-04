@@ -252,6 +252,11 @@ export const fragment = graphql`
     isVariantOf {
       productGroupID
       name
+      skuVariants {
+        activeVariations
+        slugsMap(dominantVariantName: "Color")
+        availableVariations(dominantVariantName: "Color")
+      }
     }
 
     image {
