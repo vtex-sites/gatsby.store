@@ -5,6 +5,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Conventional Changelog](https://github.com/conventional-changelog/conventional-changelog),
 and this project adheres to [Calendar Versioning](https://calver.org/).
 
+### [22.31.2](https://github.com/vtex-sites/gatsby.store/compare/22.31.1...22.31.2) (2022-08-04)
+
+
+### Refactoring
+
+* Import Tiles & Tile components from @faststore/ui ([#167](https://github.com/vtex-sites/gatsby.store/issues/167)) ([152e60f](https://github.com/vtex-sites/gatsby.store/commit/152e60f7f179472b46137872f4e7ea5e8eb83d03))
+
 ### [22.31.1](https://github.com/vtex-sites/gatsby.store/compare/22.31.0...22.31.1) (2022-08-03)
 
 
