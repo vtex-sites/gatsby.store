@@ -16,12 +16,74 @@ export type Scalars = {
   Boolean: boolean
   Int: number
   Float: number
+  /**
+   * Example:
+   *
+   * ```json
+   * {
+   *   Color: 'Red', Size: '42'
+   * }
+   * ```
+   */
+  ActiveVariations: any
   /** A date string, such as 2007-12-03, compliant with the ISO 8601 standard for representation of dates and times using the Gregorian calendar. */
   Date: any
+  /**
+   * Example:
+   *
+   * ```json
+   * {
+   *   Color: [
+   *     {
+   *       src: "https://storecomponents.vtexassets.com/...",
+   *       alt: "...",
+   *       label: "...",
+   *       value: "..."
+   *     },
+   *     {
+   *       src: "https://storecomponents.vtexassets.com/...",
+   *       alt: "...",
+   *       label: "...",
+   *       value: "..."
+   *     }
+   *   ],
+   *   Size: [
+   *     {
+   *       src: "https://storecomponents.vtexassets.com/...",
+   *       alt: "...",
+   *       label: "...",
+   *       value: "..."
+   *     }
+   *   ]
+   * }
+   * ```
+   */
+  FormattedVariants: any
   /** The `JSON` scalar type represents JSON values as specified by [ECMA-404](http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf). */
   JSON: any
   /** A string or the string representation of an object (a stringified object). */
   ObjectOrString: any
+  /**
+   * Example:
+   *
+   * ```json
+   * {
+   *   'Color-Red-Size-40': 'classic-shoes-37'
+   * }
+   * ```
+   */
+  SlugsMap: any
+  /**
+   * Example:
+   *
+   * ```json
+   * {
+   *   Color: [ "Red", "Blue", "Green" ],
+   *   Size: [ "40", "41" ]
+   * }
+   * ```
+   */
+  VariantsByName: any
 }
 
 export type BooleanQueryOperatorInput = {
@@ -2277,6 +2339,34 @@ export type SiteSortInput = {
   order: InputMaybe<Array<InputMaybe<SortOrderEnum>>>
 }
 
+export type SkuVariants = {
+  /** SKU property values for the current SKU. */
+  activeVariations: Maybe<Scalars['ActiveVariations']>
+  /** All available options for each SKU variant property, indexed by their name. */
+  allVariantsByName: Maybe<Scalars['VariantsByName']>
+  /**
+   * Available options for each varying SKU property, taking into account the
+   * `dominantVariantName` property. Returns all available options for the
+   * dominant property, and only options that can be combined with its current
+   * value for other properties.
+   */
+  availableVariations: Maybe<Scalars['FormattedVariants']>
+  /**
+   * Maps property value combinations to their respective SKU's slug. Enables
+   * us to retrieve the slug for the SKU that matches the currently selected
+   * variations in O(1) time.
+   */
+  slugsMap: Maybe<Scalars['SlugsMap']>
+}
+
+export type SkuVariantsAvailableVariationsArgs = {
+  dominantVariantName: Scalars['String']
+}
+
+export type SkuVariantsSlugsMapArgs = {
+  dominantVariantName: Scalars['String']
+}
+
 export type SortOrderEnum = 'ASC' | 'DESC'
 
 /** Aggregate offer information, for a given SKU that is available to be fulfilled by multiple sellers. */
@@ -2599,6 +2689,12 @@ export type StoreProductGroup = {
   name: Scalars['String']
   /** Product group ID. */
   productGroupID: Scalars['String']
+  /**
+   * Object containing data structures to facilitate handling different SKU
+   * variant properties. Specially useful for implementing SKU selection
+   * components.
+   */
+  skuVariants: Maybe<SkuVariants>
 }
 
 /** Properties that can be associated with products and products groups. */
@@ -2765,7 +2861,15 @@ export type ProductDetailsFragment_ProductFragment = {
   gtin: string
   description: string
   id: string
-  isVariantOf: { productGroupID: string; name: string }
+  isVariantOf: {
+    productGroupID: string
+    name: string
+    skuVariants: {
+      activeVariations: any | null
+      slugsMap: any | null
+      availableVariations: any | null
+    } | null
+  }
   image: Array<{ url: string; alternateName: string }>
   brand: { name: string }
   offers: {
@@ -2893,7 +2997,15 @@ export type ServerProductPageQueryQuery = {
         seller: { identifier: string }
       }>
     }
-    isVariantOf: { productGroupID: string; name: string }
+    isVariantOf: {
+      productGroupID: string
+      name: string
+      skuVariants: {
+        activeVariations: any | null
+        slugsMap: any | null
+        availableVariations: any | null
+      } | null
+    }
     additionalProperty: Array<{
       propertyID: string
       name: string
@@ -3003,7 +3115,15 @@ export type BrowserProductQueryQuery = {
     gtin: string
     description: string
     id: string
-    isVariantOf: { productGroupID: string; name: string }
+    isVariantOf: {
+      productGroupID: string
+      name: string
+      skuVariants: {
+        activeVariations: any | null
+        slugsMap: any | null
+        availableVariations: any | null
+      } | null
+    }
     image: Array<{ url: string; alternateName: string }>
     brand: { name: string }
     offers: {
