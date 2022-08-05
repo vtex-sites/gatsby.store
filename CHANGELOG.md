@@ -5,6 +5,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Conventional Changelog](https://github.com/conventional-changelog/conventional-changelog),
 and this project adheres to [Calendar Versioning](https://calver.org/).
 
+### [22.31.3](https://github.com/vtex-sites/gatsby.store/compare/22.31.2...22.31.3) (2022-08-05)
+
+
+### Chores
+
+* Updates `BannerText` content example ([#168](https://github.com/vtex-sites/gatsby.store/issues/168)) ([246dad3](https://github.com/vtex-sites/gatsby.store/commit/246dad37e66bd9a587e56db9c4e9fccb9a6826bf)), closes [#198](https://github.com/vtex-sites/gatsby.store/issues/198)
+
 ### [22.31.2](https://github.com/vtex-sites/gatsby.store/compare/22.31.1...22.31.2) (2022-08-04)
 
 
