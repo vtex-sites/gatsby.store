@@ -5,6 +5,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Conventional Changelog](https://github.com/conventional-changelog/conventional-changelog),
 and this project adheres to [Calendar Versioning](https://calver.org/).
 
+## [22.32.0](https://github.com/vtex-sites/gatsby.store/compare/22.31.3...22.32.0) (2022-08-05)
+
+
+### Features
+
+* Working `SkuSelector` component ([#166](https://github.com/vtex-sites/gatsby.store/issues/166)) ([b6d40a0](https://github.com/vtex-sites/gatsby.store/commit/b6d40a0edd6ddff95a4ba90d93a98fade7ba4131))
+
 ### [22.31.3](https://github.com/vtex-sites/gatsby.store/compare/22.31.2...22.31.3) (2022-08-05)
 
 
