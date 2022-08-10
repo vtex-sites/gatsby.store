@@ -160,7 +160,7 @@ export const useCart = () => {
     () => ({
       ...cart,
       isValidating,
-      messages: (cart as Cart).messages,
+      messages: cart.messages,
       gifts: cart.items.filter((item) => isGift(item)),
       items: cart.items.filter((item) => !isGift(item)),
       totalUniqueItems: cart.items.length,
