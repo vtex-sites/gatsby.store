@@ -13,8 +13,17 @@ module.exports = {
   },
 
   // Default channel
-  channel: '{"salesChannel":"1","regionId":""}',
-  locale: 'en-US',
+  session: {
+    currency: {
+      code: 'USD',
+      symbol: '$',
+    },
+    locale: 'en-US',
+    channel: '{"salesChannel":"1","regionId":""}',
+    country: 'USA',
+    postalCode: null,
+    person: null,
+  },
 
   // Production URLs
   storeUrl: 'https://vtexfaststore.com',
