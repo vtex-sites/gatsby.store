@@ -1,10 +1,10 @@
-import { SearchProvider } from '@faststore/sdk'
+import { SearchProvider, SessionProvider } from '@faststore/sdk'
 import { useSearch } from '@faststore/sdk'
 
 import storeConfig from 'store.config'
 
 import UIProvider, { useUI } from 'src/sdk/ui/Provider'
-import { validateSession } from 'src/sdk/session'
+import { validateSession } from 'src/sdk/session/validate'
 import { useFilter } from './useFilter'
 
 import Button from 'src/components/ui/Button'
@@ -126,11 +126,17 @@ export const FilterTemplate = (args) => {
 
 export const TemplateWithProvider = (args) => {
   return (
-    <UIProvider>
-      <SearchProvider onChange={() => ({})}>
-        <FilterTemplate {...args} />
-      </SearchProvider>
-    </UIProvider>
+    <SessionProvider
+      initialstate={{
+        channel: storeConfig.channel,
+      }}
+    >
+      <UIProvider>
+        <SearchProvider onChange={() => ({})}>
+          <FilterTemplate {...args} />
+        </SearchProvider>
+      </UIProvider>
+    </SessionProvider>
   )
 }
 

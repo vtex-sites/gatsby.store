@@ -1,9 +1,10 @@
-import { gql } from '@faststore/graphql-utils'
 import {
-  formatSearchState,
   parseSearchState,
   SearchProvider,
+  useSession,
+  formatSearchState,
 } from '@faststore/sdk'
+import { gql } from '@faststore/graphql-utils'
 import { graphql } from 'gatsby'
 import { BreadcrumbJsonLd, GatsbySeo } from 'gatsby-plugin-next-seo'
 import { useMemo } from 'react'
@@ -15,7 +16,6 @@ import ScrollToTopButton from 'src/components/sections/ScrollToTopButton'
 import Icon from 'src/components/ui/Icon'
 import { ITEMS_PER_PAGE, ITEMS_PER_SECTION } from 'src/constants'
 import { applySearchState } from 'src/sdk/search/state'
-import { useSession } from 'src/sdk/session'
 import { mark } from 'src/sdk/tests/mark'
 import type {
   CollectionPageQueryQuery,

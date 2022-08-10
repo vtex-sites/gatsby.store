@@ -2,13 +2,15 @@ import type { SearchSuggestionsProps } from 'src/components/search/SearchSuggest
 import SearchSuggestions from 'src/components/search/SearchSuggestions'
 import useSuggestions from 'src/sdk/search/useSuggestions'
 
+import type { SearchHistoryProps } from '../SearchHistory'
 import { SearchHistory } from '../SearchHistory'
 import { SearchTop } from '../SearchTop'
 
-export type SearchDropdownProps = SearchSuggestionsProps
+export type SearchDropdownProps = SearchHistoryProps & SearchSuggestionsProps
 
 function SearchDropdown({
   term = '',
+  history,
   style,
   ...otherProps
 }: SearchDropdownProps) {
@@ -17,7 +19,7 @@ function SearchDropdown({
   if (term.length === 0 && !isLoading) {
     return (
       <>
-        <SearchHistory />
+        <SearchHistory history={history} />
         <SearchTop />
       </>
     )

@@ -1,21 +1,21 @@
-import { sendAnalyticsEvent } from '@faststore/sdk'
 import { useCallback } from 'react'
+import { sendAnalyticsEvent, useSession } from '@faststore/sdk'
 import type { CurrencyCode, AddToCartEvent } from '@faststore/sdk'
 import type { AnalyticsItem } from 'src/sdk/analytics/types'
-import type { CartItem } from 'src/sdk/cart'
+import type { CartItem } from 'src/sdk/cart/validate'
 
-import { useSession } from '../session'
 import { useUI } from '../ui/Provider'
-import { cartStore } from './index'
+import { useCart } from './useCart'
 
 export const useBuyButton = (item: CartItem | null) => {
+  const { addItem } = useCart()
   const { openCart } = useUI()
   const {
     currency: { code },
   } = useSession()
 
   const onClick = useCallback(
-    (e: React.MouseEvent<HTMLButtonElement>) => {
+    (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
       e.preventDefault()
 
       if (!item) {
@@ -46,10 +46,10 @@ export const useBuyButton = (item: CartItem | null) => {
         },
       })
 
-      cartStore.addItem(item)
+      addItem(item)
       openCart()
     },
-    [code, item, openCart]
+    [addItem, code, item, openCart]
   )
 
   return {
