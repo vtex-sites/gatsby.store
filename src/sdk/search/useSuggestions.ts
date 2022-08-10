@@ -1,11 +1,10 @@
+import { useSession } from '@faststore/sdk'
 import { gql } from '@faststore/graphql-utils'
 import { useQuery } from 'src/sdk/graphql/useQuery'
 import type {
   SearchSuggestionsQueryQuery as Query,
   SearchSuggestionsQueryQueryVariables as Variables,
 } from '@generated/graphql'
-
-import { useSession } from '../session'
 
 const MAX_SUGGESTIONS = 5
 

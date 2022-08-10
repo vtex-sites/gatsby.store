@@ -1,3 +1,4 @@
+import { SessionProvider } from '@faststore/sdk'
 import { Meta, Canvas, Story, ArgsTable } from '@storybook/addon-docs'
 import { rest } from 'msw'
 
@@ -7,11 +8,14 @@ import {
   TokenDivider,
 } from 'src/../.storybook/components'
 import { productGridItems, searchTerms } from 'src/../.storybook/mocks'
-import { msw, products } from '../searchMock'
+import { msw, products } from'../searchMock'
 
 import SearchInput from './SearchInput'
 
-<Meta component={SearchInput} title="Features/Search/SearchInput" />
+<Meta
+  component={SearchInput}
+  title="Features/Search/SearchInput"
+/>
 
 export const Template = (props) => (
   <div
@@ -23,7 +27,9 @@ export const Template = (props) => (
       background: 'white',
     }}
   >
-    <SearchInput {...props} />
+    <SessionProvider>
+      <SearchInput {...props} />
+    </SessionProvider>
   </div>
 )
 
@@ -44,13 +50,13 @@ Responsible to receive, search and display suggestions.
     name="default"
     parameters={{
       backgrounds: { default: 'dark' },
-      msw,
+      msw
     }}
     args={{
-      products,
+      products
     }}
   >
-    {Template.bind({})}
+  {Template.bind({})}
   </Story>
 </Canvas>
 

@@ -1,7 +1,8 @@
 import { Meta, Canvas, Story, ArgsTable } from '@storybook/addon-docs'
 
+import { CartProvider, SessionProvider } from '@faststore/sdk'
 import UIProvider, { useUI } from 'src/sdk/ui/Provider'
-import { useCart } from 'src/sdk/cart'
+import { useCart } from 'src/sdk/cart/useCart'
 
 import CartToggle from 'src/components/cart/CartToggle'
 import CartSidebar from '.'
@@ -36,9 +37,13 @@ export const Template = () => {
 
 export const TemplateProvider = () => {
   return (
-    <UIProvider>
-      <Template />
-    </UIProvider>
+    <SessionProvider initialState={{}}>
+      <CartProvider>
+        <UIProvider>
+          <Template />
+        </UIProvider>
+      </CartProvider>
+    </SessionProvider>
   )
 }
 

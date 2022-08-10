@@ -1,4 +1,5 @@
 import UIProvider, { useUI } from 'src/sdk/ui/Provider'
+import { SessionProvider } from '@faststore/sdk'
 
 import { Meta, Canvas, Story, ArgsTable } from '@storybook/addon-docs'
 
@@ -21,11 +22,15 @@ export const TemplateRegionalizationModal = () => {
 export const TemplateButtonWithProvider = () => {
   return (
     <UIProvider>
-      <div style={{ display: 'flex', alignItems: 'center', columnGap: '20px' }}>
-        <p style={{ whiteSpace: 'nowrap' }}>Try me:</p>
-        <RegionalizationButton />
-        <TemplateRegionalizationModal />
-      </div>
+      <SessionProvider initialState={{}}>
+        <div
+          style={{ display: 'flex', alignItems: 'center', columnGap: '20px' }}
+        >
+          <p style={{ whiteSpace: 'nowrap' }}>Try me:</p>
+          <RegionalizationButton />
+          <TemplateRegionalizationModal />
+        </div>
+      </SessionProvider>
     </UIProvider>
   )
 }
@@ -62,10 +67,12 @@ With the Regionalization feature enabled, if a customer enters their ZIP code wh
   <ul className="sbdocs-ul-row">
     <li>
       <div>
-        <UIProvider>
-          <RegionalizationButton />
-          <TemplateRegionalizationModal />
-        </UIProvider>
+        <SessionProvider>
+          <UIProvider>
+            <RegionalizationButton />
+            <TemplateRegionalizationModal />
+          </UIProvider>
+        </SessionProvider>
       </div>
       <article className="sbdocs-list-text">
         <h3>RegionalizationButton</h3>
@@ -82,10 +89,12 @@ With the Regionalization feature enabled, if a customer enters their ZIP code wh
     </li>
     <li>
       <div>
-        <UIProvider>
-          <RegionalizationBar />
-          <TemplateRegionalizationModal />
-        </UIProvider>
+        <SessionProvider>
+          <UIProvider>
+            <RegionalizationBar />
+            <TemplateRegionalizationModal />
+          </UIProvider>
+        </SessionProvider>
       </div>
       <article className="sbdocs-list-text">
         <h3>RegionalizationBar</h3>
@@ -105,9 +114,11 @@ With the Regionalization feature enabled, if a customer enters their ZIP code wh
     </li>
     <li>
       <div>
-        <UIProvider>
-          <RegionalizationInput />
-        </UIProvider>
+        <SessionProvider>
+          <UIProvider>
+            <RegionalizationInput />
+          </UIProvider>
+        </SessionProvider>
       </div>
       <article className="sbdocs-list-text">
         <h3>RegionalizationInput</h3>
@@ -120,9 +131,11 @@ With the Regionalization feature enabled, if a customer enters their ZIP code wh
     </li>
     <li>
       <div>
-        <UIProvider>
-          <RegionalizationModalContent onClose={() => {}} />
-        </UIProvider>
+        <SessionProvider>
+          <UIProvider>
+            <RegionalizationModalContent onClose={() => {}} />
+          </UIProvider>
+        </SessionProvider>
       </div>
       <article className="sbdocs-list-text">
         <h3>RegionalizationModal</h3>

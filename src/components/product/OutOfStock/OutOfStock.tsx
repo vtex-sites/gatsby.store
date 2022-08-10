@@ -1,3 +1,4 @@
+import { useSession } from '@faststore/sdk'
 import {
   OutOfStock as UIOutOfStock,
   OutOfStockTitle as UIOutOfStockTitle,
@@ -9,7 +10,6 @@ import Button from 'src/components/ui/Button'
 import Icon from 'src/components/ui/Icon'
 import InputText from 'src/components/ui/InputText'
 import styles from 'src/components/product/OutOfStock/out-of-stock.module.scss'
-import { useSession } from 'src/sdk/session'
 
 export interface OutOfStockProps {
   /**

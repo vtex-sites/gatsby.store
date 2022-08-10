@@ -1,6 +1,4 @@
-import 'src/styles/pages/search.scss'
-
-import { parseSearchState, SearchProvider } from '@faststore/sdk'
+import { parseSearchState, SearchProvider, useSession } from '@faststore/sdk'
 import { graphql } from 'gatsby'
 import { GatsbySeo } from 'gatsby-plugin-next-seo'
 import { useEffect, useState } from 'react'
@@ -9,7 +7,6 @@ import ProductGallery from 'src/components/sections/ProductGallery'
 import SROnly from 'src/components/ui/SROnly'
 import { ITEMS_PER_PAGE } from 'src/constants'
 import { applySearchState } from 'src/sdk/search/state'
-import { useSession } from 'src/sdk/session'
 import { mark } from 'src/sdk/tests/mark'
 import type { SearchState } from '@faststore/sdk'
 import type { PageProps } from 'gatsby'
@@ -17,6 +14,8 @@ import type {
   SearchPageQueryQuery,
   SearchPageQueryQueryVariables,
 } from '@generated/graphql'
+
+import 'src/styles/pages/search.scss'
 
 export type Props = PageProps<
   SearchPageQueryQuery,
