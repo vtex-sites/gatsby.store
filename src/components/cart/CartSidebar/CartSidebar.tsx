@@ -73,9 +73,9 @@ function CartSidebar() {
                 Gifts
               </Alert>
               <List data-fs-cart-sidebar-list>
-                {items.map((item) => (
+                {gifts.map((item) => (
                   <li key={item.id}>
-                    <CartItem item={item} />
+                    <CartItem gift item={item} />
                   </li>
                 ))}
               </List>
