@@ -5,6 +5,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Conventional Changelog](https://github.com/conventional-changelog/conventional-changelog),
 and this project adheres to [Calendar Versioning](https://calver.org/).
 
+## [22.34.0](https://github.com/vtex-sites/gatsby.store/compare/22.33.1...22.34.0) (2022-08-11)
+
+
+### Features
+
+* useEffect is not for effect ([#173](https://github.com/vtex-sites/gatsby.store/issues/173)) ([90f92ed](https://github.com/vtex-sites/gatsby.store/commit/90f92ed7ae11b77f7d6aaba6a27f6b84470268b9))
+
 ### [22.33.1](https://github.com/vtex-sites/gatsby.store/compare/22.33.0...22.33.1) (2022-08-10)
 
 ## [22.33.0](https://github.com/vtex-sites/gatsby.store/compare/22.32.0...22.33.0) (2022-08-10)

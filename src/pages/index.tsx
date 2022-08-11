@@ -1,6 +1,5 @@
 import 'src/styles/pages/homepage.scss'
 
-import { useSession } from '@faststore/sdk'
 import { graphql } from 'gatsby'
 import { GatsbySeo, JsonLd } from 'gatsby-plugin-next-seo'
 import { mark } from 'src/sdk/tests/mark'
