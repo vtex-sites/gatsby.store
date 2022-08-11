@@ -1,12 +1,9 @@
-import { CartProvider, SessionProvider } from '@faststore/sdk'
-import { validateSession } from 'src/sdk/session/validate'
 import UIProvider from 'src/sdk/ui/Provider'
 import type { GatsbySSR } from 'gatsby'
 
 import ThirdPartyScripts from './src/components/ThirdPartyScripts'
 import Layout from './src/Layout'
 import AnalyticsHandler from './src/sdk/analytics'
-import { validateCart } from './src/sdk/cart/validate'
 import ErrorBoundary from './src/sdk/error/ErrorBoundary'
 import TestProvider from './src/sdk/tests'
 import storeConfig from './store.config'
@@ -15,19 +12,7 @@ export const wrapRootElement: GatsbySSR['wrapRootElement'] = ({ element }) => (
   <ErrorBoundary>
     <AnalyticsHandler />
     <TestProvider>
-      <UIProvider>
-        <SessionProvider
-          initialState={{
-            channel: storeConfig.channel,
-            locale: storeConfig.locale,
-          }}
-          onValidateSession={validateSession}
-        >
-          <CartProvider mode="optimistic" onValidateCart={validateCart}>
-            {element}
-          </CartProvider>
-        </SessionProvider>
-      </UIProvider>
+      <UIProvider>{element}</UIProvider>
     </TestProvider>
   </ErrorBoundary>
 )
