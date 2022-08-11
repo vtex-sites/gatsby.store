@@ -416,14 +416,9 @@ That's it! you have just regenerated all graphql queries/fragments for your appl
 
 This store is integrated with [VTEX headless CMS](https://www.faststore.dev/tutorials/cms/0).
 
-Since we have pages and components rendered with and without CMS we replicate the same folder structure so we can easily identify them:
+The pages rendered with CMS are:
 
-- index page without cms: `pages/index.tsx`
-- index page with cms: `pages/cms/index.tsx`
-
-> ⚠️ Warning
-> As it is now, to visit the cms integrated homepage, you must go to `your-store.vtex.app/cms`.
-> If you want the cms homepage to be at the root, just replace `pages/cms/index.tsx` with `pages/index.tsx`.
+- index page: `pages/index.tsx`
 
 ### CMS configs
 

@@ -12,7 +12,6 @@ const { pages } = cypress
 const paths = [
   pages.pdp,
   pages.home,
-  pages.cmsHome,
   pages.collection,
   pages.collection_filtered,
 ]
@@ -81,7 +80,6 @@ describe('React rendering performance', () => {
 
     testPage(pages.pdp)
     testPage(pages.home)
-    testPage(pages.cmsHome)
     testPage(pages.search)
     testPage(pages.collection)
     testPage(pages.collection_filtered)
