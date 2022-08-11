@@ -7,13 +7,21 @@ import { mark } from 'src/sdk/tests/mark'
 import type { PageProps } from 'gatsby'
 import type { CmsHomePageQueryQuery } from '@generated/graphql'
 import RenderPageSections from 'src/components/cms/RenderPageSections'
+import { clientCMS } from 'src/client'
+import type { ContentData } from '@vtex/client-cms/src'
 
-export type Props = PageProps<CmsHomePageQueryQuery>
+export type Props = PageProps<
+  CmsHomePageQueryQuery,
+  unknown,
+  unknown,
+  ContentData
+>
 
 function Page(props: Props) {
   const {
-    data: { site, cmsHome },
+    data: { site },
     location: { pathname, host },
+    serverData: cmsHome,
   } = props
 
   const { locale } = useSession()
@@ -61,7 +69,7 @@ function Page(props: Props) {
         If needed, wrap your component in a <Section /> component
         (not the HTML tag) before rendering it here.
       */}
-      <RenderPageSections sections={cmsHome?.sections} />
+      <RenderPageSections sections={cmsHome.sections} />
     </>
   )
 }
@@ -75,15 +83,26 @@ export const querySSG = graphql`
         titleTemplate
       }
     }
-
-    cmsHome {
-      sections {
-        data
-        name
-      }
-    }
   }
 `
+
+export async function getServerData() {
+  try {
+    const cmsHome = await clientCMS.getCMSPage({
+      contentType: 'home',
+      documentId: 'ad2fd81d-a53c-4281-8d01-a4fc2f274db3',
+      versionId: '1b18fbcf-ce08-4ead-9011-364921e725c3',
+    })
+
+    return {
+      props: cmsHome,
+    }
+  } catch (error) {
+    return {
+      status: 500,
+    }
+  }
+}
 
 Page.displayName = 'Page'
 export default mark(Page)

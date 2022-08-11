@@ -18,7 +18,7 @@ const COMPONENTS: Record<string, ComponentType<any>> = {
 }
 
 interface Props {
-  sections?: Array<{ name: string; data: Record<string, unknown> }>
+  sections?: Array<{ name: string; data: unknown }>
 }
 
 function RenderPageSections({ sections }: Props) {
@@ -35,7 +35,7 @@ function RenderPageSections({ sections }: Props) {
           return <></>
         }
 
-        return <Component key={`cms-section-${index}`} {...data} />
+        return <Component key={`cms-section-${index}`} {...(data as any)} />
       })}
     </>
   )

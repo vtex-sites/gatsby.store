@@ -1,6 +1,6 @@
 import { lazy, Suspense } from 'react'
-import Alert from 'src/components/cms/common/Alert'
 import Footer from 'src/components/common/Footer'
+import Alert from 'src/components/common/Alert'
 import Navbar from 'src/components/common/Navbar'
 import Toast from 'src/components/common/Toast'
 import RegionalizationBar from 'src/components/regionalization/RegionalizationBar'
@@ -19,7 +19,9 @@ function Layout({ children }: PropsWithChildren) {
 
   return (
     <>
-      <Alert />
+      <Alert icon="Bell" link={{ text: 'Buy now', to: '/office' }} dismissible>
+        Get 10% off today:&nbsp;<span>NEW10</span>
+      </Alert>
 
       <Navbar />
 
