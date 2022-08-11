@@ -8,7 +8,7 @@ import type { PageProps } from 'gatsby'
 import type { CmsHomePageQueryQuery } from '@generated/graphql'
 import RenderPageSections from 'src/components/cms/RenderPageSections'
 import { clientCMS } from 'src/client'
-import type { ContentData } from '@vtex/client-cms/src'
+import type { ContentData } from '@vtex/client-cms'
 
 export type Props = PageProps<
   CmsHomePageQueryQuery,

@@ -414,14 +414,12 @@ That's it! you have just regenerated all graphql queries/fragments for your appl
 
 ## CMS Integration
 
-This store is integrated with [VTEX headless CMS](https://www.faststore.dev/tutorials/cms/0). To better understand how this integration was done you may refer to the previous link or to [#104](https://github.com/vtex-sites/gatsby.store/pull/104).
+This store is integrated with [VTEX headless CMS](https://www.faststore.dev/tutorials/cms/0).
 
 Since we have pages and components rendered with and without CMS we replicate the same folder structure so we can easily identify them:
 
 - index page without cms: `pages/index.tsx`
 - index page with cms: `pages/cms/index.tsx`
-- global alert component without cms: `components/common/Alert`
-- global alert component with cms: `components/cms/common/Alert`
 
 > ⚠️ Warning
 > As it is now, to visit the cms integrated homepage, you must go to `your-store.vtex.app/cms`.

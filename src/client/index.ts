@@ -1,4 +1,4 @@
-import ClientCMS from '@vtex/client-cms/src'
+import ClientCMS from '@vtex/client-cms'
 
 import config from '../../store.config'
 
