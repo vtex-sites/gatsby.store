@@ -7,8 +7,9 @@ import { mark } from 'src/sdk/tests/mark'
 import type { PageProps } from 'gatsby'
 import type { CmsHomePageQueryQuery } from '@generated/graphql'
 import RenderPageSections from 'src/components/cms/RenderPageSections'
-import { clientCMS } from 'src/client'
+import { clientCMS } from 'src/cms/client'
 import type { ContentData } from '@vtex/client-cms'
+import cmsHomeFallback from 'src/cms/cmsHomeFallback'
 
 export type Props = PageProps<
   CmsHomePageQueryQuery,
@@ -98,8 +99,10 @@ export async function getServerData() {
       props: cmsHome,
     }
   } catch (error) {
+    console.error('CMS fetch error', error)
+
     return {
-      status: 500,
+      props: cmsHomeFallback,
     }
   }
 }
