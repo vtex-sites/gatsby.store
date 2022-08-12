@@ -5,6 +5,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Conventional Changelog](https://github.com/conventional-changelog/conventional-changelog),
 and this project adheres to [Calendar Versioning](https://calver.org/).
 
+## [22.36.0](https://github.com/vtex-sites/gatsby.store/compare/22.35.0...22.36.0) (2022-08-12)
+
+
+### Features
+
+* Refinements on `Navbar` and `Navlinks` ([#174](https://github.com/vtex-sites/gatsby.store/issues/174)) ([de39dc8](https://github.com/vtex-sites/gatsby.store/commit/de39dc8ed062c796f501ba5daa16bdae266604eb))
+
 ## [22.35.0](https://github.com/vtex-sites/gatsby.store/compare/22.34.2...22.35.0) (2022-08-12)
 
 
