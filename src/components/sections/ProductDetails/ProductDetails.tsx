@@ -297,12 +297,8 @@ export const fragment = graphql`
       }
     }
 
-    additionalProperty {
-      propertyID
-      name
-      value
-      valueReference
-    }
+    # Contains necessary info to add this item to cart
+    ...CartProductItem
   }
 `
 
