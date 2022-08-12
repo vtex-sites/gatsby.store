@@ -5,6 +5,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Conventional Changelog](https://github.com/conventional-changelog/conventional-changelog),
 and this project adheres to [Calendar Versioning](https://calver.org/).
 
+## [22.35.0](https://github.com/vtex-sites/gatsby.store/compare/22.34.2...22.35.0) (2022-08-12)
+
+
+### Features
+
+* Add new tokens to `SearchInput` ([#175](https://github.com/vtex-sites/gatsby.store/issues/175)) ([04daa83](https://github.com/vtex-sites/gatsby.store/commit/04daa833f8bd9b5717620022f8fece8727ee4c51))
+
 ### [22.34.2](https://github.com/vtex-sites/gatsby.store/compare/22.34.1...22.34.2) (2022-08-12)
 
 
