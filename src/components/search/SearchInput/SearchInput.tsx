@@ -1,7 +1,3 @@
-import { sendAnalyticsEvent } from '@faststore/sdk'
-import { SearchInput as UISearchInput } from '@faststore/ui'
-import { navigate } from 'gatsby'
-import type { CSSProperties } from 'react'
 import {
   forwardRef,
   lazy,
@@ -9,11 +5,16 @@ import {
   useRef,
   useState,
   useDeferredValue,
+  useImperativeHandle,
 } from 'react'
+import type { CSSProperties } from 'react'
+import { navigate } from 'gatsby'
+import { sendAnalyticsEvent } from '@faststore/sdk'
 import type { SearchEvent } from '@faststore/sdk'
+import { SearchInput as UISearchInput } from '@faststore/ui'
 import type {
   SearchInputProps as UISearchInputProps,
-  SearchInputRef,
+  SearchInputRef as UISearchInputRef,
 } from '@faststore/ui'
 import Icon from 'src/components/ui/Icon'
 import useSearchHistory from 'src/sdk/search/useSearchHistory'
@@ -24,6 +25,8 @@ import {
 import type { SearchInputContextValue } from 'src/sdk/search/useSearchInput'
 import useOnClickOutside from 'src/sdk/ui/useOnClickOutside'
 
+import styles from './search-input.module.scss'
+
 const SearchDropdown = lazy(
   () => import('src/components/search/SearchDropdown')
 )
@@ -33,6 +36,8 @@ export type SearchInputProps = {
   buttonTestId?: string
   containerStyle?: CSSProperties
 } & Omit<UISearchInputProps, 'onSubmit'>
+
+export type SearchInputRef = UISearchInputRef & { resetSearchInput: () => void }
 
 const sendAnalytics = async (term: string) => {
   sendAnalyticsEvent<SearchEvent>({
@@ -53,29 +58,37 @@ const SearchInput = forwardRef<SearchInputRef, SearchInputProps>(
   ) {
     const [searchQuery, setSearchQuery] = useState<string>('')
     const searchQueryDeferred = useDeferredValue(searchQuery)
-    const [searchDropdownOpen, setSearchDropdownOpen] = useState<boolean>(false)
+    const [searchDropdownVisible, setSearchDropdownVisible] =
+      useState<boolean>(false)
+
     const searchRef = useRef<HTMLDivElement>(null)
     const { addToSearchHistory } = useSearchHistory()
+
+    useImperativeHandle(ref, () => ({
+      resetSearchInput: () => setSearchQuery(''),
+    }))
 
     const onSearchInputSelection: SearchInputContextValue['onSearchInputSelection'] =
       (term, path) => {
         addToSearchHistory({ term, path })
         sendAnalytics(term)
-        setSearchDropdownOpen(false)
+        setSearchDropdownVisible(false)
         setSearchQuery(term)
       }
 
-    useOnClickOutside(searchRef, () => setSearchDropdownOpen(false))
+    useOnClickOutside(searchRef, () => setSearchDropdownVisible(false))
 
     return (
       <div
         ref={searchRef}
-        data-store-search-input-wrapper
-        data-store-search-input-dropdown-open={searchDropdownOpen}
+        data-fs-search-input-wrapper
+        className={styles.fsSearchInput}
+        data-fs-search-input-dropdown-visible={searchDropdownVisible}
         style={containerStyle}
       >
         <SearchInputProvider onSearchInputSelection={onSearchInputSelection}>
           <UISearchInput
+            data-fs-search-input
             ref={ref}
             icon={
               <Icon
@@ -92,13 +105,13 @@ const SearchInput = forwardRef<SearchInputRef, SearchInputProps>(
               onSearchInputSelection(term, path)
               navigate(path)
             }}
-            onFocus={() => setSearchDropdownOpen(true)}
+            onFocus={() => setSearchDropdownVisible(true)}
             value={searchQuery}
             {...otherProps}
           />
-          {searchDropdownOpen && (
+          {searchDropdownVisible && (
             <Suspense fallback={null}>
-              <div data-store-search-input-dropdown-wrapper>
+              <div data-fs-search-input-dropdown-wrapper>
                 <SearchDropdown term={searchQueryDeferred} />
               </div>
             </Suspense>

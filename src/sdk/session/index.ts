@@ -17,7 +17,7 @@ export const mutation = gql`
       locale
       channel
       country
-      postalCodes
+      postalCode
       currency {
         code
         symbol
