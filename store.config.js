@@ -8,14 +8,9 @@ module.exports = {
   // Platform specific configs for API
   api: {
     storeId: 'storeframework',
+    workspace: 'master',
     environment: 'vtexcommercestable',
     hideUnavailableItems: true,
-  },
-
-  // Headless CMS
-  cms: {
-    tenant: 'storeframework',
-    workspace: 'master',
   },
 
   // Default channel
