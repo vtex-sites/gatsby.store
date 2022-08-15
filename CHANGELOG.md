@@ -5,6 +5,34 @@ All notable changes to this project will be documented in this file.
 The format is based on [Conventional Changelog](https://github.com/conventional-changelog/conventional-changelog),
 and this project adheres to [Calendar Versioning](https://calver.org/).
 
+## [22.36.0](https://github.com/vtex-sites/gatsby.store/compare/22.35.0...22.36.0) (2022-08-12)
+
+
+### Features
+
+* Refinements on `Navbar` and `Navlinks` ([#174](https://github.com/vtex-sites/gatsby.store/issues/174)) ([de39dc8](https://github.com/vtex-sites/gatsby.store/commit/de39dc8ed062c796f501ba5daa16bdae266604eb))
+
+## [22.35.0](https://github.com/vtex-sites/gatsby.store/compare/22.34.2...22.35.0) (2022-08-12)
+
+
+### Features
+
+* Add new tokens to `SearchInput` ([#175](https://github.com/vtex-sites/gatsby.store/issues/175)) ([04daa83](https://github.com/vtex-sites/gatsby.store/commit/04daa833f8bd9b5717620022f8fece8727ee4c51))
+
+### [22.34.2](https://github.com/vtex-sites/gatsby.store/compare/22.34.1...22.34.2) (2022-08-12)
+
+
+### Bug Fixes
+
+* Avoids performing the search when user abandons the query ([#176](https://github.com/vtex-sites/gatsby.store/issues/176)) ([70753fe](https://github.com/vtex-sites/gatsby.store/commit/70753fe0eef8faef11fc93494450579832f4a474))
+
+### [22.34.1](https://github.com/vtex-sites/gatsby.store/compare/22.34.0...22.34.1) (2022-08-12)
+
+
+### Bug Fixes
+
+* Join cart items ([#170](https://github.com/vtex-sites/gatsby.store/issues/170)) ([74d1ed7](https://github.com/vtex-sites/gatsby.store/commit/74d1ed7fbd39039250672b10b88e511db44679b4))
+
 ## [22.34.0](https://github.com/vtex-sites/gatsby.store/compare/22.33.1...22.34.0) (2022-08-11)
 
 
