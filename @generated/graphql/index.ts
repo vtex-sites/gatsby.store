@@ -3015,18 +3015,6 @@ export type ServerProductPageQueryQuery = {
   }
 }
 
-export type CmsHomePageQueryQueryVariables = Exact<{ [key: string]: never }>
-
-export type CmsHomePageQueryQuery = {
-  site: {
-    siteMetadata: {
-      title: string | null
-      description: string | null
-      titleTemplate: string | null
-    } | null
-  } | null
-}
-
 export type HomePageQueryQueryVariables = Exact<{ [key: string]: never }>
 
 export type HomePageQueryQuery = {
