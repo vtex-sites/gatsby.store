@@ -5,6 +5,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Conventional Changelog](https://github.com/conventional-changelog/conventional-changelog),
 and this project adheres to [Calendar Versioning](https://calver.org/).
 
+## [22.37.0](https://github.com/vtex-sites/gatsby.store/compare/22.36.1...22.37.0) (2022-08-16)
+
+
+### Features
+
+* Handles `OutOfStock` error message through `InputText`'s error prop ([#177](https://github.com/vtex-sites/gatsby.store/issues/177)) ([aed1567](https://github.com/vtex-sites/gatsby.store/commit/aed15674cf16ac195829a71a29c58df55a7f2835))
+
 ### [22.36.1](https://github.com/vtex-sites/gatsby.store/compare/22.36.0...22.36.1) (2022-08-16)
 
 
