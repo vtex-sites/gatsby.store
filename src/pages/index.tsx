@@ -87,18 +87,10 @@ export const querySSG = graphql`
 `
 
 export async function getServerData() {
-  try {
-    const cmsHome = await getCMSPageDataByContentType('home')
+  const cmsHome = await getCMSPageDataByContentType('home')
 
-    return {
-      props: { cmsHome },
-    }
-  } catch (error) {
-    console.error(error)
-
-    return {
-      props: { cmsHome: { sections: [] } },
-    }
+  return {
+    props: { cmsHome },
   }
 }
 
