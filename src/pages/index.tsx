@@ -6,18 +6,22 @@ import { mark } from 'src/sdk/tests/mark'
 import type { PageProps } from 'gatsby'
 import type { HomePageQueryQuery } from '@generated/graphql'
 import RenderPageSections from 'src/components/cms/RenderPageSections'
-import { clientCMS } from 'src/cms/client'
+import { getCMSPageDataByContentType } from 'src/cms/client'
 import type { ContentData } from '@vtex/client-cms'
-import cmsHomeFallback from 'src/cms/cmsHomeFallback'
 import { useSession } from 'src/sdk/session'
 
-export type Props = PageProps<HomePageQueryQuery, unknown, unknown, ContentData>
+export type Props = PageProps<
+  HomePageQueryQuery,
+  unknown,
+  unknown,
+  { cmsHome: ContentData }
+>
 
 function Page(props: Props) {
   const {
     data: { site },
     location: { pathname, host },
-    serverData: cmsHome,
+    serverData: { cmsHome },
   } = props
 
   const { locale } = useSession()
@@ -65,7 +69,7 @@ function Page(props: Props) {
         If needed, wrap your component in a <Section /> component
         (not the HTML tag) before rendering it here.
       */}
-      <RenderPageSections sections={cmsHome.sections} />
+      <RenderPageSections sections={cmsHome?.sections} />
     </>
   )
 }
@@ -83,24 +87,17 @@ export const querySSG = graphql`
 `
 
 export async function getServerData() {
-  const contentType = 'home'
-
   try {
-    const {
-      data: [cmsHome],
-    } = await clientCMS.getCMSPagesByContentType(contentType)
+    const cmsHome = await getCMSPageDataByContentType('home')
 
     return {
-      props: cmsHome,
+      props: { cmsHome },
     }
   } catch (error) {
-    console.error(
-      `Missing '${contentType}' data from CMS. To prevent this warning, open https://storeframework.myvtex.com/admin/new-cms and create a new content from the 'home' template. Falling back to default home template`,
-      error
-    )
+    console.error(error)
 
     return {
-      props: cmsHomeFallback,
+      props: { cmsHome: { sections: [] } },
     }
   }
 }

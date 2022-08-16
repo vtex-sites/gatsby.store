@@ -5538,10 +5538,10 @@
   resolved "https://registry.yarnpkg.com/@vercel/webpack-asset-relocator-loader/-/webpack-asset-relocator-loader-1.7.0.tgz#d3b707e0aba3111719f941dacb2408eff3c27319"
   integrity sha512-1Dy3BdOliDwxA7VZSIg55E1d/us2KvsCQOZV25fgufG//CsnZBGiSAL7qewTQf7YVHH0A9PHgzwMmKIZ8aFYVw==
 
-"@vtex/client-cms@^0.2.9":
-  version "0.2.9"
-  resolved "https://registry.yarnpkg.com/@vtex/client-cms/-/client-cms-0.2.9.tgz#3c017762df5b0d79c8606af7bcc85e740db2ae43"
-  integrity sha512-NEHxRN7jlfCJSF6BKlF91JLfch73n1trXNzTEJW9WkUnAYNY+wlVDcl0f1QLQeyNnhI/dqMrayoAk1cT2fFHRg==
+"@vtex/client-cms@^0.2.10":
+  version "0.2.10"
+  resolved "https://registry.yarnpkg.com/@vtex/client-cms/-/client-cms-0.2.10.tgz#d2e3dee0b9a38b0ee3de3e4cec0d31349f4c8cf5"
+  integrity sha512-z9pg0srPxdL5lZ+tgWsnYvsHm2IcNEOukVnjJ1+8GqWDFiaJkPskuJhhuJhA7cAa4pLpDUONYnDlALT1BTNnFg==
   dependencies:
     fetch-retry "^4.1.1"
     isomorphic-unfetch "^3.1.0"
