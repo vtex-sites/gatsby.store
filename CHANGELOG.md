@@ -5,6 +5,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Conventional Changelog](https://github.com/conventional-changelog/conventional-changelog),
 and this project adheres to [Calendar Versioning](https://calver.org/).
 
+### [22.36.1](https://github.com/vtex-sites/gatsby.store/compare/22.36.0...22.36.1) (2022-08-16)
+
+
+### Chores
+
+* Adds `InputText` documentation to storybook ([#178](https://github.com/vtex-sites/gatsby.store/issues/178)) ([c492e0a](https://github.com/vtex-sites/gatsby.store/commit/c492e0a5b62cf8a6aefdfba022becc3d736bb5f4))
+
 ## [22.36.0](https://github.com/vtex-sites/gatsby.store/compare/22.35.0...22.36.0) (2022-08-12)
 
 
