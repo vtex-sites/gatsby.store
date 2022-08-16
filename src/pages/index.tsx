@@ -83,21 +83,19 @@ export const querySSG = graphql`
 `
 
 export async function getServerData() {
-  const locatorCMS = {
-    contentType: 'home',
-    documentId: 'ad2fd81d-a53c-4281-8d01-a4fc2f274db3',
-    versionId: '1b18fbcf-ce08-4ead-9011-364921e725c3',
-  }
+  const contentType = 'home'
 
   try {
-    const cmsHome = await clientCMS.getCMSPage(locatorCMS)
+    const {
+      data: [cmsHome],
+    } = await clientCMS.getCMSPagesByContentType(contentType)
 
     return {
       props: cmsHome,
     }
   } catch (error) {
     console.error(
-      `Missing '${locatorCMS.contentType}' data from CMS. To prevent this warning, open https://storeframework.myvtex.com/admin/new-cms and create a new content from the 'home' template. Falling back to default home template`,
+      `Missing '${contentType}' data from CMS. To prevent this warning, open https://storeframework.myvtex.com/admin/new-cms and create a new content from the 'home' template. Falling back to default home template`,
       error
     )
 
