@@ -20,14 +20,13 @@ export type Props = PageProps<
 function Page(props: Props) {
   const {
     data: { site },
-    location: { pathname, host },
     serverData: { cmsHome },
   } = props
 
   const { locale } = useSession()
 
   const title = site?.siteMetadata?.title ?? ''
-  const siteUrl = `https://${host}${pathname}`
+  const siteUrl = `${site?.siteMetadata?.siteUrl}`
 
   return (
     <>
@@ -81,16 +80,23 @@ export const querySSG = graphql`
         title
         description
         titleTemplate
+        siteUrl
       }
     }
   }
 `
 
 export async function getServerData() {
+  const ONE_YEAR_CACHE = `s-maxage=31536000, stale-while-revalidate`
+
   const cmsHome = await getCMSPageDataByContentType('home')
 
   return {
+    status: 200,
     props: { cmsHome },
+    headers: {
+      'cache-control': ONE_YEAR_CACHE,
+    },
   }
 }
 
