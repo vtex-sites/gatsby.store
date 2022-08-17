@@ -5,6 +5,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Conventional Changelog](https://github.com/conventional-changelog/conventional-changelog),
 and this project adheres to [Calendar Versioning](https://calver.org/).
 
+## [22.38.0](https://github.com/vtex-sites/gatsby.store/compare/22.37.0...22.38.0) (2022-08-17)
+
+
+### Features
+
+* Add new tokens to `SkuSelector` ([#179](https://github.com/vtex-sites/gatsby.store/issues/179)) ([04c08ab](https://github.com/vtex-sites/gatsby.store/commit/04c08ab23e1b31d95c465b67c56052e511d0f361)), closes [vtex-sites/nextjs.store#202](https://github.com/vtex-sites/nextjs.store/issues/202)
+
 ## [22.37.0](https://github.com/vtex-sites/gatsby.store/compare/22.36.1...22.37.0) (2022-08-16)
 
 
