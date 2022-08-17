@@ -67,7 +67,7 @@ function Page(props: Props) {
         (not the HTML tag) before rendering it here.
       */}
       <Hero
-        title="New Products Available"
+        title="New Products Available now!"
         subtitle="At BaseStore you can shop the best tech of 2022. Enjoy and get 10% off on your first purchase."
         linkText="See all"
         link="/technology"
