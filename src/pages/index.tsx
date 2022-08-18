@@ -96,6 +96,7 @@ export async function getServerData() {
     props: { cmsHome },
     headers: {
       'cache-control': ONE_YEAR_CACHE,
+      'content-type': 'text/html',
     },
   }
 }
