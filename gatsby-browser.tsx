@@ -15,14 +15,39 @@ import type { GatsbyBrowser } from 'gatsby'
 
 export const wrapRootElement: GatsbyBrowser['wrapRootElement'] = ({
   element,
-}) => (
-  <ErrorBoundary>
-    <AnalyticsHandler />
-    <TestProvider>
-      <UIProvider>{element}</UIProvider>
-    </TestProvider>
-  </ErrorBoundary>
-)
+}) => {
+  const handleUpdate = async () => {
+    if ('serviceWorker' in navigator) {
+      let refreshing: boolean
+
+      const oldSw = (await navigator.serviceWorker.getRegistration())?.active
+        ?.state
+
+      navigator.serviceWorker.addEventListener('controllerchange', async () => {
+        if (refreshing) return
+
+        const newSw = (await navigator.serviceWorker.getRegistration())?.active
+          ?.state
+
+        if (oldSw === 'activated' && newSw === 'activating') {
+          refreshing = true
+          window.location.reload()
+        }
+      })
+    }
+  }
+
+  handleUpdate()
+
+  return (
+    <ErrorBoundary>
+      <AnalyticsHandler />
+      <TestProvider>
+        <UIProvider>{element}</UIProvider>
+      </TestProvider>
+    </ErrorBoundary>
+  )
+}
 
 export const wrapPageElement: GatsbyBrowser['wrapPageElement'] = ({
   element,
