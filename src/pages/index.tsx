@@ -58,7 +58,7 @@ function Page(props: Props) {
       />
 
       {/*
-        WARNING: Do not import or render components from any
+        WARNING: Don't import or render components from any
         other folder than '../components/sections' in here.
 
         This is necessary to keep the integration with the CMS
