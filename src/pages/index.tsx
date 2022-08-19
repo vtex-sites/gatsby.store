@@ -87,7 +87,7 @@ export const querySSG = graphql`
 `
 
 export async function getServerData() {
-  // const ONE_YEAR_CACHE = `s-maxage=31536000, stale-while-revalidate`
+  const ONE_YEAR_CACHE = `s-maxage=31536000, stale-while-revalidate`
 
   const cmsHome = await getCMSPageDataByContentType('home')
 
@@ -95,7 +95,7 @@ export async function getServerData() {
     status: 200,
     props: { cmsHome },
     headers: {
-      // 'cache-control': ONE_YEAR_CACHE,
+      'cache-control': ONE_YEAR_CACHE,
       'content-type': 'text/html',
     },
   }
