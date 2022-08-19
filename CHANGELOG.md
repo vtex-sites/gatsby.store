@@ -5,6 +5,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Conventional Changelog](https://github.com/conventional-changelog/conventional-changelog),
 and this project adheres to [Calendar Versioning](https://calver.org/).
 
+### [22.38.2](https://github.com/vtex-sites/gatsby.store/compare/22.38.1...22.38.2) (2022-08-19)
+
+
+### Features
+
+* integrate with client-cms ([#172](https://github.com/vtex-sites/gatsby.store/issues/172)) ([2870d30](https://github.com/vtex-sites/gatsby.store/commit/2870d30f33447556ba19a6d467b4cf898639e340))
+
 ### [22.38.1](https://github.com/vtex-sites/gatsby.store/compare/22.38.0...22.38.1) (2022-08-19)
 
 
