@@ -5,6 +5,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Conventional Changelog](https://github.com/conventional-changelog/conventional-changelog),
 and this project adheres to [Calendar Versioning](https://calver.org/).
 
+### [22.38.1](https://github.com/vtex-sites/gatsby.store/compare/22.38.0...22.38.1) (2022-08-19)
+
+
+### Bug Fixes
+
+* Display `SearchDropdown` correctly ([#212](https://github.com/vtex-sites/gatsby.store/issues/212)) ([#186](https://github.com/vtex-sites/gatsby.store/issues/186)) ([7ef737a](https://github.com/vtex-sites/gatsby.store/commit/7ef737a18abf39d2c9f41c69250fa992ed4373bc))
+
 ## [22.38.0](https://github.com/vtex-sites/gatsby.store/compare/22.37.0...22.38.0) (2022-08-17)
 
 
