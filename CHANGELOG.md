@@ -5,6 +5,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Conventional Changelog](https://github.com/conventional-changelog/conventional-changelog),
 and this project adheres to [Calendar Versioning](https://calver.org/).
 
+### [22.38.5](https://github.com/vtex-sites/gatsby.store/compare/22.38.4...22.38.5) (2022-08-22)
+
+
+### Chores
+
+* Renames/Updates border tokens ([#184](https://github.com/vtex-sites/gatsby.store/issues/184)) ([54706ff](https://github.com/vtex-sites/gatsby.store/commit/54706ff15bd646a4e8eff9deeda2f7735f6c65b3))
+
 ### [22.38.4](https://github.com/vtex-sites/gatsby.store/compare/22.38.3...22.38.4) (2022-08-22)
 
 
