@@ -1,7 +1,7 @@
 {
   "name": "gatsby.store",
   "private": true,
-  "version": "22.38.1",
+  "version": "22.38.3",
   "license": "MIT",
   "browserslist": "supports es6-module and not dead",
   "scripts": {
@@ -30,6 +30,7 @@
     "@envelop/core": "^1.2.0",
     "@envelop/parser-cache": "^2.2.0",
     "@envelop/validation-cache": "^2.2.0",
+    "@vtex/client-cms": "^0.2.10",
     "@faststore/api": "^1.11.3",
     "@faststore/graphql-utils": "^1.10.34",
     "@faststore/sdk": "^1.10.34",
