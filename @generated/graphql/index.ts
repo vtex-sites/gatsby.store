@@ -942,6 +942,7 @@ export type MutationSubscribeToNewsletterArgs = {
 
 export type MutationValidateCartArgs = {
   cart: IStoreCart
+  session: InputMaybe<IStoreSession>
 }
 
 export type MutationValidateSessionArgs = {
@@ -2653,6 +2654,8 @@ export type StoreProduct = {
   offers: StoreAggregateOffer
   /** Product ID, such as [ISBN](https://www.isbn-international.org/content/what-isbn) or similar global IDs. */
   productID: Scalars['String']
+  /** The product's release date. Formatted using https://en.wikipedia.org/wiki/ISO_8601 */
+  releaseDate: Scalars['String']
   /** Array with review information. */
   review: Array<StoreReview>
   /** Meta tag data. */
@@ -3042,6 +3045,7 @@ export type SearchPageQueryQuery = {
 
 export type ValidateCartMutationMutationVariables = Exact<{
   cart: IStoreCart
+  session: IStoreSession
 }>
 
 export type ValidateCartMutationMutation = {
