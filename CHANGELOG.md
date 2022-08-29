@@ -5,6 +5,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Conventional Changelog](https://github.com/conventional-changelog/conventional-changelog),
 and this project adheres to [Calendar Versioning](https://calver.org/).
 
+## [22.39.0](https://github.com/vtex-sites/gatsby.store/compare/22.38.5...22.39.0) (2022-08-29)
+
+
+### Features
+
+* Cart with session info ([#190](https://github.com/vtex-sites/gatsby.store/issues/190)) ([fcbc03f](https://github.com/vtex-sites/gatsby.store/commit/fcbc03f9561400a11e5398a415006efe6216fa42))
+
 ### [22.38.5](https://github.com/vtex-sites/gatsby.store/compare/22.38.4...22.38.5) (2022-08-22)
 
 
