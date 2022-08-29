@@ -4,6 +4,7 @@ import { useMemo } from 'react'
 import type { Session } from '@faststore/sdk'
 
 import storeConfig from '../../../store.config'
+import { cartStore } from '../cart'
 import { request } from '../graphql/request'
 import { createValidationStore, useStore } from '../useStore'
 import type {
@@ -43,7 +44,17 @@ export const validateSession = async (session: Session) => {
 
 const [validationStore, onValidate] = createValidationStore(validateSession)
 
-export const sessionStore = createSessionStore(storeConfig.session, onValidate)
+const defaultStore = createSessionStore(storeConfig.session, onValidate)
+
+export const sessionStore = {
+  ...defaultStore,
+  set: (val: Session) => {
+    defaultStore.set(val)
+
+    // Trigger cart revalidation when session changes
+    cartStore.set(cartStore.read())
+  },
+}
 
 export const useSession = () => {
   const session = useStore(sessionStore)
