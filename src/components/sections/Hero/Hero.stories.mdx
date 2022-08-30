@@ -1,3 +1,4 @@
+import { HelmetProvider } from 'react-helmet-async'
 import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs'
 import { TokenTable, TokenRow } from 'src/../.storybook/components'
 
@@ -30,7 +31,11 @@ import Icon from 'src/components/ui/Icon'
   }}
 />
 
-export const Template = (args) => <Hero {...args} />
+export const Template = (args) => (
+  <HelmetProvider>
+    <Hero {...args} />
+  </HelmetProvider>
+)
 
 <header>
 
@@ -66,6 +71,7 @@ The `Hero` component uses [FastStore UI Hero](https://www.faststore.dev/referenc
     {Template.bind({})}
   </Story>
 </Canvas>
+
 <ArgsTable story="usage" />
 
 <TokenTable>
@@ -136,6 +142,7 @@ The `Hero` component uses [FastStore UI Hero](https://www.faststore.dev/referenc
     {Template.bind({})}
   </Story>
 </Canvas>
+
 <TokenTable>
   <TokenRow token="--fs-hero-primary-image-height-mobile" value="15rem" />
   <TokenRow token="--fs-hero-primary-image-height-desktop" value="29rem" />
@@ -163,6 +170,7 @@ The `Hero` component uses [FastStore UI Hero](https://www.faststore.dev/referenc
     {Template.bind({})}
   </Story>
 </Canvas>
+
 <TokenTable>
   <TokenRow token="--fs-hero-secondary-image-height-mobile" value="11.25rem" />
   <TokenRow
@@ -196,6 +204,7 @@ The `Hero` component uses [FastStore UI Hero](https://www.faststore.dev/referenc
     {Template.bind({})}
   </Story>
 </Canvas>
+
 <TokenTable>
   <TokenRow
     token="--fs-hero-main-bkg-color"
@@ -226,6 +235,7 @@ The `Hero` component uses [FastStore UI Hero](https://www.faststore.dev/referenc
     {Template.bind({})}
   </Story>
 </Canvas>
+
 <TokenTable>
   <TokenRow
     token="--fs-hero-light-bkg-color"
@@ -256,6 +266,7 @@ The `Hero` component uses [FastStore UI Hero](https://www.faststore.dev/referenc
     {Template.bind({})}
   </Story>
 </Canvas>
+
 <TokenTable>
   <TokenRow
     token="--fs-hero-accent-bkg-color"
