@@ -5,6 +5,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Conventional Changelog](https://github.com/conventional-changelog/conventional-changelog),
 and this project adheres to [Calendar Versioning](https://calver.org/).
 
+### [22.39.1](https://github.com/vtex-sites/gatsby.store/compare/22.39.0...22.39.1) (2022-08-30)
+
+
+### Chores
+
+* Include `Button` with only an icon on Storybook ([#193](https://github.com/vtex-sites/gatsby.store/issues/193)) ([2790446](https://github.com/vtex-sites/gatsby.store/commit/27904466227120afcef21ee9272e0d0d94e7fda8))
+
 ## [22.39.0](https://github.com/vtex-sites/gatsby.store/compare/22.38.5...22.39.0) (2022-08-29)
 
 
