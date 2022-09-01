@@ -5,6 +5,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Conventional Changelog](https://github.com/conventional-changelog/conventional-changelog),
 and this project adheres to [Calendar Versioning](https://calver.org/).
 
+### [22.39.2](https://github.com/vtex-sites/gatsby.store/compare/22.39.1...22.39.2) (2022-08-31)
+
+
+### Bug Fixes
+
+* Navigation links on mobile not being clickable ([#195](https://github.com/vtex-sites/gatsby.store/issues/195)) ([6035bf2](https://github.com/vtex-sites/gatsby.store/commit/6035bf222cfb92d268344855dafbc980ab4fcea4))
+
 ### [22.39.1](https://github.com/vtex-sites/gatsby.store/compare/22.39.0...22.39.1) (2022-08-30)
 
 
