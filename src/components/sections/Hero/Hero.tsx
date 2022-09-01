@@ -1,3 +1,4 @@
+import type { ReactNode } from 'react'
 import { ButtonLink } from 'src/components/ui/Button'
 import {
   Hero as UIHero,
@@ -8,19 +9,47 @@ import Icon from 'src/components/ui/Icon'
 import Image from 'src/components/ui/Image/Image'
 
 import Section from '../Section'
+import styles from './hero.module.scss'
 
 type Variant = 'primary' | 'secondary'
 type ColorVariant = 'main' | 'light' | 'accent'
 
 export interface HeroProps {
+  /**
+   * Content for the h1 tag.
+   */
   title: string
+  /**
+   * Content for the p tag.
+   */
   subtitle: string
+  /**
+   * Specifies the component variant.
+   */
   variant?: Variant
+  /**
+   * Specifies the component's color variant combination.
+   */
   colorVariant?: ColorVariant
-  linkText?: string
+  /**
+   * Specifies the URL the action button goes to.
+   */
   link?: string
-  icon?: JSX.Element
+  /**
+   * Specifies the action button's content.
+   */
+  linkText?: string
+  /**
+   * Icon component for additional customization.
+   */
+  icon?: ReactNode
+  /**
+   * Specifies the image URL.
+   */
   imageSrc: string
+  /**
+   * Alternative description of the image.
+   */
   imageAlt: string
 }
 
@@ -38,6 +67,7 @@ const Hero = ({
   return (
     <Section>
       <UIHero
+        className={styles.fsHero}
         data-fs-hero
         data-fs-hero-variant={variant}
         data-fs-hero-color-variant={colorVariant}
@@ -57,15 +87,15 @@ const Hero = ({
         <UIHeroHeading data-fs-hero-heading aria-labelledby="hero-heading">
           <div data-fs-hero-wrapper className="layout__content">
             <div data-fs-hero-info>
-              <h1 id="hero-heading">{title}</h1>
-              <p data-fs-hero-text-body>{subtitle}</p>
+              <h1 data-fs-hero-title>{title}</h1>
+              <p data-fs-hero-subtitle>{subtitle}</p>
               {!!link && (
                 <ButtonLink href={link} inverse={colorVariant === 'main'}>
                   {linkText} <Icon name="ArrowRight" width={24} height={24} />
                 </ButtonLink>
               )}
             </div>
-            {variant === 'secondary' && icon && (
+            {icon && variant === 'secondary' && (
               <div data-fs-hero-icon>{icon}</div>
             )}
           </div>
