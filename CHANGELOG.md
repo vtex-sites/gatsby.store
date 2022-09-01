@@ -5,6 +5,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Conventional Changelog](https://github.com/conventional-changelog/conventional-changelog),
 and this project adheres to [Calendar Versioning](https://calver.org/).
 
+### [22.39.3](https://github.com/vtex-sites/gatsby.store/compare/22.39.2...22.39.3) (2022-09-01)
+
+
+### Chores
+
+* Revisit `Hero` documentation (Storybook) ([#194](https://github.com/vtex-sites/gatsby.store/issues/194)) ([2a2b44b](https://github.com/vtex-sites/gatsby.store/commit/2a2b44bd89dc15741af6d830be8e7a9e90fabd7d)), closes [vtex-sites/nextjs.store#217](https://github.com/vtex-sites/nextjs.store/issues/217)
+
 ### [22.39.2](https://github.com/vtex-sites/gatsby.store/compare/22.39.1...22.39.2) (2022-08-31)
 
 
