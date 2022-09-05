@@ -2,13 +2,194 @@
 
 All notable changes to this project will be documented in this file.
 
-The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
-and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+The format is based on [Conventional Changelog](https://github.com/conventional-changelog/conventional-changelog),
+and this project adheres to [Calendar Versioning](https://calver.org/).
 
-## [Unreleased]
+### [22.39.3](https://github.com/vtex-sites/gatsby.store/compare/22.39.2...22.39.3) (2022-09-01)
 
-### Added
 
+### Chores
+
+* Revisit `Hero` documentation (Storybook) ([#194](https://github.com/vtex-sites/gatsby.store/issues/194)) ([2a2b44b](https://github.com/vtex-sites/gatsby.store/commit/2a2b44bd89dc15741af6d830be8e7a9e90fabd7d)), closes [vtex-sites/nextjs.store#217](https://github.com/vtex-sites/nextjs.store/issues/217)
+
+### [22.39.2](https://github.com/vtex-sites/gatsby.store/compare/22.39.1...22.39.2) (2022-08-31)
+
+
+### Bug Fixes
+
+* Navigation links on mobile not being clickable ([#195](https://github.com/vtex-sites/gatsby.store/issues/195)) ([6035bf2](https://github.com/vtex-sites/gatsby.store/commit/6035bf222cfb92d268344855dafbc980ab4fcea4))
+
+### [22.39.1](https://github.com/vtex-sites/gatsby.store/compare/22.39.0...22.39.1) (2022-08-30)
+
+
+### Chores
+
+* Include `Button` with only an icon on Storybook ([#193](https://github.com/vtex-sites/gatsby.store/issues/193)) ([2790446](https://github.com/vtex-sites/gatsby.store/commit/27904466227120afcef21ee9272e0d0d94e7fda8))
+
+## [22.39.0](https://github.com/vtex-sites/gatsby.store/compare/22.38.5...22.39.0) (2022-08-29)
+
+
+### Features
+
+* Cart with session info ([#190](https://github.com/vtex-sites/gatsby.store/issues/190)) ([fcbc03f](https://github.com/vtex-sites/gatsby.store/commit/fcbc03f9561400a11e5398a415006efe6216fa42))
+
+### [22.38.5](https://github.com/vtex-sites/gatsby.store/compare/22.38.4...22.38.5) (2022-08-22)
+
+
+### Chores
+
+* Renames/Updates border tokens ([#184](https://github.com/vtex-sites/gatsby.store/issues/184)) ([54706ff](https://github.com/vtex-sites/gatsby.store/commit/54706ff15bd646a4e8eff9deeda2f7735f6c65b3))
+
+### [22.38.4](https://github.com/vtex-sites/gatsby.store/compare/22.38.3...22.38.4) (2022-08-22)
+
+
+### Chores
+
+* Renames/Updates breakpoints tokens ([#188](https://github.com/vtex-sites/gatsby.store/issues/188)) ([e4e979d](https://github.com/vtex-sites/gatsby.store/commit/e4e979da6b105a47b574d0d35e8e798db255b63e))
+
+### [22.38.3](https://github.com/vtex-sites/gatsby.store/compare/22.38.2...22.38.3) (2022-08-19)
+
+
+### Bug Fixes
+
+* Fix cms config ([#189](https://github.com/vtex-sites/gatsby.store/issues/189)) ([0a2e04a](https://github.com/vtex-sites/gatsby.store/commit/0a2e04a0bbf2deb21f1d03a8418451511cd50045))
+
+### [22.38.2](https://github.com/vtex-sites/gatsby.store/compare/22.38.1...22.38.2) (2022-08-19)
+
+
+### Features
+
+* integrate with client-cms ([#172](https://github.com/vtex-sites/gatsby.store/issues/172)) ([2870d30](https://github.com/vtex-sites/gatsby.store/commit/2870d30f33447556ba19a6d467b4cf898639e340))
+
+### [22.38.1](https://github.com/vtex-sites/gatsby.store/compare/22.38.0...22.38.1) (2022-08-19)
+
+
+### Bug Fixes
+
+* Display `SearchDropdown` correctly ([#212](https://github.com/vtex-sites/gatsby.store/issues/212)) ([#186](https://github.com/vtex-sites/gatsby.store/issues/186)) ([7ef737a](https://github.com/vtex-sites/gatsby.store/commit/7ef737a18abf39d2c9f41c69250fa992ed4373bc))
+
+## [22.38.0](https://github.com/vtex-sites/gatsby.store/compare/22.37.0...22.38.0) (2022-08-17)
+
+
+### Features
+
+* Add new tokens to `SkuSelector` ([#179](https://github.com/vtex-sites/gatsby.store/issues/179)) ([04c08ab](https://github.com/vtex-sites/gatsby.store/commit/04c08ab23e1b31d95c465b67c56052e511d0f361)), closes [vtex-sites/nextjs.store#202](https://github.com/vtex-sites/nextjs.store/issues/202)
+
+## [22.37.0](https://github.com/vtex-sites/gatsby.store/compare/22.36.1...22.37.0) (2022-08-16)
+
+
+### Features
+
+* Handles `OutOfStock` error message through `InputText`'s error prop ([#177](https://github.com/vtex-sites/gatsby.store/issues/177)) ([aed1567](https://github.com/vtex-sites/gatsby.store/commit/aed15674cf16ac195829a71a29c58df55a7f2835))
+
+### [22.36.1](https://github.com/vtex-sites/gatsby.store/compare/22.36.0...22.36.1) (2022-08-16)
+
+
+### Chores
+
+* Adds `InputText` documentation to storybook ([#178](https://github.com/vtex-sites/gatsby.store/issues/178)) ([c492e0a](https://github.com/vtex-sites/gatsby.store/commit/c492e0a5b62cf8a6aefdfba022becc3d736bb5f4))
+
+## [22.36.0](https://github.com/vtex-sites/gatsby.store/compare/22.35.0...22.36.0) (2022-08-12)
+
+
+### Features
+
+* Refinements on `Navbar` and `Navlinks` ([#174](https://github.com/vtex-sites/gatsby.store/issues/174)) ([de39dc8](https://github.com/vtex-sites/gatsby.store/commit/de39dc8ed062c796f501ba5daa16bdae266604eb))
+
+## [22.35.0](https://github.com/vtex-sites/gatsby.store/compare/22.34.2...22.35.0) (2022-08-12)
+
+
+### Features
+
+* Add new tokens to `SearchInput` ([#175](https://github.com/vtex-sites/gatsby.store/issues/175)) ([04daa83](https://github.com/vtex-sites/gatsby.store/commit/04daa833f8bd9b5717620022f8fece8727ee4c51))
+
+### [22.34.2](https://github.com/vtex-sites/gatsby.store/compare/22.34.1...22.34.2) (2022-08-12)
+
+
+### Bug Fixes
+
+* Avoids performing the search when user abandons the query ([#176](https://github.com/vtex-sites/gatsby.store/issues/176)) ([70753fe](https://github.com/vtex-sites/gatsby.store/commit/70753fe0eef8faef11fc93494450579832f4a474))
+
+### [22.34.1](https://github.com/vtex-sites/gatsby.store/compare/22.34.0...22.34.1) (2022-08-12)
+
+
+### Bug Fixes
+
+* Join cart items ([#170](https://github.com/vtex-sites/gatsby.store/issues/170)) ([74d1ed7](https://github.com/vtex-sites/gatsby.store/commit/74d1ed7fbd39039250672b10b88e511db44679b4))
+
+## [22.34.0](https://github.com/vtex-sites/gatsby.store/compare/22.33.1...22.34.0) (2022-08-11)
+
+
+### Features
+
+* useEffect is not for effect ([#173](https://github.com/vtex-sites/gatsby.store/issues/173)) ([90f92ed](https://github.com/vtex-sites/gatsby.store/commit/90f92ed7ae11b77f7d6aaba6a27f6b84470268b9))
+
+### [22.33.1](https://github.com/vtex-sites/gatsby.store/compare/22.33.0...22.33.1) (2022-08-10)
+
+## [22.33.0](https://github.com/vtex-sites/gatsby.store/compare/22.32.0...22.33.0) (2022-08-10)
+
+
+### Features
+
+* useEffect is not for effects ([#136](https://github.com/vtex-sites/gatsby.store/issues/136)) ([a55ce99](https://github.com/vtex-sites/gatsby.store/commit/a55ce9918d376d9711fc95ff5558d472a167a5cd))
+
+## [22.32.0](https://github.com/vtex-sites/gatsby.store/compare/22.31.3...22.32.0) (2022-08-05)
+
+
+### Features
+
+* Working `SkuSelector` component ([#166](https://github.com/vtex-sites/gatsby.store/issues/166)) ([b6d40a0](https://github.com/vtex-sites/gatsby.store/commit/b6d40a0edd6ddff95a4ba90d93a98fade7ba4131))
+
+### [22.31.3](https://github.com/vtex-sites/gatsby.store/compare/22.31.2...22.31.3) (2022-08-05)
+
+
+### Chores
+
+* Updates `BannerText` content example ([#168](https://github.com/vtex-sites/gatsby.store/issues/168)) ([246dad3](https://github.com/vtex-sites/gatsby.store/commit/246dad37e66bd9a587e56db9c4e9fccb9a6826bf)), closes [#198](https://github.com/vtex-sites/gatsby.store/issues/198)
+
+### [22.31.2](https://github.com/vtex-sites/gatsby.store/compare/22.31.1...22.31.2) (2022-08-04)
+
+
+### Refactoring
+
+* Import Tiles & Tile components from @faststore/ui ([#167](https://github.com/vtex-sites/gatsby.store/issues/167)) ([152e60f](https://github.com/vtex-sites/gatsby.store/commit/152e60f7f179472b46137872f4e7ea5e8eb83d03))
+
+### [22.31.1](https://github.com/vtex-sites/gatsby.store/compare/22.31.0...22.31.1) (2022-08-03)
+
+
+### Features
+
+* adds tokens to `PriceRange` ([#165](https://github.com/vtex-sites/gatsby.store/issues/165)) ([a03f037](https://github.com/vtex-sites/gatsby.store/commit/a03f03728f185e91bac75a02eed10e9b92db2dfd))
+
+## [22.31.0](https://github.com/vtex-sites/gatsby.store/compare/22.30.0...22.31.0) (2022-08-02)
+
+
+### Features
+
+* Add `ProductTitle` import from faststore ([#164](https://github.com/vtex-sites/gatsby.store/issues/164)) ([5638fb2](https://github.com/vtex-sites/gatsby.store/commit/5638fb2bac9110f22ea53f252591563fbd0fe358))
+
+## [22.30.0](https://github.com/vtex-sites/gatsby.store/compare/22.29.5...22.30.0) (2022-08-01)
+
+
+### Features
+
+* Adds new tokens to `Skeleton` [FS-269] ([#162](https://github.com/vtex-sites/gatsby.store/issues/162)) ([8423be3](https://github.com/vtex-sites/gatsby.store/commit/8423be3df7da4dc04d84f1b89fc4f6564ca476ba)), closes [#171](https://github.com/vtex-sites/gatsby.store/issues/171)
+
+### [22.29.5](https://github.com/vtex-sites/gatsby.store/compare/22.29.4...22.29.5) (2022-07-28)
+
+### Chores
+
+* Update PR template to reflect recent changelog changes and add checklist regarding PR titles and commit messages ([#160](https://github.com/vtex-sites/gatsby.store/issues/160)) ([6bba877](https://github.com/vtex-sites/gatsby.store/commit/6bba877af2ca3707c7cf1a6f79cdd014e0ea2ab3))
+
+### [22.29.4](https://github.com/vtex-sites/gatsby.store/compare/22.29.3...22.29.4) (2022-07-28)
+
+### Features
+
+- Creates Themes doc pages on storybook ([#156](https://github.com/vtex-sites/gatsby.store/pull/156))
+- Added a new theme for testing purposes called midnight ([#156](https://github.com/vtex-sites/gatsby.store/pull/156))
+- Extracted all BaseStore visual to a new theme called soft-blue ([#156](https://github.com/vtex-sites/gatsby.store/pull/156))
+- Newsletter form and `useNewsletter` hook ([#134](https://github.com/vtex-sites/gatsby.store/pull/134))
+- Applies new local tokens to `SearchHistory`, `SearchTop`, `SearchDropdown` and `SearchSuggestions` ([#150](https://github.com/vtex-sites/gatsby.store/pull/150))
 - Applies CSS Modules to `Incentives` ([#147](https://github.com/vtex-sites/gatsby.store/pull/147))
 - Applies new local tokens to `Footer` ([#147](https://github.com/vtex-sites/gatsby.store/pull/147))
 - Applies new local tokens to `Breadcrumb` ([#146](https://github.com/vtex-sites/gatsby.store/pull/146))
@@ -20,19 +201,37 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Applies new local tokens to `SuggestionProductCard` ([#135](https://github.com/vtex-sites/gatsby.store/pull/135))
 - Applies new local tokens to `Navbar` ([#132](https://github.com/vtex-sites/gatsby.store/pull/132))
 
-### Changed
+### Refactoring
 
+- Updates global tokens to follow Brandless approach ([#156](https://github.com/vtex-sites/gatsby.store/pull/156))
+- Cypress version from 9.5.4 to 9.6.0 to match WebOps' ([#151](https://github.com/vtex-sites/gatsby.store/pull/151))
+- Renames and refactors the components of Search feature ([#150](https://github.com/vtex-sites/gatsby.store/pull/150))
+- A flaky PLP infinite scroll test to be more stable ([#149](https://github.com/vtex-sites/gatsby.store/pull/149))
+- Cypress version from 6.6.0 to 9.5.4 to match WebOps' ([#148](https://github.com/vtex-sites/gatsby.store/pull/148))
 - Updates `IncentivesFooter` content ([#147](https://github.com/vtex-sites/gatsby.store/pull/147))
 - Updated Getting Started doc page and overall improvements ([#140](https://github.com/vtex-sites/gatsby.store/pull/140))
+- Removed `ButtonIcon` component ([#155](https://github.com/vtex-sites/gatsby.store/pull/155))
 
-### Deprecated
-
-### Removed
-
-### Fixed
+### Bug Fixes
 
 - Transfers responsibility of `InputText`'s main attributes and callbacks to the renderer ([#144](https://github.com/vtex-sites/gatsby.store/pull/144))
 - priceCurrency field on SEO meta data ([#139](https://github.com/vtex-sites/gatsby.store/pull/139))
+
+### [22.29.3](https://github.com/vtex-sites/gatsby.store/compare/22.29.2...22.29.3) (2022-07-26)
+
+### [22.29.2](https://github.com/vtex-sites/gatsby.store/compare/22.29.1...22.29.2) (2022-07-26)
+
+### 22.29.1 (2022-07-26)
+
+
+### Bug Fixes
+
+* prettier ignore auto generated file ([#157](https://github.com/vtex-sites/gatsby.store/issues/157)) ([b55f6c7](https://github.com/vtex-sites/gatsby.store/commit/b55f6c7db9f6dc324a894fb830c70e94070437a1))
+
+
+### Chores
+
+* automatic changelog releases ([#153](https://github.com/vtex-sites/gatsby.store/issues/153)) ([2ce858d](https://github.com/vtex-sites/gatsby.store/commit/2ce858d20c6baddffac294503a89396324a49929))
 
 ## [22.26.0.beta] - 2022-07-01
 
@@ -63,6 +262,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 
+- A test related infinite scroll pagination that only failed in development mode ([#118](https://github.com/vtex-sites/gatsby.store/pull/118))
 - SonarQube warnings and error ([#145](https://github.com/vtex-sites/gatsby.store/pull/145))
 - `ImageGallerySelector` scroll that isn't working on Safari ([##121](https://github.com/vtex-sites/gatsby.store/pull/121))
 - Some console errors when running the storybook ([#115](https://github.com/vtex-sites/gatsby.store/pull/115))

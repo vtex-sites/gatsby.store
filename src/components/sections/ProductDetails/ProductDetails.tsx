@@ -1,6 +1,7 @@
-import { sendAnalyticsEvent, useSession } from '@faststore/sdk'
+import { sendAnalyticsEvent } from '@faststore/sdk'
 import { graphql } from 'gatsby'
 import { useEffect, useState } from 'react'
+import OutOfStock from 'src/components/product/OutOfStock'
 import { DiscountBadge } from 'src/components/ui/Badge'
 import Breadcrumb from 'src/components/ui/Breadcrumb'
 import { ButtonBuy } from 'src/components/ui/Button'
@@ -11,10 +12,11 @@ import QuantitySelector from 'src/components/ui/QuantitySelector'
 import { useBuyButton } from 'src/sdk/cart/useBuyButton'
 import { useFormattedPrice } from 'src/sdk/product/useFormattedPrice'
 import { useProduct } from 'src/sdk/product/useProduct'
+import { useSession } from 'src/sdk/session'
 import type { ProductDetailsFragment_ProductFragment } from '@generated/graphql'
 import type { CurrencyCode, ViewItemEvent } from '@faststore/sdk'
 import type { AnalyticsItem } from 'src/sdk/analytics/types'
-import OutOfStock from 'src/components/product/OutOfStock'
+import Selectors from 'src/components/ui/SkuSelector'
 
 import Section from '../Section'
 
@@ -44,7 +46,7 @@ function ProductDetails({ product: staleProduct }: Props) {
       name: variantName,
       brand,
       isVariantOf,
-      isVariantOf: { name, productGroupID: productId },
+      isVariantOf: { name, productGroupID: productId, skuVariants },
       image: productImages,
       offers: {
         offers: [{ availability, price, listPrice, seller }],
@@ -125,6 +127,13 @@ function ProductDetails({ product: staleProduct }: Props) {
         <ImageGallery images={productImages} />
 
         <section className="product-details__settings">
+          {skuVariants && (
+            <Selectors
+              slugsMap={skuVariants.slugsMap}
+              availableVariations={skuVariants.availableVariations}
+              activeVariations={skuVariants.activeVariations}
+            />
+          )}
           <section className="product-details__values">
             <div className="product-details__prices">
               <Price
@@ -252,6 +261,11 @@ export const fragment = graphql`
     isVariantOf {
       productGroupID
       name
+      skuVariants {
+        activeVariations
+        slugsMap(dominantVariantName: "Color")
+        availableVariations(dominantVariantName: "Color")
+      }
     }
 
     image {
@@ -283,12 +297,8 @@ export const fragment = graphql`
       }
     }
 
-    additionalProperty {
-      propertyID
-      name
-      value
-      valueReference
-    }
+    # Contains necessary info to add this item to cart
+    ...CartProductItem
   }
 `
 

@@ -1,17 +1,30 @@
 module.exports = {
+  // Theming
+  theme: 'custom-theme',
+
   // Ecommerce Platform
   platform: 'vtex',
 
   // Platform specific configs for API
   api: {
     storeId: 'storeframework',
+    workspace: 'master',
     environment: 'vtexcommercestable',
     hideUnavailableItems: true,
   },
 
   // Default channel
-  channel: '{"salesChannel":"1","regionId":""}',
-  locale: 'en-US',
+  session: {
+    currency: {
+      code: 'USD',
+      symbol: '$',
+    },
+    locale: 'en-US',
+    channel: '{"salesChannel":"1","regionId":""}',
+    country: 'USA',
+    postalCode: null,
+    person: null,
+  },
 
   // Production URLs
   storeUrl: 'https://vtexfaststore.com',

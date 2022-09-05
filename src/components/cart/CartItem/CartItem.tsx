@@ -1,20 +1,21 @@
+import { sendAnalyticsEvent } from '@faststore/sdk'
 import { Card, CardActions, CardContent, CardImage } from '@faststore/ui'
-import Button from 'src/components/ui/Button'
-import Icon from 'src/components/ui/Icon'
-import { Image } from 'src/components/ui/Image'
-import Price from 'src/components/ui/Price'
-import QuantitySelector from 'src/components/ui/QuantitySelector'
-import { useCart } from 'src/sdk/cart/useCart'
-import { useRemoveButton } from 'src/sdk/cart/useRemoveButton'
-import { useFormattedPrice } from 'src/sdk/product/useFormattedPrice'
-import type { CartItem as ICartItem } from 'src/sdk/cart/validate'
 import { useCallback, useMemo } from 'react'
 import type {
   AddToCartEvent,
   CurrencyCode,
   RemoveFromCartEvent,
 } from '@faststore/sdk'
-import { useSession, sendAnalyticsEvent } from '@faststore/sdk'
+import Button from 'src/components/ui/Button'
+import Icon from 'src/components/ui/Icon'
+import { Image } from 'src/components/ui/Image'
+import Price from 'src/components/ui/Price'
+import QuantitySelector from 'src/components/ui/QuantitySelector'
+import { cartStore } from 'src/sdk/cart'
+import { useRemoveButton } from 'src/sdk/cart/useRemoveButton'
+import { useFormattedPrice } from 'src/sdk/product/useFormattedPrice'
+import { useSession } from 'src/sdk/session'
+import type { CartItem as ICartItem } from 'src/sdk/cart'
 import type { AnalyticsItem } from 'src/sdk/analytics/types'
 
 import styles from './cart-item.module.scss'
@@ -62,20 +63,21 @@ function useCartItemEvent() {
 
 interface Props {
   item: ICartItem
+  gift?: boolean
 }
 
-function CartItem({ item }: Props) {
+function CartItem({ item, gift = false }: Props) {
   const btnProps = useRemoveButton(item)
-  const { updateItemQuantity } = useCart()
+
   const { sendCartItemEvent } = useCartItemEvent()
 
   const onQuantityChange = useCallback(
     (quantity: number) => {
       sendCartItemEvent(item, quantity)
 
-      updateItemQuantity(item.id, quantity)
+      cartStore.updateItemQuantity(item.id, quantity)
     },
-    [item, sendCartItemEvent, updateItemQuantity]
+    [item, sendCartItemEvent]
   )
 
   return (
@@ -98,44 +100,48 @@ function CartItem({ item }: Props) {
           <p className="text__body" data-fs-cart-item-title>
             {item.itemOffered.isVariantOf.name}
           </p>
-          <span data-fs-cart-item-prices>
-            <Price
-              value={item.listPrice}
-              formatter={useFormattedPrice}
-              testId="list-price"
-              data-value={item.listPrice}
-              variant="listing"
-              classes="text__legend"
-              SRText="Original price:"
-            />
-            <Price
-              value={item.price}
-              formatter={useFormattedPrice}
-              testId="price"
-              data-value={item.price}
-              variant="spot"
-              classes="text__title-subsection"
-              SRText="Price:"
-            />
-          </span>
+          {!gift && (
+            <span data-fs-cart-item-prices>
+              <Price
+                value={item.listPrice}
+                formatter={useFormattedPrice}
+                testId="list-price"
+                data-value={item.listPrice}
+                variant="listing"
+                classes="text__legend"
+                SRText="Original price:"
+              />
+              <Price
+                value={item.price}
+                formatter={useFormattedPrice}
+                testId="price"
+                data-value={item.price}
+                variant="spot"
+                classes="text__title-subsection"
+                SRText="Price:"
+              />
+            </span>
+          )}
         </div>
       </CardContent>
 
-      <CardActions data-fs-cart-item-actions>
-        <Button
-          variant="tertiary"
-          icon={<Icon name="XCircle" width={18} height={18} />}
-          iconPosition="left"
-          {...btnProps}
-        >
-          Remove
-        </Button>
-        <QuantitySelector
-          min={1}
-          initial={item.quantity}
-          onChange={onQuantityChange}
-        />
-      </CardActions>
+      {!gift && (
+        <CardActions data-fs-cart-item-actions>
+          <Button
+            variant="tertiary"
+            icon={<Icon name="XCircle" width={18} height={18} />}
+            iconPosition="left"
+            {...btnProps}
+          >
+            Remove
+          </Button>
+          <QuantitySelector
+            min={1}
+            initial={item.quantity}
+            onChange={onQuantityChange}
+          />
+        </CardActions>
+      )}
     </Card>
   )
 }

@@ -120,7 +120,7 @@ self.addEventListener('fetch', function (event) {
         console.warn(
           '[MSW] Successfully emulated a network error for the "%s %s" request.',
           request.method,
-          request.url
+          request.url,
         )
         return
       }
@@ -131,9 +131,9 @@ self.addEventListener('fetch', function (event) {
 [MSW] Caught an exception from the "%s %s" request (%s). This is probably not a problem with Mock Service Worker. There is likely an additional logging output above.`,
         request.method,
         request.url,
-        `${error.name}: ${error.message}`
+        `${error.name}: ${error.message}`,
       )
-    })
+    }),
   )
 })
 
@@ -235,7 +235,7 @@ async function getResponse(event, client, requestId) {
   // This way events can be exchanged outside of the worker's global
   // "message" event listener (i.e. abstracted into functions).
   const operationChannel = new BroadcastChannel(
-    `msw-response-stream-${requestId}`
+    `msw-response-stream-${requestId}`,
   )
 
   // Notify the client that a request has been intercepted.
@@ -294,7 +294,7 @@ ${parsedBody.location}
 This exception has been gracefully handled as a 500 response, however, it's strongly recommended to resolve this error, as it indicates a mistake in your code. If you wish to mock an error response, please see this guide: https://mswjs.io/docs/recipes/mocking-error-responses\
 `,
         request.method,
-        request.url
+        request.url,
       )
 
       return respondWithMock(clientMessage.payload)
