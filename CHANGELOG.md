@@ -5,6 +5,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Conventional Changelog](https://github.com/conventional-changelog/conventional-changelog),
 and this project adheres to [Calendar Versioning](https://calver.org/).
 
+## [22.40.0](https://github.com/vtex-sites/gatsby.store/compare/22.39.3...22.40.0) (2022-09-09)
+
+
+### Features
+
+* Adds Gift component ([#197](https://github.com/vtex-sites/gatsby.store/issues/197)) ([71c4079](https://github.com/vtex-sites/gatsby.store/commit/71c4079334fe8aec7424880602ceea77f4c3a445))
+
 ### [22.39.3](https://github.com/vtex-sites/gatsby.store/compare/22.39.2...22.39.3) (2022-09-01)
 
 
