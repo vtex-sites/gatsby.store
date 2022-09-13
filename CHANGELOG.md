@@ -5,6 +5,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Conventional Changelog](https://github.com/conventional-changelog/conventional-changelog),
 and this project adheres to [Calendar Versioning](https://calver.org/).
 
+### [22.40.2](https://github.com/vtex-sites/gatsby.store/compare/22.40.1...22.40.2) (2022-09-13)
+
+
+### Refactoring
+
+* Extract `SkuSelector` component to `@faststore/ui` ([#199](https://github.com/vtex-sites/gatsby.store/issues/199)) ([47cfe29](https://github.com/vtex-sites/gatsby.store/commit/47cfe294c578c3734ab7027c10bc8f75588fb9cf))
+
 ### [22.40.1](https://github.com/vtex-sites/gatsby.store/compare/22.40.0...22.40.1) (2022-09-13)
 
 
