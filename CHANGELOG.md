@@ -5,6 +5,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Conventional Changelog](https://github.com/conventional-changelog/conventional-changelog),
 and this project adheres to [Calendar Versioning](https://calver.org/).
 
+### [22.40.1](https://github.com/vtex-sites/gatsby.store/compare/22.40.0...22.40.1) (2022-09-13)
+
+
+### Refactoring
+
+* Extract `CartItem` from the starter to `@faststore/ui` ([#198](https://github.com/vtex-sites/gatsby.store/issues/198)) ([83d135c](https://github.com/vtex-sites/gatsby.store/commit/83d135c265af9445236cba5101adfe1c0db172ae))
+
 ## [22.40.0](https://github.com/vtex-sites/gatsby.store/compare/22.39.3...22.40.0) (2022-09-09)
 
 
