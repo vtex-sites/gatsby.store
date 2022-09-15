@@ -6,7 +6,7 @@
   // --------------------------------------------------------
 
   // Default properties
-  --fs-shipping-simulation-font-size                : var(--fs-text-size-legend);
+  --fs-shipping-simulation-text-size                : var(--fs-text-size-legend);
 
   --fs-shipping-simulation-padding                  : var(--fs-spacing-5);
 
@@ -22,8 +22,8 @@
   --fs-shipping-simulation-link-padding-bottom      : var(--fs-spacing-4);
 
   // Subtitle
-  --fs-shipping-simulation-subtitle-text-size       : var(--fs-text-size-2);
-  --fs-shipping-simulation-subtitle-text-weight     : var(--fs-text-weight-bold);
+  --fs-shipping-simulation-subtitle-size       : var(--fs-text-size-2);
+  --fs-shipping-simulation-subtitle-weight     : var(--fs-text-weight-bold);
   --fs-shipping-simulation-subtitle-line-height     : 1.5;
 
   // Location
@@ -37,7 +37,7 @@
   --fs-shipping-simulation-table-cell-text-size     : var(--fs-text-size-2);
   --fs-shipping-simulation-table-cell-border-radius : .25rem;
 
-  font-size: var(--fs-shipping-simulation-font-size);
+  font-size: var(--fs-shipping-simulation-text-size);
 
   @include media(">=tablet") {
     grid-row: 3 / span 2;
@@ -71,8 +71,8 @@
   }
 
   [data-fs-shipping-simulation-subtitle] {
-    font-size: var(--fs-shipping-simulation-subtitle-text-size);
-    font-weight: var(--fs-shipping-simulation-subtitle-text-weight);
+    font-size: var(--fs-shipping-simulation-subtitle-size);
+    font-weight: var(--fs-shipping-simulation-subtitle-weight);
     line-height: var(--fs-shipping-simulation-subtitle-line-height);
   }
 
