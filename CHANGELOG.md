@@ -5,6 +5,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Conventional Changelog](https://github.com/conventional-changelog/conventional-changelog),
 and this project adheres to [Calendar Versioning](https://calver.org/).
 
+### [22.40.4](https://github.com/vtex-sites/gatsby.store/compare/22.40.3...22.40.4) (2022-09-16)
+
+
+### Features
+
+* [Refinements] Creates `ShippingSimulation` ([#201](https://github.com/vtex-sites/gatsby.store/issues/201)) ([28fb9c2](https://github.com/vtex-sites/gatsby.store/commit/28fb9c2e6fb4435bdf2136d26543fe77483a7828)), closes [#183](https://github.com/vtex-sites/gatsby.store/issues/183)
+
 ### [22.40.3](https://github.com/vtex-sites/gatsby.store/compare/22.40.2...22.40.3) (2022-09-15)
 
 
