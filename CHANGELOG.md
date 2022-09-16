@@ -5,6 +5,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Conventional Changelog](https://github.com/conventional-changelog/conventional-changelog),
 and this project adheres to [Calendar Versioning](https://calver.org/).
 
+## [22.41.0](https://github.com/vtex-sites/gatsby.store/compare/22.40.4...22.41.0) (2022-09-16)
+
+
+### Features
+
+* Fire `view_cart` event when the minicart is opened ([#204](https://github.com/vtex-sites/gatsby.store/issues/204)) ([d1a7572](https://github.com/vtex-sites/gatsby.store/commit/d1a7572f6c2e53e0eff8ec24e7bab45b5f60ab5d))
+
 ### [22.40.4](https://github.com/vtex-sites/gatsby.store/compare/22.40.3...22.40.4) (2022-09-16)
 
 
