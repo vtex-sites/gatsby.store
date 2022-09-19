@@ -1,4 +1,5 @@
 /* eslint-disable react-hooks/rules-of-hooks */
+import type { FormatErrorHandler } from '@envelop/core'
 import {
   envelop,
   useAsyncSchema,
@@ -7,10 +8,16 @@ import {
 } from '@envelop/core'
 import { useParserCache } from '@envelop/parser-cache'
 import { useValidationCache } from '@envelop/validation-cache'
-import { getContextFactory, getSchema, isFastStoreError } from '@faststore/api'
-import { GraphQLError } from 'graphql'
-import type { FormatErrorHandler } from '@envelop/core'
 import type { Options as APIOptions } from '@faststore/api'
+import {
+  getContextFactory,
+  getSchema,
+  getTypeDefs,
+  isFastStoreError,
+} from '@faststore/api'
+import { mergeTypeDefs } from '@graphql-tools/merge'
+import { makeExecutableSchema, mergeSchemas } from '@graphql-tools/schema'
+import { GraphQLError } from 'graphql'
 
 import persisted from '../../@generated/graphql/persisted.json'
 import storeConfig from '../../store.config'
@@ -35,7 +42,40 @@ const apiOptions: APIOptions = {
   },
 }
 
-export const apiSchema = getSchema(apiOptions)
+const typeDefs = `
+  type Query {
+    numberSix: Int! # Should always return the number 6 when queried
+    numberSeven: Int! # Should always return 7
+  }
+`
+
+const resolvers = {
+  Query: {
+    numberSix() {
+      return 6
+    },
+    numberSeven() {
+      return 7
+    },
+  },
+}
+
+const nativeApiSchema = getSchema(apiOptions)
+
+const mergedTypeDefs = mergeTypeDefs([getTypeDefs(), typeDefs])
+
+const getMergedSchemas = async () =>
+  mergeSchemas({
+    schemas: [
+      await nativeApiSchema,
+      makeExecutableSchema({
+        resolvers,
+        typeDefs: mergedTypeDefs,
+      }),
+    ],
+  })
+
+export const apiSchema = getMergedSchemas()
 
 const apiContextFactory = getContextFactory(apiOptions)
 
