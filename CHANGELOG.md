@@ -5,6 +5,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Conventional Changelog](https://github.com/conventional-changelog/conventional-changelog),
 and this project adheres to [Calendar Versioning](https://calver.org/).
 
+### [22.41.1](https://github.com/vtex-sites/gatsby.store/compare/22.41.0...22.41.1) (2022-09-16)
+
+
+### Bug Fixes
+
+* A regression with CLS on the Home page ([#203](https://github.com/vtex-sites/gatsby.store/issues/203)) ([0a606a4](https://github.com/vtex-sites/gatsby.store/commit/0a606a4e1129aab3a5787f89584681967818a637))
+
 ## [22.41.0](https://github.com/vtex-sites/gatsby.store/compare/22.40.4...22.41.0) (2022-09-16)
 
 
