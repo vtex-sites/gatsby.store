@@ -5,6 +5,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Conventional Changelog](https://github.com/conventional-changelog/conventional-changelog),
 and this project adheres to [Calendar Versioning](https://calver.org/).
 
+### [22.41.2](https://github.com/vtex-sites/gatsby.store/compare/22.41.1...22.41.2) (2022-09-21)
+
+
+### Bug Fixes
+
+* Product Details Grid ([#236](https://github.com/vtex-sites/gatsby.store/issues/236)) ([#205](https://github.com/vtex-sites/gatsby.store/issues/205)) ([bc21ed3](https://github.com/vtex-sites/gatsby.store/commit/bc21ed3f9a670247460040c5157b14fc9bb35d37))
+
 ### [22.41.1](https://github.com/vtex-sites/gatsby.store/compare/22.41.0...22.41.1) (2022-09-16)
 
 
