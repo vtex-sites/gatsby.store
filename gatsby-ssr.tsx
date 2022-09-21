@@ -42,8 +42,10 @@ type StyleComponent = {
   }
 }
 
+/* eslint-disable @typescript-eslint/no-explicit-any */
 const isStyleComponent = (node: any): node is StyleComponent =>
   typeof node === 'object' && node != null && (node as any).type === 'style'
+/* eslint-enable @typescript-eslint/no-explicit-any */
 
 /**
  * Gatsby inlines all styles from the app inside a `<style/>` tag. This decreases
