@@ -17,7 +17,7 @@ export type Props = PageProps<
   { cmsHome: ContentData }
 >
 
-// function Page(props: Props) {
+function Page(props: Props) {
   const {
     data: { site },
     serverData: { cmsHome },
