@@ -5,6 +5,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Conventional Changelog](https://github.com/conventional-changelog/conventional-changelog),
 and this project adheres to [Calendar Versioning](https://calver.org/).
 
+## [22.42.0](https://github.com/vtex-sites/gatsby.store/compare/22.41.2...22.42.0) (2022-09-26)
+
+
+### Features
+
+* add [@cache](https://github.com/cache)Control directive to GraphQL schema ([#209](https://github.com/vtex-sites/gatsby.store/issues/209)) ([ccbaa19](https://github.com/vtex-sites/gatsby.store/commit/ccbaa1987d727d515776fae88518921b60b4c1e4))
+
 ### [22.41.2](https://github.com/vtex-sites/gatsby.store/compare/22.41.1...22.41.2) (2022-09-21)
 
 
