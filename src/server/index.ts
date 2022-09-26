@@ -86,11 +86,19 @@ export const execute = async (
     schema,
   } = enveloped(envelopContext)
 
-  return run({
+  const contextValue = await contextFactory({ headers })
+
+  const { data, errors } = (await run({
     schema,
     document: parse(query),
     variableValues: variables,
-    contextValue: await contextFactory({ headers }),
+    contextValue,
     operationName,
-  })
+  })) as { data: any; errors: unknown[] }
+
+  return {
+    data,
+    errors,
+    extensions: { cacheControl: contextValue.cacheControl },
+  }
 }
