@@ -1,4 +1,4 @@
-import { isFastStoreError } from '@faststore/api'
+import { isFastStoreError, stringifyCacheControl } from '@faststore/api'
 import type { GatsbyFunctionRequest, GatsbyFunctionResponse } from 'gatsby'
 
 import { execute } from '../server'
@@ -36,7 +36,7 @@ const handler = async (
   const { operationName, variables, query } = parseRequest(req)
 
   try {
-    const result = await execute(
+    const { data, errors, extensions } = await execute(
       {
         operationName,
         variables,
@@ -45,15 +45,22 @@ const handler = async (
       { req }
     )
 
-    if (Array.isArray(result.errors)) {
-      const error = result.errors.find(isFastStoreError)
+    const hasErrors = Array.isArray(errors)
+
+    if (hasErrors) {
+      const error = errors.find(isFastStoreError)
 
       res.status(error?.extensions.status ?? 500)
     }
 
-    res.setHeader('cache-control', 'no-cache, no-store')
+    const cacheControl =
+      !hasErrors && extensions.cacheControl
+        ? stringifyCacheControl(extensions.cacheControl)
+        : 'no-cache, no-store'
+
+    res.setHeader('cache-control', cacheControl)
     res.setHeader('content-type', 'application/json')
-    res.send(JSON.stringify(result))
+    res.send(JSON.stringify({ data, errors }))
   } catch (err) {
     console.error(err)
 
