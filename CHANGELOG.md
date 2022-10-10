@@ -5,6 +5,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Conventional Changelog](https://github.com/conventional-changelog/conventional-changelog),
 and this project adheres to [Calendar Versioning](https://calver.org/).
 
+## [22.43.0](https://github.com/vtex-sites/gatsby.store/compare/22.42.1...22.43.0) (2022-10-10)
+
+
+### Features
+
+* Removes content visibility ([#213](https://github.com/vtex-sites/gatsby.store/issues/213)) ([c141a72](https://github.com/vtex-sites/gatsby.store/commit/c141a7248c249c378a2494811f438e72452d1462))
+
 ### [22.42.1](https://github.com/vtex-sites/gatsby.store/compare/22.42.0...22.42.1) (2022-09-29)
 
 
