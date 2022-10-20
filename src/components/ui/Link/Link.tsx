@@ -14,7 +14,13 @@ export type LinkProps<T extends ElementType = 'a'> = UILinkProps<T> &
   FrameworkLinkProps &
   AnchorHTMLAttributes<HTMLAnchorElement> & {
     href: string
+    /**
+     * Specifies the component variant.
+     */
     variant?: Variant
+    /**
+     * Defines use of inverted color.
+     */
     inverse?: boolean
   }
 
