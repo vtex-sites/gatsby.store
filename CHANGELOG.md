@@ -5,6 +5,8 @@ All notable changes to this project will be documented in this file.
 The format is based on [Conventional Changelog](https://github.com/conventional-changelog/conventional-changelog),
 and this project adheres to [Calendar Versioning](https://calver.org/).
 
+### [22.43.1](https://github.com/vtex-sites/gatsby.store/compare/22.43.0...22.43.1) (2022-10-20)
+
 ## [22.43.0](https://github.com/vtex-sites/gatsby.store/compare/22.42.1...22.43.0) (2022-10-10)
 
 
