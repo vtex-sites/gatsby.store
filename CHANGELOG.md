@@ -5,6 +5,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Conventional Changelog](https://github.com/conventional-changelog/conventional-changelog),
 and this project adheres to [Calendar Versioning](https://calver.org/).
 
+### [22.43.3](https://github.com/vtex-sites/gatsby.store/compare/22.43.2...22.43.3) (2022-10-21)
+
+
+### Features
+
+* Adjust Newsletter to match new designs ([#215](https://github.com/vtex-sites/gatsby.store/issues/215)) ([0cd9977](https://github.com/vtex-sites/gatsby.store/commit/0cd997724252767d9d52657d3bb5183c243bc5a5))
+
 ### [22.43.2](https://github.com/vtex-sites/gatsby.store/compare/22.43.1...22.43.2) (2022-10-21)
 
 
