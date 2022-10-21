@@ -5,6 +5,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Conventional Changelog](https://github.com/conventional-changelog/conventional-changelog),
 and this project adheres to [Calendar Versioning](https://calver.org/).
 
+### [22.43.2](https://github.com/vtex-sites/gatsby.store/compare/22.43.1...22.43.2) (2022-10-21)
+
+
+### Chores
+
+* Renames data-attr ([#216](https://github.com/vtex-sites/gatsby.store/issues/216)) ([d27df9c](https://github.com/vtex-sites/gatsby.store/commit/d27df9cfbc07b81034912be659bfe726dc2d541f))
+
 ### [22.43.1](https://github.com/vtex-sites/gatsby.store/compare/22.43.0...22.43.1) (2022-10-20)
 
 ## [22.43.0](https://github.com/vtex-sites/gatsby.store/compare/22.42.1...22.43.0) (2022-10-10)
