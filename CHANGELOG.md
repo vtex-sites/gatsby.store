@@ -5,6 +5,71 @@ All notable changes to this project will be documented in this file.
 The format is based on [Conventional Changelog](https://github.com/conventional-changelog/conventional-changelog),
 and this project adheres to [Calendar Versioning](https://calver.org/).
 
+### [22.43.3](https://github.com/vtex-sites/gatsby.store/compare/22.43.2...22.43.3) (2022-10-21)
+
+
+### Features
+
+* Adjust Newsletter to match new designs ([#215](https://github.com/vtex-sites/gatsby.store/issues/215)) ([0cd9977](https://github.com/vtex-sites/gatsby.store/commit/0cd997724252767d9d52657d3bb5183c243bc5a5))
+
+### [22.43.2](https://github.com/vtex-sites/gatsby.store/compare/22.43.1...22.43.2) (2022-10-21)
+
+
+### Chores
+
+* Renames data-attr ([#216](https://github.com/vtex-sites/gatsby.store/issues/216)) ([d27df9c](https://github.com/vtex-sites/gatsby.store/commit/d27df9cfbc07b81034912be659bfe726dc2d541f))
+
+### [22.43.1](https://github.com/vtex-sites/gatsby.store/compare/22.43.0...22.43.1) (2022-10-20)
+
+## [22.43.0](https://github.com/vtex-sites/gatsby.store/compare/22.42.1...22.43.0) (2022-10-10)
+
+
+### Features
+
+* Removes content visibility ([#213](https://github.com/vtex-sites/gatsby.store/issues/213)) ([c141a72](https://github.com/vtex-sites/gatsby.store/commit/c141a7248c249c378a2494811f438e72452d1462))
+
+### [22.42.1](https://github.com/vtex-sites/gatsby.store/compare/22.42.0...22.42.1) (2022-09-29)
+
+
+### Bug Fixes
+
+* Wrong sku being returned for slug ([#210](https://github.com/vtex-sites/gatsby.store/issues/210)) ([9f99830](https://github.com/vtex-sites/gatsby.store/commit/9f99830dc6cc29e00113fd2ceac6f659e75f504a))
+
+## [22.42.0](https://github.com/vtex-sites/gatsby.store/compare/22.41.2...22.42.0) (2022-09-26)
+
+
+### Features
+
+* add [@cache](https://github.com/cache)Control directive to GraphQL schema ([#209](https://github.com/vtex-sites/gatsby.store/issues/209)) ([ccbaa19](https://github.com/vtex-sites/gatsby.store/commit/ccbaa1987d727d515776fae88518921b60b4c1e4))
+
+### [22.41.2](https://github.com/vtex-sites/gatsby.store/compare/22.41.1...22.41.2) (2022-09-21)
+
+
+### Bug Fixes
+
+* Product Details Grid ([#236](https://github.com/vtex-sites/gatsby.store/issues/236)) ([#205](https://github.com/vtex-sites/gatsby.store/issues/205)) ([bc21ed3](https://github.com/vtex-sites/gatsby.store/commit/bc21ed3f9a670247460040c5157b14fc9bb35d37))
+
+### [22.41.1](https://github.com/vtex-sites/gatsby.store/compare/22.41.0...22.41.1) (2022-09-16)
+
+
+### Bug Fixes
+
+* A regression with CLS on the Home page ([#203](https://github.com/vtex-sites/gatsby.store/issues/203)) ([0a606a4](https://github.com/vtex-sites/gatsby.store/commit/0a606a4e1129aab3a5787f89584681967818a637))
+
+## [22.41.0](https://github.com/vtex-sites/gatsby.store/compare/22.40.4...22.41.0) (2022-09-16)
+
+
+### Features
+
+* Fire `view_cart` event when the minicart is opened ([#204](https://github.com/vtex-sites/gatsby.store/issues/204)) ([d1a7572](https://github.com/vtex-sites/gatsby.store/commit/d1a7572f6c2e53e0eff8ec24e7bab45b5f60ab5d))
+
+### [22.40.4](https://github.com/vtex-sites/gatsby.store/compare/22.40.3...22.40.4) (2022-09-16)
+
+
+### Features
+
+* [Refinements] Creates `ShippingSimulation` ([#201](https://github.com/vtex-sites/gatsby.store/issues/201)) ([28fb9c2](https://github.com/vtex-sites/gatsby.store/commit/28fb9c2e6fb4435bdf2136d26543fe77483a7828)), closes [#183](https://github.com/vtex-sites/gatsby.store/issues/183)
+
 ### [22.40.3](https://github.com/vtex-sites/gatsby.store/compare/22.40.2...22.40.3) (2022-09-15)
 
 
