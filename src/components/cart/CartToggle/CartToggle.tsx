@@ -9,7 +9,7 @@ function CartToggle() {
     <Button
       variant="tertiary"
       data-fs-button-icon
-      data-fs-button-cart
+      data-fs-cart-toggle
       aria-label={`Cart with ${btnProps['data-items']} items`}
       icon={<Icon name="ShoppingCart" width={32} height={32} />}
       {...btnProps}
