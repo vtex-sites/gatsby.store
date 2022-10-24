@@ -5,10 +5,11 @@ import {
   AccordionPanel as UIAccordionPanel,
   Icon as UIIcon,
 } from '@faststore/ui'
+import type { ReactNode } from 'react'
 import { forwardRef } from 'react'
 import Icon from 'src/components/ui/Icon'
 
-interface Props extends AccordionItemProps {
+type Props = Omit<AccordionItemProps<'article' | 'div'>, 'ref'> & {
   /**
    * Attribute to check whether the item is expanded or not.
    */
@@ -16,7 +17,7 @@ interface Props extends AccordionItemProps {
   /**
    * Label for Accordion button
    */
-  buttonLabel?: string
+  buttonLabel?: ReactNode
 }
 
 const AccordionItem = forwardRef<HTMLDivElement, Props>(function AccordionItem(
@@ -26,6 +27,7 @@ const AccordionItem = forwardRef<HTMLDivElement, Props>(function AccordionItem(
     index = 0,
     buttonLabel = '',
     testId = 'store-accordion-item',
+    as,
     ...otherProps
   },
   ref
@@ -36,6 +38,7 @@ const AccordionItem = forwardRef<HTMLDivElement, Props>(function AccordionItem(
       index={index}
       data-testid={`${testId}-item`}
       data-fs-accordion-item
+      as={as}
       {...otherProps}
     >
       <UIAccordionButton
