@@ -48,7 +48,7 @@ const gatsbyConfig: GatsbyConfig = {
     {
       resolve: 'gatsby-plugin-robots-txt',
       options: {
-        resolveEnv: () => process.env.NODE_ENV || 'development',
+        resolveEnv: () => process.env.NODE_ENV ?? 'development',
         env: {
           production: {
             policy: [
