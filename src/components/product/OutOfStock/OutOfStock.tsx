@@ -117,7 +117,7 @@ function OutOfStock(props: OutOfStockProps) {
         }}
       />
       <Button
-        data-store-out-of-stock-button
+        data-fs-out-of-stock-button
         type="submit"
         disabled={disabled}
         variant="primary"

@@ -9,6 +9,7 @@ import RenderPageSections from 'src/components/cms/RenderPageSections'
 import { getCMSPageDataByContentType } from 'src/cms/client'
 import type { ContentData } from '@vtex/client-cms'
 import { useSession } from 'src/sdk/session'
+import Newsletter from 'src/components/sections/Newsletter'
 
 export type Props = PageProps<
   HomePageQueryQuery,
@@ -69,6 +70,10 @@ function Page(props: Props) {
         (not the HTML tag) before rendering it here.
       */}
       <RenderPageSections sections={cmsHome?.sections} />
+      <Newsletter
+        title="Get News and Special Offers!"
+        description="Receive our news and promotions in advance. Enjoy and get 10% off your first purchase. For more information click here."
+      />
     </>
   )
 }

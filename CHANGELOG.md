@@ -5,6 +5,43 @@ All notable changes to this project will be documented in this file.
 The format is based on [Conventional Changelog](https://github.com/conventional-changelog/conventional-changelog),
 and this project adheres to [Calendar Versioning](https://calver.org/).
 
+### [22.43.5](https://github.com/vtex-sites/gatsby.store/compare/22.43.4...22.43.5) (2022-10-25)
+
+
+### Chores
+
+* Sync with NextJS repo ([#219](https://github.com/vtex-sites/gatsby.store/issues/219)) ([e4755b5](https://github.com/vtex-sites/gatsby.store/commit/e4755b565d10f1cc68e525f30e86d864e4c80d70)), closes [#238](https://github.com/vtex-sites/gatsby.store/issues/238) [#258](https://github.com/vtex-sites/gatsby.store/issues/258) [#265](https://github.com/vtex-sites/gatsby.store/issues/265) [#270](https://github.com/vtex-sites/gatsby.store/issues/270)
+
+### [22.43.4](https://github.com/vtex-sites/gatsby.store/compare/22.43.3...22.43.4) (2022-10-24)
+
+
+### Chores
+
+* Improve deploy time with the new `USE_BUILD_CACHE` ([#202](https://github.com/vtex-sites/gatsby.store/issues/202)) ([5595369](https://github.com/vtex-sites/gatsby.store/commit/55953694eef1c47e742b17a70a7ae8fd5a29d3d5))
+
+### [22.43.3](https://github.com/vtex-sites/gatsby.store/compare/22.43.2...22.43.3) (2022-10-21)
+
+
+### Features
+
+* Adjust Newsletter to match new designs ([#215](https://github.com/vtex-sites/gatsby.store/issues/215)) ([0cd9977](https://github.com/vtex-sites/gatsby.store/commit/0cd997724252767d9d52657d3bb5183c243bc5a5))
+
+### [22.43.2](https://github.com/vtex-sites/gatsby.store/compare/22.43.1...22.43.2) (2022-10-21)
+
+
+### Chores
+
+* Renames data-attr ([#216](https://github.com/vtex-sites/gatsby.store/issues/216)) ([d27df9c](https://github.com/vtex-sites/gatsby.store/commit/d27df9cfbc07b81034912be659bfe726dc2d541f))
+
+### [22.43.1](https://github.com/vtex-sites/gatsby.store/compare/22.43.0...22.43.1) (2022-10-20)
+
+## [22.43.0](https://github.com/vtex-sites/gatsby.store/compare/22.42.1...22.43.0) (2022-10-10)
+
+
+### Features
+
+* Removes content visibility ([#213](https://github.com/vtex-sites/gatsby.store/issues/213)) ([c141a72](https://github.com/vtex-sites/gatsby.store/commit/c141a7248c249c378a2494811f438e72452d1462))
+
 ### [22.42.1](https://github.com/vtex-sites/gatsby.store/compare/22.42.0...22.42.1) (2022-09-29)
 
 
