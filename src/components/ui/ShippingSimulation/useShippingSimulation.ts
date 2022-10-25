@@ -1,6 +1,5 @@
 import type { ChangeEvent } from 'react'
 import { useCallback, useEffect, useReducer } from 'react'
-
 import { useSession } from 'src/sdk/session'
 
 type InputProps = {

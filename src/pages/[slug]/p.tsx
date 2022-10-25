@@ -44,8 +44,8 @@ function Page(props: Props) {
     product: { seo },
   } = serverData
 
-  const title = seo.title || site?.siteMetadata?.title || ''
-  const description = seo.description || site?.siteMetadata?.description || ''
+  const title = seo.title ?? site?.siteMetadata?.title ?? ''
+  const description = seo.description ?? site?.siteMetadata?.description ?? ''
   const canonical = `${site?.siteMetadata?.siteUrl}${seo.canonical}`
 
   return (
