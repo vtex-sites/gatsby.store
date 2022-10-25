@@ -5,6 +5,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Conventional Changelog](https://github.com/conventional-changelog/conventional-changelog),
 and this project adheres to [Calendar Versioning](https://calver.org/).
 
+### [22.43.7](https://github.com/vtex-sites/gatsby.store/compare/22.43.6...22.43.7) (2022-10-25)
+
+
+### Bug Fixes
+
+* collection pages facets ([#211](https://github.com/vtex-sites/gatsby.store/issues/211)) ([ec6d65a](https://github.com/vtex-sites/gatsby.store/commit/ec6d65aa1fccefb61e036b01b153d29204856503))
+
 ### [22.43.6](https://github.com/vtex-sites/gatsby.store/compare/22.43.5...22.43.6) (2022-10-25)
 
 
