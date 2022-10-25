@@ -16,7 +16,7 @@
   // Structural Styles
   // --------------------------------------------------------
 
-  margin-top: var(--fs-spacing-3);
+  margin-top: 0;
 
   [data-fs-out-of-stock] {
     margin-top: var(--fs-product-details-vertical-spacing);
@@ -26,7 +26,6 @@
     display: flex;
     flex-direction: column;
     row-gap: var(--fs-product-details-vertical-spacing);
-    margin-top: var(--fs-spacing-3);
 
     @include media(">=tablet") {
       display: grid;
@@ -39,7 +38,7 @@
   [data-fs-product-details-section] {
     height: fit-content;
 
-    [data-store-sku-selector] {
+    [data-fs-sku-selector] {
       margin-bottom: var(--fs-product-details-vertical-spacing);
       &:last-of-type { margin-bottom: var(--fs-spacing-7); }
     }
@@ -176,10 +175,6 @@
   // -----------------------------
 
   [data-fs-product-details-content] {
-    [data-fs-product-details-description] h2 {
-      margin-bottom: var(--fs-spacing-3);
-    }
-
     @include media(">=tablet") {
       grid-row: span 10;
       grid-column: span 7;
@@ -187,8 +182,13 @@
     }
 
     @include media(">=notebook") {
-      grid-row: span 7;
       grid-column: span 8;
+    }
+  }
+
+  [data-fs-image-gallery="with-selector"] ~ [data-fs-product-details-content] {
+    @include media(">=notebook") {
+      grid-column: 2 / 9;
     }
   }
 }

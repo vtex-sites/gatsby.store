@@ -5,6 +5,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Conventional Changelog](https://github.com/conventional-changelog/conventional-changelog),
 and this project adheres to [Calendar Versioning](https://calver.org/).
 
+### [22.43.4](https://github.com/vtex-sites/gatsby.store/compare/22.43.3...22.43.4) (2022-10-24)
+
+
+### Chores
+
+* Improve deploy time with the new `USE_BUILD_CACHE` ([#202](https://github.com/vtex-sites/gatsby.store/issues/202)) ([5595369](https://github.com/vtex-sites/gatsby.store/commit/55953694eef1c47e742b17a70a7ae8fd5a29d3d5))
+
 ### [22.43.3](https://github.com/vtex-sites/gatsby.store/compare/22.43.2...22.43.3) (2022-10-21)
 
 
