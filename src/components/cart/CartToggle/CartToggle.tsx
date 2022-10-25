@@ -4,12 +4,12 @@ import { useCartToggleButton } from 'src/sdk/cart/useCartToggleButton'
 
 function CartToggle() {
   const btnProps = useCartToggleButton()
+  const totalItems = btnProps['data-items']
 
   return (
     <Button
-      variant="tertiary"
-      data-fs-button-icon
       data-fs-cart-toggle
+      counter={totalItems}
       aria-label={`Cart with ${btnProps['data-items']} items`}
       icon={<Icon name="ShoppingCart" width={32} height={32} />}
       {...btnProps}

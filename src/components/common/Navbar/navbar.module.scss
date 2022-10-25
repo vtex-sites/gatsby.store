@@ -7,6 +7,8 @@
 
   // Default properties
 
+  --fs-navbar-height-mobile                              : 3.5rem;
+
   --fs-navbar-bkg-color                                  : rgb(255 255 255 / 90%);
 
   --fs-navbar-transition-timing                          : var(--fs-transition-timing);
@@ -43,9 +45,16 @@
   position: sticky;
   top: 0;
   z-index: var(--fs-z-index-high);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   padding: 0;
   box-shadow: var(--fs-navbar-box-shadow);
   transition: top var(--fs-navbar-transition-timing) var(--fs-navbar-transition-function);
+
+  @include media("<notebook") {
+    height: var(--fs-navbar-height-mobile);
+  }
 
   &[data-fs-navbar-scroll="down"] {
     > nav {
@@ -138,7 +147,7 @@
           }
         }
 
-        [data-store-icon] {
+        [data-fs-icon] {
           margin-right: 0;
           line-height: 0;
 
@@ -160,14 +169,15 @@
 
         [data-fs-search-input] {
           width: var(--fs-navbar-search-expanded-input-width);
+          padding: var(--fs-spacing-2);
         }
 
-        [data-store-icon] {
+        [data-fs-icon] {
           margin-right: 0;
         }
       }
 
-      [data-fs-button-icon] {
+      [data-fs-button-icon="true"] {
         margin-right: var(--fs-navbar-search-expanded-button-icon-margin-right);
         transition: margin var(--fs-navbar-transition-timing) var(--fs-navbar-transition-function);
       }
