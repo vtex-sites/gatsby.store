@@ -1944,10 +1944,10 @@
     minimatch "^3.0.4"
     strip-json-comments "^3.1.1"
 
-"@faststore/api@^1.12.8":
-  version "1.12.8"
-  resolved "https://registry.yarnpkg.com/@faststore/api/-/api-1.12.8.tgz#520f17eadbec0abf404e4a8653b4e0c8fc573734"
-  integrity sha512-ZiaNE+r7MPWwiOLAgSiwmTl4SGTDf/OEscfH1mrXOPPIR09aqLlPfyxtma8DU+VD1JkbSitsr74Urvi/Ixgtpg==
+"@faststore/api@^1.12.17":
+  version "1.12.17"
+  resolved "https://registry.yarnpkg.com/@faststore/api/-/api-1.12.17.tgz#fad07e1ac222040873722eb709b393a6f2a8609f"
+  integrity sha512-l7tUpNM1pfNOACm69iWE5lNCl+JRVnJhFSYYo0QqD/KbHWtpXq9mQHK2cVX1VDWjADNXgWm4Nem7Fyyf/+dINQ==
   dependencies:
     "@graphql-tools/schema" "^8.2.0"
     "@rollup/plugin-graphql" "^1.0.0"
