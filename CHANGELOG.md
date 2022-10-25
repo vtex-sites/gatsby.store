@@ -5,6 +5,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Conventional Changelog](https://github.com/conventional-changelog/conventional-changelog),
 and this project adheres to [Calendar Versioning](https://calver.org/).
 
+### [22.43.6](https://github.com/vtex-sites/gatsby.store/compare/22.43.5...22.43.6) (2022-10-25)
+
+
+### Chores
+
+* Resolve linting warnings and errors ([#207](https://github.com/vtex-sites/gatsby.store/issues/207)) ([a8736a5](https://github.com/vtex-sites/gatsby.store/commit/a8736a5099669ce0ac6633ac54b2f0165b483f90)), closes [/github.com/vtex-sites/nextjs.store/blob/ddf283ec2ec6c7f79838ab2e38bce128331b2bc3/src/server/index.ts#L98](https://github.com/vtex-sites//github.com/vtex-sites/nextjs.store/blob/ddf283ec2ec6c7f79838ab2e38bce128331b2bc3/src/server/index.ts/issues/L98)
+
 ### [22.43.5](https://github.com/vtex-sites/gatsby.store/compare/22.43.4...22.43.5) (2022-10-25)
 
 
