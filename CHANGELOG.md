@@ -5,6 +5,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Conventional Changelog](https://github.com/conventional-changelog/conventional-changelog),
 and this project adheres to [Calendar Versioning](https://calver.org/).
 
+### [22.43.8](https://github.com/vtex-sites/gatsby.store/compare/22.43.7...22.43.8) (2022-10-25)
+
+
+### Chores
+
+* use transition api to defer navbar behavior ([#222](https://github.com/vtex-sites/gatsby.store/issues/222)) ([883daa0](https://github.com/vtex-sites/gatsby.store/commit/883daa0fa8866785640be86bda915e623d793a70))
+
 ### [22.43.7](https://github.com/vtex-sites/gatsby.store/compare/22.43.6...22.43.7) (2022-10-25)
 
 
