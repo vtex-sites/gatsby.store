@@ -1,6 +1,9 @@
 {
   "extends": "vtex-react/gatsby",
   "root": true,
+  "parserOptions": {
+    "ecmaVersion": 2020
+  },
   "rules": {
     "react/prop-types": "off",
     "react/react-in-jsx-scope": "off"
