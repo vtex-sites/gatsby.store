@@ -5,6 +5,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Conventional Changelog](https://github.com/conventional-changelog/conventional-changelog),
 and this project adheres to [Calendar Versioning](https://calver.org/).
 
+### [22.43.9](https://github.com/vtex-sites/gatsby.store/compare/22.43.8...22.43.9) (2022-10-26)
+
+
+### Features
+
+* Storybook Updates ([#271](https://github.com/vtex-sites/gatsby.store/issues/271)) ([#221](https://github.com/vtex-sites/gatsby.store/issues/221)) ([b1202c1](https://github.com/vtex-sites/gatsby.store/commit/b1202c19c62d63fa2825e795bf0a78f8536ab58f))
+
 ### [22.43.8](https://github.com/vtex-sites/gatsby.store/compare/22.43.7...22.43.8) (2022-10-25)
 
 
