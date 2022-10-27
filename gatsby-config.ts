@@ -117,10 +117,6 @@ const gatsbyConfig: GatsbyConfig = {
     },
     {
       resolve: '@sentry/gatsby',
-      options: {
-        dsn: 'https://examplePublicKey@o0.ingest.sentry.io/0',
-        sampleRate: 0.2,
-      },
     },
   ],
 }

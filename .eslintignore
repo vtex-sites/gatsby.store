@@ -6,3 +6,4 @@ coverage/
 .cache/
 @generated
 src/typings/
+sentry.config.ts
