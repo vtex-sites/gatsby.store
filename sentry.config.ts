@@ -10,6 +10,7 @@ Sentry.init({
       account: config.api.storeId,
       ...event.extra,
     }
+
     return event
   },
 })
