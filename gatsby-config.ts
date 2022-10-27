@@ -115,6 +115,13 @@ const gatsbyConfig: GatsbyConfig = {
     {
       resolve: 'gatsby-plugin-postcss',
     },
+    {
+      resolve: '@sentry/gatsby',
+      options: {
+        dsn: 'https://examplePublicKey@o0.ingest.sentry.io/0',
+        sampleRate: 0.2,
+      },
+    },
   ],
 }
 
