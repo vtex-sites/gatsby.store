@@ -72,6 +72,10 @@ const handleEvent = (event: AnalyticsEvent | SearchSelectItemEvent) => {
     return
   }
 
+  if (typeof window === 'undefined') {
+    return
+  }
+
   const url = new URL(event.params.url)
 
   if (!isFullTextSearch(url)) {
@@ -94,9 +98,11 @@ const handleEvent = (event: AnalyticsEvent | SearchSelectItemEvent) => {
   }
 }
 
-setInterval(
-  () => sendEvent({ type: 'session.ping' }),
-  60 * 1e3 /* One minute */
-)
+if (typeof window !== 'undefined') {
+  setInterval(
+    () => sendEvent({ type: 'session.ping' }),
+    60 * 1e3 /* One minute */
+  )
+}
 
 export default handleEvent
