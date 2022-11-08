@@ -5,6 +5,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Conventional Changelog](https://github.com/conventional-changelog/conventional-changelog),
 and this project adheres to [Calendar Versioning](https://calver.org/).
 
+### [22.43.11](https://github.com/vtex-sites/gatsby.store/compare/22.43.10...22.43.11) (2022-11-08)
+
+
+### Bug Fixes
+
+* chunk load analytics ([#224](https://github.com/vtex-sites/gatsby.store/issues/224)) ([17b2560](https://github.com/vtex-sites/gatsby.store/commit/17b2560565653a301c22d86b2b299765fc3f045e))
+
 ### [22.43.10](https://github.com/vtex-sites/gatsby.store/compare/22.43.9...22.43.10) (2022-11-03)
 
 ### [22.43.9](https://github.com/vtex-sites/gatsby.store/compare/22.43.8...22.43.9) (2022-10-26)
