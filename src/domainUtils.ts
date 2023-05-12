@@ -24,3 +24,4 @@ export const getDomain = (url, subdomain) => {
   
     return url;
   };
+  
