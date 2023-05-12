@@ -2,9 +2,11 @@ import './src/styles/global/tokens.scss'
 import './src/styles/global/resets.scss'
 import './src/styles/global/typography.scss'
 import './src/styles/global/layout.scss'
+import Cookies from 'js-cookie';
 
 // Replace this with your theme style file
 import './src/styles/themes/custom-theme.scss'
+import { getDomain } from 'src/domainUtils'
 
 import Layout from 'src/Layout'
 import AnalyticsHandler from 'src/sdk/analytics'
@@ -29,3 +31,8 @@ export const wrapPageElement: GatsbyBrowser['wrapPageElement'] = ({
 }) => {
   return <Layout>{element}</Layout>
 }
+
+export const onClientEntry = () => {
+  const domain = getDomain(window.location.href, true);
+  Cookies.set('myCustomCookie', 'custom cookie value',  { domain } );
+};
