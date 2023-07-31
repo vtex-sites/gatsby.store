@@ -172,7 +172,7 @@ All code is inside the `src` folder. The code is split into folders that impleme
 The `controller` is inside the `src/sdk` folder. This is where you will find most logic for the application. This folder contains hooks for adding items to cart, making graphql queries, resizing images, etc. If you need to write a custom business logic this is probably the place to put this logic.
 
 The `views` are written in the `src/components` folder and are subdivided into domain-specific components. Cart related items are inside the `src/components/cart` folder. Search and Product related components like facets, product summary, and search results are in their respective folders. Basic building blocks components are inside the UI folder. Components like button, checkbox, and modal are good candidates for the UI folder.
-Section components are those components that occupy a whole slice on the webpage and are desirable to be changed by a CMS. Section components are Product Gallery, Carousel, Shelf and Product description.
+Section components are those components that occupy a whole slice on the webpage and are desirable to be changed by a CMS. Section components are Product Gallery, Carousel, Shelf and Product Description.
 
 The `model`, in a website, is where the data fetching occurs. Since this project uses Jamstack, a crucial design decision was made to explicitly split where Static and Dynamic data are fetched. The files inside the `src/pages` folder use [Gatsby's File System Route API](https://www.gatsbyjs.com/docs/reference/routing/file-system-route-api/) to declare routes and fetch static data. The files inside the `src/views` folder revalidate and enrich static data with dynamic attributes.
 
