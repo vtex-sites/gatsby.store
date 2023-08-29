@@ -60,5 +60,7 @@ module.exports = {
     gtmContainerId: 'GTM-PGHZ95N',
   },
 
-  experimental: {}
+  experimental: {
+    nodeVersion: 18,
+  },
 }
