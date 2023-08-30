@@ -7,6 +7,7 @@
   "scripts": {
     "generate": "graphql-codegen",
     "build": "yarn partytown && gatsby build",
+    "info": "gatsby info",
     "develop": "yarn partytown && gatsby develop",
     "clean": "gatsby clean",
     "serve": "gatsby serve",
