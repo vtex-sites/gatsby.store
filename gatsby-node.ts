@@ -3,7 +3,7 @@ import type { GatsbyNode } from 'gatsby'
 import { apiSchema } from './src/server'
 
 export const onCreateWebpackConfig: GatsbyNode['onCreateWebpackConfig'] = ({
-  actions: { setWebpackConfig },
+  actions: { setWebpackConfig }},
   stage,
 }) => {
   const isProfilingEnabled = process.env.GATSBY_STORE_PROFILING === 'true'
