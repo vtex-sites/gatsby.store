@@ -19,7 +19,7 @@ export interface ThumborOptions {
   manualCrop?: Box | false
 }
 
-const THUMBOR_SERVER = 'https://assets.vtex.app'
+const THUMBOR_SERVER = 'https://vtexassets.com'
 
 const cropSection = ({ left, top, right, bottom }: Box) =>
   `${left}x${top}:${right}x${bottom}`
