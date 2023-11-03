@@ -1,6 +1,6 @@
 module.exports = {
   // Theming
-  theme: 'custom-theme',
+  theme: 'midnight',
 
   // Ecommerce Platform
   platform: 'vtex',
@@ -61,6 +61,6 @@ module.exports = {
   },
 
   experimental: {
-    nodeVersion: 18
+    nodeVersion: 18,
   },
 }
