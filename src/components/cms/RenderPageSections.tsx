@@ -1,7 +1,9 @@
 import type { ComponentType } from 'react'
 import BannerText from 'src/components/sections/BannerText'
 import Hero from 'src/components/sections/Hero'
+import Incentives from 'src/components/sections/Incentives/Incentives'
 import IncentivesHeader from 'src/components/sections/Incentives/IncentivesHeader'
+import Newsletter from 'src/components/sections/Newsletter/Newsletter'
 import ProductShelf from 'src/components/sections/ProductShelf'
 import ProductTiles from 'src/components/sections/ProductTiles'
 
@@ -13,7 +15,9 @@ import ProductTiles from 'src/components/sections/ProductTiles'
 const COMPONENTS: Record<string, ComponentType<any>> = {
   Hero,
   BannerText,
+  Incentives,
   IncentivesHeader,
+  Newsletter,
   ProductShelf,
   ProductTiles,
 }
