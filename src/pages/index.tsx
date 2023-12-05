@@ -96,6 +96,8 @@ export async function getServerData() {
 
   const cmsHome = await getCMSPageDataByContentType('home')
 
+  console.log("Calling server data on homepage");
+
   return {
     status: 200,
     props: { cmsHome },

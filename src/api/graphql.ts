@@ -33,6 +33,8 @@ const handler = async (
     return
   }
 
+  console.log('calling the api')
+
   const { operationName, variables, query } = parseRequest(req)
 
   try {
@@ -49,6 +51,8 @@ const handler = async (
 
     if (hasErrors) {
       const error = errors.find(isFastStoreError)
+
+      console.error(error)
 
       res.status(error?.extensions.status ?? 500)
     }
