@@ -1,3 +1,5 @@
+import { useMemo } from 'react'
+import { sendAnalyticsEvent } from '@faststore/sdk'
 import { gql } from '@faststore/graphql-utils'
 import { useQuery } from 'src/sdk/graphql/useQuery'
 import type {
@@ -6,6 +8,7 @@ import type {
 } from '@generated/graphql'
 
 import { useSession } from '../session'
+import type { IntelligentSearchAutocompleteQueryEvent } from '../analytics/types'
 
 const MAX_SUGGESTIONS = 5
 
@@ -38,12 +41,35 @@ const query = gql`
 function useSuggestions(term: string, limit: number = MAX_SUGGESTIONS) {
   const { channel, locale } = useSession()
 
-  const { data, error } = useQuery<Query, Variables>(query, {
-    term,
-    selectedFacets: [
-      { key: 'channel', value: channel ?? '' },
-      { key: 'locale', value: locale },
-    ],
+  const variables = useMemo(
+    () => ({
+      term,
+      selectedFacets: [
+        { key: 'channel', value: channel ?? '' },
+        { key: 'locale', value: locale },
+      ],
+    }),
+    [term, locale, channel]
+  )
+
+  const { data, error } = useQuery<Query, Variables>(query, variables, {
+    onSuccess: (callbackData) => {
+      if (data && term) {
+        sendAnalyticsEvent<IntelligentSearchAutocompleteQueryEvent>({
+          name: 'intelligent_search_autocomplete_query',
+          params: {
+            locale,
+            term,
+            url: window.location.href,
+            logicalOperator:
+              callbackData.search.metadata?.logicalOperator ?? 'and',
+            isTermMisspelled:
+              callbackData.search.metadata?.isTermMisspelled ?? false,
+            totalCount: callbackData.search.products.pageInfo.totalCount,
+          },
+        })
+      }
+    },
   })
 
   return {
