@@ -23,6 +23,14 @@ const query = gql`
           ...ProductSummary_product
         }
       }
+      products {
+        pageInfo {
+          totalCount
+        }
+      }
+      metadata {
+        ...SearchEvent_metadata
+      }
     }
   }
 `

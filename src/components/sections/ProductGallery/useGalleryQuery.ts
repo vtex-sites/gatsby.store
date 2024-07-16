@@ -13,6 +13,11 @@ import { useLocalizedVariables } from '../../../sdk/product/useProductsQuery'
  * the current search state of the user
  */
 export const query = gql`
+  fragment SearchEvent_metadata on SearchMetadata {
+    isTermMisspelled
+    logicalOperator
+  }
+
   query ProductGalleryQuery(
     $first: Int!
     $after: String!
@@ -34,6 +39,9 @@ export const query = gql`
       }
       facets {
         ...Filter_facets
+      }
+      metadata {
+        ...SearchEvent_metadata
       }
     }
   }
