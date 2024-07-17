@@ -33,10 +33,10 @@ const createOrRefreshCookie = (key: string, expiresSecond: number) => {
 
     if (isExpired) {
       currentValue = randomUUID()
-
-      // Setting the `path=/` makes the cookie accessible on any path of the domain/subdomain
-      document.cookie = `${key}=${currentValue}; max-age=${expiresSecond}; domain=${urlDomain}; path=/;`
     }
+
+    // Setting the `path=/` makes the cookie accessible on any path of the domain/subdomain
+    document.cookie = `${key}=${currentValue}; max-age=${expiresSecond}; domain=${urlDomain}; path=/;`
 
     return currentValue
   }
@@ -102,6 +102,7 @@ const handleEvent = (
     | IntelligentSearchQueryEvent
     | IntelligentSearchAutocompleteQueryEvent
 ) => {
+  // Avoid `navigator is not defined` reference error
   if (typeof window === 'undefined') return
 
   switch (event.name) {
