@@ -1,10 +1,12 @@
-import { useSearch } from '@faststore/sdk'
+import { useSearch, sendAnalyticsEvent } from '@faststore/sdk'
 import { gql } from '@faststore/graphql-utils'
 import { useQuery } from 'src/sdk/graphql/useQuery'
 import type {
   ProductGalleryQueryQuery as Query,
   ProductGalleryQueryQueryVariables as Variables,
 } from '@generated/graphql'
+import type { IntelligentSearchQueryEvent } from 'src/sdk/analytics/types'
+import { useSession } from 'src/sdk/session'
 
 import { useLocalizedVariables } from '../../../sdk/product/useProductsQuery'
 
@@ -13,6 +15,11 @@ import { useLocalizedVariables } from '../../../sdk/product/useProductsQuery'
  * the current search state of the user
  */
 export const query = gql`
+  fragment SearchEvent_metadata on SearchMetadata {
+    isTermMisspelled
+    logicalOperator
+  }
+
   query ProductGalleryQuery(
     $first: Int!
     $after: String!
@@ -35,6 +42,9 @@ export const query = gql`
       facets {
         ...Filter_facets
       }
+      metadata {
+        ...SearchEvent_metadata
+      }
     }
   }
 `
@@ -45,6 +55,8 @@ export const useGalleryQuery = () => {
     itemsPerPage,
   } = useSearch()
 
+  const { locale } = useSession()
+
   const localizedVariables = useLocalizedVariables({
     first: itemsPerPage,
     after: (itemsPerPage * page).toString(),
@@ -53,5 +65,21 @@ export const useGalleryQuery = () => {
     selectedFacets,
   })
 
-  return useQuery<Query, Variables>(query, localizedVariables)
+  return useQuery<Query, Variables>(query, localizedVariables, {
+    onSuccess: (data) => {
+      if (data && term) {
+        sendAnalyticsEvent<IntelligentSearchQueryEvent>({
+          name: 'intelligent_search_query',
+          params: {
+            locale,
+            term,
+            url: window.location.href,
+            logicalOperator: data.search.metadata?.logicalOperator ?? 'and',
+            isTermMisspelled: data.search.metadata?.isTermMisspelled ?? false,
+            totalCount: data.search.products.pageInfo.totalCount,
+          },
+        })
+      }
+    },
+  })
 }

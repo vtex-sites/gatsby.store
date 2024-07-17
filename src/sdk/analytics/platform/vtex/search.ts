@@ -1,40 +1,50 @@
 /**
- * More info at: https://www.notion.so/vtexhandbook/Event-API-Documentation-48eee26730cf4d7f80f8fd7262231f84
+ * More info at: https://developers.vtex.com/docs/api-reference/intelligent-search-events-api-headless
  */
 import type { AnalyticsEvent } from '@faststore/sdk'
 
 import config from '../../../../../store.config'
-import type { SearchSelectItemEvent } from '../../types'
+import type {
+  SearchSelectItemEvent,
+  IntelligentSearchQueryEvent,
+  IntelligentSearchAutocompleteQueryEvent,
+} from '../../types'
+import { getCookie } from './utils/getCookie'
 
 const THIRTY_MINUTES_S = 30 * 60
 const ONE_YEAR_S = 365 * 24 * 3600
 
 const randomUUID = () =>
   typeof crypto.randomUUID === 'function'
-    ? crypto.randomUUID()
+    ? crypto.randomUUID().replace(/-/g, '')
     : (Math.random() * 1e6).toFixed(0)
 
-const createStorage = (key: string, expiresSecond: number) => {
-  const timelapsed = (past: number) => (Date.now() - past) / 1e3
+const createOrRefreshCookie = (key: string, expiresSecond: number) => {
+  // Setting the domain attribute specifies which host can receive it; we need it to make the cookies available on the `secure` subdomain.
+  // Although https://developer.mozilla.org/en-US/docs/Web/API/Document/cookie mentioned leading dot (.) is not needed and ignored, couldn't set the cookies without it.
+  const urlDomain =
+    process.env.NODE_ENV === 'development'
+      ? '.localhost'
+      : `.${new URL(config.storeUrl).hostname}`
 
   return () => {
-    const item = JSON.parse(localStorage.getItem(key) ?? 'null')
-    const isExpired = !item || timelapsed(item.createdAt) > expiresSecond
-    const payload: string = isExpired ? randomUUID() : item.payload
+    let currentValue = getCookie(key)
+    const isExpired = currentValue === undefined
 
     if (isExpired) {
-      const data = { payload, createdAt: Date.now() }
-
-      localStorage.setItem(key, JSON.stringify(data))
+      currentValue = randomUUID()
     }
 
-    return payload
+    // Setting the `path=/` makes the cookie accessible on any path of the domain/subdomain
+    document.cookie = `${key}=${currentValue}; max-age=${expiresSecond}; domain=${urlDomain}; path=/;`
+
+    return currentValue
   }
 }
 
 const user = {
-  anonymous: createStorage('vtex.search.anonymous', ONE_YEAR_S),
-  session: createStorage('vtex.search.session', THIRTY_MINUTES_S),
+  anonymous: createOrRefreshCookie('vtex-search-anonymous', ONE_YEAR_S),
+  session: createOrRefreshCookie('vtex-search-session', THIRTY_MINUTES_S),
 }
 
 type SearchEvent =
@@ -47,6 +57,24 @@ type SearchEvent =
       text: string
       url: string
       type: 'search.click'
+    }
+  | {
+      type: 'search.query'
+      text: string
+      misspelled: boolean
+      match: number
+      operator: string
+      locale: string
+      url: string
+    }
+  | {
+      type: 'search.autocomplete.query'
+      text: string
+      misspelled: boolean
+      match: number
+      operator: string
+      locale: string
+      url: string
     }
 
 const sendEvent = (options: SearchEvent & { url?: string }) =>
@@ -67,42 +95,74 @@ const isFullTextSearch = (url: URL) =>
   typeof url.searchParams.get('q') === 'string' &&
   /^\/s(\/)?$/g.test(url.pathname)
 
-const handleEvent = (event: AnalyticsEvent | SearchSelectItemEvent) => {
-  if (event.name !== 'search_select_item') {
-    return
-  }
+type EventType =
+  | AnalyticsEvent
+  | SearchSelectItemEvent
+  | IntelligentSearchQueryEvent
+  | IntelligentSearchAutocompleteQueryEvent
 
+const handleEvent = (event: EventType) => {
+  // Avoid `navigator is not defined` reference error
   if (typeof window === 'undefined') {
     return
   }
 
-  const url = new URL(event.params.url)
+  switch (event.name) {
+    case 'search_select_item': {
+      const url = new URL(event.params.url)
 
-  if (!isFullTextSearch(url)) {
-    return
-  }
+      if (!isFullTextSearch(url)) {
+        return
+      }
 
-  for (const item of event.params.items ?? []) {
-    const productId = item.item_id ?? item.item_variant
-    const position = item.index
+      for (const item of event.params.items ?? []) {
+        const productId = item.item_id ?? item.item_variant
+        const position = item.index
 
-    if (productId && position) {
-      sendEvent({
-        type: 'search.click',
-        productId,
-        position,
-        url: url.href,
-        text: url.searchParams.get('q') ?? '<empty>',
-      })
+        if (productId && position) {
+          sendEvent({
+            type: 'search.click',
+            productId,
+            position,
+            url: url.href,
+            text: url.searchParams.get('q') ?? '<empty>',
+          })
+        }
+      }
+
+      break
     }
-  }
-}
 
-if (typeof window !== 'undefined') {
-  setInterval(
-    () => sendEvent({ type: 'session.ping' }),
-    60 * 1e3 /* One minute */
-  )
+    case 'intelligent_search_query': {
+      sendEvent({
+        type: 'search.query',
+        url: event.params.url,
+        text: event.params.term,
+        misspelled: event.params.isTermMisspelled,
+        match: event.params.totalCount,
+        operator: event.params.logicalOperator,
+        locale: event.params.locale,
+      })
+
+      break
+    }
+
+    case 'intelligent_search_autocomplete_query': {
+      sendEvent({
+        type: 'search.autocomplete.query',
+        url: event.params.url,
+        text: event.params.term,
+        misspelled: event.params.isTermMisspelled,
+        match: event.params.totalCount,
+        operator: event.params.logicalOperator,
+        locale: event.params.locale,
+      })
+
+      break
+    }
+
+    default:
+  }
 }
 
 export default handleEvent
