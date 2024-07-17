@@ -27,7 +27,7 @@ module.exports = {
   },
 
   // Production URLs
-  storeUrl: 'https://gatsby.vtex.app',
+  storeUrl: 'https://gatsby.preview.vtex.app',
   secureSubdomain: 'https://secure.vtexfaststore.com',
   checkoutUrl: 'https://secure.vtexfaststore.com/checkout',
   loginUrl: 'https://secure.vtexfaststore.com/api/io/login',
