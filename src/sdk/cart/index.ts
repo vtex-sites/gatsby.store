@@ -99,6 +99,8 @@ const validateCart = async (cart: Cart): Promise<Cart | null> => {
     cart: {
       order: {
         orderNumber: cart.id,
+        // Same as omitting it: the API defaults to splitting items
+        shouldSplitItem: true,
         acceptedOffer: cart.items.map(
           ({
             price,

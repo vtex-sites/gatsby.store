@@ -1949,10 +1949,10 @@
     minimatch "^3.0.4"
     strip-json-comments "^3.1.1"
 
-"@faststore/api@^1.12.38":
-  version "1.12.48"
-  resolved "https://registry.yarnpkg.com/@faststore/api/-/api-1.12.48.tgz#767e1419de6fcb17bb81b02f3e44579cecf9f5e7"
-  integrity sha512-xGIMVroCplxz2yFG4LrSQ8gX/kWKiwAJGgbJxmCfCbDBpi7KLE+xqIW+DkDHb2LuYT2/g5g/VA36YzyFasYGNg==
+"@faststore/api@^1.12.51":
+  version "1.12.51"
+  resolved "https://registry.yarnpkg.com/@faststore/api/-/api-1.12.51.tgz#784ce512849f6a8cc3893f95fe769e5cfde2300c"
+  integrity sha512-m2CCKEWDdGjkMMEUBVy4IPxV9YznlHKF7YSghvev8616HcJ6pYeHDTYCOZ4f0wUKO8gkIyeAZAtwkkJULGzH7A==
   dependencies:
     "@envelop/on-resolve" "^2.0.6"
     "@graphql-tools/schema" "^8.2.0"
